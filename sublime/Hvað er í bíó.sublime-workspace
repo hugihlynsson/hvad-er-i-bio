@@ -1,0 +1,577 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"place",
+				"placesAllowed"
+			],
+			[
+				"places",
+				"placesAllowed"
+			],
+			[
+				"acti",
+				"activatePlaceFilter"
+			],
+			[
+				"clo",
+				"closeArticleExtra"
+			],
+			[
+				"filter",
+				"filterMovies"
+			],
+			[
+				"succes",
+				"successMessage"
+			],
+			[
+				"str_re",
+				"str_replace"
+			],
+			[
+				"font-",
+				"font-size"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"f",
+				"fst	font-stretch"
+			],
+			[
+				"half",
+				"halfHeight"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"g",
+				"getElementById"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"texta",
+				"textarea	Tag"
+			],
+			[
+				"for",
+				"foreground"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"background-",
+				"background-size"
+			],
+			[
+				"query",
+				"query_args"
+			],
+			[
+				"_",
+				"_POST"
+			],
+			[
+				"recipe",
+				"recipe_persons"
+			],
+			[
+				"update",
+				"update_post_meta"
+			],
+			[
+				"reciep_cookin",
+				"recipe_cooking_time_meta_box"
+			],
+			[
+				"max-",
+				"max-width"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/hugihlynsson/Web/Hvað er í bíó/site/style.css",
+			"settings":
+			{
+				"buffer_size": 21185,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/hugihlynsson/Web/Hvað er í bíó/site/index.php",
+			"settings":
+			{
+				"buffer_size": 4428,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/hugihlynsson/Web/Hvað er í bíó/site/main.js",
+			"settings":
+			{
+				"buffer_size": 9413,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 93.0,
+		"selected_items":
+		[
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 554.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 5/site/index.php",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 5/site/functions.php",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 5/site/add-event.php",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 5/site/main.js",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 5/site/style.less",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 5/site/index.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 5/style.less",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 4/site/movies.json",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 4/site/main.js",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 4/site/style.less",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 4/site/manifest.appcache",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 3/site/style.less",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 4/site/index.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 4/site/details/tt0017136.json",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 4/localstorage.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 1/index.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 4/ajax.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 3/site/vanilla.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 3/site/jquery.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 3/site/script.js",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 3/site/scriptJquery.js",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 3/demo/demo.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 3/demo/style.less",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 3/site/demo.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 3/site/index.html",
+		"/Users/hugihlynsson/Documents/Web/hugihlynsson.com/hh.com 5.0/index.html",
+		"/Users/hugihlynsson/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/hugihlynsson/Web/arnorb.github.io/CNAME",
+		"/Users/hugihlynsson/Web/arnorb.github.io/styles.css",
+		"/Users/hugihlynsson/Web/arnorb.github.io/index.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Tölvuleikjaforritun TÖL308/V3/main.js",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Tölvuleikjaforritun TÖL308/V2/main.js",
+		"/Users/hugihlynsson/Web/leikstjorar.is/site/wp-config.php",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 2/site/style.less",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 2/site/index.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Tölvuleikjaforritun TÖL308/V3/index.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Hugbunadarverkefni HBV501/HBV1/linkar.txt",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Hugbunadarverkefni HBV501/RestaurantFinder/AndroidManifest.xml",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Hugbunadarverkefni HBV501/RestaurantFinder/res/layout/review_criteria.xml",
+		"/Users/hugihlynsson/Web/test/site/style.less",
+		"/Users/hugihlynsson/Web/test/site/index.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Tölvuleikjaforritun TÖL308/V2/index.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Tölvuleikjaforritun TÖL308/V1/v1.js",
+		"/Users/hugihlynsson/Web/gunnarhelgi.is/site/wp-content/themes/bluefin/front-page.php",
+		"/Users/hugihlynsson/Web/gunnarhelgi.is/site/wp-content/themes/bluefin/index.php",
+		"/Users/hugihlynsson/Web/gunnarhelgi.is/site/wp-content/themes/bluefin/recipe.php",
+		"/Users/hugihlynsson/Web/gunnarhelgi.is/site/wp-content/themes/bluefin/style.css",
+		"/Users/hugihlynsson/Web/gunnarhelgi.is/site/wp-content/plugins/someplugin.php",
+		"/Users/hugihlynsson/Downloads/Torrents/Sketch_2.2.4/sketch_keyfilemaker.txt",
+		"/Users/hugihlynsson/Downloads/Torrents/Sketch_2.2.4/sketch_keyfilemaker.md",
+		"/Users/hugihlynsson/Downloads/Torrents/Sketch_2.2.4/sketch_keyfilemaker",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Hugbúnaðarverkefni HBV501/HBV1/base.txt",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 1/style.less",
+		"/Users/hugihlynsson/Web/bulsur.is/wordpress/.htaccess",
+		"/Users/hugihlynsson/Web/wordpress/themeBase/index.php",
+		"/Users/hugihlynsson/Web/wordpress/themeBase/style.less",
+		"/Users/hugihlynsson/Documents/Web/juliarunolfs.com/jr.com v.5/5.1/style.less",
+		"/Users/hugihlynsson/Documents/Web/juliarunolfs.com/jr.com v.5/5.1/mixins.less",
+		"/Users/hugihlynsson/Web/leiguvaktin.is/site/style.less",
+		"/Users/hugihlynsson/Web/leiguvaktin.is/site/index.html",
+		"/Users/hugihlynsson/Web/common/mixins.less",
+		"/Users/hugihlynsson/Desktop/index.html",
+		"/Users/hugihlynsson/Desktop/bordergradient.html"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 95.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"filter-",
+			"limitTimeRange",
+			"place",
+			"getToggledPlaces",
+			"getToggledPlaces()",
+			"console.log",
+			"php echo ",
+			"movie",
+			"console.",
+			"filtered",
+			"[i]",
+			"time",
+			"movie",
+			"console.log",
+			"80",
+			"title",
+			"$(this)",
+			"place",
+			"movie",
+			"z-index",
+			"openArticle",
+			"closeArticle",
+			"to-time",
+			".rank",
+			"span ",
+			"li ",
+			"h2",
+			"@secondColor",
+			"third",
+			"$(this)",
+			"redColor",
+			"h2 ",
+			"i ",
+			"activateMore",
+			"split",
+			"$('#to_time').val()",
+			"$('#from_time').val()",
+			"range",
+			"el",
+			"Time",
+			"time",
+			"failMessage",
+			"success",
+			"successMessage",
+			".slide",
+			"p",
+			"scrollTop",
+			"h1",
+			"seconds",
+			"_GET",
+			".more",
+			".see",
+			"button",
+			"@thirdColor",
+			"event",
+			"data",
+			"event",
+			"select",
+			"form",
+			"button",
+			"h2",
+			".extr",
+			"start",
+			"comments",
+			"title",
+			"start",
+			"Start",
+			"start",
+			"Start",
+			"start",
+			"title",
+			"dt ",
+			"rank",
+			".seen",
+			".extras",
+			".mark-seen",
+			"dl",
+			"span",
+			"border-radius",
+			"30",
+			"30em",
+			"24",
+			"translate",
+			"36",
+			"lighten",
+			"open",
+			"h1",
+			"input-b",
+			"blockquote",
+			"#v",
+			"#",
+			"italic",
+			"20em",
+			"font-size: 16/20em;",
+			"font-size",
+			"eyðublaðið",
+			"radios",
+			"p",
+			"consol",
+			"$(input).",
+			"Proxima Nova",
+			"font-w",
+			"url('prox",
+			"blackout-text",
+			"focus",
+			"inputBox",
+			"@formBgColor",
+			"nauðsynlegt",
+			"\"required",
+			"required",
+			"#000",
+			"black-text",
+			"Vel",
+			"cx",
+			"this.cy",
+			"hightlightColor",
+			"formBgColor",
+			"\"input",
+			"</li>",
+			"[errorBox.length] ",
+			"eText",
+			"people",
+			"Recipe",
+			"'opensans",
+			"draw();",
+			"g_smiley.draw();",
+			"redraw();",
+			"trail"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"=",
+			"openArticleExtra",
+			"closeArticleExtra",
+			".rating",
+			"warningColor",
+			".marked",
+			".extra",
+			".mark",
+			"font-size: 16/18em;",
+			"input-box"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/hugihlynsson/Web/Hvað er í bíó/site/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 21185,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/hugihlynsson/Web/Hvað er í bíó/site/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4428,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/hugihlynsson/Web/Hvað er í bíó/site/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9413,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"project": "Hvað er í bíó.sublime-project",
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 217.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
