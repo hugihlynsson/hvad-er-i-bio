@@ -7,7 +7,7 @@
 // Change number with point (20.5) to human readable string (20:30):
 var numToTime = function (number) {
 	var parts = number.split('.');
-	if (parts.length === 1 || parseInt(parts[1]) === 0) return number + ':00';
+	if (parts.length === 1 || parseInt(parts[1], 10) === 0) return number + ':00';
 	minutes = Math.round(parseFloat('0.' + parts[1])*60).toString();
 	if (minutes.length === 1) minutes = '0' + minutes;
 	return parts[0] + ':' + minutes;
@@ -17,7 +17,7 @@ var numToTime = function (number) {
 // Change human readable (20:30) time to number with point (20.5) as string:
 var timeToNum = function (time) {
 	var parts = time.split(':');
-	return parts[0] + (parseInt(parts[1])/60 + '').substring(1);
+	return parts[0] + (parseInt(parts[1], 10)/60 + '').substring(1);
 };
 
 
@@ -62,7 +62,7 @@ var populateMoviesObject = function () {
 		var movie = movies.titles[id];
 		movie.isFiltered = false;
 		var rating = parseFloat(movieElm.find('.rating').text().split('Ein')[0]);
-		movie.rating = (rating != '') ? rating : '10';
+		movie.rating = (rating !== '') ? rating : '10';
 		movie.places = {};
 
 		// For each movie object, add the showplaces:
@@ -87,7 +87,7 @@ var populateMoviesObject = function () {
 };
 
 
-// ======== FILTER PREFERENCES ========
+// ======== FILTERING FUNCTIONS ========
 
 // Mark movies with highest and lowest showtimes:
 var filterMoviesByTime = function (lowFilter, highFilter) {
@@ -117,7 +117,7 @@ var filterMoviesByRating = function (minRating) {
 			movies.titles[id].isFiltered = true;
 		}
 	}
-}
+};
 
 var filterMoviesByPlace = function (placesAllowed) {
 	if ($.isEmptyObject(placesAllowed)) return;
@@ -135,7 +135,16 @@ var filterMoviesByPlace = function (placesAllowed) {
 
 		if (!hasPlace) movies.titles[id].isFiltered = true;
 	}
-}
+};
+
+var filterMoviesByText = function (text) {
+	if (text === '') return;
+
+	for (var id in movies.titles) {
+		if (id.toLowerCase().indexOf(text) === -1) 
+			movies.titles[id].isFiltered = true;
+	}
+};
 
 var filterMovies = function () {
 	// Start unfiltering every movie:
@@ -147,6 +156,7 @@ var filterMovies = function () {
 	filterMoviesByTime($('#from-time').val(), $('#to-time').val());
 	filterMoviesByRating($('#rating-range').val());
 	filterMoviesByPlace(getToggledPlaces());
+	filterMoviesByText($('#text-filter').val().toLowerCase());
 
 	// Hide and show movies based on filtering:
 	$('.movie').each(function () {
@@ -174,27 +184,38 @@ var filterMovies = function () {
 			movieElm.slideDown();
 		}
 	});
+};
 
-}
 
+// ======== FILTER INITIATION ========
 
 var limitTimeRange = function() {
 	$('#to-time, #from-time').attr('min', movies.lowestShowtime);
 	$('#to-time, #from-time').attr('max', movies.highestShowtime);
 	$('.time-range .from').text(numToTime(movies.lowestShowtime));
 	$('.time-range .to').text(numToTime(movies.highestShowtime));
-}
+};
 
 var initPlaceFilter = function () {
 	var placeFilterList = $('.place-filter ul');
-	for (place in places) {
-		placeFilterList.append('<li>' +  place + '</li>')
+	for (var place in places) {
+		placeFilterList.append('<li>' +  place + '</li>');
 	}
 
 	$('.place-filter li').on('click', function () {
 		$(this).toggleClass('toggled', !$(this).is('.toggled'));
 		filterMovies();
 	});
+};
+
+var getToggledPlaces = function () {
+	var places = {};
+	$('.place-filter li').each(function () {
+		if ($(this).is('.toggled')) {
+			places[$(this).text()] = true;
+		}
+	});
+	return places;
 };
 
 var updateRangemarkPosition = function (range) {
@@ -209,8 +230,8 @@ var updateRangemarkPosition = function (range) {
 	else if (newPoint > 1) { newPlace = width; }
 	else { newPlace = width * newPoint + offset; offset -= newPoint; }
 
-	range.next('output').css('left', newPlace)
-}
+	range.next('output').css('left', newPlace);
+};
 
 var updateTimeRangeMarks = function () {
 
@@ -227,6 +248,46 @@ var updateTimeRangeMarks = function () {
 		range.next('output').text(numToTime(range.val()));
 	});
 };
+
+var activateRangeSlidera = function () {
+	// On time range change:
+	$('#to-time, #from-time').on('change', function() {
+		filterMovies();
+		updateTimeRangeMarks();	
+	});
+
+	// On rating range change:
+	$('#rating-range').on('change', function () {
+		var range = $(this);
+		filterMovies();
+		updateRangemarkPosition(range);
+		range.next('output').text(range.val());
+	}).trigger('change');
+
+	$(window).on('resize', function () {
+		$('input[type="range"]').each(function () {
+			updateRangemarkPosition($(this));
+		});
+	});
+};
+
+var activateTextFilter = function () {
+	$('#text-filter').on('input propertychange', function() {
+		console.log('Keydown, value: ' + $(this).val());
+		filterMovies();
+	});
+};
+
+var activateFilters = function () {
+	initPlaceFilter();
+	limitTimeRange();
+	updateTimeRangeMarks();
+	activateRangeSliders();
+	activateTextFilter();
+};
+
+
+// ======== OTHER FUNCTIONS  ========
 
 var activateLocalStorageMarks = function () {
 	// Load marked things from localstorage:
@@ -303,48 +364,11 @@ var activateMoreToggle = function () {
 	});
 };
 
-var activateRangeSlider = function () {
-	// On time range change:
-	$('#to-time, #from-time').on('change', function() {
-		filterMovies();
-		updateTimeRangeMarks();	
-	});
-
-	// On rating range change:
-	$('#rating-range').on('change', function () {
-		var range = $(this);
-		filterMovies();
-		updateRangemarkPosition(range);
-		range.next('output').text(range.val());
-	}).trigger('change');
-
-	$(window).on('resize', function () {
-		$('input[type="range"]').each(function () {
-			updateRangemarkPosition($(this));
-		});
-	});
-};
-
-var getToggledPlaces = function () {
-	var places = {};
-	$('.place-filter li').each(function () {
-		if ($(this).is('.toggled')) {
-			places[$(this).text()] = true;
-		}
-	});
-	return places;
-};
-
 //
 // ========================= INITIALIZATION ============================
 // 
 
-// Has to happen first:
-populateMoviesObject();
-
-initPlaceFilter();
-limitTimeRange();
-updateTimeRangeMarks();
 activateLocalStorageMarks();
+populateMoviesObject();
+activateFilters();
 activateMoreToggle();
-activateRangeSlider();

@@ -57,15 +57,21 @@
 						</div>
 					</div>
 				</div>
-				<div class="input-box rating-range">
-					<label for="rating-range">Einkunn</label>
-					<div class="range-wrap">
-						<span class="range-mark from">0</span>
-						<div class="range">
-							<input id="rating-range" type="range" min="0" max="10" step="0.1" name="rating-range" value="0">
-							<output for="rating-range" onforminput="value = rating-range.valueAsNumber;">24</output>
+				<div class="two-col">
+					<div class="input-box rating-range">
+						<label for="rating-range">Einkunn</label>
+						<div class="range-wrap">
+							<span class="range-mark from">0</span>
+							<div class="range">
+								<input id="rating-range" type="range" min="0" max="10" step="0.1" name="rating-range" value="0">
+								<output for="rating-range" onforminput="value = rating-range.valueAsNumber;">24</output>
+							</div>
+							<span class="range-mark to">10</span>
 						</div>
-						<span class="range-mark to">10</span>
+					</div>
+					<div class="input-box text-filter">
+						<label for="text-filter">Heiti</label>
+						<input id="text-filter" type="text" placeholder="Pulp Fiction">
 					</div>
 				</div>
 			</div>

@@ -376,6 +376,45 @@ a:hover {
 img {
   max-width: 100%;
 }
+label {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  background: #eeeeee;
+  padding: 0.5em 1em;
+  width: 20%;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #eeeeee;
+  border-right: 1px solid #fff;
+}
+input[type="text"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  float: left;
+  width: 100%;
+  padding: 0.5em;
+  background: #fff;
+  border: 1px solid #eeeeee;
+  border-radius: 0 5px 5px 0;
+  line-height: 1.4em;
+  -webkit-appearance: none;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+input[type="text"]:hover {
+  border-color: #bbb;
+}
+input[type="text"]:focus {
+  border-color: #3388ee;
+  outline: none;
+}
 input[type="range"] {
   position: relative;
   -webkit-appearance: none;
@@ -422,10 +461,9 @@ output {
   -ms-transition: opacity 0.2s, background 0.2s;
   transition: opacity 0.2s, background 0.2s;
 }
-.two-col:hover output,
-.input-box:hover output,
 input:active + output,
-input:hover + output,
+input:focus + output,
+input::-webkit-slider-thumb:focus + output,
 input::-webkit-slider-thumb:active + output {
   opacity: 1;
   background: #3388ee;
@@ -471,6 +509,7 @@ output:after {
   width: 80%;
   background: #eeeeee;
   padding: 0.5em 0;
+  border: 1px solid #eeeeee;
   border-radius: 0 5px 5px 0;
 }
 .range-wrap .range-mark {
@@ -508,18 +547,6 @@ output:after {
   width: 100%;
   vertical-align: 0.1em;
 }
-label {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
-  float: left;
-  background: #eeeeee;
-  padding: 0.5em 1em;
-  width: 20%;
-  border-radius: 5px 0 0 5px;
-  border-right: 1px solid #fff;
-}
 .filters-wrap .time-range label {
   width: 3em;
 }
@@ -540,6 +567,12 @@ label {
 }
 .filters-wrap .rating-range .range-wrap .range {
   width: calc(100% - 4.5em);
+}
+.filters-wrap .text-filter label {
+  width: 4em;
+}
+.filters-wrap .text-filter input {
+  width: calc(100% - 4em);
 }
 .place-filter {
   -webkit-box-sizing: border-box;
@@ -900,6 +933,9 @@ label {
   .two-col .input-box:first-child {
     border-right: 1px solid #ffffff;
   }
+  input[type="text"] {
+    border-radius: 0;
+  }
   .range-wrap {
     border-radius: 0;
   }
@@ -1043,10 +1079,10 @@ label {
     border-radius: 5px 0 0 0;
   }
   .place-filter {
-    padding: 0.04em;
+    padding: 0.6em;
     border-radius: 0 5px 5px 0;
   }
-  .rating-range label {
+  .text-filter label {
     border-radius: 0 0 0 5px;
   }
   .movies-wrap {
