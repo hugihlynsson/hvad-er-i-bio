@@ -249,7 +249,7 @@ var updateTimeRangeMarks = function () {
 	});
 };
 
-var activateRangeSlidera = function () {
+var activateRangeSliders = function () {
 	// On time range change:
 	$('#to-time, #from-time').on('change', function() {
 		filterMovies();
