@@ -218,13 +218,12 @@ var getToggledPlaces = function () {
 	return places;
 };
 
-var updateRangemarkPosition = function (range) {
-	var el, newPoint, newPlace, offset;
+var updateRangemark = function (range) {
 	// Compersate for thumb width:
-	width = range.width()-20;
-	newPoint = (range.val()-range.attr("min")) / (range.attr("max")-range.attr("min"));
+	var width = range.width()-20;
+	var newPoint = (range.val()-range.attr("min")) / (range.attr("max")-range.attr("min"));
 	// Compersate for thumb width and slider padding:
-	offset = 10;
+	var offset = 10;
 	// Prevent mark from going beyond left or right (unsupported browsers):
 	if (newPoint < 0) { newPlace = 0; }
 	else if (newPoint > 1) { newPlace = width; }
@@ -244,12 +243,13 @@ var updateTimeRangeMarks = function () {
 	// Update position and value of rangemarks:
 	$('#to-time, #from-time').each(function () {
 		var range = $(this);
-		updateRangemarkPosition(range);
+		updateRangemark(range);
 		range.next('output').text(numToTime(range.val()));
 	});
 };
 
 var activateRangeSliders = function () {
+
 	// On time range change:
 	$('#to-time, #from-time').on('change', function() {
 		filterMovies();
@@ -260,13 +260,13 @@ var activateRangeSliders = function () {
 	$('#rating-range').on('change', function () {
 		var range = $(this);
 		filterMovies();
-		updateRangemarkPosition(range);
+		updateRangemark(range);
 		range.next('output').text(range.val());
 	}).trigger('change');
 
 	$(window).on('resize', function () {
 		$('input[type="range"]').each(function () {
-			updateRangemarkPosition($(this));
+			updateRangemark($(this));
 		});
 	});
 };

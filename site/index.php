@@ -6,12 +6,24 @@
 	include 'filecache.php';
 ?>
 <!DOCTYPE html>
-<html lang="is">
+<html lang="is" manifest="offline.appcache">
 	<head>
 		<meta charset="UTF-8">
 		<title>Hvað er í bíó</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<link rel="apple-touch-icon" sizes="60x60"  href="images/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-156x156.png">
+		<link rel="shortcut icon" sizes="16x16" href="images/icon-16x16.png">
+		<link rel="shortcut icon" sizes="32x32" href="images/icon-32x32.png">
+		<link rel="shortcut icon" sizes="128x128" href="images/icon-128x128.png">
+		<link rel="shortcut icon" sizes="196x196" href="images/icon-196x196.png">
+
 		<link rel="stylesheet" href="style.css">
+
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
 			_gaq.push(['_setAccount', 'UA-20956924-1']);
@@ -24,6 +36,7 @@
 				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 			})();
 		</script>
+
 		<script type="text/javascript" src="//use.typekit.net/kyo1clm.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	</head>
@@ -40,7 +53,7 @@
 							<span class="range-mark from">00:00</span>
 							<div class="range">
 								<input id="from-time" type="range" min="0" max="24" step="0.25" name="from-time" value="0">
-								<output for="from-time" onforminput="value = from-time.valueAsNumber;">0</output>
+								<output for="from-time">0</output>
 							</div>
 							<span class="range-mark to">24:00</span>
 						</div>
@@ -51,7 +64,7 @@
 							<span class="range-mark from">00:00</span>
 							<div class="range">
 								<input id="to-time" type="range" min="0" max="24" step="0.25" name="to-time" value="24">
-								<output for="to-time" onforminput="value = to-time.valueAsNumber;">24</output>
+								<output for="to-time">24</output>
 							</div>
 							<span class="range-mark to">24:00</span>
 						</div>
@@ -64,7 +77,7 @@
 							<span class="range-mark from">0</span>
 							<div class="range">
 								<input id="rating-range" type="range" min="0" max="10" step="0.1" name="rating-range" value="0">
-								<output for="rating-range" onforminput="value = rating-range.valueAsNumber;">24</output>
+								<output for="rating-range">24</output>
 							</div>
 							<span class="range-mark to">10</span>
 						</div>
@@ -110,7 +123,7 @@
 				</header>
 				<a class="more" href="#">Sjá meira</a>
 				<aside class="extra">
-					<img src="<?=$imageUrl?>">	
+					<img src="<?=$imageUrl?>" alt="Plakat fyrir <?=$title?>">	
 					<div class="padding"></div>
 					<div class="content">
 						<?php
