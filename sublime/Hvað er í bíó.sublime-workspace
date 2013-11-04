@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"loe",
+				"lowestShowtime"
+			],
+			[
+				"cur",
+				"curl_response"
+			],
+			[
+				"filterMo",
+				"filterMovies"
+			],
+			[
+				"filterMoviesBy",
+				"filterMoviesByText"
+			],
+			[
 				"place",
 				"placesAllowed"
 			],
@@ -108,18 +124,10 @@
 	"buffers":
 	[
 		{
-			"file": "/Users/hugihlynsson/Web/Hvað er í bíó/site/style.css",
+			"file": "/Users/hugihlynsson/Web/Hvað er í bíó/site/style.less",
 			"settings":
 			{
-				"buffer_size": 21185,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/hugihlynsson/Web/Hvað er í bíó/site/index.php",
-			"settings":
-			{
-				"buffer_size": 4428,
+				"buffer_size": 12812,
 				"line_ending": "Unix"
 			}
 		},
@@ -127,7 +135,15 @@
 			"file": "/Users/hugihlynsson/Web/Hvað er í bíó/site/main.js",
 			"settings":
 			{
-				"buffer_size": 9413,
+				"buffer_size": 10917,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/hugihlynsson/Web/Hvað er í bíó/site/index.php",
+			"settings":
+			{
+				"buffer_size": 5504,
 				"line_ending": "Unix"
 			}
 		}
@@ -175,6 +191,11 @@
 	},
 	"file_history":
 	[
+		"/Users/hugihlynsson/Web/Hvað er í bíó/site/filecache.php",
+		"/Users/hugihlynsson/Web/Hvað er í bíó/site/offline.appcache",
+		"/Users/hugihlynsson/Web/Hvað er í bíó/site/.htaccess",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 4/site/manifest.appcache",
+		"/Users/hugihlynsson/Web/Hvað er í bíó/site/style.css",
 		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 5/site/index.php",
 		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 5/site/functions.php",
 		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 5/site/add-event.php",
@@ -185,7 +206,6 @@
 		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 4/site/movies.json",
 		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 4/site/main.js",
 		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 4/site/style.less",
-		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 4/site/manifest.appcache",
 		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 3/site/style.less",
 		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 4/site/index.html",
 		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 4/site/details/tt0017136.json",
@@ -255,6 +275,11 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"throttle(filterMovies, 300);",
+			"filterMovies(throttle(filterMovies, 300);",
+			"updateRangemarkPosition",
+			"16",
+			"baseBorderRadius",
 			"filter-",
 			"limitTimeRange",
 			"place",
@@ -377,12 +402,7 @@
 			"[errorBox.length] ",
 			"eText",
 			"people",
-			"Recipe",
-			"'opensans",
-			"draw();",
-			"g_smiley.draw();",
-			"redraw();",
-			"trail"
+			"Recipe"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -390,6 +410,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"throttleMovieFilter()",
+			"updateRangemark",
+			"borderRadius",
 			"=",
 			"openArticleExtra",
 			"closeArticleExtra",
@@ -410,81 +433,52 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/Users/hugihlynsson/Web/Hvað er í bíó/site/style.css",
+					"file": "/Users/hugihlynsson/Web/Hvað er í bíó/site/style.less",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 21185,
+						"buffer_size": 12812,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								2839,
+								2839
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2029.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/Users/hugihlynsson/Web/Hvað er í bíó/site/index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4428,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "/Users/hugihlynsson/Web/Hvað er í bíó/site/main.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9413,
+						"buffer_size": 10917,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								5878,
+								5878
 							]
 						],
 						"settings":
@@ -493,7 +487,35 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2762.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/hugihlynsson/Web/Hvað er í bíó/site/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5504,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3425,
+								3425
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1371.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

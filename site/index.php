@@ -1,9 +1,7 @@
 <?php
 	header('Content-Type: text/html; charset=utf-8');
-	// error_reporting(E_ALL);
-	// ini_set('display_errors', 'ON');
-
-	// include 'filecache.php';
+	
+	include 'filecache.php';
 ?>
 <!DOCTYPE html>
 <html lang="is">
@@ -96,7 +94,7 @@
 		<div class="movies-wrap">
 			<?php
 
-				$service_url = 'http://apis.is/cinema';
+				$service_url = 'http://apis.is/cinema/';
 				$curl = curl_init($service_url);
 				curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 				$response = curl_exec($curl);
@@ -162,5 +160,5 @@
 </html>
 
 <?php
-	// writeCache($cacheFile, ob_get_contents());
+	writeCache($cacheFile, ob_get_contents());
 ?>

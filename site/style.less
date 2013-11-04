@@ -141,19 +141,16 @@ output {
 	font-size: 15px;
 	line-height: 20px;
 	color: #fff;
-	pointer-events: none;
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='your_transparent.png', sizingMethod='scale');
 	background: none;
 	box-shadow: 0px 1px 3px fade(black, 30%);
 	.transition(opacity 0.2s, background 0.2s;);
+	pointer-events: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='your_transparent.png', sizingMethod='scale');
 
 	.two-col:hover &,
-	.input-box:hover &,
 	input:active + &,
 	input:focus + &,
-	input:hover + &,
-	input::-webkit-slider-thumb:focus + &, 
-	input::-webkit-slider-thumb:active + & {
+	input:hover + & {
 		opacity: 1;
 		background: @highlightColor;
 	}

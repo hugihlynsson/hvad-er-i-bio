@@ -107,6 +107,11 @@ var populateMoviesObject = function () {
 			});
 		});
 	});
+
+	// Make lowest and hightst showime be a quarter:
+	movies.lowestShowtime = (Math.floor(movies.lowestShowtime * 4) / 4).toString();
+	movies.highestShowtime = (Math.ceil(movies.highestShowtime * 4) / 4).toString();
+	console.log(movies.highestShowtime);
 };
 
 

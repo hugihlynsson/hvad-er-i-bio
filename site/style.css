@@ -452,22 +452,19 @@ output {
   font-size: 15px;
   line-height: 20px;
   color: #fff;
-  pointer-events: none;
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='your_transparent.png', sizingMethod='scale');
   background: none;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
   -webkit-transition: opacity 0.2s, background 0.2s;
   -moz-transition: opacity 0.2s, background 0.2s;
   -ms-transition: opacity 0.2s, background 0.2s;
   transition: opacity 0.2s, background 0.2s;
+  pointer-events: none;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='your_transparent.png', sizingMethod='scale');
 }
 .two-col:hover output,
-.input-box:hover output,
 input:active + output,
 input:focus + output,
-input:hover + output,
-input::-webkit-slider-thumb:focus + output,
-input::-webkit-slider-thumb:active + output {
+input:hover + output {
   opacity: 1;
   background: #3388ee;
 }

@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="is">
+	<head>
+		<meta charset="UTF-8">
+		<title>Hvað er í bíó</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<link rel="apple-touch-icon" sizes="60x60"  href="images/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-156x156.png">
+		<link rel="shortcut icon" sizes="16x16" href="images/icon-16x16.png">
+		<link rel="shortcut icon" sizes="32x32" href="images/icon-32x32.png">
+		<link rel="shortcut icon" sizes="128x128" href="images/icon-128x128.png">
+		<link rel="shortcut icon" sizes="196x196" href="images/icon-196x196.png">
+
+		<link rel="stylesheet" href="style.css">
+
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-20956924-1']);
+			_gaq.push(['_trackPageview']);
+			(function() {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+
+		<script type="text/javascript" src="//use.typekit.net/kyo1clm.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	</head>
+
+	<body>
+		<h1>Hvað er í bíó?</h1>
+
+		<div class="filters">
+			<div class="filters-wrap">
+				<div class="two-col">
+					<div class="input-box time-range">
+						<label for="from-time">Frá</label>
+						<div class="range-wrap">
+							<span class="range-mark from">00:00</span>
+							<div class="range">
+								<input id="from-time" type="range" min="0" max="24" step="0.25" name="from-time" value="0">
+								<output for="from-time">0</output>
+							</div>
+							<span class="range-mark to">24:00</span>
+						</div>
+					</div>
+					<div class="input-box time-range">
+						<label for="to-time">Til</label>
+						<div class="range-wrap">
+							<span class="range-mark from">00:00</span>
+							<div class="range">
+								<input id="to-time" type="range" min="0" max="24" step="0.25" name="to-time" value="24">
+								<output for="to-time">24</output>
+							</div>
+							<span class="range-mark to">24:00</span>
+						</div>
+					</div>
+				</div>
+				<div class="two-col">
+					<div class="input-box rating-range">
+						<label for="rating-range">Einkunn</label>
+						<div class="range-wrap">
+							<span class="range-mark from">0</span>
+							<div class="range">
+								<input id="rating-range" type="range" min="0" max="10" step="0.1" name="rating-range" value="0">
+								<output for="rating-range">24</output>
+							</div>
+							<span class="range-mark to">10</span>
+						</div>
+					</div>
+					<div class="input-box text-filter">
+						<label for="text-filter">Heiti</label>
+						<input id="text-filter" type="text" placeholder="Pulp Fiction">
+					</div>
+				</div>
+			</div>
+			<div class="filters-wrap place-filter">
+				<ul></ul>
+			</div>
+		</div>
+
+		<div class="movies-wrap">
+						<article class="movie" data-id="Söngleikur: Merrily We Roll Along">
+				<header>
+					<div class="rating">
+																	</div>
+					<h2>Söngleikur: Merrily We Roll Along						<i>Öllum leyfð</i>
+					</h2>
+					<a class="mark" href="#">Merkja</a>
+				</header>
+				<a class="more" href="#">Sjá meira</a>
+				<aside class="extra">
+					<img src="http://kvikmyndir.is/images/poster/merry-1383386527.jpg" alt="Plakat fyrir Söngleikur: Merrily We Roll Along">	
+					<div class="padding"></div>
+					<div class="content">
+												<div class="showplace" data-place="Háskólabíó">
+							<h3>Háskólabíó:</h3>
+							<ul>
+																<li data-time="17:45">17:45</li>
+															</ul>
+						</div>
+											</div>
+				</aside>
+			</article>
+						<article class="movie" data-id="Free Birds">
+				<header>
+					<div class="rating">
+						5.1												<span>Einkunn frá IMDB með  603 atkv.</span>
+											</div>
+					<h2>Free Birds						<i>Öllum leyfð</i>
+					</h2>
+					<a class="mark" href="#">Merkja</a>
+				</header>
+				<a class="more" href="#">Sjá meira</a>
+				<aside class="extra">
+					<img src="http://kvikmyndir.is/images/poster/8716_500.jpg" alt="Plakat fyrir Free Birds">	
+					<div class="padding"></div>
+					<div class="content">
+												<div class="showplace" data-place="Smárabíó">
+							<h3>Smárabíó:</h3>
+							<ul>
+																<li data-time="15:20">15:20 (3D )</li>
+																<li data-time="15:20">15:20</li>
+																<li data-time="17:40">17:40</li>
+															</ul>
+						</div>
+												<div class="showplace" data-place="Borgarbíó">
+							<h3>Borgarbíó:</h3>
+							<ul>
+																<li data-time="18:00">18:00 (3D )</li>
+															</ul>
+						</div>
+												<div class="showplace" data-place="Laugarásbíó">
+							<h3>Laugarásbíó:</h3>
+							<ul>
+																<li data-time="18:00">18:00 (3D )</li>
+															</ul>
+						</div>
+											</div>
+				</aside>
+			</article>
+						<article class="movie" data-id="Philomena">
+				<header>
+					<div class="rating">
+						7.3												<span>Einkunn frá IMDB með  636 atkv.</span>
+											</div>
+					<h2>Philomena						<i>Öllum leyfð</i>
+					</h2>
+					<a class="mark" href="#">Merkja</a>
+				</header>
+				<a class="more" href="#">Sjá meira</a>
+				<aside class="extra">
+					<img src="http://kvikmyndir.is/images/poster/8984_500.jpg" alt="Plakat fyrir Philomena">	
+					<div class="padding"></div>
+					<div class="content">
+												<div class="showplace" data-place="Háskólabíó">
+							<h3>Háskólabíó:</h3>
+							<ul>
+																<li data-time="17:45">17:45</li>
+																<li data-time="20:00">20:00</li>
+															</ul>
+						</div>
+												<div class="showplace" data-place="Borgarbíó">
+							<h3>Borgarbíó:</h3>
+							<ul>
+																<li data-time="20:00">20:00</li>
+																<li data-time="22:00">22:00</li>
+															</ul>
+						</div>
+												<div class="showplace" data-place="Laugarásbíó">
+							<h3>Laugarásbíó:</h3>
+							<ul>
+																<li data-time="17:50">17:50</li>
+																<li data-time="20:00">20:00</li>
+																<li data-time="22:10">22:10</li>
+															</ul>
+						</div>
+											</div>
+				</aside>
+			</article>
+						<article class="movie" data-id="Thor: The Dark World">
+				<header>
+					<div class="rating">
+						7.8												<span>Einkunn frá IMDB með  18,196 atkv.</span>
+											</div>
+					<h2>Thor: The Dark World						<i class="warning">12 ára</i>
+					</h2>
+					<a class="mark" href="#">Merkja</a>
+				</header>
+				<a class="more" href="#">Sjá meira</a>
+				<aside class="extra">
+					<img src="http://kvikmyndir.is/images/poster/7861_500.jpg" alt="Plakat fyrir Thor: The Dark World">	
+					<div class="padding"></div>
+					<div class="content">
+												<div class="showplace" data-place="Smárabíó">
+							<h3>Smárabíó:</h3>
+							<ul>
+																<li data-time="17:30">17:30 (3D )</li>
+																<li data-time="17:30">17:30 (3DLÚX )</li>
+																<li data-time="20:00">20:00 (3D )</li>
+																<li data-time="20:00">20:00 (3DLÚX )</li>
+																<li data-time="22:30">22:30 (3D )</li>
+																<li data-time="22:30">22:30 (3DLÚX )</li>
+															</ul>
+						</div>
+												<div class="showplace" data-place="Sambíóin Álfabakka">
+							<h3>Sambíóin Álfabakka:</h3>
+							<ul>
+																<li data-time="17:30">17:30 (1)</li>
+																<li data-time="17:30">17:30 (Vip)</li>
+																<li data-time="20:00">20:00 (1)</li>
+																<li data-time="20:00">20:00 (Vip)</li>
+																<li data-time="22:10">22:10 (A)</li>
+																<li data-time="22:30">22:30 (Vip)</li>
+															</ul>
+						</div>
+												<div class="showplace" data-place="Sambíóin Kringlunni">
+							<h3>Sambíóin Kringlunni:</h3>
+							<ul>
+																<li data-time="17:30">17:30 (1)</li>
+																<li data-time="20:00">20:00 (1)</li>
+																<li data-time="22:30">22:30 (1)</li>
+															</ul>
+						</div>
+												<div class="showplace" data-place="Sambíóin Egilshöll">
+							<h3>Sambíóin Egilshöll:</h3>
+							<ul>
+																<li data-time="17:30">17:30 (1)</li>
+																<li data-time="20:00">20:00 (1)</li>
+																<li data-time="22:30">22:30 (1)</li>
+															</ul>
+						</div>
+												<div class="showplace" data-place="Sambíóin Akureyri">
+							<h3>Sambíóin Akureyri:</h3>
+							<ul>
+																<li data-time="17:30">17:30 (A)</li>
+																<li data-time="20:00">20:00 (A)</li>
+																<li data-time="22:30">22:30 (A)</li>
+															</ul>
+						</div>
+												<div class="showplace" data-place="Sambíóin Keflavík">
+							<h3>Sambíóin Keflavík:</h3>
+							<ul>
+																<li data-time="20:00">20:00 (1)</li>
+																<li data-time="22:20">22:20 (1)</li>
+															</ul>
+						</div>
+											</div>
+				</aside>
+			</article>
+						<article class="movie" data-id="Bad Grandpa">
+				<header>
+					<div class="rating">
+						7.0												<span>Einkunn frá IMDB með  7,721 atkv.</span>
+											</div>
+					<h2>Bad Grandpa						<i class="warning">12 ára</i>
+					</h2>
+					<a class="mark" href="#">Merkja</a>
+				</header>
+				<a class="more" href="#">Sjá meira</a>
+				<aside class="extra">
+					<img src="http://kvikmyndir.is/images/poster/jackass-presents-bad-grandpa-poster-535x838-1377541246.jpg" alt="Plakat fyrir Bad Grandpa">	
+					<div class="padding"></div>
+					<div class="content">
+												<div class="showplace" data-place="Sambíóin Álfabakka">
+							<h3>Sambíóin Álfabakka:</h3>
+							<ul>
+																<li data-time="17:50">17:50 (A)</li>
+																<li data-time="20:00">20:00 (A)</li>
+																<li data-time="22:30">22:30 (1)</li>
+															</ul>
+						</div>
+												<div class="showplace" data-place="Sambíóin Kringlunni">
+							<h3>Sambíóin Kringlunni:</h3>
+							<ul>
+																<li data-time="17:50">17:50 (2)</li>
+																<li data-time="20:00">20:00 (3)</li>
+																<li data-time="23:00">23:00 (2)</li>
+															</ul>
+						</div>
+												<div class="showplace" data-place="Sambíóin Egilshöll">
+							<h3>Sambíóin Egilshöll:</h3>
+							<ul>
+																<li data-time="17:50">17:50 (2)</li>
+																<li data-time="20:00">20:00 (2)</li>
+																<li data-time="22:10">22:10 (2)</li>
+															</ul>
+						</div>
+												<div class="showplace" data-place="Sambíóin Akureyri">
+							<h3>Sambíóin Akureyri:</h3>
+							<ul>
+																<li data-time="20:00">20:00 (B)</li>
+															</ul>
+						</div>
+												<div class="showplace" data-place="Sambíóin Keflavík">
+							<h3>Sambíóin Keflavík:</h3>
+							<ul>
+																<li data-time="20:00">20:00 (2)</li>
+															</ul>
+						</div>
+											</div>
+				</aside>
+			</article>
+						<article class="movie" data-id="Captain Phillips">
+				<header>
+					<div class="rating">
+						8.1												<span>Einkunn frá IMDB með  25,571 atkv.</span>
+											</div>
+					<h2>Captain Phillips						<i class="warning">12 ára</i>
+					</h2>
+					<a class="mark" href="#">Merkja</a>
+				</header>
+				<a class="more" href="#">Sjá meira</a>
+				<aside class="extra">
+					<img src="http://kvikmyndir.is/images/poster/7842_500.jpg" alt="Plakat fyrir Captain Phillips">	
+					<div class="padding"></div>
+					<div class="content">
+												<div class="showplace" data-place="Smárabíó">
+							<h3>Smárabíó:</h3>
+							<ul>
+																<li data-time="17:00">17:00</li>
+																<li data-time="20:00">20:00</li>
+																<li data-time="22:45">22:45</li>
+															</ul>
+						</div>
+												<div class="showplace" data-place="Háskólabíó">
+							<h3>Háskólabíó:</h3>
+							<ul>
+																<li data-time="22:00">22:00</li>
+															</ul>
+						</div>
+												<div class="showplace" data-place="Borgarbíó">
+							<h3>Borgarbíó:</h3>
+							<ul>
+																<li data-time="20:00">20:00</li>
+															</ul>
+						</div>
+												<div class="showplace" data-place="Laugarásbíó">
+							<h3>Laugarásbíó:</h3>
+							<ul>
+																<li data-time="18:00">18:00</li>
+																<li data-time="21:00">21:00</li>
+															</ul>
+						</div>
+											</div>
+				</aside>
+			</article>
+						<article class="movie" data-id="Insidious: Chapter 2">
+				<header>
+					<div class="rating">
+						7.0												<span>Einkunn frá IMDB með  17,155 atkv.</span>
+											</div>
+					<h2>Insidious: Chapter 2						<i class="warning">16 ára</i>
+					</h2>
+					<a class="mark" href="#">Merkja</a>
+				</header>
+				<a class="more" href="#">Sjá meira</a>
+				<aside class="extra">
+					<img src="http://kvikmyndir.is/images/poster/8753_500.jpg" alt="Plakat fyrir Insidious: Chapter 2">	
+					<div class="padding"></div>
+					<div class="content">
+												<div class="showplace" data-place="Smárabíó">
+							<h3>Smárabíó:</h3>
+							<ul>
+																<li data-time="20:00">20:00</li>
+																<li data-time="22:20">22:20</li>
+															</ul>
+						</div>
+												<div class="showplace" data-place="Borgarbíó">
+							<h3>Borgarbíó:</h3>
+							<ul>
+																<li data-time="22:30">22:30</li>
+															</ul>
+						</div>
+											</div>
+				</aside>
+			</article>
+						<article class="movie" data-id="Paradise: Faith">
+				<header>
+					<div class="rating">
+						6.8												<span>Einkunn frá IMDB með  1,046 atkv.</span>
+											</div>
+					<h2>Paradise: Faith						<i class="warning">16 ára</i>
+					</h2>
+					<a class="mark" href="#">Merkja</a>
+				</header>
+				<a class="more" href="#">Sjá meira</a>
+				<aside class="extra">
+					<img src="http://kvikmyndir.is/images/poster/8969_500.jpg" alt="Plakat fyrir Paradise: Faith">	
+					<div class="padding"></div>
+					<div class="content">
+												<div class="showplace" data-place="Bíó Paradís">
+							<h3>Bíó Paradís:</h3>
+							<ul>
+																<li data-time="17:45">17:45</li>
+																<li data-time="20:00">20:00</li>
+																<li data-time="22:15">22:15</li>
+															</ul>
+						</div>
+											</div>
+				</aside>
+			</article>
+						<article class="movie" data-id="Disconnect">
+				<header>
+					<div class="rating">
+						7.5												<span>Einkunn frá IMDB með  18,630 atkv.</span>
+											</div>
+					<h2>Disconnect						<i class="warning">12 ára</i>
+					</h2>
+					<a class="mark" href="#">Merkja</a>
+				</header>
+				<a class="more" href="#">Sjá meira</a>
+				<aside class="extra">
+					<img src="http://kvikmyndir.is/images/poster/8596_500.jpg" alt="Plakat fyrir Disconnect">	
+					<div class="padding"></div>
+					<div class="content">
+												<div class="showplace" data-place="Sambíóin Kringlunni">
+							<h3>Sambíóin Kringlunni:</h3>
+							<ul>
+																<li data-time="17:20">17:20 (3)</li>
+																<li data-time="22:10">22:10 (3)</li>
+															</ul>
+						</div>
+												<div class="showplace" data-place="Sambíóin Akureyri">
+							<h3>Sambíóin Akureyri:</h3>
+							<ul>
+																<li data-time="17:20">17:20 (B)</li>
+															</ul>
+						</div>
+												<div class="showplace" data-place="Sambíóin Keflavík">
+							<h3>Sambíóin Keflavík:</h3>
+							<ul>
+																<li data-time="22:10">22:10 (2)</li>
+															</ul>
+						</div>
+											</div>
+				</aside>
+			</article>
+						<article class="movie" data-id="Frances Ha">
+				<header>
+					<div class="rating">
+						7.6												<span>Einkunn frá IMDB með  5,992 atkv.</span>
+											</div>
+					<h2>Frances Ha						<i class="warning">7 ára</i>
+					</h2>
+					<a class="mark" href="#">Merkja</a>
+				</header>
+				<a class="more" href="#">Sjá meira</a>
+				<aside class="extra">
+					<img src="http://kvikmyndir.is/images/poster/8632_500.jpg" alt="Plakat fyrir Frances Ha">	
+					<div class="padding"></div>
+					<div class="content">
+												<div class="showplace" data-place="Háskólabíó">
+							<h3>Háskólabíó:</h3>
+							<ul>
+																<li data-time="18:00">18:00</li>
+															</ul>
+						</div>
+											</div>
+				</aside>
+			</article>
+						<article class="movie" data-id="Gravity">
+				<header>
+					<div class="rating">
+						8.5												<span>Einkunn frá IMDB með  119,890 atkv.</span>
+											</div>
+					<h2>Gravity						<i class="warning">12 ára</i>
+					</h2>
+					<a class="mark" href="#">Merkja</a>
+				</header>
+				<a class="more" href="#">Sjá meira</a>
+				<aside class="extra">
+					<img src="http://kvikmyndir.is/images/poster/7743_500.jpg" alt="Plakat fyrir Gravity">	
+					<div class="padding"></div>
+					<div class="content">
+												<div class="showplace" data-place="Háskólabíó">
+							<h3>Háskólabíó:</h3>
+							<ul>
+																<li data-time="22:15">22:15 (3D )</li>
+															</ul>
+						</div>
+												<div class="showplace" data-place="Sambíóin Álfabakka">
+							<h3>Sambíóin Álfabakka:</h3>
+							<ul>
+																<li data-time="17:50">17:50 (3)</li>
+																<li data-time="20:00">20:00 (3)</li>
+															</ul>
+						</div>
+												<div class="showplace" data-place="Sambíóin Egilshöll">
+							<h3>Sambíóin Egilshöll:</h3>
+							<ul>
+																<li data-time="17:50">17:50 (3)</li>
+																<li data-time="20:00">20:00 (3)</li>
+															</ul>
+						</div>
+												<div class="showplace" data-place="Sambíóin Akureyri">
+							<h3>Sambíóin Akureyri:</h3>
+							<ul>
+																<li data-time="22:10">22:10 (B)</li>
+															</ul>
+						</div>
+											</div>
+				</aside>
+			</article>
+						<article class="movie" data-id="Kvinden i buret">
+				<header>
+					<div class="rating">
+						7.2												<span>Einkunn frá IMDB með  660 atkv.</span>
+											</div>
+					<h2>Kvinden i buret						<i class="warning">14 ára</i>
+					</h2>
+					<a class="mark" href="#">Merkja</a>
+				</header>
+				<a class="more" href="#">Sjá meira</a>
+				<aside class="extra">
+					<img src="http://kvikmyndir.is/images/poster/8714_500.jpg" alt="Plakat fyrir Kvinden i buret">	
+					<div class="padding"></div>
+					<div class="content">
+												<div class="showplace" data-place="Smárabíó">
+							<h3>Smárabíó:</h3>
+							<ul>
+																<li data-time="20:00">20:00</li>
+																<li data-time="22:15">22:15</li>
+															</ul>
+						</div>
+												<div class="showplace" data-place="Háskólabíó">
+							<h3>Háskólabíó:</h3>
+							<ul>
+																<li data-time="22:15">22:15</li>
+															</ul>
+						</div>
+												<div class="showplace" data-place="Borgarbíó">
+							<h3>Borgarbíó:</h3>
+							<ul>
+																<li data-time="18:00">18:00</li>
+															</ul>
+						</div>
+											</div>
+				</aside>
+			</article>
+						<article class="movie" data-id="Málmhaus">
+				<header>
+					<div class="rating">
+						7.4												<span>Einkunn frá IMDB með  113 atkv.</span>
+											</div>
+					<h2>Málmhaus						<i class="warning">12 ára</i>
+					</h2>
+					<a class="mark" href="#">Merkja</a>
+				</header>
+				<a class="more" href="#">Sjá meira</a>
+				<aside class="extra">
+					<img src="http://kvikmyndir.is/images/poster/plakat-1378151401.jpg" alt="Plakat fyrir Málmhaus">	
+					<div class="padding"></div>
+					<div class="content">
+												<div class="showplace" data-place="Smárabíó">
+							<h3>Smárabíó:</h3>
+							<ul>
+																<li data-time="17:45">17:45</li>
+															</ul>
+						</div>
+												<div class="showplace" data-place="Háskólabíó">
+							<h3>Háskólabíó:</h3>
+							<ul>
+																<li data-time="20:00">20:00</li>
+															</ul>
+						</div>
+											</div>
+				</aside>
+			</article>
+						<article class="movie" data-id="Rush">
+				<header>
+					<div class="rating">
+						8.3												<span>Einkunn frá IMDB með  44,153 atkv.</span>
+											</div>
+					<h2>Rush						<i class="warning">12 ára</i>
+					</h2>
+					<a class="mark" href="#">Merkja</a>
+				</header>
+				<a class="more" href="#">Sjá meira</a>
+				<aside class="extra">
+					<img src="http://kvikmyndir.is/images/poster/8310_500.jpg" alt="Plakat fyrir Rush">	
+					<div class="padding"></div>
+					<div class="content">
+												<div class="showplace" data-place="Sambíóin Egilshöll">
+							<h3>Sambíóin Egilshöll:</h3>
+							<ul>
+																<li data-time="18:00">18:00 (4)</li>
+															</ul>
+						</div>
+											</div>
+				</aside>
+			</article>
+						<article class="movie" data-id="Prisoners">
+				<header>
+					<div class="rating">
+						8.1												<span>Einkunn frá IMDB með  41,617 atkv.</span>
+											</div>
+					<h2>Prisoners						<i class="warning">16 ára</i>
+					</h2>
+					<a class="mark" href="#">Merkja</a>
+				</header>
+				<a class="more" href="#">Sjá meira</a>
+				<aside class="extra">
+					<img src="http://kvikmyndir.is/images/poster/8579_500.jpg" alt="Plakat fyrir Prisoners">	
+					<div class="padding"></div>
+					<div class="content">
+												<div class="showplace" data-place="Sambíóin Álfabakka">
+							<h3>Sambíóin Álfabakka:</h3>
+							<ul>
+																<li data-time="18:00">18:00 (2)</li>
+																<li data-time="20:00">20:00 (B)</li>
+																<li data-time="21:00">21:00 (2)</li>
+																<li data-time="22:10">22:10 (3)</li>
+															</ul>
+						</div>
+												<div class="showplace" data-place="Sambíóin Kringlunni">
+							<h3>Sambíóin Kringlunni:</h3>
+							<ul>
+																<li data-time="20:00">20:00 (2)</li>
+															</ul>
+						</div>
+												<div class="showplace" data-place="Sambíóin Egilshöll">
+							<h3>Sambíóin Egilshöll:</h3>
+							<ul>
+																<li data-time="20:30">20:30 (4)</li>
+																<li data-time="22:10">22:10 (3)</li>
+															</ul>
+						</div>
+											</div>
+				</aside>
+			</article>
+						<article class="movie" data-id="Turbo">
+				<header>
+					<div class="rating">
+						6.3												<span>Einkunn frá IMDB með  14,181 atkv.</span>
+											</div>
+					<h2>Turbo						<i>Öllum leyfð</i>
+					</h2>
+					<a class="mark" href="#">Merkja</a>
+				</header>
+				<a class="more" href="#">Sjá meira</a>
+				<aside class="extra">
+					<img src="http://kvikmyndir.is/images/poster/7858_500.jpg" alt="Plakat fyrir Turbo">	
+					<div class="padding"></div>
+					<div class="content">
+												<div class="showplace" data-place="Smárabíó">
+							<h3>Smárabíó:</h3>
+							<ul>
+																<li data-time="15:30">15:30</li>
+															</ul>
+						</div>
+											</div>
+				</aside>
+			</article>
+						<article class="movie" data-id="About Time">
+				<header>
+					<div class="rating">
+						7.7												<span>Einkunn frá IMDB með  10,930 atkv.</span>
+											</div>
+					<h2>About Time						<i class="warning">10 ára</i>
+					</h2>
+					<a class="mark" href="#">Merkja</a>
+				</header>
+				<a class="more" href="#">Sjá meira</a>
+				<aside class="extra">
+					<img src="http://kvikmyndir.is/images/poster/8294_500.jpg" alt="Plakat fyrir About Time">	
+					<div class="padding"></div>
+					<div class="content">
+												<div class="showplace" data-place="Laugarásbíó">
+							<h3>Laugarásbíó:</h3>
+							<ul>
+																<li data-time="21:00">21:00</li>
+															</ul>
+						</div>
+											</div>
+				</aside>
+			</article>
+						<article class="movie" data-id="VI ÄR BÄST">
+				<header>
+					<div class="rating">
+						7.1												<span>Einkunn frá IMDB með  299 atkv.</span>
+											</div>
+					<h2>VI ÄR BÄST						<i>Öllum leyfð</i>
+					</h2>
+					<a class="mark" href="#">Merkja</a>
+				</header>
+				<a class="more" href="#">Sjá meira</a>
+				<aside class="extra">
+					<img src="http://kvikmyndir.is/images/poster/mv5bndcyodq0odazm15bml5banbnxkftztgwotqxmzkxmde@._v1_sy317_cr101,0,214,317_-1378570347.jpg" alt="Plakat fyrir VI ÄR BÄST">	
+					<div class="padding"></div>
+					<div class="content">
+												<div class="showplace" data-place="Bíó Paradís">
+							<h3>Bíó Paradís:</h3>
+							<ul>
+																<li data-time="18:00">18:00</li>
+																<li data-time="20:00">20:00</li>
+																<li data-time="22:00">22:00</li>
+															</ul>
+						</div>
+											</div>
+				</aside>
+			</article>
+						<article class="movie" data-id="To the Wonder">
+				<header>
+					<div class="rating">
+						6.1												<span>Einkunn frá IMDB með  10,854 atkv.</span>
+											</div>
+					<h2>To the Wonder						<i>Öllum leyfð</i>
+					</h2>
+					<a class="mark" href="#">Merkja</a>
+				</header>
+				<a class="more" href="#">Sjá meira</a>
+				<aside class="extra">
+					<img src="http://kvikmyndir.is/images/poster/8836_500.jpg" alt="Plakat fyrir To the Wonder">	
+					<div class="padding"></div>
+					<div class="content">
+												<div class="showplace" data-place="Bíó Paradís">
+							<h3>Bíó Paradís:</h3>
+							<ul>
+																<li data-time="20:00">20:00</li>
+															</ul>
+						</div>
+											</div>
+				</aside>
+			</article>
+						<article class="movie" data-id="Planes">
+				<header>
+					<div class="rating">
+						5.2												<span>Einkunn frá IMDB með  8,018 atkv.</span>
+											</div>
+					<h2>Planes						<i>Öllum leyfð</i>
+					</h2>
+					<a class="mark" href="#">Merkja</a>
+				</header>
+				<a class="more" href="#">Sjá meira</a>
+				<aside class="extra">
+					<img src="http://kvikmyndir.is/images/poster/flugvélar-1375722099.jpg" alt="Plakat fyrir Planes">	
+					<div class="padding"></div>
+					<div class="content">
+												<div class="showplace" data-place="Sambíóin Álfabakka">
+							<h3>Sambíóin Álfabakka:</h3>
+							<ul>
+																<li data-time="18:00">18:00 (ÍSL TAL B)</li>
+															</ul>
+						</div>
+											</div>
+				</aside>
+			</article>
+						<article class="movie" data-id="Hross í oss">
+				<header>
+					<div class="rating">
+						8.2												<span>Einkunn frá IMDB með  36 atkv.</span>
+											</div>
+					<h2>Hross í oss						<i class="warning">12 ára</i>
+					</h2>
+					<a class="mark" href="#">Merkja</a>
+				</header>
+				<a class="more" href="#">Sjá meira</a>
+				<aside class="extra">
+					<img src="http://kvikmyndir.is/images/poster/hrosss-1375721995.jpg" alt="Plakat fyrir Hross í oss">	
+					<div class="padding"></div>
+					<div class="content">
+												<div class="showplace" data-place="Háskólabíó">
+							<h3>Háskólabíó:</h3>
+							<ul>
+																<li data-time="18:00">18:00</li>
+																<li data-time="20:00">20:00</li>
+															</ul>
+						</div>
+											</div>
+				</aside>
+			</article>
+						<article class="movie" data-id="Búðin">
+				<header>
+					<div class="rating">
+																	</div>
+					<h2>Búðin						<i>Öllum leyfð</i>
+					</h2>
+					<a class="mark" href="#">Merkja</a>
+				</header>
+				<a class="more" href="#">Sjá meira</a>
+				<aside class="extra">
+					<img src="http://kvikmyndir.is/images/poster/121109-1380239411.jpg" alt="Plakat fyrir Búðin">	
+					<div class="padding"></div>
+					<div class="content">
+												<div class="showplace" data-place="Bíó Paradís">
+							<h3>Bíó Paradís:</h3>
+							<ul>
+																<li data-time="18:00">18:00</li>
+															</ul>
+						</div>
+											</div>
+				</aside>
+			</article>
+						<article class="movie" data-id="Mud">
+				<header>
+					<div class="rating">
+						7.5												<span>Einkunn frá IMDB með  44,419 atkv.</span>
+											</div>
+					<h2>Mud						<i class="warning">12 ára</i>
+					</h2>
+					<a class="mark" href="#">Merkja</a>
+				</header>
+				<a class="more" href="#">Sjá meira</a>
+				<aside class="extra">
+					<img src="http://kvikmyndir.is/images/poster/mud-poster-1359990467.jpg" alt="Plakat fyrir Mud">	
+					<div class="padding"></div>
+					<div class="content">
+												<div class="showplace" data-place="Bíó Paradís">
+							<h3>Bíó Paradís:</h3>
+							<ul>
+																<li data-time="22:10">22:10</li>
+															</ul>
+						</div>
+											</div>
+				</aside>
+			</article>
+					</div>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script src="main.js"></script>
+	</body>
+</html>
+

@@ -18,7 +18,6 @@
 	}
 
 	function writeCache ($file, $out) {
-		echo 'Debug: notCached';
 		global $cacheFolder;
 		$cachefile = $cacheFolder . $file;
 		$fp = fopen($cachefile, 'w');
