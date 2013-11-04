@@ -3,10 +3,10 @@
 	// error_reporting(E_ALL);
 	// ini_set('display_errors', 'ON');
 
-	include 'filecache.php';
+	// include 'filecache.php';
 ?>
 <!DOCTYPE html>
-<html lang="is" manifest="offline.appcache">
+<html lang="is">
 	<head>
 		<meta charset="UTF-8">
 		<title>Hvað er í bíó</title>
@@ -95,8 +95,19 @@
 
 		<div class="movies-wrap">
 			<?php
-				$json = file_get_contents('http://apis.is/cinema');
-				$jsonDecoded = json_decode($json);
+
+				$service_url = 'http://apis.is/cinema';
+				$curl = curl_init($service_url);
+				curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+				$response = curl_exec($curl);
+				if ($response === false) {
+				    $info = curl_getinfo($curl);
+				    curl_close($curl);
+				    die('Failed to retreve data. Additioanl info: ' . var_export($info));
+				}
+				curl_close($curl);
+
+				$jsonDecoded = json_decode($response);
 				
 				foreach ($jsonDecoded->results as $movie) {
 					$title = $movie->title;

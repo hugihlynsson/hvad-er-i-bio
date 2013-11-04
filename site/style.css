@@ -348,7 +348,7 @@ body {
 }
 h1 {
   margin: 1em 0 0.5em;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 3em;
   line-height: 1em;
   text-align: center;
@@ -461,8 +461,11 @@ output {
   -ms-transition: opacity 0.2s, background 0.2s;
   transition: opacity 0.2s, background 0.2s;
 }
+.two-col:hover output,
+.input-box:hover output,
 input:active + output,
 input:focus + output,
+input:hover + output,
 input::-webkit-slider-thumb:focus + output,
 input::-webkit-slider-thumb:active + output {
   opacity: 1;

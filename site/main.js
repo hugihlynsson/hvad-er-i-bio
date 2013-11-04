@@ -35,6 +35,29 @@ var openArticleExtra = function (article) {
 	$('html,body').animate({ scrollTop: $(article).offset().top}, 400);
 };
 
+// Delay multiple function calls:
+var throttle = function(func, wait, immediate) { 
+	var timeout, args, context, timestamp, result;
+	return function() { 
+		context = this; 
+		args = arguments; 
+		timestamp = new Date(); 
+		var later = function() { 
+			var last = (new Date()) - timestamp; 
+			if (last < wait) { 
+				timeout = setTimeout(later, wait - last); 
+			} 
+			else { 
+				timeout = null; 
+				if (!immediate) result = func.apply(context, args); 
+			} 
+		}; 
+		var callNow = immediate && !timeout; 
+		if (!timeout) timeout = setTimeout(later, wait);
+		if (callNow) result = func.apply(context, args);
+		return result; 
+	}; 
+};
 
 
 //
@@ -186,6 +209,8 @@ var filterMovies = function () {
 	});
 };
 
+var throttleMovieFilter = throttle(filterMovies, 100);
+
 
 // ======== FILTER INITIATION ========
 
@@ -204,7 +229,7 @@ var initPlaceFilter = function () {
 
 	$('.place-filter li').on('click', function () {
 		$(this).toggleClass('toggled', !$(this).is('.toggled'));
-		filterMovies();
+		throttleMovieFilter()
 	});
 };
 
@@ -252,14 +277,14 @@ var activateRangeSliders = function () {
 
 	// On time range change:
 	$('#to-time, #from-time').on('change', function() {
-		filterMovies();
+		throttleMovieFilter()
 		updateTimeRangeMarks();	
 	});
 
 	// On rating range change:
 	$('#rating-range').on('change', function () {
 		var range = $(this);
-		filterMovies();
+		throttleMovieFilter()
 		updateRangemark(range);
 		range.next('output').text(range.val());
 	}).trigger('change');
@@ -274,8 +299,7 @@ var activateRangeSliders = function () {
 var activateTextFilter = function () {
 	$('#text-filter').on('input propertychange', function() {
 		console.log('Keydown, value: ' + $(this).val());
-		filterMovies();
-	});
+		throttleMovieFilter()	});
 };
 
 var activateFilters = function () {
