@@ -3,10 +3,10 @@
 	// error_reporting(E_ALL);
 	// ini_set('display_errors', 'ON');
 
-	include 'filecache.php';
+	// include 'filecache.php';
 ?>
 <!DOCTYPE html>
-<html lang="is" manifest="offline.appcache">
+<html lang="is">
 	<head>
 		<meta charset="UTF-8">
 		<title>Hvað er í bíó</title>
@@ -70,22 +70,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="two-col">
-					<div class="input-box rating-range">
-						<label for="rating-range">Einkunn</label>
-						<div class="range-wrap">
-							<span class="range-mark from">0</span>
-							<div class="range">
-								<input id="rating-range" type="range" min="0" max="10" step="0.1" name="rating-range" value="0">
-								<output for="rating-range">24</output>
-							</div>
-							<span class="range-mark to">10</span>
-						</div>
-					</div>
-					<div class="input-box text-filter">
-						<label for="text-filter">Heiti</label>
-						<input id="text-filter" type="text" placeholder="Pulp Fiction">
-					</div>
+				<div class="input-box text-filter">
+					<label for="text-filter">Heiti</label>
+					<input id="text-filter" type="text" placeholder="Pulp Fiction">
 				</div>
 			</div>
 			<div class="filters-wrap place-filter">
@@ -107,12 +94,6 @@
 			?>
 			<article class="movie" data-id="<?=$title?>">
 				<header>
-					<div class="rating">
-						<?=current(explode('/', $movie->imdb))?>
-						<?php if ($movie->imdb != '') { ?>
-						<span>Einkunn frá IMDB með <?=implode(array_slice(explode('10 ', $movie->imdb), 1, 1))?></span>
-						<?php } ?>
-					</div>
 					<h2><?=$movie->title?><?php if ($restriction != '') { ?>
 						<i<?php 
 							if (is_numeric(current(explode(' ', $restriction)))) 
