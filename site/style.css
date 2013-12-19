@@ -42,13 +42,10 @@ audio:not([controls]) {
 html {
   font-family: sans-serif;
   /* 1 */
-
   -ms-text-size-adjust: 100%;
   /* 2 */
-
   -webkit-text-size-adjust: 100%;
   /* 2 */
-
 }
 /**
  * Remove default margin.
@@ -203,10 +200,8 @@ fieldset {
 legend {
   border: 0;
   /* 1 */
-
   padding: 0;
   /* 2 */
-
 }
 /**
  * 1. Correct font family not being inherited in all browsers.
@@ -219,13 +214,10 @@ select,
 textarea {
   font-family: inherit;
   /* 1 */
-
   font-size: 100%;
   /* 2 */
-
   margin: 0;
   /* 3 */
-
 }
 /**
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
@@ -258,10 +250,8 @@ input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
-
   cursor: pointer;
   /* 3 */
-
 }
 /**
  * Re-set default cursor for disabled elements.
@@ -278,10 +268,8 @@ input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
-
   padding: 0;
   /* 2 */
-
 }
 /**
  * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
@@ -291,11 +279,9 @@ input[type="radio"] {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   /* 2 */
-
   box-sizing: content-box;
 }
 /**
@@ -321,10 +307,8 @@ input::-moz-focus-inner {
 textarea {
   overflow: auto;
   /* 1 */
-
   vertical-align: top;
   /* 2 */
-
 }
 /* ==========================================================================
    Tables
@@ -1052,6 +1036,7 @@ output:after {
   .filters {
     border-radius: 5px;
     margin-bottom: 2em;
+    background: #eeeeee;
   }
   .filters:after {
     content: ".";
@@ -1068,19 +1053,33 @@ output:after {
     width: 50%;
     float: left;
     border-right: 1px solid white;
+    background: #eeeeee;
+    border-radius: 5px 0 0 5px;
+  }
+  .input-box {
+    border: 0;
+    border-bottom: 1px solid #fff;
+    margin: 0;
   }
   .two-col .input-box {
     width: 100%;
   }
   .two-col .input-box:first-child {
-    border: 0;
+    border-right: 0;
   }
   .time-range:first-child label {
+    border-radius: 5px 0 0 0;
+  }
+  .time-range:first-child {
     border-radius: 5px 0 0 0;
   }
   .place-filter {
     padding: 0.6em;
     border-radius: 0 5px 5px 0;
+    border-right: 0;
+  }
+  .text-filter {
+    border-bottom: 0;
   }
   .text-filter label {
     border-radius: 0 0 0 5px;
