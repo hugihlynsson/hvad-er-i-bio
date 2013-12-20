@@ -1,6 +1,6 @@
 <?php
 	header('Content-Type: text/html; charset=utf-8');
-	
+
 	include 'filecache.php';
 ?>
 <!DOCTYPE html>
@@ -33,11 +33,11 @@
 				a.src = g;
 				m.parentNode.insertBefore(a,m)
 			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-			ga('create', 'UA-20956924-1', 'hugihlynsson.com');
+			ga('create', 'UA-20956924-1', 'hvaderibio.is');
 			ga('send', 'pageview');
 		</script>
 
-		<script type="text/javascript" src="//use.typekit.net/kyo1clm.js"></script>
+		<script type="text/javascript" src="//use.typekit.net/kkk7ayb.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	</head>
 
@@ -108,7 +108,7 @@
 				curl_close($curl);
 
 				$jsonDecoded = json_decode($response);
-				
+
 				foreach ($jsonDecoded->results as $movie) {
 					$title = $movie->title;
 					$restriction = $movie->restricted;
@@ -125,16 +125,16 @@
 						<?php } ?>
 					</div>
 					<h2><?=$movie->title?><?php if ($restriction != '') { ?>
-						<i<?php 
-							if (is_numeric(current(explode(' ', $restriction)))) 
-								echo ' class="warning"'; 
+						<i<?php
+							if (is_numeric(current(explode(' ', $restriction))))
+								echo ' class="warning"';
 						?>><?=$restriction?></i>
 					<?php } ?></h2>
 					<a class="mark" href="#">Merkja</a>
 				</header>
 				<a class="more" href="#">Sjá meira</a>
 				<aside class="extra">
-					<img src="<?=$imageUrl?>" alt="Plakat fyrir <?=$title?>">	
+					<img src="<?=$imageUrl?>" alt="Plakat fyrir <?=$title?>">
 					<div class="padding"></div>
 					<div class="content">
 						<?php
