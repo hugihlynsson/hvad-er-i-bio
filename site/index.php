@@ -20,6 +20,15 @@
 		<link rel="shortcut icon" sizes="128x128" href="images/icon-128x128.png">
 		<link rel="shortcut icon" sizes="196x196" href="images/icon-196x196.png">
 
+		<meta name="description" content="Hvað er í bíó er fljótlegt yfirlit yfir bíódagskrá kvöldsins á öllu landinu og leyfir þér að ráða tíma, bíóhúsi og lágmarkseinkun.">
+
+        <meta property="og:title"       content="Hvað er í bíó?">
+        <meta property="og:site_name"   content="Hvað er í bíó?">
+        <meta property="og:type"        content="website">
+        <meta property="og:url"         content="http://www.hvaderibio.is">
+        <meta property="og:image"       content="http://www.hvaderibio.is/images/icon-512x512.png">
+        <meta property="og:description" content="Hvað er í bíó gefur þér fljótlegt yfirlit yfir bíódagskrá kvöldsins og leyfir þér að ráða tíma, bíóhúsi og lágmarkseinkun.">
+
 		<link rel="stylesheet" href="style.css">
 
 		<script>
@@ -35,8 +44,11 @@
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	</head>
 
+
 	<body>
+
 		<h1>Hvað er í bíó?</h1>
+
 
 		<div class="filters">
 			<div class="filters-wrap">
@@ -87,9 +99,10 @@
 			</div>
 		</div>
 
-		<div class="movies-wrap">
-			<?php
 
+		<div class="movies-wrap">
+
+			<?php
 				$service_url = 'http://apis.is/cinema/';
 				$curl = curl_init($service_url);
 				curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -103,6 +116,10 @@
 
 				$jsonDecoded = json_decode($response);
 
+				if (empty($jsonDecoded->results)) {
+					echo '<p class="no-data-message">Dularfullt. <strong>Engar myndir fundust.</strong><br>Líklegast hafa gögnin lent í umferðarteppu eða mögulega er bara ekkert í bíó í dag. Prófaðu aftur seinna.</p>';
+				}
+
 				foreach ($jsonDecoded->results as $movie) {
 					$title = $movie->title;
 					$restriction = $movie->restricted;
@@ -110,6 +127,7 @@
 					$imageType = end(explode('.', $imageUrl));
 					$imageName = urlencode($title . '.' . $imageType);
 			?>
+
 			<article class="movie" data-id="<?=$title?>">
 				<header>
 					<div class="rating">
@@ -147,8 +165,14 @@
 					</div>
 				</aside>
 			</article>
+
 			<?php } ?>
+
 		</div>
+
+
+		<footer>Verkefni eftir <a href="http://www.hugihlynsson.com/">Huga Hlynsson</a> - <a href="mailto:hugihlynsson@gmail.com">hugihlynsson@gmail.com</a></footer>
+
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<script src="main.js"></script>

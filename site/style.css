@@ -600,8 +600,21 @@ output:after {
 }
 .movies-wrap {
   overflow: hidden;
-  float: left;
   width: 100%;
+}
+.movies-wrap:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+.movies-wrap .no-data-message {
+  margin: 1em;
+  padding: 0.5em 1em;
+  background: #e89737;
+  border-radius: 5px;
+  color: #fff;
 }
 .movie {
   margin: 2% 0;
@@ -891,6 +904,16 @@ output:after {
 .movie.seen .extras {
   background: rgba(26, 188, 156, 0.8);
 }
+footer {
+  margin: 1em;
+  text-align: center;
+  color: #AAA;
+  font-size: 0.8em;
+}
+footer a {
+  color: #3388ee;
+  border-color: transparent;
+}
 @media screen and (min-width: 340px) {
   .movie .extra img {
     width: 150px;
@@ -1087,5 +1110,8 @@ output:after {
   .movies-wrap {
     border-radius: 5px;
     padding: 0;
+  }
+  .movies-wrap .no-data-message {
+    text-align: center;
   }
 }
