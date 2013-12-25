@@ -127,7 +127,7 @@
 			"file": "/Users/hugihlynsson/Web/Hvað er í bíó/site/style.less",
 			"settings":
 			{
-				"buffer_size": 12812,
+				"buffer_size": 13116,
 				"line_ending": "Unix"
 			}
 		},
@@ -135,7 +135,7 @@
 			"file": "/Users/hugihlynsson/Web/Hvað er í bíó/site/main.js",
 			"settings":
 			{
-				"buffer_size": 10917,
+				"buffer_size": 10802,
 				"line_ending": "Unix"
 			}
 		},
@@ -143,7 +143,7 @@
 			"file": "/Users/hugihlynsson/Web/Hvað er í bíó/site/index.php",
 			"settings":
 			{
-				"buffer_size": 5504,
+				"buffer_size": 5490,
 				"line_ending": "Unix"
 			}
 		}
@@ -275,6 +275,8 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"cons",
+			"con",
 			"throttle(filterMovies, 300);",
 			"filterMovies(throttle(filterMovies, 300);",
 			"updateRangemarkPosition",
@@ -400,9 +402,7 @@
 			"\"input",
 			"</li>",
 			"[errorBox.length] ",
-			"eText",
-			"people",
-			"Recipe"
+			"eText"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -442,15 +442,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12812,
+						"buffer_size": 13116,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2839,
-								2839
+								402,
+								402
 							]
 						],
 						"settings":
@@ -459,9 +459,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2029.0,
+						"translation.y": 24.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -470,15 +471,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10917,
+						"buffer_size": 10802,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5878,
-								5878
+								2756,
+								2756
 							]
 						],
 						"settings":
@@ -487,9 +488,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2762.0,
+						"translation.y": 1433.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -498,15 +500,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5504,
+						"buffer_size": 5490,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3425,
-								3425
+								1151,
+								1151
 							]
 						],
 						"settings":
@@ -515,9 +517,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1371.0,
+						"translation.y": 1998.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -554,6 +557,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
 	"project": "Hvað er í bíó.sublime-project",
 	"replace":
 	{
