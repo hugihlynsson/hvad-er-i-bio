@@ -18,6 +18,7 @@
 @darkerFormBgColor: #ddd;
 @baseFont: 'proxima-nova', 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
+@transitionTime: 0.2s;
 //
 // =============================== BASICS ==============================
 //
@@ -49,7 +50,7 @@ a {
 	border-bottom: 1px solid #000;
 	text-decoration: none;
 	color: #000;
-	.transition (all 0.2s);
+	.transition (all @transitionTime);
 
 	&:hover {
 		border-color: @highlightColor;
@@ -89,7 +90,7 @@ input[type="text"] {
 	border-radius: 0 @borderRadius @borderRadius 0;
 	line-height: 1.4em;
 	-webkit-appearance: none;
-	.transition(all 0.2s);
+	.transition(all @transitionTime);
 
 	&:hover { border-color: #bbb; }
 
@@ -143,7 +144,7 @@ output {
 	color: #fff;
 	background: none;
 	box-shadow: 0px 1px 3px fade(black, 30%);
-	.transition(opacity 0.2s, background 0.2s;);
+	.transition(opacity @transitionTime, background @transitionTime;);
 	pointer-events: none;
 	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='your_transparent.png', sizingMethod='scale');
 
@@ -166,7 +167,7 @@ output {
 		border-left: 5px solid transparent;
 		border-right: 5px solid transparent;
 		margin-left: -5px;
-		.transition(all 0.2s);
+		.transition(all @transitionTime);
 	}
 }
 
@@ -276,7 +277,7 @@ output {
 			line-height: 18/16em;
 			color: @highlightColor;
 			cursor: pointer;
-			.transition(all 0.2s);
+			.transition(all @transitionTime);
 
 			&:hover { background: fade(@highlightColor, 10%); }
 
@@ -292,8 +293,16 @@ output {
 // Movie styles
 .movies-wrap {
 	overflow: hidden;
-	float: left;
 	width: 100%;
+	.after-clear();
+
+	.no-data-message {
+		margin: 1em;
+		padding: 0.5em 1em;
+		background: @secondColor;
+		border-radius: @borderRadius;
+		color: #fff;
+	}
 }
 
 .movie {
@@ -321,7 +330,7 @@ output {
 			border: 1px solid @backgroundColor;
 			border-radius: @borderRadius 0 0 0;
 			text-align: center;
-			.transition(all 0.2s);
+			.transition(all @transitionTime);
 
 			span {
 				display: none;
@@ -372,18 +381,18 @@ output {
 			overflow: hidden;
 			text-overflow: ellipsis;
 			text-transform: uppercase;
-			.transition(all 0.2s);
+			.transition(all @transitionTime);
 
 			i {
 				display: inline;
 				color: @thirdColor;
 				font-size: 14/16em;
 				text-transform: none;
-				.transition(all 0.2s);
+				.transition(all @transitionTime);
 				&::before {
 					content: '- ';
 					color: #000;
-					.transition(all 0.2s);
+					.transition(all @transitionTime);
 				}
 				&.warning { color: @warningColor; }
 			}
@@ -479,7 +488,7 @@ output {
 					border-radius: @borderRadius;
 					margin: 0.1em 0 0.3em;
 					color: #fff;
-					.transition(all 0.2s);
+					.transition(all @transitionTime);
 
 					&:hover { cursor: pointer; }
 
@@ -571,9 +580,26 @@ footer {
 }
 
 
-// //
-// // ============================= MEDIA QUERIES ==============================
-// //
+// ================================== FOOTER ===================================
+
+footer {
+	margin: 1em;
+	text-align: center;
+	color: #AAA;
+	font-size: 0.8em;
+
+	a {
+		color: @highlightColor;
+		border-color: transparent;
+	}
+}
+
+
+
+
+//
+// ============================= MEDIA QUERIES ==============================
+//
 
 @media screen and (min-width: 340px) {
 	.movie {
@@ -605,7 +631,9 @@ footer {
 		border-radius: 0;
 		margin:  0 0 1px;
 	}
-	.movies-wrap { padding-bottom: 1px; }
+	.movies-wrap {
+		padding-bottom: 1px;
+	}
 	.movie {
 		margin: 0;
 		header {
@@ -726,5 +754,6 @@ footer {
 	.movies-wrap {
 		border-radius: @borderRadius;
 		padding: 0;
+		.no-data-message { text-align: center; }
 	}
 }

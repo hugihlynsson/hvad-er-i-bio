@@ -1,7 +1,7 @@
 
 //
 // ======================= HELPING FUNCTIONS ===========================
-// 
+//
 
 
 // Change number with point (20.5) to human readable string (20:30):
@@ -36,33 +36,33 @@ var openArticleExtra = function (article) {
 };
 
 // Delay multiple function calls:
-var throttle = function(func, wait, immediate) { 
+var throttle = function(func, wait, immediate) {
 	var timeout, args, context, timestamp, result;
-	return function() { 
-		context = this; 
-		args = arguments; 
-		timestamp = new Date(); 
-		var later = function() { 
-			var last = (new Date()) - timestamp; 
-			if (last < wait) { 
-				timeout = setTimeout(later, wait - last); 
-			} 
-			else { 
-				timeout = null; 
-				if (!immediate) result = func.apply(context, args); 
-			} 
-		}; 
-		var callNow = immediate && !timeout; 
+	return function() {
+		context = this;
+		args = arguments;
+		timestamp = new Date();
+		var later = function() {
+			var last = (new Date()) - timestamp;
+			if (last < wait) {
+				timeout = setTimeout(later, wait - last);
+			}
+			else {
+				timeout = null;
+				if (!immediate) result = func.apply(context, args);
+			}
+		};
+		var callNow = immediate && !timeout;
 		if (!timeout) timeout = setTimeout(later, wait);
 		if (callNow) result = func.apply(context, args);
-		return result; 
-	}; 
+		return result;
+	};
 };
 
 
 //
 // ========================= MAIN FUNCTIONS ============================
-// 
+//
 
 
 // ======== BASE STUFF ========
@@ -111,7 +111,6 @@ var populateMoviesObject = function () {
 	// Make lowest and hightst showime be a quarter:
 	movies.lowestShowtime = (Math.floor(movies.lowestShowtime * 4) / 4).toString();
 	movies.highestShowtime = (Math.ceil(movies.highestShowtime * 4) / 4).toString();
-	console.log(movies.highestShowtime);
 };
 
 
@@ -151,7 +150,7 @@ var filterMoviesByPlace = function (placesAllowed) {
 	if ($.isEmptyObject(placesAllowed)) return;
 	for (var id in movies.titles) {
 		var hasPlace = false;
-		
+
 		// Check if movie has any place that passes the filter:
 		var places = movies.titles[id].places;
 		for (var place in places) {
@@ -169,7 +168,7 @@ var filterMoviesByText = function (text) {
 	if (text === '') return;
 
 	for (var id in movies.titles) {
-		if (id.toLowerCase().indexOf(text) === -1) 
+		if (id.toLowerCase().indexOf(text) === -1)
 			movies.titles[id].isFiltered = true;
 	}
 };
@@ -207,7 +206,7 @@ var filterMovies = function () {
 						$(this).addClass('filtered');
 					}
 				});
-			}); 
+			});
 
 			movieElm.slideDown();
 		}
@@ -283,7 +282,7 @@ var activateRangeSliders = function () {
 	// On time range change:
 	$('#to-time, #from-time').on('change', function() {
 		throttleMovieFilter()
-		updateTimeRangeMarks();	
+		updateTimeRangeMarks();
 	});
 
 	// On rating range change:
@@ -303,7 +302,6 @@ var activateRangeSliders = function () {
 
 var activateTextFilter = function () {
 	$('#text-filter').on('input propertychange', function() {
-		console.log('Keydown, value: ' + $(this).val());
 		throttleMovieFilter()	});
 };
 
@@ -395,7 +393,7 @@ var activateMoreToggle = function () {
 
 //
 // ========================= INITIALIZATION ============================
-// 
+//
 
 activateLocalStorageMarks();
 populateMoviesObject();
