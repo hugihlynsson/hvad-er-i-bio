@@ -219,9 +219,17 @@ var throttleMovieFilter = throttle(filterMovies, 100);
 // ======== FILTER INITIATION ========
 
 var limitTimeRange = function() {
+
+	// Set min and max time values:
 	$('#to-time, #from-time').attr('min', movies.lowestShowtime);
 	$('#to-time, #from-time').attr('max', movies.highestShowtime);
-	$('#from-time').attr('value', timeToNum(new Date().getHours() + ':' + new Date().getMinutes()));
+
+	// Set from value to current time:
+	var timeNow = timeToNum(new Date().getHours() + ':' + new Date().getMinutes());
+	if (timeNow > movies.highestShowtime) timeNow = movies.lowestShowtime;
+	$('#from-time').attr('value', timeNow);
+
+	// Update marks on range ends:
 	$('.time-range .from').text(numToTime(movies.lowestShowtime));
 	$('.time-range .to').text(numToTime(movies.highestShowtime));
 };

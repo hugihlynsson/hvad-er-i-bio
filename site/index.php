@@ -45,7 +45,7 @@
 	</head>
 
 
-	<body>
+	<body ontouchstart="">
 
 		<h1>Hvað er í bíó?</h1>
 
@@ -133,9 +133,9 @@
 
 			<article class="movie" data-id="<?=$title?>">
 				<header>
+					<?php if ($movie->imdb != '') { ?>
 					<a class="rating" href="<?=$imdbUrl?>" title="IMDB síða myndarinnar" target="_blank">
 						<?=$rating?>
-					<?php if ($movie->imdb != '') { ?>
 						<span>IMDB</span>
 						<div class="info">með <?=$votes?></div>
 					<?php } ?>

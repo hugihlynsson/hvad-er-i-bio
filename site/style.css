@@ -997,7 +997,7 @@ footer a {
 }
 @media screen and (min-width: 1024px) {
   body {
-    padding-bottom: 5em;
+    padding-bottom: 3em;
   }
   body:after {
     content: ".";
@@ -1062,7 +1062,7 @@ footer a {
   }
   .movies-wrap {
     border-radius: 5px;
-    padding: 0;
+    padding: 0 0 2.5em;
   }
   .movies-wrap .no-data-message {
     text-align: center;
