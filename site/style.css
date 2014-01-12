@@ -454,13 +454,12 @@ output {
   left: 0;
   display: inline-block;
   width: 50px;
-  height: 20px;
   border-radius: 5px;
   margin-left: -25px;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
   text-align: center;
-  font-size: 15px;
-  line-height: 20px;
+  font-size: 14px;
+  line-height: 21px;
   color: #fff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
   -webkit-transition: opacity 0.2s, background 0.2s;
@@ -478,7 +477,7 @@ output:after {
   left: 50%;
   width: 0;
   height: 0;
-  border-top: 6px solid #3388ee;
+  border-top: 5px solid #3388ee;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   margin-left: -5px;
@@ -943,15 +942,17 @@ footer a {
     border-right: 0;
   }
   output {
-    height: 28px;
     line-height: 28px;
     margin-bottom: 7px;
     opacity: 0;
     background: none;
+    font-size: 15px;
+    width: 54px;
+    margin-left: -27px;
   }
   output::after {
     border-width: 6px;
-    border-top-width: 7px;
+    border-top-width: 6px;
   }
   .two-col:hover output,
   input:active + output,
