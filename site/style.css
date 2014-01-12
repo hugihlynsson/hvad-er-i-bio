@@ -407,6 +407,7 @@ input[type="range"] {
   border-radius: 1em;
   height: 8px;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+  margin-top: 7px;
 }
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -448,7 +449,6 @@ input[type="range"]:focus {
   border: 0;
 }
 output {
-  opacity: 0;
   position: absolute;
   bottom: 100%;
   left: 0;
@@ -457,12 +457,11 @@ output {
   height: 20px;
   border-radius: 5px;
   margin-left: -25px;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   text-align: center;
   font-size: 15px;
   line-height: 20px;
   color: #fff;
-  background: none;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
   -webkit-transition: opacity 0.2s, background 0.2s;
   -moz-transition: opacity 0.2s, background 0.2s;
@@ -470,12 +469,6 @@ output {
   transition: opacity 0.2s, background 0.2s;
   pointer-events: none;
   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='', sizingMethod='scale');
-}
-.two-col:hover output,
-input:active + output,
-input:focus + output,
-input:hover + output {
-  opacity: 1;
   background: #3388ee;
 }
 output:after {
@@ -556,10 +549,6 @@ output:after {
 .range-wrap .range input {
   width: 100%;
   vertical-align: 0.1em;
-}
-.range-wrap .range:active output {
-  opacity: 1;
-  background: #3388ee;
 }
 .filters-wrap .time-range label {
   width: 3em;
@@ -956,11 +945,20 @@ footer a {
   output {
     height: 28px;
     line-height: 28px;
-    margin-bottom: 11px;
+    margin-bottom: 7px;
+    opacity: 0;
+    background: none;
   }
   output::after {
     border-width: 6px;
     border-top-width: 7px;
+  }
+  .two-col:hover output,
+  input:active + output,
+  input:focus + output,
+  input:hover + output {
+    opacity: 1;
+    background: #3388ee;
   }
   .movie header {
     width: 80%;

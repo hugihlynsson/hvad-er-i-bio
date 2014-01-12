@@ -108,6 +108,7 @@ input[type="range"] {
 	border-radius: 1em;
 	height: 8px;
 	box-shadow: inset 0 1px 3px fade(black, 20%);
+	margin-top: 7px;
 
 	// The clickable thumb:
 	&::-webkit-slider-thumb {
@@ -160,7 +161,6 @@ input[type="range"] {
 
 // Output used for input[type="range"] 'bubble':
 output {
-	opacity: 0;
 	position: absolute;
 	bottom: 100%;
 	left: 0;
@@ -169,24 +169,16 @@ output {
 	height: 20px;
 	border-radius: @borderRadius;
 	margin-left: -25px;
-	margin-bottom: 8px;
+	margin-bottom: 6px;
 	text-align: center;
 	font-size: 15px;
 	line-height: 20px;
 	color: #fff;
-	background: none;
 	box-shadow: 0px 1px 3px fade(black, 30%);
 	.transition(opacity @transitionTime, background @transitionTime;);
 	pointer-events: none;
 	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='', sizingMethod='scale');
-
-	.two-col:hover &,
-	input:active + &,
-	input:focus + &,
-	input:hover + & {
-		opacity: 1;
-		background: @highlightColor;
-	}
+	background: @highlightColor;
 
 	&:after {
 		content: "";
@@ -252,12 +244,10 @@ output {
 		width: calc(~"100% - 8em");
 		float: left;
 		font-size: 13/16em;
-		input { width: 100%;
-		vertical-align: 0.1em; }
 
-		&:active output {
-			opacity: 1;
-			background: @highlightColor;
+		input {
+			width: 100%;
+			vertical-align: 0.1em;
 		}
 	}
 }
@@ -629,11 +619,22 @@ footer {
 	output {
 		height: 28px;
 		line-height: 28px;
-		margin-bottom: 11px;
+		margin-bottom: 7px;
 
 		&::after {
 			border-width: 6px;
 			border-top-width: 7px;
+		}
+
+		opacity: 0;
+		background: none;
+
+		.two-col:hover &,
+		input:active + &,
+		input:focus + &,
+		input:hover + & {
+			opacity: 1;
+			background: @highlightColor;
 		}
 	}
 	.movie {
