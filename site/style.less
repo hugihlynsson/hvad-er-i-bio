@@ -325,7 +325,7 @@ output {
 			height: 3em;
 			display: block;
 			float: left;
-			padding: 1em 0.5em 0.5em;
+			padding: 0.7em 0.5em 0.5em;
 			background: @backgroundColor;
 			border: 1px solid @backgroundColor;
 			border-radius: @borderRadius 0 0 0;
@@ -333,13 +333,19 @@ output {
 			.transition(all @transitionTime);
 
 			span {
+				display: block;
+				font-size: 0.5em;
+				line-height: 0.5em;
+			}
+
+			.info {
 				display: none;
 				position: absolute;
-				left: 98%;
+				left: 115%;
 				top: 58%;
-				width: 240px;
+				width: 130px;
 				height: 28px;
-				background: fade(@highlightColor, 90%);
+				background: @highlightColor;
 				border-radius: @borderRadius;
 				margin-top: -14px;
 				text-align: center;
@@ -361,14 +367,17 @@ output {
 				}
 			}
 
-			&:hover span {
-				display: block;
+			&:hover {
+				color: #fff;
+				border-color: @highlightColor;
+				background: @highlightColor;
+				.info { display: block; }
 			}
 		}
 		h2 {
 			.box-sizing(border-box);
 			height: 3em;
-			padding: 1em 4.5em 0.5em 0.5em;
+			padding: 1em 0.5em 0.5em 0.5em;
 			background: @backgroundColor;
 			border: 1px solid @backgroundColor;
 			border-left: 1px solid #fff;
@@ -397,24 +406,6 @@ output {
 				&.warning { color: @warningColor; }
 			}
 		}
-		.mark {
-			position: absolute;
-			right: 0.5em;
-			top: 1.1em;
-			border-radius: 2px;
-			border: 1px solid @thirdColor;
-			text-transform: uppercase;
-			font-size: 15/18em;
-			line-height: 18/16em;
-			padding: 0.2em 0.5em;
-			color: @thirdColor;
-
-			&:focus,
-			&:hover {
-				outline: none;
-				background-color: fade(@thirdColor, 20%);
-			}
-		}
 	}
 
 
@@ -423,7 +414,7 @@ output {
 		height: 2em;
 		display: block;
 		background: @highlightColor;
-		padding: 0.5em 0.5em 0.5em;
+		padding: 0.4em 0.5em 0.5em;
 		border: 0;
 		border-top: 1px solid #fff;
 		border-radius: 0 0 @borderRadius @borderRadius;
@@ -434,16 +425,7 @@ output {
 
 		&:focus,
 		&:hover {
-			background: darken(@highlightColor, 5%);
-		}
-
-		&.open {
-			background: @secondColor;
-			border-radius: 0;
-			&:focus,
-			&:hover {
-				background: darken(@secondColor, 5%);
-			}
+			background: lighten(@highlightColor, 5%);
 		}
 	}
 
@@ -458,7 +440,15 @@ output {
 		margin: 0;
 		color: #fff;
 
-		img { width: 100%; }
+
+		img {
+			width: 150px;
+			float: right;
+			margin-left: 1em;
+			border-left: 1px solid #fff;
+			border-bottom: 1px solid #fff;
+			margin-bottom: -1px;
+		}
 
 		.content {
 			.box-sizing(border-box);
@@ -505,64 +495,11 @@ output {
 	&.open {
 		.more {
 			border-radius: 0;
-			background: darken(@highlightColor, 10%);
+			background: @secondColor;
 			&:focus,
 			&:hover {
-				background: @highlightColor;
+				background: lighten(@secondColor, 10%);
 			}
-		}
-	}
-	&.marked {
-		header {
-			color: #fff;
-			.rating {
-				background: @thirdColor;
-				border-color: @thirdColor;
-			}
-			h2 {
-				background: @thirdColor;
-				border-top-color: @thirdColor;
-				border-bottom-color: @thirdColor;
-				i { color: #fff; }
-				i::before { color: #fff; }
-			}
-			.mark {
-				border-color: #fff;
-				color: #fff;
-
-				&:focus,
-				&:hover { background-color: darken(@thirdColor, 4%); }
-			}
-		}
-	}
-	&.seen {
-		header {
-			color: #aaa;
-			h2 {
-				i { color: #aaa; }
-				i::before { color: #aaa; }
-			}
-			.mark {
-				border-color: #aaa;
-				color: #aaa;
-				&:focus,
-				&:hover {
-					background-color: fade(#aaa, 20%);
-				}
-			}
-		}
-		.more {
-			background: fade(@highlightColor, 80%);
-			&:focus,
-			&:hover { background: fade(@highlightColor, 90%); }
-			&.open {
-				background: fade(@thirdColor, 80%);
-				&:focus,
-				&:hover { background: fade(@thirdColor, 90%); }
-			}
-		}
-		.extras {
-			background: fade(@thirdColor, 80%);
 		}
 	}
 }
@@ -601,20 +538,7 @@ footer {
 // ============================= MEDIA QUERIES ==============================
 //
 
-@media screen and (min-width: 340px) {
-	.movie {
-		.extra {
-			img {
-				width: 150px;
-				float: right;
-				margin-left: 1em;
-				border-left: 1px solid #fff;
-				border-bottom: 1px solid #fff;
-				margin-bottom: -1px;
-			}
-		}
-	}
-}
+
 @media screen and (min-width: 460px) {
 	body { padding: 0 1px; }
 	h1 { padding: 0.5em 1em; }
@@ -755,5 +679,11 @@ footer {
 		border-radius: @borderRadius;
 		padding: 0;
 		.no-data-message { text-align: center; }
+	}
+
+	.movie {
+		header {
+			h2 { padding-left: 1em; }
+		}
 	}
 }

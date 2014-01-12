@@ -644,7 +644,7 @@ output:after {
   height: 3em;
   display: block;
   float: left;
-  padding: 1em 0.5em 0.5em;
+  padding: 0.7em 0.5em 0.5em;
   background: #eeeeee;
   border: 1px solid #eeeeee;
   border-radius: 5px 0 0 0;
@@ -655,13 +655,18 @@ output:after {
   transition: all 0.2s;
 }
 .movie header .rating span {
+  display: block;
+  font-size: 0.5em;
+  line-height: 0.5em;
+}
+.movie header .rating .info {
   display: none;
   position: absolute;
-  left: 98%;
+  left: 115%;
   top: 58%;
-  width: 240px;
+  width: 130px;
   height: 28px;
-  background: rgba(51, 136, 238, 0.9);
+  background: #3388ee;
   border-radius: 5px;
   margin-top: -14px;
   text-align: center;
@@ -670,7 +675,7 @@ output:after {
   z-index: 1;
   color: white;
 }
-.movie header .rating span:after {
+.movie header .rating .info:after {
   content: "";
   position: absolute;
   top: 50%;
@@ -682,7 +687,12 @@ output:after {
   border-bottom: 4px solid transparent;
   margin-top: -4px;
 }
-.movie header .rating:hover span {
+.movie header .rating:hover {
+  color: #fff;
+  border-color: #3388ee;
+  background: #3388ee;
+}
+.movie header .rating:hover .info {
   display: block;
 }
 .movie header h2 {
@@ -691,7 +701,7 @@ output:after {
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   height: 3em;
-  padding: 1em 4.5em 0.5em 0.5em;
+  padding: 1em 0.5em 0.5em 0.5em;
   background: #eeeeee;
   border: 1px solid #eeeeee;
   border-left: 1px solid #fff;
@@ -730,23 +740,6 @@ output:after {
 .movie header h2 i.warning {
   color: #ee4433;
 }
-.movie header .mark {
-  position: absolute;
-  right: 0.5em;
-  top: 1.1em;
-  border-radius: 2px;
-  border: 1px solid #1abc9c;
-  text-transform: uppercase;
-  font-size: 0.8333333333333334em;
-  line-height: 1.125em;
-  padding: 0.2em 0.5em;
-  color: #1abc9c;
-}
-.movie header .mark:focus,
-.movie header .mark:hover {
-  outline: none;
-  background-color: rgba(26, 188, 156, 0.2);
-}
 .movie .more {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -755,7 +748,7 @@ output:after {
   height: 2em;
   display: block;
   background: #3388ee;
-  padding: 0.5em 0.5em 0.5em;
+  padding: 0.4em 0.5em 0.5em;
   border: 0;
   border-top: 1px solid #fff;
   border-radius: 0 0 5px 5px;
@@ -766,15 +759,7 @@ output:after {
 }
 .movie .more:focus,
 .movie .more:hover {
-  background: #1b7aec;
-}
-.movie .more.open {
-  background: #e89737;
-  border-radius: 0;
-}
-.movie .more.open:focus,
-.movie .more.open:hover {
-  background: #e58b20;
+  background: #4b96f0;
 }
 .movie .extra {
   float: left;
@@ -788,7 +773,12 @@ output:after {
   color: #fff;
 }
 .movie .extra img {
-  width: 100%;
+  width: 150px;
+  float: right;
+  margin-left: 1em;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  margin-bottom: -1px;
 }
 .movie .extra .content {
   -webkit-box-sizing: border-box;
@@ -838,71 +828,11 @@ output:after {
 }
 .movie.open .more {
   border-radius: 0;
-  background: #126edc;
+  background: #e89737;
 }
 .movie.open .more:focus,
 .movie.open .more:hover {
-  background: #3388ee;
-}
-.movie.marked header {
-  color: #fff;
-}
-.movie.marked header .rating {
-  background: #1abc9c;
-  border-color: #1abc9c;
-}
-.movie.marked header h2 {
-  background: #1abc9c;
-  border-top-color: #1abc9c;
-  border-bottom-color: #1abc9c;
-}
-.movie.marked header h2 i {
-  color: #fff;
-}
-.movie.marked header h2 i::before {
-  color: #fff;
-}
-.movie.marked header .mark {
-  border-color: #fff;
-  color: #fff;
-}
-.movie.marked header .mark:focus,
-.movie.marked header .mark:hover {
-  background-color: #18aa8d;
-}
-.movie.seen header {
-  color: #aaa;
-}
-.movie.seen header h2 i {
-  color: #aaa;
-}
-.movie.seen header h2 i::before {
-  color: #aaa;
-}
-.movie.seen header .mark {
-  border-color: #aaa;
-  color: #aaa;
-}
-.movie.seen header .mark:focus,
-.movie.seen header .mark:hover {
-  background-color: rgba(170, 170, 170, 0.2);
-}
-.movie.seen .more {
-  background: rgba(51, 136, 238, 0.8);
-}
-.movie.seen .more:focus,
-.movie.seen .more:hover {
-  background: rgba(51, 136, 238, 0.9);
-}
-.movie.seen .more.open {
-  background: rgba(26, 188, 156, 0.8);
-}
-.movie.seen .more.open:focus,
-.movie.seen .more.open:hover {
-  background: rgba(26, 188, 156, 0.9);
-}
-.movie.seen .extras {
-  background: rgba(26, 188, 156, 0.8);
+  background: #edaf65;
 }
 footer {
   text-align: center;
@@ -923,16 +853,6 @@ footer {
 footer a {
   color: #3388ee;
   border-color: transparent;
-}
-@media screen and (min-width: 340px) {
-  .movie .extra img {
-    width: 150px;
-    float: right;
-    margin-left: 1em;
-    border-left: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-    margin-bottom: -1px;
-  }
 }
 @media screen and (min-width: 460px) {
   body {
@@ -1123,5 +1043,8 @@ footer a {
   }
   .movies-wrap .no-data-message {
     text-align: center;
+  }
+  .movie header h2 {
+    padding-left: 1em;
   }
 }

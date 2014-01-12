@@ -121,28 +121,31 @@
 				}
 
 				foreach ($jsonDecoded->results as $movie) {
-					$title = $movie->title;
+					$title       = $movie->title;
 					$restriction = $movie->restricted;
-					$imageUrl = $movie->image;
-					$imageType = end(explode('.', $imageUrl));
-					$imageName = urlencode($title . '.' . $imageType);
+					$imageUrl    = $movie->image;
+					$imdbUrl     = $movie->imdbLink;
+					$rating      = current(explode('/', $movie->imdb));
+					$votes       = implode(array_slice(explode('10 ', $movie->imdb), 1, 1));
+					$imageType   = end(explode('.', $imageUrl));
+					$imageName   = urlencode($title . '.' . $imageType);
 			?>
 
 			<article class="movie" data-id="<?=$title?>">
 				<header>
-					<div class="rating">
-						<?=current(explode('/', $movie->imdb))?>
-						<?php if ($movie->imdb != '') { ?>
-						<span>Einkunn frá IMDB með <?=implode(array_slice(explode('10 ', $movie->imdb), 1, 1))?></span>
-						<?php } ?>
-					</div>
-					<h2><?=$movie->title?><?php if ($restriction != '') { ?>
+					<a class="rating" href="<?=$imdbUrl?>" title="IMDB síða myndarinnar" target="_blank">
+						<?=$rating?>
+					<?php if ($movie->imdb != '') { ?>
+						<span>IMDB</span>
+						<div class="info">með <?=$votes?></div>
+					<?php } ?>
+					</a>
+					<h2><?=$title?><?php if ($restriction != '') { ?>
 						<i<?php
 							if (is_numeric(current(explode(' ', $restriction))))
 								echo ' class="warning"';
 						?>><?=$restriction?></i>
 					<?php } ?></h2>
-					<a class="mark" href="#">Merkja</a>
 				</header>
 				<a class="more" href="#">Sjá meira</a>
 				<aside class="extra">

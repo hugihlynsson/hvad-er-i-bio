@@ -221,6 +221,7 @@ var throttleMovieFilter = throttle(filterMovies, 100);
 var limitTimeRange = function() {
 	$('#to-time, #from-time').attr('min', movies.lowestShowtime);
 	$('#to-time, #from-time').attr('max', movies.highestShowtime);
+	$('#from-time').attr('value', timeToNum(new Date().getHours() + ':' + new Date().getMinutes()));
 	$('.time-range .from').text(numToTime(movies.lowestShowtime));
 	$('.time-range .to').text(numToTime(movies.highestShowtime));
 };
@@ -316,69 +317,6 @@ var activateFilters = function () {
 
 // ======== OTHER FUNCTIONS  ========
 
-var activateLocalStorageMarks = function () {
-	// Load marked things from localstorage:
-	$('.movie').each(function() {
-		var movie = $(this);
-		if (window.localStorage.getItem(movie.data('id') + '.marked')) {
-			movie.addClass('marked');
-		}
-		else if (window.localStorage.getItem(movie.data('id') + '.seen')) {
-			movie.addClass('seen');
-		}
-		movie.find('.showplace li').each(function () {
-			var place = $(this).closest('.showplace').find('h3').text();
-			if (window.localStorage.getItem(
-				(movie).data('id') + place + $(this).text() + '.marked'
-			)) {
-				$(this).addClass('marked');
-			}
-		});
-	});
-
-	// Toggle marked on article and localstorage:
-	$('.mark').on('click', function (e) {
-
-		e.preventDefault();
-
-		var article = $(this).closest('article');
-		if (article.is('.marked')) {
-			article.removeClass('marked');
-			article.addClass('seen');
-			window.localStorage.removeItem(article.data('id') + '.marked');
-			window.localStorage.setItem(article.data('id') + '.seen', true);
-		}
-		else if (article.is('.seen')) {
-			article.removeClass('seen');
-			window.localStorage.removeItem(article.data('id') + '.seen');
-		}
-		else {
-			article.addClass('marked');
-			window.localStorage.setItem(article.data('id') + '.marked', true);
-		}
-	});
-
-	// Toggle marked on showtime and localstorage:
-	$('.showplace li').on('click', function () {
-		var time = $(this);
-		var movie = time.closest('.movie');
-		var place = time.closest('.showplace').find('h3').text();
-
-		if (time.is('.marked')) {
-			time.removeClass('marked');
-			window.localStorage.removeItem(
-				(movie).data('id') + place + $(this).text() + '.marked'
-			);
-		}
-		else {
-			time.addClass('marked');
-			window.localStorage.setItem(
-				(movie).data('id') + place + $(this).text() + '.marked',
-				'true'
-			);
-		}
-	});
-};
 
 // Show the aside and change link state:
 var activateMoreToggle = function () {
@@ -395,7 +333,6 @@ var activateMoreToggle = function () {
 // ========================= INITIALIZATION ============================
 //
 
-activateLocalStorageMarks();
 populateMoviesObject();
 activateFilters();
 activateMoreToggle();
