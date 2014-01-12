@@ -469,7 +469,7 @@ output {
   -ms-transition: opacity 0.2s, background 0.2s;
   transition: opacity 0.2s, background 0.2s;
   pointer-events: none;
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='your_transparent.png', sizingMethod='scale');
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='', sizingMethod='scale');
 }
 .two-col:hover output,
 input:active + output,
@@ -556,6 +556,10 @@ output:after {
 .range-wrap .range input {
   width: 100%;
   vertical-align: 0.1em;
+}
+.range-wrap .range:active output {
+  opacity: 1;
+  background: #3388ee;
 }
 .filters-wrap .time-range label {
   width: 3em;

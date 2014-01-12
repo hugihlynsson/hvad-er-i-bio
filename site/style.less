@@ -178,7 +178,7 @@ output {
 	box-shadow: 0px 1px 3px fade(black, 30%);
 	.transition(opacity @transitionTime, background @transitionTime;);
 	pointer-events: none;
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='your_transparent.png', sizingMethod='scale');
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='', sizingMethod='scale');
 
 	.two-col:hover &,
 	input:active + &,
@@ -254,6 +254,11 @@ output {
 		font-size: 13/16em;
 		input { width: 100%;
 		vertical-align: 0.1em; }
+
+		&:active output {
+			opacity: 1;
+			background: @highlightColor;
+		}
 	}
 }
 

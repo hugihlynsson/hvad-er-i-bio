@@ -1,4 +1,4 @@
-
+"use strict";
 //
 // ======================= HELPING FUNCTIONS ===========================
 //
@@ -8,7 +8,7 @@
 var numToTime = function (number) {
 	var parts = number.split('.');
 	if (parts.length === 1 || parseInt(parts[1], 10) === 0) return number + ':00';
-	minutes = Math.round(parseFloat('0.' + parts[1])*60).toString();
+	var minutes = Math.round(parseFloat('0.' + parts[1])*60).toString();
 	if (minutes.length === 1) minutes = '0' + minutes;
 	return parts[0] + ':' + minutes;
 };
@@ -259,10 +259,11 @@ var getToggledPlaces = function () {
 var updateRangemark = function (range) {
 	// Compersate for thumb width:
 	var width = range.width()-30;
-	var newPoint = (range.val()-range.attr("min")) / (range.attr("max")-range.attr("min"));
+	var newPoint = (range.val()-range.attr('min')) / (range.attr('max')-range.attr('min'));
 	// Compersate for thumb width and slider padding:
 	var offset = 15;
 	// Prevent mark from going beyond left or right (unsupported browsers):
+	var newPlace;
 	if (newPoint < 0) { newPlace = 0; }
 	else if (newPoint > 1) { newPlace = width; }
 	else { newPlace = width * newPoint + offset; offset -= newPoint; }
@@ -290,14 +291,14 @@ var activateRangeSliders = function () {
 
 	// On time range change:
 	$('#to-time, #from-time').on('change', function() {
-		throttleMovieFilter()
+		throttleMovieFilter();
 		updateTimeRangeMarks();
 	});
 
 	// On rating range change:
 	$('#rating-range').on('change', function () {
 		var range = $(this);
-		throttleMovieFilter()
+		throttleMovieFilter();
 		updateRangemark(range);
 		range.next('output').text(range.val());
 	}).trigger('change');
