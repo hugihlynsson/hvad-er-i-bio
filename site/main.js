@@ -250,10 +250,10 @@ var getToggledPlaces = function () {
 
 var updateRangemark = function (range) {
 	// Compersate for thumb width:
-	var width = range.width()-20;
+	var width = range.width()-30;
 	var newPoint = (range.val()-range.attr("min")) / (range.attr("max")-range.attr("min"));
 	// Compersate for thumb width and slider padding:
-	var offset = 10;
+	var offset = 15;
 	// Prevent mark from going beyond left or right (unsupported browsers):
 	if (newPoint < 0) { newPlace = 0; }
 	else if (newPoint > 1) { newPlace = width; }
@@ -320,7 +320,7 @@ var activateFilters = function () {
 
 // Show the aside and change link state:
 var activateMoreToggle = function () {
-	$('.more').on('click', function (e) {
+	$('.more, header h2').on('click', function (e) {
 		e.preventDefault();
 		var article = $(this).closest('article');
 

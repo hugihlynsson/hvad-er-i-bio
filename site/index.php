@@ -173,7 +173,7 @@
 
 		</div>
 
-		<footer>Verkefni eftir <a href="http://www.hugihlynsson.com/">Huga Hlynsson</a> - <a href="mailto:hugihlynsson@gmail.com">hugihlynsson@gmail.com</a></footer>
+		<footer>Verkefni eftir <a href="http://www.hugihlynsson.com/">Huga Hlynsson</a> - <a href="mailto:hugihlynsson@gmail.com">hugihlynsson@gmail.com</a> með gögnum frá <a href="http://docs.apis.is">{apis.is}</a>.</footer>
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<script src="main.js"></script>

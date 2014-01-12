@@ -406,20 +406,46 @@ input[type="range"] {
   background: #6ba9f3;
   border-radius: 1em;
   height: 8px;
-  padding: 0 0px;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 20px;
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+  cursor: ew-resize;
+}
+input[type="range"]::-webkit-slider-thumb::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+  display: block;
   height: 20px;
+  width: 20px;
   background: #fff;
   border-radius: 10px;
-  margin-top: -1px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+input[type="range"]::-moz-range-thumb {
+  -moz-appearance: none;
+  border: 0;
+  height: 20px;
+  width: 20px;
+  background: #fff;
+  border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 input[type="range"]:focus {
   outline: none;
+}
+::-moz-range-track {
+  background: #6ba9f3;
+  border: 0;
 }
 output {
   opacity: 0;
@@ -635,6 +661,9 @@ output:after {
 .movie header {
   position: relative;
 }
+.movie header:hover {
+  cursor: pointer;
+}
 .movie header .rating {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -687,12 +716,15 @@ output:after {
   border-bottom: 4px solid transparent;
   margin-top: -4px;
 }
-.movie header .rating:hover {
+.movie header .rating:hover,
+.movie header .rating:focus {
+  outline: 0;
   color: #fff;
   border-color: #3388ee;
   background: #3388ee;
 }
-.movie header .rating:hover .info {
+.movie header .rating:hover .info,
+.movie header .rating:focus .info {
   display: block;
 }
 .movie header h2 {
@@ -805,7 +837,7 @@ output:after {
 .movie .extra .content ul li {
   display: inline-block;
   padding: 0 0.5em;
-  background: #3388ee;
+  background: #1abc9c;
   border-radius: 5px;
   margin: 0.1em 0 0.3em;
   color: #fff;
@@ -814,25 +846,16 @@ output:after {
   -ms-transition: all 0.2s;
   transition: all 0.2s;
 }
-.movie .extra .content ul li:hover {
-  cursor: pointer;
-}
 .movie .extra .content ul li.filtered {
-  background: rgba(51, 136, 238, 0.3);
-}
-.movie .extra .content ul li.marked {
-  background: #1abc9c;
-}
-.movie .extra .content ul li.marked.filtered {
-  background: rgba(26, 188, 156, 0.5);
+  background: rgba(26, 188, 156, 0.3);
 }
 .movie.open .more {
   border-radius: 0;
-  background: #e89737;
+  background: #1abc9c;
 }
 .movie.open .more:focus,
 .movie.open .more:hover {
-  background: #edaf65;
+  background: #1dd2af;
 }
 footer {
   text-align: center;
