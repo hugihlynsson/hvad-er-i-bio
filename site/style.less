@@ -19,6 +19,7 @@
 @baseFont: 'proxima-nova', 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 @transitionTime: 0.2s;
+
 //
 // =============================== BASICS ==============================
 //
@@ -296,17 +297,17 @@ output {
 	ul {
 		list-style: none;
 		padding: 0;
-		margin: 0.2em;
+		margin: 0.1em;
 
 		li {
 			display: inline-block;
-			padding: 0.2em 0.5em 0.1em;
+			padding: 0.2em 0.2em 0.1em;
 			background: white;
 			border-radius: 3px;
 			border: 1px solid @highlightColor;
 			margin: 0.2em;
 			text-transform: uppercase;
-			font-size: 16/18em;
+			font-size: 15/18em;
 			line-height: 18/16em;
 			color: @highlightColor;
 			cursor: pointer;
@@ -572,6 +573,16 @@ footer {
 // ============================= MEDIA QUERIES ==============================
 //
 
+@media screen and (min-width: 350px) {
+	.place-filter ul {
+		margin: 0.2em;
+		li {
+			font-size: 16/18em;
+			padding: 0.2em 0.5em 0.1em;
+			margin: 0.2em;
+		}
+	}
+}
 
 @media screen and (min-width: 460px) {
 	body { padding: 0 1px; }

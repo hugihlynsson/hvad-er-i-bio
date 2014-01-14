@@ -601,17 +601,17 @@ output:after {
 .place-filter ul {
   list-style: none;
   padding: 0;
-  margin: 0.2em;
+  margin: 0.1em;
 }
 .place-filter ul li {
   display: inline-block;
-  padding: 0.2em 0.5em 0.1em;
+  padding: 0.2em 0.2em 0.1em;
   background: white;
   border-radius: 3px;
   border: 1px solid #3388ee;
   margin: 0.2em;
   text-transform: uppercase;
-  font-size: 0.8888888888888888em;
+  font-size: 0.8333333333333334em;
   line-height: 1.125em;
   color: #3388ee;
   cursor: pointer;
@@ -884,6 +884,16 @@ footer {
 footer a {
   color: #3388ee;
   border-color: transparent;
+}
+@media screen and (min-width: 350px) {
+  .place-filter ul {
+    margin: 0.2em;
+  }
+  .place-filter ul li {
+    font-size: 0.8888888888888888em;
+    padding: 0.2em 0.5em 0.1em;
+    margin: 0.2em;
+  }
 }
 @media screen and (min-width: 460px) {
   body {
