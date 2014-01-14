@@ -118,8 +118,13 @@ input[type="range"] {
 		position: relative;
 		width: 30px;
 		height: 30px;
+		border: 0;
+		background: transparent;
 
-		&:hover { cursor: ew-resize; };
+		&:hover {
+			cursor: ew-resize;
+			background: transparent;
+		};
 
 		// The visible part:
 		&::after {

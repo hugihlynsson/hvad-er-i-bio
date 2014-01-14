@@ -422,9 +422,12 @@ input[type="range"]::-webkit-slider-thumb {
   position: relative;
   width: 30px;
   height: 30px;
+  border: 0;
+  background: transparent;
 }
 input[type="range"]::-webkit-slider-thumb:hover {
   cursor: ew-resize;
+  background: transparent;
 }
 input[type="range"]::-webkit-slider-thumb::after {
   content: '';
