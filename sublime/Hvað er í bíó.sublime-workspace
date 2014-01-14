@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"tr",
+				"transition"
+			],
+			[
+				"after",
+				"after-clear"
+			],
+			[
+				"ha",
+				"header	Tag"
+			],
+			[
+				"transitio",
+				"transitionTime"
+			],
+			[
 				"loe",
 				"lowestShowtime"
 			],
@@ -124,26 +140,26 @@
 	"buffers":
 	[
 		{
-			"file": "/Users/hugihlynsson/Web/Hvað er í bíó/site/style.less",
+			"file": "/Users/hugihlynsson/Web/hvaderibio.is/site/style.less",
 			"settings":
 			{
-				"buffer_size": 13116,
+				"buffer_size": 13153,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/hugihlynsson/Web/Hvað er í bíó/site/main.js",
+			"file": "/Users/hugihlynsson/Web/hvaderibio.is/site/index.php",
 			"settings":
 			{
-				"buffer_size": 10802,
+				"buffer_size": 6748,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/hugihlynsson/Web/Hvað er í bíó/site/index.php",
+			"file": "/Users/hugihlynsson/Web/hvaderibio.is/site/main.js",
 			"settings":
 			{
-				"buffer_size": 5490,
+				"buffer_size": 9328,
 				"line_ending": "Unix"
 			}
 		}
@@ -151,9 +167,17 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 93.0,
+		"height": 400.0,
 		"selected_items":
 		[
+			[
+				"list	",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control: li",
+				"Package Control: List Packages"
+			],
 			[
 				"remo",
 				"Package Control: Remove Package"
@@ -171,7 +195,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 554.0
+		"width": 576.0
 	},
 	"console":
 	{
@@ -191,6 +215,28 @@
 	},
 	"file_history":
 	[
+		"/Users/hugihlynsson/Web/hvaderibio.is/sublime/Hvað er í bíó.sublime-project",
+		"/Users/hugihlynsson/Web/bulsur.is/wordpress/wp-content/themes/bulsur/editor-style.less",
+		"/Users/hugihlynsson/Library/Application Support/Sublime Text 3/Packages/Pretty JSON/Pretty JSON.sublime-settings",
+		"/Users/hugihlynsson/Library/Caches/Cleanup At Startup/Transmit/65F7D6D8-6918-4A33-AD00-0C9764475A1B/single-work.php",
+		"/Users/hugihlynsson/Library/Caches/Cleanup At Startup/Transmit/FF951D04-9738-4E9F-BCFE-44198EB8843C/single.php",
+		"/Users/hugihlynsson/Library/Caches/Cleanup At Startup/Transmit/629203CB-BB8A-445F-A68B-97A4FFC6907D/archive.php",
+		"/Users/hugihlynsson/Library/Caches/Cleanup At Startup/Transmit/690D4FE2-1199-46C6-88CF-0AD896D2650C/functions.php",
+		"/Users/hugihlynsson/Library/Caches/Cleanup At Startup/Transmit/94196D74-699B-46FC-BD4B-0D7D1AC1CAF1/functions.php",
+		"/Users/hugihlynsson/Library/Caches/Cleanup At Startup/Transmit/EA351F6E-AF1E-4306-8148-79A90FD426D1/functions.php",
+		"/Users/hugihlynsson/Web/bulsur.is/wordpress/wp-content/themes/bulsur/index.php",
+		"/Users/hugihlynsson/Web/bulsur.is/wordpress/wp-content/themes/bulsur/archive.php",
+		"/Users/hugihlynsson/Web/bulsur.is/wordpress/wp-content/themes/bulsur/functions.php",
+		"/Users/hugihlynsson/Web/bulsur.is/site/index.html",
+		"/Users/hugihlynsson/Web/bulsur.is/site/style.less",
+		"/Users/hugihlynsson/Web/kjarninnapp.is/django/bookshelf/style.less",
+		"/Users/hugihlynsson/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/hugihlynsson/Library/Caches/Cleanup At Startup/Transmit/363106C1-B3B6-456E-BBA7-2BF3E9C5C830/wp-config-sample.php",
+		"/Users/hugihlynsson/Library/Caches/Cleanup At Startup/Transmit/17CBB1C9-22F7-43A5-8D78-A702F38FCEC2/robots.txt",
+		"/Users/hugihlynsson/Web/bulsur.is/assets/Untitled.svg",
+		"/Users/hugihlynsson/Web/Hvað er í bíó/site/index.php",
+		"/Users/hugihlynsson/Web/Hvað er í bíó/site/main.js",
+		"/Users/hugihlynsson/Web/Hvað er í bíó/site/style.less",
 		"/Users/hugihlynsson/Web/Hvað er í bíó/site/filecache.php",
 		"/Users/hugihlynsson/Web/Hvað er í bíó/site/offline.appcache",
 		"/Users/hugihlynsson/Web/Hvað er í bíó/site/.htaccess",
@@ -221,7 +267,6 @@
 		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 3/site/demo.html",
 		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 3/site/index.html",
 		"/Users/hugihlynsson/Documents/Web/hugihlynsson.com/hh.com 5.0/index.html",
-		"/Users/hugihlynsson/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/hugihlynsson/Web/arnorb.github.io/CNAME",
 		"/Users/hugihlynsson/Web/arnorb.github.io/styles.css",
 		"/Users/hugihlynsson/Web/arnorb.github.io/index.html",
@@ -261,13 +306,14 @@
 	],
 	"find":
 	{
-		"height": 37.0
+		"height": 24.0
 	},
 	"find_in_files":
 	{
 		"height": 95.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -275,6 +321,42 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			".socia",
+			"\"",
+			"rating",
+			"webkit",
+			"header",
+			"thirdC",
+			"background",
+			"highlight",
+			"highlightColor",
+			"highlight",
+			"li ",
+			"li",
+			"second",
+			"secondColor",
+			"showpla",
+			".more",
+			".open",
+			"img",
+			"rating",
+			"recipe",
+			"h2",
+			"h1",
+			".home",
+			"letter-",
+			"contenst",
+			"my_create_page",
+			"Forsíða",
+			"h2",
+			"div",
+			"color",
+			"font-size: 1",
+			"png",
+			">\n",
+			".movies-wrap",
+			"transition",
+			".movies-wr",
 			"cons",
 			"con",
 			"throttle(filterMovies, 300);",
@@ -366,43 +448,7 @@
 			"24",
 			"translate",
 			"36",
-			"lighten",
-			"open",
-			"h1",
-			"input-b",
-			"blockquote",
-			"#v",
-			"#",
-			"italic",
-			"20em",
-			"font-size: 16/20em;",
-			"font-size",
-			"eyðublaðið",
-			"radios",
-			"p",
-			"consol",
-			"$(input).",
-			"Proxima Nova",
-			"font-w",
-			"url('prox",
-			"blackout-text",
-			"focus",
-			"inputBox",
-			"@formBgColor",
-			"nauðsynlegt",
-			"\"required",
-			"required",
-			"#000",
-			"black-text",
-			"Vel",
-			"cx",
-			"this.cy",
-			"hightlightColor",
-			"formBgColor",
-			"\"input",
-			"</li>",
-			"[errorBox.length] ",
-			"eText"
+			"lighten"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -433,24 +479,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/Users/hugihlynsson/Web/Hvað er í bíó/site/style.less",
+					"file": "/Users/hugihlynsson/Web/hvaderibio.is/site/style.less",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13116,
+						"buffer_size": 13153,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								402,
-								402
+								0,
+								0
 							]
 						],
 						"settings":
@@ -459,56 +505,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 24.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/Users/hugihlynsson/Web/Hvað er í bíó/site/main.js",
+					"file": "/Users/hugihlynsson/Web/hvaderibio.is/site/index.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10802,
+						"buffer_size": 6748,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2756,
-								2756
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1433.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/Users/hugihlynsson/Web/Hvað er í bíó/site/index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5490,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1151,
-								1151
+								0,
+								0
 							]
 						],
 						"settings":
@@ -517,10 +534,39 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1998.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/hugihlynsson/Web/hvaderibio.is/site/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9328,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -528,11 +574,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 24.0
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 32.0
 	},
 	"layout":
 	{
@@ -564,7 +610,7 @@
 	"project": "Hvað er í bíó.sublime-project",
 	"replace":
 	{
-		"height": 66.0
+		"height": 44.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -597,7 +643,7 @@
 	"show_minimap": false,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 217.0,
 	"status_bar_visible": true,
 	"template_settings":

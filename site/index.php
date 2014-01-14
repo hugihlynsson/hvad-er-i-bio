@@ -8,17 +8,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Hvað er í bíó</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="apple-mobile-web-app-capable" content="yes">
-		<link rel="apple-touch-icon" sizes="60x60"  href="images/apple-touch-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-156x156.png">
-		<link rel="shortcut icon" sizes="16x16" href="images/icon-16x16.png">
-		<link rel="shortcut icon" sizes="32x32" href="images/icon-32x32.png">
-		<link rel="shortcut icon" sizes="128x128" href="images/icon-128x128.png">
-		<link rel="shortcut icon" sizes="196x196" href="images/icon-196x196.png">
 
 		<meta name="description" content="Hvað er í bíó er fljótlegt yfirlit yfir bíódagskrá kvöldsins á öllu landinu og leyfir þér að ráða tíma, bíóhúsi og lágmarkseinkun.">
 
@@ -28,6 +20,16 @@
         <meta property="og:url"         content="http://www.hvaderibio.is">
         <meta property="og:image"       content="http://www.hvaderibio.is/images/icon-512x512.png">
         <meta property="og:description" content="Hvað er í bíó gefur þér fljótlegt yfirlit yfir bíódagskrá kvöldsins og leyfir þér að ráða tíma, bíóhúsi og lágmarkseinkun.">
+
+
+		<link rel="apple-touch-icon" sizes="60x60"  href="images/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-156x156.png">
+		<link rel="shortcut icon" sizes="16x16" href="images/icon-16x16.png">
+		<link rel="shortcut icon" sizes="32x32" href="images/icon-32x32.png">
+		<link rel="shortcut icon" sizes="128x128" href="images/icon-128x128.png">
+		<link rel="shortcut icon" sizes="196x196" href="images/icon-196x196.png">
 
 		<link rel="stylesheet" href="style.css">
 
@@ -45,7 +47,7 @@
 	</head>
 
 
-	<body ontouchstart="">
+	<body>
 
 		<h1>Hvað er í bíó?</h1>
 
@@ -150,7 +152,6 @@
 				<a class="more" href="#">Sjá meira</a>
 				<aside class="extra">
 					<img src="<?=$imageUrl?>" alt="Plakat fyrir <?=$title?>">
-					<div class="padding"></div>
 					<div class="content">
 						<?php
 							foreach ($movie->showtimes as $showtime) {
@@ -171,9 +172,11 @@
 
 			<?php } ?>
 
+			<div class="no-match">Hmm. <strong>Engin mynd uppfyllir skilyrðin.</strong> Prófaðu að <a href="#" class="filter-reset">víkka þau</a>.</div>
+
 		</div>
 
-		<footer>Verkefni eftir <a href="http://www.hugihlynsson.com/">Huga Hlynsson</a> - <a href="mailto:hugihlynsson@gmail.com">hugihlynsson@gmail.com</a> með gögnum frá <a href="http://docs.apis.is">{apis.is}</a>.</footer>
+		<footer>Verkefni eftir <a href="http://www.hugihlynsson.com/">Huga Hlynsson</a> - <a href="mailto:hugihlynsson@gmail.com">hugihlynsson@gmail.com</a> með gögnum frá <a href="http://docs.apis.is/#endpoint-cinema">{apis.is}</a>.</footer>
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<script src="main.js"></script>

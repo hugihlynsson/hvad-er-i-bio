@@ -185,6 +185,7 @@ var filterMovies = function () {
 	filterMoviesByPlace(getToggledPlaces());
 	filterMoviesByText($('#text-filter').val().toLowerCase());
 
+	var hasOnlyFiltered = true;
 	// Hide and show movies based on filtering:
 	$('.movie').each(function () {
 		var movieElm = $(this);
@@ -194,6 +195,7 @@ var filterMovies = function () {
 			closeArticleExtra(movieElm);
 		}
 		else {
+			hasOnlyFiltered = false;
 
 			movieElm.find('.showplace').each(function () {
 				var place = $(this).data('place');
@@ -211,7 +213,27 @@ var filterMovies = function () {
 			movieElm.slideDown();
 		}
 	});
+
+	if (hasOnlyFiltered) $('.no-match').slideDown();
+	else $('.no-match').slideUp();
 };
+
+
+var resetFilters = function () {
+	$('#from-time').val(movies.lowestShowtime);
+	$('#to-time').val(movies.highestShowtime);
+	$('#rating-range').val('0');
+	$('#text-filter').val('');
+	updateTimeRangeMarks();
+	var ratingRange = $('#rating-range');
+	updateRangemark(ratingRange);
+	ratingRange.next('output').text('0');
+
+	$('.place-filter li').each(function () {
+		$(this).removeClass('toggled');
+	});
+};
+
 
 var throttleMovieFilter = throttle(filterMovies, 100);
 
@@ -242,7 +264,7 @@ var initPlaceFilter = function () {
 
 	$('.place-filter li').on('click', function () {
 		$(this).toggleClass('toggled', !$(this).is('.toggled'));
-		throttleMovieFilter()
+		throttleMovieFilter();
 	});
 };
 
@@ -312,7 +334,16 @@ var activateRangeSliders = function () {
 
 var activateTextFilter = function () {
 	$('#text-filter').on('input propertychange', function() {
-		throttleMovieFilter()	});
+		throttleMovieFilter();
+	});
+};
+
+var activateFilterReset = function () {
+	$('.filter-reset').on('click', function (e) {
+		e.preventDefault();
+		resetFilters();
+		throttleMovieFilter();
+	});
 };
 
 var activateFilters = function () {
@@ -321,6 +352,7 @@ var activateFilters = function () {
 	updateTimeRangeMarks();
 	activateRangeSliders();
 	activateTextFilter();
+	activateFilterReset();
 };
 
 
