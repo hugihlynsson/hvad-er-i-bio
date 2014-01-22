@@ -143,7 +143,7 @@
 			"file": "/Users/hugihlynsson/Web/hvaderibio.is/site/style.less",
 			"settings":
 			{
-				"buffer_size": 13153,
+				"buffer_size": 14052,
 				"line_ending": "Unix"
 			}
 		},
@@ -151,7 +151,7 @@
 			"file": "/Users/hugihlynsson/Web/hvaderibio.is/site/index.php",
 			"settings":
 			{
-				"buffer_size": 6748,
+				"buffer_size": 6951,
 				"line_ending": "Unix"
 			}
 		},
@@ -159,7 +159,15 @@
 			"file": "/Users/hugihlynsson/Web/hvaderibio.is/site/main.js",
 			"settings":
 			{
-				"buffer_size": 9328,
+				"buffer_size": 10058,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/hugihlynsson/Library/Application Support/Sublime Text 3/Packages/JSHint Gutter/.jshintrc",
+			"settings":
+			{
+				"buffer_size": 453,
 				"line_ending": "Unix"
 			}
 		}
@@ -215,6 +223,8 @@
 	},
 	"file_history":
 	[
+		"/Users/hugihlynsson/Library/Application Support/Sublime Text 3/Packages/JSHint Gutter/.jshintrc",
+		"/Users/hugihlynsson/Library/Application Support/Sublime Text 3/Packages/JSHint Gutter/JSHint.sublime-settings",
 		"/Users/hugihlynsson/Web/hvaderibio.is/sublime/Hvað er í bíó.sublime-project",
 		"/Users/hugihlynsson/Web/bulsur.is/wordpress/wp-content/themes/bulsur/editor-style.less",
 		"/Users/hugihlynsson/Library/Application Support/Sublime Text 3/Packages/Pretty JSON/Pretty JSON.sublime-settings",
@@ -306,7 +316,7 @@
 	],
 	"find":
 	{
-		"height": 24.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -321,6 +331,12 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"calc",
+			"updateTim",
+			"'value', ",
+			"attr",
+			"prevent",
+			"string",
 			".socia",
 			"\"",
 			"rating",
@@ -442,13 +458,7 @@
 			".mark-seen",
 			"dl",
 			"span",
-			"border-radius",
-			"30",
-			"30em",
-			"24",
-			"translate",
-			"36",
-			"lighten"
+			"border-radius"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -479,7 +489,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -488,15 +498,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13153,
+						"buffer_size": 14052,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								13819,
+								13819
 							]
 						],
 						"settings":
@@ -505,10 +515,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 11072.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -517,15 +527,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6748,
+						"buffer_size": 6951,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								6655,
+								6655
 							]
 						],
 						"settings":
@@ -534,7 +544,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2288.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -546,15 +556,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9328,
+						"buffer_size": 10058,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								6237,
+								6237
 							]
 						],
 						"settings":
@@ -566,7 +576,37 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/hugihlynsson/Library/Application Support/Sublime Text 3/Packages/JSHint Gutter/.jshintrc",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 453,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								450,
+								450
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -643,7 +683,7 @@
 	"show_minimap": false,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 217.0,
 	"status_bar_visible": true,
 	"template_settings":
