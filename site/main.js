@@ -214,7 +214,7 @@ var filterMovies = function () {
 		}
 	});
 
-	if (hasOnlyFiltered) $('.no-match').slideDown();
+	if (hasOnlyFiltered && movies.length > 0) $('.no-match').slideDown();
 	else $('.no-match').slideUp();
 };
 

@@ -105,7 +105,7 @@
 		<div class="movies-wrap">
 
 			<?php
-				$service_url = 'http://apis.is/cinema/';
+				$service_url = 'http://apis.is/cinema';
 				$curl = curl_init($service_url);
 				curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 				$response = curl_exec($curl);
