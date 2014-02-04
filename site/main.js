@@ -228,6 +228,8 @@ var filterMovies = function () {
 				e.preventDefault();
 				resetFilters();
 				throttleMovieFilter();
+				// Send Analytics event:
+				ga('send', 'event', 'button', 'click', 'Reset');
 			});
 		}
 		$('.no-match').slideDown();
@@ -390,37 +392,32 @@ var activateMoreToggle = function () {
 var enableAnalyticEventTracking = function () {
 	// Track input use:
 	$('input[type=range]').on('click', function (e) {
-		console.log(e.target.id);
 		ga('send', 'event', 'input', 'use', e.target.id);
 	});
 	$('input[type=text]').on('focus', function (e) {
-		console.log(e.target.id);
 		ga('send', 'event', 'input', 'use', e.target.id);
 	});
 
 	// Track cinema clicks:
-	$('.placefilter li').on('click', function (e) {
-		console.log(e.target.text);
-		ga('send', 'event', 'button', 'click', 'Place: ' + e.target.text);
+	$('.place-filter li').on('click', function (e) {
+		var place = $(e.target);
+		var toggle = (place.is('.toggled')) ? 1 : 0;
+		ga('send', 'event', 'button', 'click', 'Place: ' + $(e.target).text(), toggle);
 	});
 
 	// Track 'See more' clicks:
 	$('.movie .more').on('click', function (e) {
-		console.log(e.target.text);
-		ga('send', 'event', 'button', 'click', 'See more');
+		var buttonContext = ($(e.target).closest('article').is('.open')) ? 'See more' : 'See less';
+		ga('send', 'event', 'button', 'click', buttonContext);
 	});
 
 	// Track IMDb clicks:
 	$('.movie .rating').on('click', function (e) {
-		console.log(e.target.id);
 		ga('send', 'event', 'button', 'click', 'IMDb');
 	});
 
 	// Track filter reset use:
-	$('.filter-reset').on('click', function (e) {
-		console.log(e.target.id);
-		ga('send', 'event', 'button', 'click', 'Reset');
-	});
+	// See .reset-filter at end of filterMovies()
 };
 
 //
