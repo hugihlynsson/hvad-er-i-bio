@@ -112,7 +112,6 @@
 				if ($response === false) {
 				    $info = curl_getinfo($curl);
 				    curl_close($curl);
-				    die('Failed to retreve data. Additioanl info: ' . var_export($info));
 				}
 				curl_close($curl);
 

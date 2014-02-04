@@ -259,18 +259,27 @@ var throttleMovieFilter = throttle(filterMovies, 100);
 
 var limitTimeRange = function() {
 
-	// Set min and max time values:
-	$('#to-time, #from-time').attr('min', movies.lowestShowtime);
-	$('#to-time, #from-time').attr('max', movies.highestShowtime);
+	if (movies.hasMovies) {
+		// Set min and max time values:
+		$('#to-time, #from-time').attr('min', movies.lowestShowtime);
+		$('#to-time, #from-time').attr('max', movies.highestShowtime);
 
-	// Set from value to current time:
-	var timeNow = timeToNum(new Date().getHours() + ':' + new Date().getMinutes());
-	if (timeNow > movies.highestShowtime) timeNow = movies.lowestShowtime;
-	$('#from-time').attr('value', timeNow);
+		// Set from value to current time:
+		var timeNow = timeToNum(new Date().getHours() + ':' + new Date().getMinutes());
+		if (timeNow > movies.highestShowtime) timeNow = movies.lowestShowtime;
+		$('#from-time').attr('value', timeNow);
 
-	// Update marks on range ends:
-	$('.time-range .from').text(numToTime(movies.lowestShowtime));
-	$('.time-range .to').text(numToTime(movies.highestShowtime));
+		// Update marks on range ends:
+		$('.time-range .from').text(numToTime(movies.lowestShowtime));
+		$('.time-range .to').text(numToTime(movies.highestShowtime));
+	}
+	else {
+		$('#to-time, #from-time').attr('min', 12);
+		$('#to-time, #from-time').attr('max', 24);
+		$('.time-range .from').text('12:00');
+		$('.time-range .to').text('12:00');
+	}
+
 };
 
 var initPlaceFilter = function () {
@@ -376,6 +385,23 @@ var activateMoreToggle = function () {
 		if (article.is('.open')) closeArticleExtra(article);
 		else openArticleExtra(article);
 	});
+};
+
+var enableAnalyticEvents = function () {
+	// Track input use:
+	$('input').on('click', function (e) {
+		ga('send', 'event', 'input', 'click', 'inputtype');
+	});
+
+	// Track cinema clicks:
+	$('').on('click', function (e) {
+		ga('send', 'event', object, type, label);
+	});
+
+	// Track 'See more' clicks:
+
+
+	// Track filter reset use:
 };
 
 //
