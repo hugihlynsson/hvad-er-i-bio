@@ -79,6 +79,7 @@ var populateMoviesObject = function () {
 	movies.titles = {};
 	// Populate the 'movies' with movies:
 	$('.movie').each(function () {
+		movies.hasMovies = true;
 		var movieElm = $(this);
 		var id = movieElm.data('id');
 		movies.titles[id] = {};
@@ -213,8 +214,24 @@ var filterMovies = function () {
 			movieElm.slideDown();
 		}
 	});
+	if (hasOnlyFiltered && movies.hasMovies) {
+		var noMatchDiv = $('.no-match');
 
-	if (hasOnlyFiltered && movies.length > 0) $('.no-match').slideDown();
+		// If noMatchDiv has not been injected, add it to movies-wrap and connect event:
+		if (!noMatchDiv.length) {
+			noMatchDiv = $('<div class="message no-match">Hmm. <strong>Engin mynd uppfyllir skilyrðin.</strong> Prófaðu að <a href="#" class="filter-reset">víkka þau</a>.</div>');
+
+			noMatchDiv.hide();
+			noMatchDiv.appendTo('.movies-wrap');
+
+			$('.filter-reset').on('click', function (e) {
+				e.preventDefault();
+				resetFilters();
+				throttleMovieFilter();
+			});
+		}
+		$('.no-match').slideDown();
+	}
 	else $('.no-match').slideUp();
 };
 
@@ -334,14 +351,6 @@ var activateRangeSliders = function () {
 
 var activateTextFilter = function () {
 	$('#text-filter').on('input propertychange', function() {
-		throttleMovieFilter();
-	});
-};
-
-var activateFilterReset = function () {
-	$('.filter-reset').on('click', function (e) {
-		e.preventDefault();
-		resetFilters();
 		throttleMovieFilter();
 	});
 };

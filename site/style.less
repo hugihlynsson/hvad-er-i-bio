@@ -329,14 +329,6 @@ output {
 	overflow: hidden;
 	width: 100%;
 	.after-clear();
-
-	.no-data-message {
-		margin: 1em;
-		padding: 0.5em 1em;
-		background: @secondColor;
-		border-radius: @borderRadius;
-		color: #fff;
-	}
 }
 
 .movie {
@@ -535,8 +527,7 @@ output {
 	}
 }
 
-.no-match {
-	display: none;
+.message {
 	background: @secondColor;
 	color: #fff;
 	padding: 1em 1em 0.6em;
@@ -630,7 +621,7 @@ footer {
 			width: 30%;
 		}
 	}
-	.no-match {
+	.message {
 		border-radius: 0;
 		margin: 0;
 	}
@@ -740,7 +731,6 @@ footer {
 	.movies-wrap {
 		border-radius: @borderRadius;
 		padding: 0;
-		.no-data-message { text-align: center; }
 	}
 
 	.movie {
@@ -764,7 +754,7 @@ footer {
 	}
 	.filters {
 		float: left;
-		width: 420px;
+		width: 440px;
 	}
 	.filters-wrap {
 		width: 100%;
@@ -777,7 +767,7 @@ footer {
 	}
 	.movies-wrap {
 		float: right;
-		width: calc(~"100% - 420px - 1em");
+		width: calc(~"100% - 440px - 1em");
 	}
 	.place-filter {
 		border-top: 1px solid #fff;

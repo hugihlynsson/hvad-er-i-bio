@@ -638,13 +638,6 @@ output:after {
   height: 0;
   clear: both;
 }
-.movies-wrap .no-data-message {
-  margin: 1em;
-  padding: 0.5em 1em;
-  background: #e89737;
-  border-radius: 5px;
-  color: #fff;
-}
 .movie {
   margin: 2% 0;
   clear: both;
@@ -860,19 +853,18 @@ output:after {
 .movie.open .more:hover {
   background: #1dd2af;
 }
-.no-match {
-  display: none;
+.message {
   background: #e89737;
   color: #fff;
   padding: 1em 1em 0.6em;
   border-radius: 5px;
   margin: 2% 0;
 }
-.no-match a {
+.message a {
   color: #fff;
   border-color: #fff;
 }
-.no-match a:hover {
+.message a:hover {
   border-bottom-width: 2px;
 }
 footer {
@@ -956,7 +948,7 @@ footer a {
   .movie .extra img {
     width: 30%;
   }
-  .no-match {
+  .message {
     border-radius: 0;
     margin: 0;
   }
@@ -1097,9 +1089,6 @@ footer a {
     border-radius: 5px;
     padding: 0;
   }
-  .movies-wrap .no-data-message {
-    text-align: center;
-  }
   .movie header h2 {
     padding-left: 1em;
   }
@@ -1117,7 +1106,7 @@ footer a {
   }
   .filters {
     float: left;
-    width: 420px;
+    width: 440px;
   }
   .filters-wrap {
     width: 100%;
@@ -1131,7 +1120,7 @@ footer a {
   }
   .movies-wrap {
     float: right;
-    width: calc(100% - 420px - 1em);
+    width: calc(100% - 440px - 1em);
   }
   .place-filter {
     border-top: 1px solid #fff;

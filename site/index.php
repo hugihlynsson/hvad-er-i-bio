@@ -119,7 +119,7 @@
 				$jsonDecoded = json_decode($response);
 
 				if (empty($jsonDecoded->results)) {
-					echo '<p class="no-data-message">Dularfullt. <strong>Engar myndir fundust.</strong><br>Líklegast hafa gögnin lent í umferðarteppu eða mögulega er bara ekkert í bíó í dag. Prófaðu aftur seinna.</p>';
+					echo '<p class="message no-data">Dularfullt. <strong>Engar myndir fundust.</strong><br>Líklegast hafa gögnin lent í umferðarteppu eða mögulega er bara ekkert í bíó í dag. Prófaðu aftur seinna.</p>';
 				}
 
 				foreach ($jsonDecoded->results as $movie) {
@@ -171,8 +171,6 @@
 			</article>
 
 			<?php } ?>
-
-			<div class="no-match">Hmm. <strong>Engin mynd uppfyllir skilyrðin.</strong> Prófaðu að <a href="#" class="filter-reset">víkka þau</a>.</div>
 
 		</div>
 
