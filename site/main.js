@@ -277,7 +277,7 @@ var limitTimeRange = function() {
 		$('#to-time, #from-time').attr('min', 12);
 		$('#to-time, #from-time').attr('max', 24);
 		$('.time-range .from').text('12:00');
-		$('.time-range .to').text('12:00');
+		$('.time-range .to').text('24:00');
 	}
 
 };
