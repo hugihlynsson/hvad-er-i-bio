@@ -361,7 +361,6 @@ var activateFilters = function () {
 	updateTimeRangeMarks();
 	activateRangeSliders();
 	activateTextFilter();
-	activateFilterReset();
 };
 
 
