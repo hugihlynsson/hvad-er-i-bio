@@ -36,10 +36,15 @@ body {
 }
 
 h1 {
-	margin: 1em 0 0.5em;
+	margin: 1em 0 0;
 	font-weight: 400;
-	font-size: 48/16em;
+	font-size: 50/16em;
 	line-height: 1em;
+	text-align: center;
+}
+
+.subtitle {
+	margin-top: 0;
 	text-align: center;
 }
 
@@ -263,6 +268,8 @@ output {
 // //
 // // =============================== CUSTOM ==============================
 // //
+
+.filters { margin-top: 2em; }
 
 // Filter styles:
 .filters-wrap {
@@ -577,7 +584,8 @@ footer {
 
 @media screen and (min-width: 460px) {
 	body { padding: 0 1px; }
-	h1 { padding: 0.5em 1em; }
+	h1 { padding: 0.5em 1em 0; }
+	.filters { margin-top: 3em; }
 	.input-box { margin: 0 0 1px; }
 	.two-col .input-box {
 		width: 50%;
@@ -590,9 +598,6 @@ footer {
 		padding: 0.4em;
 		border-radius: 0;
 		margin:  0 0 1px;
-	}
-	.movies-wrap {
-		padding-bottom: 1px;
 	}
 	.movie {
 		margin: 0;
@@ -629,6 +634,7 @@ footer {
 @media screen and (min-width: 700px) {
 	body { font-size: 24/20em; }
 	h1 { font-size: 80/24em; }
+	.subtitle { font-size: 21/20em; }
 	.two-col .input-box {
 		border-right: 0;
 	}
@@ -691,11 +697,13 @@ footer {
 		padding-bottom: 2em;
 		.after-clear();
 	}
-	h1 { font-size: 100/24em; }
+	h1 { font-size: 99/24em; }
+	.subtitle { font-size: 26/20em; }
 
 	.filters {
-		border-radius: @borderRadius;
+		margin-top: 4em;
 		margin-bottom: 2em;
+		border-radius: @borderRadius;
 		background: @backgroundColor;
 		.after-clear();
 	}
@@ -755,6 +763,7 @@ footer {
 	.filters {
 		float: left;
 		width: 440px;
+		margin-top: 2em;
 	}
 	.filters-wrap {
 		width: 100%;
@@ -766,6 +775,7 @@ footer {
 		}
 	}
 	.movies-wrap {
+		margin-top: 2em;
 		float: right;
 		width: calc(~"100% - 440px - 1em");
 	}

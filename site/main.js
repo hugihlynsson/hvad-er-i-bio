@@ -431,5 +431,3 @@ populateMoviesObject();
 activateFilters();
 activateMoreToggle();
 enableAnalyticEventTracking();
-
-jaddabulls

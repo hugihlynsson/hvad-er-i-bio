@@ -50,7 +50,12 @@
 	<body>
 
 		<h1>Hvað er í bíó?</h1>
-
+		<p class="subtitle">Þessar myndir eru sýndar í dag, <?php
+			$months = array('', 'janúar', 'febrúar', 'mars', 'apríl', 'maí', 'júní', 'júlí', 'ágúst', 'september', 'október', 'nóbember', 'desember');
+			date_default_timezone_set('GMT');
+			echo date('j').'. ';
+			echo $months[date('n')];
+		?></p>
 
 		<div class="filters">
 			<div class="filters-wrap">
