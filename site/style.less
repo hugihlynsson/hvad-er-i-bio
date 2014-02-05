@@ -1,19 +1,19 @@
 // Author: Hugi Hlynsson
 
 //
-// ==================== IMPORTS AND GLOBAL VARIABLES ===================
+// ==================== IMPORTS AND VARIABLES ===================
 //
 
 @import '../../common/mixins.less';
 @import '../../common/normalize.less';
 
-@highlightColor: #38e;
-@secondColor: #e89737;
-@thirdColor: #1abc9c;
+@highlightColor: #38E;
+@secondColor: #E89737;
+@thirdColor: #1ABC9C;
 @warningColor: #E43;
-@backgroundColor: #eee;
-@formBgColor: #eee;
-@darkerFormBgColor: #ddd;
+@backgroundColor: #EEE;
+@formBgColor: #EEE;
+@textColor: #222;
 
 @baseFont: 'proxima-nova', 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
@@ -25,13 +25,16 @@
 //
 
 body {
-	padding: 0 2% 2%;
 	max-width: 1024px;
+	padding: 0 2% 2%;
 	margin: 0 auto;
+
+	background: #FFF;
 	font-family: @baseFont;
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.4em;
+	color: @textColor;
 	.font-smoothing();
 }
 
@@ -49,13 +52,12 @@ h1 {
 }
 
 h2 { font-weight: 400; }
-
 h3 { font-weight: 400; }
 
 a {
-	border-bottom: 1px solid #000;
+	border-bottom: 1px solid transparent;
 	text-decoration: none;
-	color: #000;
+	color: @textColor;
 	.transition (all @transitionTime);
 
 	&:hover {
@@ -65,9 +67,7 @@ a {
 	}
 }
 
-img {
-	max-width: 100%;
-}
+img { max-width: 100%; }
 
 //
 // =============================== FORMS ===============================
@@ -77,12 +77,13 @@ img {
 label {
 	.box-sizing(border-box);
 	float: left;
-	background: @formBgColor;
-	padding: 0.5em 1em;
 	width: 20%;
-	border-radius: @radius 0 0 @radius;
+	padding: 0.5em 1em;
 	border: 1px solid @formBgColor;
-	border-right: 1px solid #fff;
+	border-right: 1px solid #FFF;
+
+	background: @formBgColor;
+	border-radius: @radius 0 0 @radius;
 }
 
 input[type="text"] {
@@ -91,14 +92,15 @@ input[type="text"] {
 	float: left;
 	width: 100%;
 	padding: 0.5em;
-	background: #fff;
 	border: 1px solid @formBgColor;
+
+	background: #FFF;
 	border-radius: 0 @radius @radius 0;
 	line-height: 1.4em;
 	-webkit-appearance: none;
 	.transition(all @transitionTime);
 
-	&:hover { border-color: #bbb; }
+	&:hover { border-color: darken(@formBgColor, 15%); }
 
 	&:focus {
 		border-color: @highlightColor;
@@ -113,9 +115,10 @@ input[type="range"] {
 	position: relative;
 	-webkit-appearance: none;
 	-moz-appearance: none;
+	height: 8px;
+
 	background: lighten(@highlightColor, 12%);
 	border-radius: 1em;
-	height: 8px;
 	box-shadow: inset 0 1px 3px fade(black, 20%);
 
 	// The clickable thumb:
@@ -144,7 +147,7 @@ input[type="range"] {
 			height: 20px;
 			width: 20px;
 
-			background: #fff;
+			background: #FFF;
 			border-radius: 10px;
 			box-shadow: 0 1px 3px fade(#000, 40%);
 		}
@@ -154,7 +157,7 @@ input[type="range"] {
 		-moz-appearance: none;
 		border: 0;
 		height: 20px;
-		width: 20px;background: #fff;
+		width: 20px;background: #FFF;
 		border-radius: 10px;
 		box-shadow: 0 1px 3px fade(#000, 40%);
 	}
@@ -179,18 +182,19 @@ output {
 	left: 0;
 	display: inline-block;
 	width: 50px;
-	border-radius: @radius;
 	margin-left: -25px;
 	margin-bottom: 5px;
+
+	background: @highlightColor;
+	border-radius: @radius;
 	text-align: center;
 	font-size: 14px;
 	line-height: 21px;
-	color: #fff;
+	color: #FFF;
 	box-shadow: 0px 1px 3px fade(black, 30%);
 	.transition(opacity @transitionTime, background @transitionTime;);
 	pointer-events: none;
 	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='', sizingMethod='scale');
-	background: @highlightColor;
 
 	&:after {
 		content: "";
@@ -206,7 +210,6 @@ output {
 		.transition(all @transitionTime);
 	}
 }
-
 
 
 .input-box {
@@ -266,12 +269,12 @@ output {
 
 
 // //
-// // =============================== CUSTOM ==============================
+// // ============================== FILTER STYLES =============================
 // //
+
 
 .filters { margin-top: 2em; }
 
-// Filter styles:
 .filters-wrap {
 
 	.time-range {
@@ -312,7 +315,7 @@ output {
 			margin: 0 0 1px;
 
 			background: darken(@formBgColor, 10%);
-			color: #fff;
+			color: #FFF;
 			border-radius: @radius @radius 0 0;
 			text-align: center;
 			text-decoration: none;
@@ -337,13 +340,13 @@ output {
 		li {
 			display: inline-block;
 			padding: 0.2em 0.5em 0.1em;
-			margin: 0.2em 0.1em;
+			margin: 0.2em;
 
 			border-radius: 1em;
 			cursor: pointer;
 
 			color: @highlightColor;
-			font-size: 15/18em;
+			font-size: 16/18em;
 			font-weight: 600;
 			text-transform: uppercase;
 			line-height: 18/16em;
@@ -354,7 +357,7 @@ output {
 
 			&.toggled {
 				background: @highlightColor;
-				color: #fff;
+				color: #FFF;
 				&:hover { background: fade(@highlightColor, 80%); }
 			}
 		}
@@ -363,7 +366,7 @@ output {
 	&.toggled {
 		h2 a {
 			background: @highlightColor;
-			color: #fff;
+			color: #FFF;
 		}
 
 		ul {
@@ -379,7 +382,11 @@ output {
 }
 
 
-// Movie styles
+// //
+// // ============================== MOVIE STYLES ==============================
+// //
+
+
 .movies-wrap {
 	overflow: hidden;
 	width: 100%;
@@ -389,7 +396,7 @@ output {
 .movie {
 	margin: 2% 0;
 	clear: both;
-	border-bottom: 1px solid #fff;
+	border-bottom: 1px solid #FFF;
 	.after-clear();
 
 	&:last-child {
@@ -452,7 +459,7 @@ output {
 			&:hover,
 			&:focus {
 				outline: 0;
-				color: #fff;
+				color: #FFF;
 				border-color: @highlightColor;
 				background: @highlightColor;
 				.info { display: block; }
@@ -464,8 +471,8 @@ output {
 			padding: 1em 0.5em 0.5em 0.5em;
 			background: @backgroundColor;
 			border: 1px solid @backgroundColor;
-			border-left: 1px solid #fff;
-			border-right: 1px solid #fff;
+			border-left: 1px solid #FFF;
+			border-right: 1px solid #FFF;
 			border-radius: 0 @radius 0 0;
 			margin: 0;
 			font-size: 1em;
@@ -484,7 +491,7 @@ output {
 				.transition(all @transitionTime);
 				&::before {
 					content: '- ';
-					color: #000;
+					color: @textColor;
 					.transition(all @transitionTime);
 				}
 				&.warning { color: @warningColor; }
@@ -500,12 +507,12 @@ output {
 		background: @highlightColor;
 		padding: 0.4em 0.5em 0.5em;
 		border: 0;
-		border-top: 1px solid #fff;
+		border-top: 1px solid #FFF;
 		border-radius: 0 0 @radius @radius;
 		font-weight: 400;
 		text-transform: uppercase;
 		text-align: center;
-		color: #fff;
+		color: #FFF;
 
 		&:focus,
 		&:hover {
@@ -520,17 +527,17 @@ output {
 		overflow: hidden;
 		background: @formBgColor;
 		border-radius: 0 0 @radius @radius;
-		border-top: 1px solid #fff;
+		border-top: 1px solid #FFF;
 		margin: 0;
-		color: #fff;
+		color: #FFF;
 
 
 		img {
 			width: 150px;
 			float: right;
 			margin-left: 1em;
-			border-left: 1px solid #fff;
-			border-bottom: 1px solid #fff;
+			border-left: 1px solid #FFF;
+			border-bottom: 1px solid #FFF;
 			margin-bottom: -1px;
 		}
 
@@ -544,7 +551,7 @@ output {
 
 			h3 {
 				margin: 0 0 0.2em;
-				color: #000;
+				color: @textColor;
 				text-transform: uppercase;
 				font-size: 15/16em;
 			}
@@ -561,7 +568,7 @@ output {
 					background: @thirdColor;
 					border-radius: @radius;
 					margin: 0.1em 0 0.3em;
-					color: #fff;
+					color: #FFF;
 					.transition(all @transitionTime);
 
 					&.filtered { background: fade(@thirdColor, 30%); }
@@ -584,14 +591,14 @@ output {
 
 .message {
 	background: @secondColor;
-	color: #fff;
+	color: #FFF;
 	padding: 1em 1em 0.6em;
 	border-radius: @radius;
 	margin: 2% 0;
 
 	a {
-		color: #fff;
-		border-color: #fff;
+		color: #FFF;
+		border-color: #FFF;
 		&:hover { border-bottom-width: 2px; }
 	}
 }
@@ -600,11 +607,10 @@ output {
 // ================================== FOOTER ===================================
 
 footer {
+	margin: 1em;
 	text-align: center;
 	font-size: 0.8em;
 	color: #AAA;
-
-	margin: 1em;
 
 	a {
 		color: @highlightColor;
@@ -619,19 +625,11 @@ footer {
 // ============================= MEDIA QUERIES ==============================
 //
 
-@media screen and (min-width: 350px) {
-	.place-filter ul {
-		li {
-			font-size: 16/18em;
-			padding: 0.2em 0.5em 0.1em;
-			margin: 0.2em;
-		}
-	}
-}
-
+// Move into compact no-rounded layout:
 @media screen and (min-width: 460px) {
 	body { padding: 0 1px; }
 	h1 { padding: 0.5em 1em 0; }
+
 	.filters { margin-top: 3em; }
 	.input-box { margin: 0 0 1px; }
 	.two-col .input-box {
@@ -681,13 +679,13 @@ footer {
 		margin: 0;
 	}
 }
+
+// Expand the compact layout and make bubbles visible only on hover:
 @media screen and (min-width: 700px) {
 	body { font-size: 24/20em; }
 	h1 { font-size: 80/24em; }
 	.subtitle { font-size: 21/20em; }
-	.two-col .input-box {
-		border-right: 0;
-	}
+	.two-col .input-box { border-right: 0; }
 	output {
 		line-height: 28px;
 		margin-bottom: 7px;
@@ -701,7 +699,6 @@ footer {
 			border-width: 6px;
 			border-top-width: 6px;
 		}
-
 
 		.two-col:hover &,
 		input:active + &,
@@ -725,7 +722,7 @@ footer {
 		}
 		.extra {
 			width: calc(~"100% - 3em");
-			border-left: 1px solid #fff;
+			border-left: 1px solid #FFF;
 			border-radius: 0;
 			margin-left: 3em;
 
@@ -734,7 +731,7 @@ footer {
 			.content {
 				padding-bottom: 0;
 				.columns(2);
-				.column-rule(1px solid #fff);
+				.column-rule(1px solid #FFF);
 				.showplace {
 					display: inline-block;
 					width: 100%;
@@ -743,6 +740,8 @@ footer {
 		}
 	}
 }
+
+// Make layout more comfortable and put filters into islands:
 @media screen and (min-width: 1024px) {
 	body {
 		padding-bottom: 2em;
@@ -772,7 +771,7 @@ footer {
 	}
 	.input-box {
 		border: 0;
-		border-bottom: 1px solid #fff;
+		border-bottom: 1px solid #FFF;
 		margin: 0;
 	}
 	.two-col .input-box {
@@ -822,6 +821,7 @@ footer {
 	}
 }
 
+// Split layout into two columns and move filters to the left:
 @media screen and (min-width: 1400px) {
 	body {
 		max-width: 1600px;
