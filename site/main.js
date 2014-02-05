@@ -285,13 +285,38 @@ var limitTimeRange = function() {
 };
 
 var initPlaceFilter = function () {
-	var placeFilterList = $('.place-filter ul');
+	var knownCapitalPlaces = ['Sambíóin Álfabakka', 'Sambíóin Egilshöll', 'Háskólabíó', 'Laugarásbíó', 'Sambíóin Kringlunni', 'Smárabíó', 'Bíó Paradís'];
+	var capitalList = $('.place-filter.capital ul');
+	var ruralList = $('.place-filter.rural ul')
+
 	for (var place in places) {
-		placeFilterList.append('<li>' +  place + '</li>');
+		var placeLi = '<li>' +  place + '</li>';
+		if (knownCapitalPlaces.indexOf(place) >= 0) capitalList.append(placeLi);
+		else ruralList.append(placeLi);
 	}
 
 	$('.place-filter li').on('click', function () {
 		$(this).toggleClass('toggled', !$(this).is('.toggled'));
+		throttleMovieFilter();
+	});
+
+	// Make header click toggle/untoggle all:
+	$('.place-filter h2 a').on('click', function (e) {
+		e.preventDefault();
+		var placeFilter = $(this).closest('.place-filter');
+
+		// Find out if all are toggled or not:
+		var allAreToggled = true;
+		placeFilter.find('li').each(function () {
+			var toggled = ($(this).is('.toggled')) ? true : false;
+			if (!toggled) allAreToggled = false;
+		})
+		// TODO: Debuggin, remove for producion:
+		console.log('All are toggled: ' + allAreToggled);
+		console.log(placeFilter);
+
+		// Toggle or untoggle based on allAreToggled:
+		$(this).closest('.place-filter').find('li').toggleClass('toggled', !allAreToggled);
 		throttleMovieFilter();
 	});
 };

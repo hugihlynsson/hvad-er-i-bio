@@ -101,7 +101,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="filters-wrap place-filter">
+			<div class="filters-wrap place-filter capital">
+				<h2><a href="#">Höfuðborgarsvæðið</a></h2>
+				<ul></ul>
+			</div>
+			<div class="filters-wrap place-filter rural">
+				<h2><a href="#">Landsbyggðin</a></h2>
 				<ul></ul>
 			</div>
 		</div>
