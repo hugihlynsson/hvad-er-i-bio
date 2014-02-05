@@ -822,26 +822,32 @@ footer {
 }
 
 // Split layout into two columns and move filters to the left:
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1680px) {
 	body {
 		max-width: 1600px;
 		padding: 0 2em;
 	}
+	.subtitle {
+		margin-bottom: 0;
+		padding-bottom: 1em;
+	}
 
 	.filters {
-		float: left;
-		width: 420px;
-		margin-top: 2em;
-		background: transparent;
+		position: absolute;
+		left: 50%;
+		width: calc(~"40% - 350px");
+		max-width: 400px;
+		margin: 2em 0 0 420px;
+
 	}
 	.filters-wrap { width: 100%; }
 	.place-filter.rural,
 	.place-filter { margin: 1.2em 0 0 0; }
 
 	.movies-wrap {
+		margin: 2em auto 0;
 		margin-top: 2em;
-		float: right;
-		width: calc(~"100% - 420px - 1em");
+		width: 800px;
 	}
 
 	footer {
