@@ -12,13 +12,13 @@
 @thirdColor: #1abc9c;
 @warningColor: #E43;
 @backgroundColor: #eee;
-@radius: 5px;
-
 @formBgColor: #eee;
 @darkerFormBgColor: #ddd;
+
 @baseFont: 'proxima-nova', 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 @transitionTime: 0.2s;
+@radius: 5px;
 
 //
 // =============================== BASICS ==============================
@@ -281,7 +281,9 @@ output {
 	.rating-range {
 		label { width: 5em; }
 		.range-wrap {
-			width: calc(~"100% - 5em");
+			// 0.4px is a 1px fix for webkit browsers
+			// Todo: Remove that ugly fix
+			width: calc(~"100% - 5em - 0.4px");
 			.range-mark { width: 1.5em; }
 			.range-mark.from { width: 1em; }
 			.range { width: calc(~"100% - 4.5em"); }
@@ -353,6 +355,7 @@ output {
 			&.toggled {
 				background: @highlightColor;
 				color: #fff;
+				&:hover { background: fade(@highlightColor, 80%); }
 			}
 		}
 	}
@@ -364,12 +367,12 @@ output {
 		}
 
 		ul {
-			// background: fade(@highlightColor, 20%);
 
 			li {
-				// background: #fff;
+				// Hide the toggle:
 				color: @highlightColor;
 				background: @formBgColor;
+				&:hover { background: fade(@highlightColor, 10%); }
 			}
 		}
 	}
@@ -751,16 +754,21 @@ footer {
 	.filters {
 		margin-top: 4em;
 		margin-bottom: 2em;
-		border-radius: @radius;
-		background: @backgroundColor;
 		.after-clear();
 	}
 	.filters-wrap {
 		.box-sizing(border-box);
-		width: 50%;
+		width: 47%;
 		float: left;
+
 		border-right: 1px solid white;
 		border-radius: @radius 0 0 @radius;
+
+
+		// Propably the messyest selector ever:
+		&:first-child .two-col:first-child .input-box:first-child .range-wrap {
+			border-radius: 0 @radius 0 0;
+		}
 	}
 	.input-box {
 		border: 0;
@@ -775,16 +783,24 @@ footer {
 	.time-range:first-child label { border-radius: @radius 0 0 0; }
 	.time-range:first-child { border-radius: @radius 0 0 0; }
 
-	.text-filter { border-bottom: 0; }
-	.text-filter label { border-radius: 0 0 0 @radius; }
+	.text-filter {
+		background: transparent;
+		border-bottom: 0;
+		label { border-radius: 0 0 0 @radius; }
+		input { border-radius: 0 0 @radius 0; }
+	}
 
 	.place-filter {
+		float: right;
+		width: 51.5%;
 		border-radius: 0 @radius @radius 0;
 		border-right: 0;
 
-		&.capital h2 a {
-			border-radius: 0 @radius 0 0;
-		}
+		&.rural { margin-top: 0.9em; }
+
+		// Make corners round:
+		h2 a { border-radius: @radius @radius 0 0; }
+		ul { border-radius: 0 0 @radius @radius ; }
 	}
 
 	.movies-wrap {
@@ -806,7 +822,7 @@ footer {
 	}
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1400px) {
 	body {
 		max-width: 1600px;
 		padding: 0 2em;
@@ -814,36 +830,18 @@ footer {
 
 	.filters {
 		float: left;
-		width: 440px;
+		width: 420px;
 		margin-top: 2em;
 		background: transparent;
 	}
-	.filters-wrap {
-		width: 100%;
-		border-right: 0;
-		// Propaably the messyest selector ever:
-		&:first-child .two-col:first-child .input-box:first-child {
-			.range-wrap { border-radius: 0 @radius 0 0; }
-		}
-	}
-	.text-filter {
-		background: transparent;
-		label { border-radius: 0 0 0 @radius; }
-		input { border-radius: 0 0 @radius 0; }
-	}
-	.place-filter {
-		border-top: 1px solid #fff;
-		border-radius: 0 0 @radius @radius;
-		margin: 1em 0 0 0;
-		&.capital h2 a,
-		h2 a { border-radius: @radius @radius 0 0; }
-		ul { border-radius: 0 0 @radius @radius; }
-	}
+	.filters-wrap { width: 100%; }
+	.place-filter.rural,
+	.place-filter { margin: 1.2em 0 0 0; }
 
 	.movies-wrap {
 		margin-top: 2em;
 		float: right;
-		width: calc(~"100% - 440px - 1em");
+		width: calc(~"100% - 420px - 1em");
 	}
 
 	footer {
@@ -851,8 +849,3 @@ footer {
 		float: left;
 	}
 }
-
-
-
-
-
