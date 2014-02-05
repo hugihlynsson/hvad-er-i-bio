@@ -101,7 +101,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="filters-wrap place-filter capital">
+			<div class="filters-wrap place-filter capital toggled">
 				<h2><a href="#">Höfuðborgarsvæðið</a></h2>
 				<ul></ul>
 			</div>

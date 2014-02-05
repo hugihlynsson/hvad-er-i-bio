@@ -148,7 +148,8 @@ var filterMoviesByRating = function (minRating) {
 };
 
 var filterMoviesByPlace = function (placesAllowed) {
-	if ($.isEmptyObject(placesAllowed)) return;
+	// If there are no places allowed, filter none:
+	// if ($.isEmptyObject(placesAllowed)) return;
 	for (var id in movies.titles) {
 		var hasPlace = false;
 
@@ -239,6 +240,8 @@ var filterMovies = function () {
 
 
 var resetFilters = function () {
+
+	// Reset input filters to widest possitble:
 	$('#from-time').val(movies.lowestShowtime);
 	$('#to-time').val(movies.highestShowtime);
 	$('#rating-range').val('0');
@@ -248,9 +251,10 @@ var resetFilters = function () {
 	updateRangemark(ratingRange);
 	ratingRange.next('output').text('0');
 
-	$('.place-filter li').each(function () {
-		$(this).removeClass('toggled');
-	});
+	// Reset place filters to all capital:
+	$('.place-filter.capital li').each(function () { $(this).addClass('toggled'); });
+	$('.place-filter.rural li').each(function () { $(this).removeClass('toggled'); });
+	$('.place-filter.capital').addClass('toggled');
 };
 
 
@@ -290,13 +294,23 @@ var initPlaceFilter = function () {
 	var ruralList = $('.place-filter.rural ul')
 
 	for (var place in places) {
-		var placeLi = '<li>' +  place + '</li>';
-		if (knownCapitalPlaces.indexOf(place) >= 0) capitalList.append(placeLi);
+		var placeLi = $('<li>' +  place + '</li>');
+		if (knownCapitalPlaces.indexOf(place) >= 0) capitalList.append(placeLi.addClass('toggled'));
 		else ruralList.append(placeLi);
 	}
 
 	$('.place-filter li').on('click', function () {
-		$(this).toggleClass('toggled', !$(this).is('.toggled'));
+		var placeFilter = $(this).closest('.place-filter');
+
+		if (allPlacesAreToggled(placeFilter)) {
+			placeFilter.find('li').removeClass('toggled');
+			$(this).addClass('toggled');
+		}
+		else {
+			$(this).toggleClass('toggled');
+		}
+
+		allPlacesAreToggled(placeFilter);
 		throttleMovieFilter();
 	});
 
@@ -304,20 +318,19 @@ var initPlaceFilter = function () {
 	$('.place-filter h2 a').on('click', function (e) {
 		e.preventDefault();
 		var placeFilter = $(this).closest('.place-filter');
+		var allAreToggled = allPlacesAreToggled(placeFilter);
 
-		// Find out if all are toggled or not:
-		var allAreToggled = true;
-		placeFilter.find('li').each(function () {
-			var toggled = ($(this).is('.toggled')) ? true : false;
-			if (!toggled) allAreToggled = false;
-		})
-		// TODO: Debuggin, remove for producion:
-		console.log('All are toggled: ' + allAreToggled);
-		console.log(placeFilter);
+		placeFilter.toggleClass('toggled', !allAreToggled);
 
-		// Toggle or untoggle based on allAreToggled:
-		$(this).closest('.place-filter').find('li').toggleClass('toggled', !allAreToggled);
+		placeFilter.find('li').each(function (e) {
+			$(this).toggleClass('toggled', !allAreToggled);
+		});
+
 		throttleMovieFilter();
+	});
+
+	$('.place-filter').each(function() {
+		allPlacesAreToggled($(this));
 	});
 };
 
@@ -413,6 +426,15 @@ var activateMoreToggle = function () {
 		else openArticleExtra(article);
 	});
 };
+
+var allPlacesAreToggled = function (placeFilter) {
+	var allAreToggled = true;
+	placeFilter.find('li').each(function () {
+		if (!$(this).is('.toggled')) allAreToggled = false;
+	})
+	placeFilter.toggleClass('toggled', allAreToggled);
+	return allAreToggled;
+}
 
 var enableAnalyticEventTracking = function () {
 	// Track input use:

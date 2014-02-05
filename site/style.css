@@ -601,27 +601,48 @@ output:after {
   box-sizing: border-box;
   float: left;
   width: 100%;
-  margin: 0.5em 0 0;
-  background: #eeeeee;
-  border-radius: 5px;
+  margin: 2% 0 0;
+}
+.place-filter h2 {
+  margin: 0;
+  font-size: 1em;
+}
+.place-filter h2 a {
+  display: block;
+  padding: 0.5em 0 0.4em;
+  border-bottom: 0;
+  margin: 0 0 1px;
+  background: #d5d5d5;
+  color: #fff;
+  border-radius: 5px 5px 0 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.place-filter h2 a:hover {
+  background: #bbbbbb;
 }
 .place-filter ul {
+  display: block;
   list-style: none;
-  padding: 0;
-  margin: 0.1em;
+  padding: 0.2em;
+  margin: 0;
+  background: #eeeeee;
+  border-radius: 0 0 5px 5px;
+  text-align: center;
 }
 .place-filter ul li {
   display: inline-block;
-  padding: 0.2em 0.2em 0.1em;
-  background: white;
-  border-radius: 3px;
-  border: 1px solid #3388ee;
-  margin: 0.2em;
-  text-transform: uppercase;
-  font-size: 0.8333333333333334em;
-  line-height: 1.125em;
-  color: #3388ee;
+  padding: 0.2em 0.5em 0.1em;
+  margin: 0.2em 0.1em;
+  border-radius: 1em;
   cursor: pointer;
+  color: #3388ee;
+  font-size: 0.8333333333333334em;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1.125em;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   -ms-transition: all 0.2s;
@@ -633,6 +654,14 @@ output:after {
 .place-filter ul li.toggled {
   background: #3388ee;
   color: #fff;
+}
+.place-filter.toggled h2 a {
+  background: #3388ee;
+  color: #fff;
+}
+.place-filter.toggled ul li {
+  color: #3388ee;
+  background: #eeeeee;
 }
 .movies-wrap {
   overflow: hidden;
@@ -885,9 +914,6 @@ footer a {
   border-color: transparent;
 }
 @media screen and (min-width: 350px) {
-  .place-filter ul {
-    margin: 0.2em;
-  }
   .place-filter ul li {
     font-size: 0.8888888888888888em;
     padding: 0.2em 0.5em 0.1em;
@@ -923,9 +949,15 @@ footer a {
     border-radius: 0;
   }
   .place-filter {
-    padding: 0.4em;
+    padding: 0;
     border-radius: 0;
     margin: 0 0 1px;
+  }
+  .place-filter h2 a {
+    border-radius: 0;
+  }
+  .place-filter ul {
+    border-radius: 0;
   }
   .movie {
     margin: 0;
@@ -992,6 +1024,9 @@ footer a {
   input:hover + output {
     opacity: 1;
     background: #3388ee;
+  }
+  .place-filter {
+    font-size: 0.85em;
   }
   .movie header {
     width: 80%;
@@ -1068,7 +1103,6 @@ footer a {
     width: 50%;
     float: left;
     border-right: 1px solid white;
-    background: #eeeeee;
     border-radius: 5px 0 0 5px;
   }
   .input-box {
@@ -1088,16 +1122,18 @@ footer a {
   .time-range:first-child {
     border-radius: 5px 0 0 0;
   }
-  .place-filter {
-    padding: 0.6em;
-    border-radius: 0 5px 5px 0;
-    border-right: 0;
-  }
   .text-filter {
     border-bottom: 0;
   }
   .text-filter label {
     border-radius: 0 0 0 5px;
+  }
+  .place-filter {
+    border-radius: 0 5px 5px 0;
+    border-right: 0;
+  }
+  .place-filter.capital h2 a {
+    border-radius: 0 5px 0 0;
   }
   .movies-wrap {
     border-radius: 5px;
@@ -1122,25 +1158,40 @@ footer a {
     float: left;
     width: 440px;
     margin-top: 2em;
+    background: transparent;
   }
   .filters-wrap {
     width: 100%;
     border-right: 0;
   }
-  .filters-wrap:first-child {
+  .filters-wrap:first-child .two-col:first-child .input-box:first-child .range-wrap {
+    border-radius: 0 5px 0 0;
+  }
+  .text-filter {
+    background: transparent;
+  }
+  .text-filter label {
+    border-radius: 0 0 0 5px;
+  }
+  .text-filter input {
+    border-radius: 0 0 5px 0;
+  }
+  .place-filter {
+    border-top: 1px solid #fff;
+    border-radius: 0 0 5px 5px;
+    margin: 1em 0 0 0;
+  }
+  .place-filter.capital h2 a,
+  .place-filter h2 a {
     border-radius: 5px 5px 0 0;
   }
-  .filters-wrap:first-child .range-wrap {
-    border-radius: 5px;
+  .place-filter ul {
+    border-radius: 0 0 5px 5px;
   }
   .movies-wrap {
     margin-top: 2em;
     float: right;
     width: calc(100% - 440px - 1em);
-  }
-  .place-filter {
-    border-top: 1px solid #fff;
-    border-radius: 0 0 5px 5px;
   }
   footer {
     width: 100%;
