@@ -1175,6 +1175,7 @@ footer a {
   .filters {
     position: absolute;
     left: 50%;
+    width: 350px;
     width: calc(40% - 350px);
     max-width: 400px;
     margin: 2em 0 0 420px;
@@ -1190,6 +1191,23 @@ footer a {
     margin: 2em auto 0;
     margin-top: 2em;
     width: 800px;
+  }
+  .movie header {
+    width: 80%;
+    width: calc(100% - 160px);
+  }
+  .movie header .rating {
+    min-width: 3em;
+  }
+  .movie header h2 i {
+    font-size: 0.8333333333333334em;
+  }
+  .movie .more {
+    width: 20%;
+    width: calc(160px);
+  }
+  .movie .extra img {
+    width: 160px;
   }
   footer {
     width: 100%;
