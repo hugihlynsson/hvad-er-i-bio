@@ -425,7 +425,9 @@ var activateMoreToggle = function () {
 		if (article.is('.open')) closeArticleExtra(article);
 		else openArticleExtra(article);
 
-		article.find('.fluidbox').fluidbox({debounceResize: true});
+		article.find('.fluidbox:not(.fluidbox-enabled)')
+			.fluidbox({debounceResize: true})
+			.addClass('fluidbox-enabled');
 	});
 };
 

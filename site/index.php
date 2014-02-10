@@ -161,7 +161,7 @@
 				</header>
 				<a class="more" href="#">Sjá meira</a>
 				<aside class="extra">
-					<a class="fluidbox" href="#" data-fluidbox><img src="<?=$imageUrl?>" alt="Plakat fyrir <?=$title?>"></a>
+					<a class="fluidbox" href="#"><img src="<?=$imageUrl?>" alt="Plakat fyrir <?=$title?>"></a>
 					<div class="content">
 						<?php
 							foreach ($movie->showtimes as $showtime) {
