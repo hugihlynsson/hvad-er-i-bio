@@ -32,6 +32,7 @@
 		<link rel="shortcut icon" sizes="196x196" href="images/icon-196x196.png">
 
 		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="fluidbox.css">
 
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -160,7 +161,7 @@
 				</header>
 				<a class="more" href="#">Sjá meira</a>
 				<aside class="extra">
-					<img src="<?=$imageUrl?>" alt="Plakat fyrir <?=$title?>">
+					<a class="fluidbox" href="#" data-fluidbox><img src="<?=$imageUrl?>" alt="Plakat fyrir <?=$title?>"></a>
 					<div class="content">
 						<?php
 							foreach ($movie->showtimes as $showtime) {
@@ -186,7 +187,9 @@
 		<footer>Verkefni eftir <a href="http://www.hugihlynsson.com/">Huga Hlynsson</a> - <a href="mailto:hugihlynsson@gmail.com">hugihlynsson@gmail.com</a> með gögnum frá <a href="http://kvikmyndir.is">kvikmyndir.is</a> í gengum <a href="http://docs.apis.is/#endpoint-cinema">{apis.is}</a>.</footer>
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-		<script src="main.js"></script>
+		<script src="js/imagesloaded.js"></script>
+		<script src="js/fluidbox.js"></script>
+		<script src="js/main.js"></script>
 	</body>
 </html>
 
