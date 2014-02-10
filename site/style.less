@@ -529,6 +529,18 @@ output {
 		margin: 0;
 		color: #FFF;
 
+		img,
+		.fluidbox-ghost {
+			cursor: -webkit-zoom-in;
+			cursor: zoom-in;
+		}
+		.fluidbox-opened {
+			img,
+			.fluidbox-ghost {
+				cursor: -webkit-zoom-out;
+				cursor: zoom-out;
+			}
+		}
 
 		img {
 			width: 150px;

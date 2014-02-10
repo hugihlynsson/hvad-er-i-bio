@@ -842,6 +842,16 @@ output:after {
   margin: 0;
   color: #FFF;
 }
+.movie .extra img,
+.movie .extra .fluidbox-ghost {
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+}
+.movie .extra .fluidbox-opened img,
+.movie .extra .fluidbox-opened .fluidbox-ghost {
+  cursor: -webkit-zoom-out;
+  cursor: zoom-out;
+}
 .movie .extra img {
   width: 150px;
   float: right;
