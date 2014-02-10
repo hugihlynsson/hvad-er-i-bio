@@ -569,6 +569,13 @@ output:after {
 .filters {
   margin-top: 2em;
 }
+.filters:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
 .filters-wrap .time-range label {
   width: 3em;
 }
@@ -1094,13 +1101,6 @@ footer a {
   .filters {
     margin-top: 4em;
     margin-bottom: 2em;
-  }
-  .filters:after {
-    content: ".";
-    visibility: hidden;
-    display: block;
-    height: 0;
-    clear: both;
   }
   .filters-wrap {
     -webkit-box-sizing: border-box;
