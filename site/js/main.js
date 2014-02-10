@@ -425,7 +425,7 @@ var activateMoreToggle = function () {
 		if (article.is('.open')) closeArticleExtra(article);
 		else openArticleExtra(article);
 
-		article.find('.fluidbox').fluidbox();
+		article.find('.fluidbox').fluidbox({debounceResize: true});
 	});
 };
 
@@ -463,6 +463,11 @@ var enableAnalyticEventTracking = function () {
 	// Track IMDb clicks:
 	$('.movie .rating').on('click', function (e) {
 		ga('send', 'event', 'button', 'click', 'IMDb');
+	});
+
+	// Track Poster-enlargement clicks:
+	$('.movie .fluidbox').on('click', function (e) {
+		ga('send', 'event', 'button', 'click', 'Poster');
 	});
 
 	// Track filter reset use:

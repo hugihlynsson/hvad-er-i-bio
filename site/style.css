@@ -672,7 +672,6 @@ output:after {
   background: rgba(51, 136, 238, 0.1);
 }
 .movies-wrap {
-  overflow: hidden;
   width: 100%;
 }
 .movies-wrap:after {
@@ -1149,7 +1148,6 @@ footer a {
     border-radius: 0 0 5px 5px;
   }
   .movies-wrap {
-    border-radius: 5px;
     padding: 0;
   }
   .movie header h2 {
@@ -1157,6 +1155,27 @@ footer a {
   }
   .movie .extra .content {
     padding: 0 0.5em 0 1em;
+  }
+  .movie:first-child .rating {
+    border-radius: 5px 0 0 0;
+  }
+  .movie:first-child .more {
+    border-radius: 0 5px 0 0;
+  }
+  .movie:last-child .rating {
+    border-radius: 0 0 0 5px;
+  }
+  .movie:last-child .more {
+    border-radius: 0 0 5px 0;
+  }
+  .movie:last-child .extra {
+    border-radius: 0 0 5px 5px;
+  }
+  .movie:last-child .extra img {
+    border-radius: 0 0 5px 0;
+  }
+  .movie.open:last-child .more {
+    border-radius: 0;
   }
   footer {
     margin-top: 3em;

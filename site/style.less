@@ -388,7 +388,6 @@ output {
 
 
 .movies-wrap {
-	overflow: hidden;
 	width: 100%;
 	.after-clear();
 }
@@ -802,7 +801,6 @@ footer {
 	}
 
 	.movies-wrap {
-		border-radius: @radius;
 		padding: 0;
 	}
 
@@ -813,6 +811,19 @@ footer {
 		.extra {
 			.content { padding: 0 0.5em 0 1em; }
 		}
+
+		// Make corners rounded:
+		&:first-child {
+			.rating { border-radius: @radius 0 0 0; }
+			.more   { border-radius: 0 @radius 0 0; }
+		}
+		&:last-child {
+			.rating { border-radius: 0 0 0 @radius; }
+			.more   { border-radius: 0 0 @radius 0; }
+			.extra  { border-radius: 0 0 @radius @radius; }
+			.extra img { border-radius: 0 0 @radius 0; }
+		}
+		&.open:last-child .more { border-radius: 0; }
 	}
 
 	footer {
