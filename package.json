@@ -1,0 +1,19 @@
+{
+    "name": "hvaderibio.is",
+    "version": "0.0.0",
+    "description": "A web that displays movies in Icelandic cinemas",
+    "author": {
+        "name": "Hugi Hlynsson",
+        "email": "hugihlynsson@gmail.com",
+        "url": "http://hugihlynsson.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/hugihlynsson/Hva--er-i--bi-o-"
+    },
+    "engines": {
+        "node": "~0.10.25"
+    },
+    "homepage": "http://www.hvaderibio.is",
+    "private": true
+}

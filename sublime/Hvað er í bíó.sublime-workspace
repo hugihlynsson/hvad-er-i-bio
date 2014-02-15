@@ -1,0 +1,706 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"trans",
+				"transparent"
+			],
+			[
+				"podcasts",
+				"podcastsJSON"
+			],
+			[
+				"Pod",
+				"Podcast"
+			],
+			[
+				"ST",
+				"STATIC_ROOT"
+			],
+			[
+				"MED",
+				"MEDIA_ROOT"
+			],
+			[
+				"text",
+				"textarea"
+			],
+			[
+				"empl",
+				"employees"
+			],
+			[
+				"max",
+				"maxheight"
+			],
+			[
+				"Version",
+				"VersionAdmin"
+			],
+			[
+				"pd",
+				"pdfurl"
+			],
+			[
+				"tim",
+				"timedelta"
+			],
+			[
+				"date",
+				"datetime"
+			],
+			[
+				"get",
+				"get_object_or_404"
+			],
+			[
+				"Http",
+				"HttpResponceRedirect"
+			],
+			[
+				"HT",
+				"HttpResponceRedirect"
+			],
+			[
+				"_font",
+				"_fontSize"
+			],
+			[
+				"_nex",
+				"_nextBlock"
+			],
+			[
+				"col",
+				"color"
+			],
+			[
+				"for",
+				"form"
+			],
+			[
+				"fiel",
+				"fieldX"
+			],
+			[
+				"columns",
+				"_columns"
+			],
+			[
+				"spati",
+				"spatialManager"
+			],
+			[
+				"spa",
+				"spatialManager"
+			],
+			[
+				"_",
+				"_height"
+			],
+			[
+				"clo",
+				"closeArticleExtra"
+			],
+			[
+				"filter",
+				"filterMovies"
+			],
+			[
+				"succes",
+				"successMessage"
+			],
+			[
+				"str_re",
+				"str_replace"
+			],
+			[
+				"font-",
+				"font-size"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"f",
+				"fst	font-stretch"
+			],
+			[
+				"half",
+				"halfHeight"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"g",
+				"getElementById"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"texta",
+				"textarea	Tag"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"background-",
+				"background-size"
+			],
+			[
+				"query",
+				"query_args"
+			],
+			[
+				"recipe",
+				"recipe_persons"
+			],
+			[
+				"update",
+				"update_post_meta"
+			],
+			[
+				"reciep_cookin",
+				"recipe_cooking_time_meta_box"
+			],
+			[
+				"max-",
+				"max-width"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/hugihlynsson/Web/hvaderibio.is/site/index.php",
+			"settings":
+			{
+				"buffer_size": 7386,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/hugihlynsson/Web/hvaderibio.is/site/style.less",
+			"settings":
+			{
+				"buffer_size": 15430,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/LESS-build/LESS.sublime-build",
+	"command_palette":
+	{
+		"height": 67.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"IN",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 576.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/hugihlynsson/Web/hvaderibio.is/site/js/main.js",
+		"/Users/hugihlynsson/Downloads/peg-0.8.0.js",
+		"/Users/hugihlynsson/Downloads/Fluidbox-gh-pages/css/fluidbox.css",
+		"/Users/hugihlynsson/Downloads/Fluidbox-gh-pages/css/styles.css",
+		"/Users/hugihlynsson/Web/common/mixins.less",
+		"/Users/hugihlynsson/Web/hvaderibio.is/site/main.js",
+		"/Users/hugihlynsson/Web/hvaderibio.is/site/index.php",
+		"/Users/hugihlynsson/Web/hvaderibio.is/site/style.less",
+		"/Users/hugihlynsson/Web/apus/node_modules/angular/node_modules/jsdom/node_modules/htmlparser2/node_modules/domhandler/test/cases/01-basic.json",
+		"/Users/hugihlynsson/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/hugihlynsson/Documents/HI/2014  Vor/Hugbúnaðarverkefni 2/Git/nodejstest/public/core.js",
+		"/Users/hugihlynsson/Documents/HI/2014  Vor/Hugbúnaðarverkefni 2/Git/nodejstest/package.json",
+		"/Users/hugihlynsson/Documents/HI/2014  Vor/Hugbúnaðarverkefni 2/Git/nodejstest/server.js",
+		"/Users/hugihlynsson/Web/nodejstest/node_modules/angular/node_modules/jsdom/node_modules/cssstyle/lib/properties/webkitMarginStart.js",
+		"/Users/hugihlynsson/Web/nodejstest/node_modules/socket.io/node_modules/socket.io-client/node_modules/uglify-js/tmp/instrument.js",
+		"/Users/hugihlynsson/Web/nodejstest/node_modules/mongodb/lib/mongodb/commands/insert_command.js",
+		"/Users/hugihlynsson/Web/nodejstest/node_modules/nodemon/node_modules/update-notifier/node_modules/request/tests/test-follow-all.js",
+		"/Users/hugihlynsson/Web/nodejstest/node_modules/angular/node_modules/jsdom/node_modules/request/node_modules/form-data/node_modules/combined-stream/test/integration/test-is-stream-like.js",
+		"/usr/local/var/log/mongodb/mongo.log",
+		"/Users/hugihlynsson/Web/nodejstest/public/index.html",
+		"/Users/hugihlynsson/Web/nodejstest/server.js",
+		"/Users/hugihlynsson/Web/samferda.is/server.js",
+		"/Users/hugihlynsson/Web/nodejstest/package.json",
+		"/Users/hugihlynsson/Downloads/jquery-ui-1.10.4/README.md",
+		"/Users/hugihlynsson/Desktop/stuff.less",
+		"/Users/hugihlynsson/Web/railstest/app/models/micropost.rb",
+		"/Users/hugihlynsson/Web/railstest/app/models/user.rb",
+		"/Users/hugihlynsson/Web/railstest/Gemfile",
+		"/Users/hugihlynsson/Web/nodejstest/site/server.js",
+		"/Users/hugihlynsson/Downloads/Vodafone/vd/SMS_HISTORY.sql",
+		"/Users/hugihlynsson/Documents/Blizzard/StarCraft II/Saves/VersusAI/1 Very Easy - 1x1 - Burial Grounds.SC2Save",
+		"/Library/Fonts/ChalkboardSE.ttc",
+		"/Users/hugihlynsson/Library/Application Support/Sublime Text 3/Packages/User/less2css.sublime-settings",
+		"/Users/hugihlynsson/Library/Application Support/Sublime Text 3/Packages/Less2Css/less2css.sublime-settings",
+		"/Users/hugihlynsson/Library/Application Support/Sublime Text 3/Packages/Less2Css/README.md",
+		"/Users/hugihlynsson/Library/Application Support/Sublime Text 3/Packages/User/LESS.sublime-settings",
+		"/Users/hugihlynsson/Library/Application Support/Sublime Text 3/Packages/LESS/LESS.sublime-settings",
+		"/Users/hugihlynsson/Web/kjarninnapp.is/django/bookshelf/static/bookshelf/style.css",
+		"/Users/hugihlynsson/Web/kjarninnapp.is/django/bookshelf/static/bookshelf/script.js",
+		"/Users/hugihlynsson/Web/kjarninnapp.is/kjarninn/templates/admin/base_site.html",
+		"/Users/hugihlynsson/Web/kjarninnapp.is/kjarninn/bookshelf/admin.py",
+		"/Users/hugihlynsson/Web/kjarninnapp.is/kjarninn/bookshelf/models.py",
+		"/Users/hugihlynsson/Web/kjarninnapp.is/kjarninn/bookshelf/urls.py",
+		"/Users/hugihlynsson/Web/kjarninnapp.is/kjarninn/kjarninn/urls.py",
+		"/Users/hugihlynsson/Web/kjarninnapp.is/kjarninn/bookshelf/templates/bookshelf/index.html",
+		"/Users/hugihlynsson/Web/kjarninnapp.is/kjarninn/bookshelf/views.py",
+		"/Users/hugihlynsson/Web/kjarninnapp.is/kjarninn/kjarninn/settings.py",
+		"/Users/hugihlynsson/Web/djangotest/django/polls/poll_detail.html",
+		"/Users/hugihlynsson/Desktop/islenska.txt",
+		"/Users/hugihlynsson/Library/Application Support/Sublime Text 3/Packages/JSHint Gutter/JSHint.sublime-settings",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Tölvuleikjaforritun TÖL308/Tetris/site/menu.js",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Tölvuleikjaforritun TÖL308/Tetris/site/TETRIS.js",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Tölvuleikjaforritun TÖL308/Tetris/site/entityManager.js",
+		"/Users/hugihlynsson/Web/allterego.is/site/style.css",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Tölvuleikjaforritun TÖL308/V8 Asteroids/render.js",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Tölvuleikjaforritun TÖL308/V8 Asteroids/util.js",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Tölvuleikjaforritun TÖL308/Tetris/site/util.js",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Tölvuleikjaforritun TÖL308/Tetris/site/spatialManager.js",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Tölvuleikjaforritun TÖL308/Tetris/site/render.js",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Tölvuleikjaforritun TÖL308/Tetris/site/Brickunit.js",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Tölvuleikjaforritun TÖL308/Tetris/site/Brick.js",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Tölvuleikjaforritun TÖL308/Tetris/site/Board.js",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Tölvuleikjaforritun TÖL308/Tetris/site/Entity.js",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Tölvuleikjaforritun TÖL308/Tetris/site/brick.js",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 5/site/index.php",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 5/site/functions.php",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 5/site/add-event.php",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 5/site/main.js",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 5/site/style.less",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 5/site/index.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 5/style.less",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 4/site/movies.json",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 4/site/main.js",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 4/site/style.less",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 4/site/manifest.appcache",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 3/site/style.less",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 4/site/index.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 4/site/details/tt0017136.json",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 4/localstorage.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 1/index.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 4/ajax.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 3/site/vanilla.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 3/site/jquery.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 3/site/script.js",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 3/site/scriptJquery.js",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 3/demo/demo.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 3/demo/style.less",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 3/site/demo.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 3/site/index.html",
+		"/Users/hugihlynsson/Documents/Web/hugihlynsson.com/hh.com 5.0/index.html",
+		"/Users/hugihlynsson/Web/arnorb.github.io/CNAME",
+		"/Users/hugihlynsson/Web/arnorb.github.io/styles.css",
+		"/Users/hugihlynsson/Web/arnorb.github.io/index.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Tölvuleikjaforritun TÖL308/V3/main.js",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Tölvuleikjaforritun TÖL308/V2/main.js",
+		"/Users/hugihlynsson/Web/leikstjorar.is/site/wp-config.php",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 2/site/style.less",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 2/site/index.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Tölvuleikjaforritun TÖL308/V3/index.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Hugbunadarverkefni HBV501/HBV1/linkar.txt",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Hugbunadarverkefni HBV501/RestaurantFinder/AndroidManifest.xml",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Hugbunadarverkefni HBV501/RestaurantFinder/res/layout/review_criteria.xml",
+		"/Users/hugihlynsson/Web/test/site/style.less",
+		"/Users/hugihlynsson/Web/test/site/index.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Tölvuleikjaforritun TÖL308/V2/index.html",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Tölvuleikjaforritun TÖL308/V1/v1.js",
+		"/Users/hugihlynsson/Web/gunnarhelgi.is/site/wp-content/themes/bluefin/front-page.php",
+		"/Users/hugihlynsson/Web/gunnarhelgi.is/site/wp-content/themes/bluefin/index.php",
+		"/Users/hugihlynsson/Web/gunnarhelgi.is/site/wp-content/themes/bluefin/recipe.php",
+		"/Users/hugihlynsson/Web/gunnarhelgi.is/site/wp-content/themes/bluefin/style.css",
+		"/Users/hugihlynsson/Web/gunnarhelgi.is/site/wp-content/plugins/someplugin.php",
+		"/Users/hugihlynsson/Downloads/Torrents/Sketch_2.2.4/sketch_keyfilemaker.txt",
+		"/Users/hugihlynsson/Downloads/Torrents/Sketch_2.2.4/sketch_keyfilemaker.md",
+		"/Users/hugihlynsson/Downloads/Torrents/Sketch_2.2.4/sketch_keyfilemaker",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Hugbúnaðarverkefni HBV501/HBV1/base.txt",
+		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 1/style.less",
+		"/Users/hugihlynsson/Web/bulsur.is/wordpress/.htaccess",
+		"/Users/hugihlynsson/Web/wordpress/themeBase/index.php",
+		"/Users/hugihlynsson/Web/wordpress/themeBase/style.less",
+		"/Users/hugihlynsson/Documents/Web/juliarunolfs.com/jr.com v.5/5.1/style.less",
+		"/Users/hugihlynsson/Documents/Web/juliarunolfs.com/jr.com v.5/5.1/mixins.less",
+		"/Users/hugihlynsson/Web/leiguvaktin.is/site/style.less",
+		"/Users/hugihlynsson/Web/leiguvaktin.is/site/index.html",
+		"/Users/hugihlynsson/Desktop/index.html",
+		"/Users/hugihlynsson/Desktop/bordergradient.html"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 95.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			".two-col",
+			".after-clear();",
+			".filters",
+			"fluidb",
+			"img",
+			"overflow",
+			"overflow: hidden",
+			"overflow",
+			"img",
+			"160px",
+			"img",
+			".more",
+			"backgroundColor",
+			"darkerFormBgColor",
+			"#",
+			"#000",
+			".place-filter",
+			".filters-wrap",
+			"@borderRadius",
+			"checkIfAllToggled",
+			"placeFil",
+			".place-filter",
+			".place-",
+			"initPlaceFilter",
+			"activateF",
+			"console",
+			"console.log",
+			"consoel.log",
+			"reset",
+			"echo",
+			"3",
+			"text",
+			"input-box",
+			"4",
+			"xs",
+			"('./",
+			"time",
+			"\n		<link rel=\"stylesheet\" href=\"style.css\">",
+			"time",
+			".range ",
+			"from-time",
+			"\"",
+			"ga",
+			"title",
+			"about",
+			"validateForm",
+			"\"",
+			"adjustSi",
+			"$('#error')",
+			"$(this)",
+			"$('nav')",
+			"name",
+			"console",
+			".employee",
+			"header ",
+			".tilewrap",
+			".transi",
+			"article",
+			"proxima",
+			"0",
+			"box-siz",
+			".content",
+			".topwrap",
+			"json",
+			"DJANGO_SETTINGS_MODULE",
+			"\"",
+			"version",
+			"latest_version_list",
+			"p",
+			"Field",
+			"version",
+			"TEMPLATE_CONTEXT_PROCESSORS",
+			"poll_id",
+			" poll_id",
+			"entityManager",
+			"max",
+			"time",
+			"style",
+			"getN",
+			"color",
+			"fillText",
+			"fillBox",
+			"rotate",
+			"render",
+			"_block.posX",
+			"_block.posY",
+			"_block.color",
+			"_block.form",
+			"_blockForms",
+			"init",
+			"create",
+			"entityManager",
+			"new",
+			"_setActiveBlock",
+			"formName",
+			"new Bl",
+			"_blockForms",
+			"=== 1",
+			"KEY",
+			"checkForLine",
+			"outOfBounds",
+			"removeLine",
+			"console.lo",
+			"getWidth()",
+			"getHeight()",
+			"getHeight",
+			"getWidth",
+			"getHeight()",
+			"getWidth()",
+			"getHeight()",
+			"nextField",
+			"javasscript",
+			"_setActiveBlock",
+			"_blockSize",
+			"_size",
+			"eas",
+			"doEase",
+			"new Block",
+			"rotate",
+			"KEY_ROTATE",
+			"getWidth",
+			"_y",
+			"_x",
+			"_nudgeBricks",
+			"_stickBrick",
+			"collidesWith",
+			"keyControl",
+			"getBottom"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"@radius",
+			".top",
+			"'",
+			"fieldManager",
+			"_column",
+			"_row",
+			"_outOfBounds",
+			"_rows",
+			"_columns",
+			"_rows",
+			"_columns",
+			"_rows",
+			"_unitSize",
+			"openArticleExtra",
+			"closeArticleExtra",
+			".rating",
+			"warningColor",
+			".marked",
+			".extra",
+			".mark",
+			"font-size: 16/18em;",
+			"input-box"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/hugihlynsson/Web/hvaderibio.is/site/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7386,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+						},
+						"translation.x": 0.0,
+						"translation.y": 794.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/hugihlynsson/Web/hvaderibio.is/site/style.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15430,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2182,
+								2182
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1822.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 108.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "Hvað er í bíó.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 217.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
