@@ -1,11 +1,18 @@
 'use strict';
 
-var http = require('http');
+var express = require('express');
+var app = express();
 
-var server = http.createServer(function(req, res) {
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.end('<!doctype html><html><head><meta charset="UTF-8"></head><body><h1>Hvað er í bíó?</h1></body></html>');
+app.use(express.static(__dirname + '/public'));
+app.use(express.errorHandler());
+
+app.set('view engine', 'jade');
+
+var movies = { results: ['A', 'B', 'C'] };
+
+app.get('*', function(req, res) {
+    res.render('index', { movies: movies });
 });
 
-server.listen(8000);
+app.listen(8000);
 console.log('Running server at port 8000');
