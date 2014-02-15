@@ -1,6 +1,119 @@
 doctype html
 html(lang="is")
     head
-        title="Hvað er í bíó?"
+        meta(charset="UTF-8")
+        title Hvað er í bíó?
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(name="apple-mobile-web-app-capable" content="yes")
+
+        meta(name="description" content="Hvað er í bíó er fljótlegt yfirlit yfir bíódagskrá kvöldsins á öllu landinu og leyfir þér að ráða tíma, bíóhúsi og lágmarkseinkun.")
+        meta(property="og:title" content="Hvað er í bíó?")
+        meta(property="og:site_name" content="Hvað er í bíó?")
+        meta(property="og:type" content="website")
+        meta(property="og:url" content="http://www.hvaderibio.is")
+        meta(property="og:image" content="http://www.hvaderibio.is/images/icon-512x512.png")
+        meta(property="og:description" content="Hvað er í bíó gefur þér fljótlegt yfirlit yfir bíódagskrá kvöldsins og leyfir þér að ráða tíma, bíóhúsi og lágmarkseinkun.")
+
+        link(rel="apple-touch-icon" sizes="60x60"  href="images/apple-touch-icon-60x60.png")
+        link(rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png")
+        link(rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png")
+        link(rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-156x156.png")
+        link(rel="shortcut icon" sizes="16x16" href="images/icon-16x16.png")
+        link(rel="shortcut icon" sizes="32x32" href="images/icon-32x32.png")
+        link(rel="shortcut icon" sizes="128x128" href="images/icon-128x128.png")
+        link(rel="shortcut icon" sizes="196x196" href="images/icon-196x196.png")
+
+        link(rel="stylesheet" href="main.css")
+
+        script.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-20956924-4', 'hvaderibio.is');
+            ga('send', 'pageview');
+
+        script(type="text/javascript" src="//use.typekit.net/kkk7ayb.js")
+        script(type="text/javascript") try{Typekit.load();}catch(e){}
     body
-        h1 Hvað er í bíó
+        h1 Hvað er í bíó?
+        p.subtitle Þessar myndir eru sýndar í dag, dagsetning
+
+        div.filters
+            div.filters-wrap
+                div.two-col
+                    div.input-box.time-range
+                        label(for="from-time") Frá
+                        div.range-wrap
+                            span.range-mark.from 00:00
+                            div.range
+                                input#from-time(type="range" min="0" max="24" step="0.25" name="from-time" value="0")
+                                output(for="from-time") 0
+
+                            span.range-mark.to 24:00
+
+
+                    div.input-box.time-range
+                        label(for="to-time") Til
+                        div.range-wrap
+                            span.range-mark.from 00:00
+                            div.range
+                                input#to-time(type="range" min="0" max="24" step="0.25" name="to-time" value="24")
+                                output(for="to-time") 24
+
+                            span.range-mark.to 24:00
+
+
+
+                div.two-col
+                    div.input-box.rating-range
+                        label(for="rating-range") Einkunn
+                        div.range-wrap
+                            span.range-mark.from 0
+                            div.range
+                                input#rating-range(type="range" min="0" max="10" step="0.1" name="rating-range" value="0")
+                                output(for="rating-range") 24
+
+                            span.range-mark.to 10
+
+
+                    div.input-box.text-filter
+                        label(for="text-filter") Heiti
+                        input#text-filter(type="text" placeholder="Pulp Fiction")
+
+
+
+            div.filters-wrap.place-filter.capital.toggled
+                h2: a(href="#") Höfuðborgarsvæðið
+                ul
+
+            div.filters-wrap.place-filter.rural
+                h2: a(href="#") Landsbyggðin
+                ul
+
+        div.movies-wrap
+            each movie in movies.results
+                article.movie(data-id=movie.title)
+                    header
+                        if movie.imdb
+                            a.rating(href=movie.imdbLink)
+                                =movie.imdb
+                                span IMDb
+                                div.info með votes
+                        h2= movie.title
+                            if movie.restricted
+                                i= movie.restricted
+                    a.more(href="#") Sjá meira
+                    aside.extra
+                        a.fluidbox(href="#" data-fluidbox)
+                            img(src=movie.image alt="Plakat fyrir mynd")
+                        div.content
+                            each place in movie.showtimes
+                                div.showplace(data-place=place.theater)
+                                    h3= place.theater
+                                    ul
+                                        each time in place.schedule
+                                            li(data-time=time)= time
+
+
+        script(src="main.js")

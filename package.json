@@ -7,6 +7,26 @@
     "email": "hugihlynsson@gmail.com",
     "url": "http://hugihlynsson.com"
   },
+  "dependencies": {
+    "express": "~3.4.8",
+    "jade": "~1.1.5",
+    "bower": "~1.2.8",
+    "request": "~2.33.0"
+  },
+  "devDependencies": {
+    "gulp": "~3.5.2",
+    "gulp-livereload": "~1.1.1",
+    "gulp-minify-css": "~0.3.0",
+    "gulp-less": "~1.2.1",
+    "tiny-lr": "0.0.5",
+    "gulp-notify": "~0.5.0",
+    "gulp-jshint": "~1.4.2",
+    "gulp-concat": "~2.1.7",
+    "gulp-uglify": "~0.2.1"
+  },
+  "scripts": {
+    "start": "gulp"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/hugihlynsson/Hva--er-i--bi-o-"
@@ -15,9 +35,5 @@
     "node": "~0.10.25"
   },
   "homepage": "http://www.hvaderibio.is",
-  "private": true,
-  "dependencies": {
-    "express": "~3.4.8",
-    "jade": "~1.1.5"
-  }
+  "private": true
 }
