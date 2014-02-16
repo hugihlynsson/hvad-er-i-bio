@@ -6,7 +6,7 @@
 
 // Change number with point (20.5) to human readable string (20:30):
 var numToTime = function (number) {
-	var parts = number.split('.');
+	var parts = number.toString().split('.');
 	if (parts.length === 1 || parseInt(parts[1], 10) === 0) return number + ':00';
 	var minutes = Math.round(parseFloat('0.' + parts[1])*60).toString();
 	if (minutes.length === 1) minutes = '0' + minutes;
@@ -16,7 +16,7 @@ var numToTime = function (number) {
 
 // Change human readable (20:30) time to number with point (20.5) as string:
 var timeToNum = function (time) {
-	var parts = time.split(':');
+	var parts = time.toString().split(':');
 	return parts[0] + (parseInt(parts[1], 10)/60 + '').substring(1);
 };
 
@@ -65,56 +65,6 @@ var throttle = function(func, wait, immediate) {
 //
 
 
-// ======== BASE STUFF ========
-
-// An object containing all info for the filtering:
-var movies = {};
-var places = {};
-
-// Mark movies with highest and lowest showtimes:
-var populateMoviesObject = function () {
-
-	movies.lowestShowtime = 24;
-	movies.highestShowtime = 0;
-	movies.titles = {};
-	// Populate the 'movies' with movies:
-	$('.movie').each(function () {
-		movies.hasMovies = true;
-		var movieElm = $(this);
-		var id = movieElm.data('id');
-		movies.titles[id] = {};
-		var movie = movies.titles[id];
-		movie.isFiltered = false;
-		var rating = parseFloat(movieElm.find('.rating').text().split('Ein')[0]);
-		movie.rating = (rating !== '') ? rating : '10';
-		movie.places = {};
-
-		// For each movie object, add the showplaces:
-		movieElm.find('.showplace').each(function () {
-			var placeElm = $(this);
-			var placeStr = placeElm.data('place');
-			if (!(placeStr in places)) places[placeStr] = true;
-			movie.places[placeStr] = {};
-			var place = movie.places[placeStr];
-
-			// For each showplace array, add the time:
-			placeElm.find('li').each(function () {
-				var time = timeToNum($(this).data('time'));
-				place[time] = 'visible';
-
-				// Recalculate lowest and highest showtime:
-				if (time < movies.lowestShowtime) movies.lowestShowtime = time;
-				if (time > movies.highestShowtime) movies.highestShowtime = time;
-			});
-		});
-	});
-
-	// Make lowest and hightst showime be a quarter:
-	movies.lowestShowtime = (Math.floor(movies.lowestShowtime * 4) / 4).toString();
-	movies.highestShowtime = (Math.ceil(movies.highestShowtime * 4) / 4).toString();
-};
-
-
 // ======== FILTERING FUNCTIONS ========
 
 // Mark movies with highest and lowest showtimes:
@@ -156,7 +106,7 @@ var filterMoviesByPlace = function (placesAllowed) {
 		// Check if movie has any place that passes the filter:
 		var places = movies.titles[id].places;
 		for (var place in places) {
-			if (place in placesAllowed) {
+			if (placesAllowed.indexOf(place) >= 0) {
 				hasPlace = true;
 				break;
 			}
@@ -181,6 +131,14 @@ var filterMovies = function () {
 		movies.titles[id].isFiltered = false;
 	}
 
+	var getToggledPlaces = function () {
+		var places = [];
+		$('.place-filter li.toggled').each(function () {
+			places.push($(this).text());
+		});
+		return places;
+	};
+
 	// Now apply the filters:
 	filterMoviesByTime($('#from-time').val(), $('#to-time').val());
 	filterMoviesByRating($('#rating-range').val());
@@ -202,7 +160,7 @@ var filterMovies = function () {
 			movieElm.find('.showplace').each(function () {
 				var place = $(this).data('place');
 				$(this).find('li').each(function () {
-					var time = timeToNum($(this).data('time'));
+					var time = $(this).data('time');
 					if (movies.titles[id].places[place][time] === 'visible') {
 						$(this).removeClass('filtered');
 					}
@@ -242,14 +200,18 @@ var filterMovies = function () {
 var resetFilters = function () {
 
 	// Reset input filters to widest possitble:
-	$('#from-time').val(movies.lowestShowtime);
-	$('#to-time').val(movies.highestShowtime);
-	$('#rating-range').val('0');
-	$('#text-filter').val('');
+	var fromTime = $('#from-time');
+	var toTime = $('#to-time');
+	fromTime.val(fromTime.attr('min'));
+	toTime.val(toTime.attr('max'));
 	updateTimeRangeMarks();
+
 	var ratingRange = $('#rating-range');
+	ratingRange.val('0');
 	updateRangemark(ratingRange);
 	ratingRange.next('output').text('0');
+
+	$('#text-filter').val('');
 
 	// Reset place filters to all capital:
 	$('.place-filter.capital li').each(function () { $(this).addClass('toggled'); });
@@ -264,40 +226,13 @@ var throttleMovieFilter = throttle(filterMovies, 100);
 // ======== FILTER INITIATION ========
 
 var limitTimeRange = function() {
-
-	if (movies.hasMovies) {
-		// Set min and max time values:
-		$('#to-time, #from-time').attr('min', movies.lowestShowtime);
-		$('#to-time, #from-time').attr('max', movies.highestShowtime);
-
-		// Set from value to current time:
-		var timeNow = timeToNum(new Date().getHours() + ':' + new Date().getMinutes());
-		if (timeNow > movies.highestShowtime) timeNow = movies.lowestShowtime;
+	// Set from value to current time:
+	var timeNow = timeToNum(new Date().getHours() + ':' + new Date().getMinutes());
+	if (timeNow < $('#from-time').attr('max'))
 		$('#from-time').attr('value', timeNow);
-
-		// Update marks on range ends:
-		$('.time-range .from').text(numToTime(movies.lowestShowtime));
-		$('.time-range .to').text(numToTime(movies.highestShowtime));
-	}
-	else {
-		$('#to-time, #from-time').attr('min', 12);
-		$('#to-time, #from-time').attr('max', 24);
-		$('.time-range .from').text('12:00');
-		$('.time-range .to').text('24:00');
-	}
-
 };
 
 var initPlaceFilter = function () {
-	var knownCapitalPlaces = ['Sambíóin Álfabakka', 'Sambíóin Egilshöll', 'Háskólabíó', 'Laugarásbíó', 'Sambíóin Kringlunni', 'Smárabíó', 'Bíó Paradís'];
-	var capitalList = $('.place-filter.capital ul');
-	var ruralList = $('.place-filter.rural ul');
-
-	for (var place in places) {
-		var placeLi = $('<li>' +  place + '</li>');
-		if (knownCapitalPlaces.indexOf(place) >= 0) capitalList.append(placeLi.addClass('toggled'));
-		else ruralList.append(placeLi);
-	}
 
 	$('.place-filter li').on('click', function () {
 		var placeFilter = $(this).closest('.place-filter');
@@ -332,16 +267,6 @@ var initPlaceFilter = function () {
 	$('.place-filter').each(function() {
 		allPlacesAreToggled($(this));
 	});
-};
-
-var getToggledPlaces = function () {
-	var places = {};
-	$('.place-filter li').each(function () {
-		if ($(this).is('.toggled')) {
-			places[$(this).text()] = true;
-		}
-	});
-	return places;
 };
 
 var updateRangemark = function (range) {
@@ -391,6 +316,7 @@ var activateRangeSliders = function () {
 		range.next('output').text(range.val());
 	}).trigger('change');
 
+	// On resize, recalculate rangemark positions:
 	$(window).on('resize', function () {
 		$('input[type="range"]').each(function () {
 			updateRangemark($(this));
@@ -481,7 +407,7 @@ var enableAnalyticEventTracking = function () {
 // ========================= INITIALIZATION ============================
 //
 
-populateMoviesObject();
+// populateMoviesObject();
 activateFilters();
 activateMoreToggle();
 enableAnalyticEventTracking();

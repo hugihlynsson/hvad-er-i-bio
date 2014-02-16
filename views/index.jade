@@ -37,7 +37,7 @@ html(lang="is")
         script(type="text/javascript") try{Typekit.load();}catch(e){}
     body
         h1 Hvað er í bíó?
-        p.subtitle Þessar myndir eru sýndar í dag, dagsetning
+        p.subtitle Þessar myndir eru sýndar í dag, #{movies.date}
 
         div.filters
             div.filters-wrap
@@ -45,23 +45,23 @@ html(lang="is")
                     div.input-box.time-range
                         label(for="from-time") Frá
                         div.range-wrap
-                            span.range-mark.from 00:00
+                            span.range-mark.from= movies.lowestShowtime.human
                             div.range
-                                input#from-time(type="range" min="0" max="24" step="0.25" name="from-time" value="0")
-                                output(for="from-time") 0
+                                input#from-time(type="range" min=movies.lowestShowtime.number max=movies.highestShowtime.number step="0.25" name="from-time" value=movies.lowestShowtime.number)
+                                output(for="from-time")= movies.lowestShowtime.human
 
-                            span.range-mark.to 24:00
+                            span.range-mark.to= movies.highestShowtime.human
 
 
                     div.input-box.time-range
                         label(for="to-time") Til
                         div.range-wrap
-                            span.range-mark.from 00:00
+                            span.range-mark.from= movies.lowestShowtime.human
                             div.range
-                                input#to-time(type="range" min="0" max="24" step="0.25" name="to-time" value="24")
-                                output(for="to-time") 24
+                                input#to-time(type="range" min=movies.lowestShowtime.number max=movies.highestShowtime.number step="0.25" name="to-time" value=movies.highestShowtime.number)
+                                output(for="to-time")= movies.highestShowtime.human
 
-                            span.range-mark.to 24:00
+                            span.range-mark.to= movies.highestShowtime.human
 
 
 
@@ -72,7 +72,7 @@ html(lang="is")
                             span.range-mark.from 0
                             div.range
                                 input#rating-range(type="range" min="0" max="10" step="0.1" name="rating-range" value="0")
-                                output(for="rating-range") 24
+                                output(for="rating-range") 0
 
                             span.range-mark.to 10
 
@@ -86,34 +86,46 @@ html(lang="is")
             div.filters-wrap.place-filter.capital.toggled
                 h2: a(href="#") Höfuðborgarsvæðið
                 ul
+                    each place in movies.capitalPlaces
+                        li.toggled= place
 
             div.filters-wrap.place-filter.rural
                 h2: a(href="#") Landsbyggðin
                 ul
+                    each place in movies.ruralPlaces
+                        li= place
 
         div.movies-wrap
-            each movie in movies.results
+            each movie in movies.titles
                 article.movie(data-id=movie.title)
                     header
-                        if movie.imdb
-                            a.rating(href=movie.imdbLink)
-                                =movie.imdb
+                        if movie.rating
+                            a.rating(href=movie.imdbUrl)
+                                =movie.rating
                                 span IMDb
-                                div.info með votes
+                                div.info með #{movie.votes} atkv.
                         h2= movie.title
-                            if movie.restricted
-                                i= movie.restricted
+                            if movie.restriction === '16 ára'
+                                i.warning= movie.restriction
+                            if movie.restriction === '12 ára'
+                                i.light-warning= movie.restriction
+                            if movie.restriction === '7 ára'
+                                i.light-warning= movie.restriction
+                            if movie.restriction === 'Öllum leyfð'
+                                i= movie.restriction
                     a.more(href="#") Sjá meira
                     aside.extra
                         a.fluidbox(href="#" data-fluidbox)
-                            img(src=movie.image alt="Plakat fyrir mynd")
+                            img(src=movie.imgUrl alt="Plakat fyrir #{movie.title}")
                         div.content
-                            each place in movie.showtimes
+                            each place in movie.shows
                                 div.showplace(data-place=place.theater)
                                     h3= place.theater
                                     ul
-                                        each time in place.schedule
-                                            li(data-time=time)= time
+                                        each time in place.times
+                                            li(data-time=time.number)= time.human
 
+        footer Verkefni eftir <a href="http://www.hugihlynsson.com/">Huga Hlynsson</a> - <a href="mailto:hugihlynsson@gmail.com">hugihlynsson@gmail.com</a> með gögnum frá <a href="http://kvikmyndir.is">kvikmyndir.is</a> í gengum <a href="http://docs.apis.is/#endpoint-cinema">{apis.is}</a>.
 
+        script movies = !{JSON.stringify(data)};
         script(src="main.js")

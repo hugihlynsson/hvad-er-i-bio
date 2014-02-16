@@ -9,21 +9,162 @@ app.use(express.errorHandler());
 
 app.set('view engine', 'jade');
 
-var movies = {};
 
-request.get('http://apis.is/cinema', function (err, res, body) {
-    if (!err) {
-        movies = JSON.parse(body);
-    }
-    else {
-        console.log(err);
-    }
-});
+/**
+ * Functions for app:
+ */
 
-var movies = {"results":[{"title":"Nymphomaniac","released":"2013","restricted":"16 Ã¡ra","imdb":"7.6/10  6,093 atkv.","imdbLink":"http://www.imdb.com/title/tt1937390","image":"http://kvikmyndir.is/images/poster/8213_500.jpg","showtimes":[{"theater":"HÃ¡skÃ³labÃ­Ã³","schedule":["15:00","17:30","20:00","22:30"]},{"theater":"BorgarbÃ­Ã³","schedule":["20:00","22:15"]}]},{"title":"Out of the Furnace","released":"2013","restricted":"16 Ã¡ra","imdb":"7.0/10  19,527 atkv.","imdbLink":"http://www.imdb.com/title/tt1206543","image":"http://kvikmyndir.is/images/poster/8669_500.jpg","showtimes":[{"theater":"SambÃ­Ã³in Ãlfabakka","schedule":["17:40 (B)","20:00 (B)","22:20 (B)"]},{"theater":"SambÃ­Ã³in EgilshÃ¶ll","schedule":["20:00 (2)","22:25 (2)"]},{"theater":"SambÃ­Ã³in Akureyri","schedule":["22:20 (B)"]},{"theater":"SambÃ­Ã³in KeflavÃ­k","schedule":["22:10 (2)"]}]},{"title":"RoboCop","released":"2014","restricted":"12 Ã¡ra","imdb":"6.7/10  14,021 atkv.","imdbLink":"http://www.imdb.com/title/tt1234721","image":"http://kvikmyndir.is/images/poster/robocop_ver2-1385684467.jpg","showtimes":[{"theater":"SmÃ¡rabÃ­Ã³","schedule":["17:25","20:00 (LÃšX )","20:00","22:35","22:35 (LÃšX )"]},{"theater":"HÃ¡skÃ³labÃ­Ã³","schedule":["17:30","20:00","22:30"]},{"theater":"BorgarbÃ­Ã³","schedule":["20:00","22:15"]},{"theater":"LaugarÃ¡sbÃ­Ã³","schedule":["20:00","22:25"]}]},{"title":"The Lego Movie","released":"2014","restricted":"Ã–llum leyfÃ°","imdb":"8.6/10  17,186 atkv.","imdbLink":"http://www.imdb.com/title/tt1490017","image":"http://kvikmyndir.is/images/poster/lego_movie_ver9-1385684672.jpg","showtimes":[{"theater":"SmÃ¡rabÃ­Ã³","schedule":["13:00 (3D )","13:00 (3DLÃšX )","15:20 (3D )","15:20 (3DLÃšX )","17:40 (3DLÃšX )","17:40 (3D )","13:00","15:20","17:40"]},{"theater":"LaugarÃ¡sbÃ­Ã³","schedule":["13:50 (2D )","16:00 (2D )","13:50 (3D )","16:00 (3D )","18:00 (3D )"]},{"theater":"SambÃ­Ã³in Ãlfabakka","schedule":["13:30 (3)","13:30 (P)","13:30 (ÃSL TAL 1)","14:00 (3D ÃSL TAL A)","15:40 (3)","15:40 (P)","15:40 (ÃSL TAL 1)","16:10 (3D ÃSL TAL A)","17:50 (3)","17:50 (ÃSL TAL 1)","18:20 (3D ÃSL TAL A)","20:00 (1)","22:10 (1)"]},{"theater":"SambÃ­Ã³in Kringlunni","schedule":["13:30 (ÃSL TAL 1)","14:00 (3D ÃSL TAL 2)","15:40 (ÃSL TAL 1)","16:10 (3D ÃSL TAL 2)","17:50 (ÃSL TAL 1)","18:20 (3D ÃSL TAL 2)","22:40 (3)"]},{"theater":"SambÃ­Ã³in EgilshÃ¶ll","schedule":["13:00 (3D ÃSL TAL 1)","13:20 (ÃSL TAL 2)","15:20 (3D ÃSL TAL 1)","15:40 (ÃSL TAL 2)","17:50 (2)","17:50 (ÃSL TAL 4)"]},{"theater":"SambÃ­Ã³in Akureyri","schedule":["13:30 (3D ÃSL TAL A)","15:40 (3D ÃSL TAL A)","17:50 (B)","17:50 (3D ÃSL TAL A)","20:00 (B)"]},{"theater":"SambÃ­Ã³in KeflavÃ­k","schedule":["13:30 (3D ÃSL TAL 1)","15:40 (3D ÃSL TAL 1)","17:50 (2)","17:50 (3D ÃSL TAL 1)","20:00 (2)"]}]},{"title":"Inside Llewyn Davis","released":"2013","restricted":"Ã–llum leyfÃ°","imdb":"7.8/10  24,467 atkv.","imdbLink":"http://www.imdb.com/title/tt2042568","image":"http://kvikmyndir.is/images/poster/8725_500.jpg","showtimes":[{"theater":"HÃ¡skÃ³labÃ­Ã³","schedule":["17:40","20:00"]},{"theater":"BorgarbÃ­Ã³","schedule":["17:50"]}]},{"title":"LÃ­fsleikni Gillz","released":"2014","restricted":"12 Ã¡ra","imdb":"","imdbLink":"","image":"http://kvikmyndir.is/images/poster/gillz-1389740147.jpg","showtimes":[{"theater":"SambÃ­Ã³in Ãlfabakka","schedule":["17:40 (ÃSL TAL 2)","17:45 (ÃSL TAL P)","20:00 (ÃSL TAL P)","20:00 (ÃSL TAL 2)","22:20 (ÃSL TAL P)","22:20 (ÃSL TAL 2)"]},{"theater":"SambÃ­Ã³in Kringlunni","schedule":["20:00 (ÃSL TAL 1)","22:20 (ÃSL TAL 1)"]},{"theater":"SambÃ­Ã³in EgilshÃ¶ll","schedule":["17:40 (ÃSL TAL 1)","20:00 (ÃSL TAL 1)","22:20 (ÃSL TAL 1)"]},{"theater":"SambÃ­Ã³in Akureyri","schedule":["20:00 (ÃSL TAL A)","22:20 (ÃSL TAL A)"]},{"theater":"SambÃ­Ã³in KeflavÃ­k","schedule":["20:00 (ÃSL TAL 1)","22:20 (ÃSL TAL 1)"]}]},{"title":"JÃ³nsi og Riddarareglan","released":"2013","restricted":"Ã–llum leyfÃ°","imdb":"6.0/10  1,611 atkv.","imdbLink":"http://www.imdb.com/title/tt1639826","image":"http://kvikmyndir.is/images/poster/unnamed-1390849104.jpg","showtimes":[{"theater":"SambÃ­Ã³in Ãlfabakka","schedule":["13:30 (ÃSL TAL 2)","15:40 (ÃSL TAL 2)"]},{"theater":"SambÃ­Ã³in Kringlunni","schedule":["13:20 (ÃSL TAL 3)","15:20 (ÃSL TAL 3)"]},{"theater":"SambÃ­Ã³in EgilshÃ¶ll","schedule":["13:00 (ÃSL TAL 4)","15:20 (ÃSL TAL 4)"]},{"theater":"SambÃ­Ã³in Akureyri","schedule":["13:30 (ÃSL TAL B)"]},{"theater":"SambÃ­Ã³in KeflavÃ­k","schedule":["13:30 (ÃSL TAL 2)"]}]},{"title":"Dallas Buyers Club","released":"2013","restricted":"12 Ã¡ra","imdb":"8.0/10  58,451 atkv.","imdbLink":"http://www.imdb.com/title/tt0790636","image":"http://kvikmyndir.is/images/poster/8719_500.jpg","showtimes":[{"theater":"HÃ¡skÃ³labÃ­Ã³","schedule":["22:30"]},{"theater":"BorgarbÃ­Ã³","schedule":["17:50"]},{"theater":"LaugarÃ¡sbÃ­Ã³","schedule":["17:45","20:00","22:20"]}]},{"title":"Grudge Match","released":"2013","restricted":"12 Ã¡ra","imdb":"6.7/10  8,952 atkv.","imdbLink":"http://www.imdb.com/title/tt1661382","image":"http://kvikmyndir.is/images/poster/grudge_match_ver7-1385684332.jpg","showtimes":[{"theater":"SambÃ­Ã³in EgilshÃ¶ll","schedule":["22:20 (4)"]}]},{"title":"Her","released":"2013","restricted":"Ã–llum leyfÃ°","imdb":"8.4/10  60,239 atkv.","imdbLink":"http://www.imdb.com/title/tt1798709","image":"http://kvikmyndir.is/images/poster/8777_500.jpg","showtimes":[{"theater":"SmÃ¡rabÃ­Ã³","schedule":["20:00","22:30"]}]},{"title":"August: Osage County","released":"2013","restricted":"12 Ã¡ra","imdb":"7.4/10  17,327 atkv.","imdbLink":"http://www.imdb.com/title/tt1322269","image":"http://kvikmyndir.is/images/poster/august_osage_county_ver2-1385684224.jpg","showtimes":[{"theater":"HÃ¡skÃ³labÃ­Ã³","schedule":["18:00"]}]},{"title":"Jack Ryan: Shadow Recruit","released":"2013","restricted":"12 Ã¡ra","imdb":"6.5/10  14,217 atkv.","imdbLink":"http://www.imdb.com/title/tt1205537","image":"http://kvikmyndir.is/images/poster/8425_500.jpg","showtimes":[{"theater":"SambÃ­Ã³in Ãlfabakka","schedule":["22:20 (3)"]},{"theater":"SambÃ­Ã³in EgilshÃ¶ll","schedule":["20:00 (4)"]}]},{"title":"Last Vegas","released":"2013","restricted":"12 Ã¡ra","imdb":"6.7/10  43,078 atkv.","imdbLink":"http://www.imdb.com/title/tt1204975","image":"http://kvikmyndir.is/images/poster/8319_500.jpg","showtimes":[{"theater":"SambÃ­Ã³in Ãlfabakka","schedule":["20:00 (3)"]},{"theater":"SambÃ­Ã³in EgilshÃ¶ll","schedule":["17:40 (3)","20:00 (3)"]}]},{"title":"The Book Thief","released":"2013","restricted":"12 Ã¡ra","imdb":"7.7/10  15,752 atkv.","imdbLink":"http://www.imdb.com/title/tt0816442","image":"http://kvikmyndir.is/images/poster/book_thief_ver2-1385684482.jpg","showtimes":[{"theater":"HÃ¡skÃ³labÃ­Ã³","schedule":["15:00","21:00"]}]},{"title":"Young and Beautiful","released":"2013","restricted":"16 Ã¡ra","imdb":"7.0/10  4,955 atkv.","imdbLink":"http://www.imdb.com/title/tt2752200","image":"http://kvikmyndir.is/images/poster/9059_500.jpg","showtimes":[{"theater":"BÃ­Ã³ ParadÃ­s","schedule":["20:00"]}]},{"title":"12 Years a Slave","released":"2013","restricted":"16 Ã¡ra","imdb":"8.4/10  86,421 atkv.","imdbLink":"http://www.imdb.com/title/tt2024544","image":"http://kvikmyndir.is/images/poster/12-years-a-slave-poster-1373932047.jpg","showtimes":[{"theater":"SambÃ­Ã³in Kringlunni","schedule":["17:20 (3)","20:00 (3)"]}]},{"title":"47 Ronin","released":"2013","restricted":"12 Ã¡ra","imdb":"6.6/10  24,322 atkv.","imdbLink":"http://www.imdb.com/title/tt1335975","image":"http://kvikmyndir.is/images/poster/forty_seven_ronin_ver7-1385684283.jpg","showtimes":[{"theater":"LaugarÃ¡sbÃ­Ã³","schedule":["22:30 (3D )"]}]},{"title":"Cloudy with a Chance of Meatballs 2","released":"2013","restricted":"Ã–llum leyfÃ°","imdb":"6.5/10  22,853 atkv.","imdbLink":"http://www.imdb.com/title/tt1985966","image":"http://kvikmyndir.is/images/poster/8318_500.jpg","showtimes":[{"theater":"SmÃ¡rabÃ­Ã³","schedule":["13:00","15:10","13:00 (3D )","15:10 (3D )"]},{"theater":"HÃ¡skÃ³labÃ­Ã³","schedule":["15:20 (3D )","15:20"]},{"theater":"BorgarbÃ­Ã³","schedule":["15:50 (2D )","15:50 (3D )"]},{"theater":"LaugarÃ¡sbÃ­Ã³","schedule":["13:45 (2D )","15:45 (2D )","18:00 (2D )"]},{"theater":"SambÃ­Ã³in KeflavÃ­k","schedule":["15:40 (3D ÃSL TAL 2)"]}]},{"title":"Venus Ã­ feldi","released":"2013","restricted":"7 Ã¡ra","imdb":"7.5/10  1,545 atkv.","imdbLink":"http://www.imdb.com/title/tt2406252","image":"http://kvikmyndir.is/images/poster/9052_500.jpg","showtimes":[{"theater":"BÃ­Ã³ ParadÃ­s","schedule":["18:00"]}]},{"title":"American Hustle","released":"2013","restricted":"12 Ã¡ra","imdb":"7.6/10  112,826 atkv.","imdbLink":"http://www.imdb.com/title/tt1800241","image":"http://kvikmyndir.is/images/poster/8710_500.jpg","showtimes":[{"theater":"SambÃ­Ã³in Ãlfabakka","schedule":["20:30 (A)"]},{"theater":"SambÃ­Ã³in EgilshÃ¶ll","schedule":["22:15 (3)"]}]},{"title":"Borgman","released":"2013","restricted":"16 Ã¡ra","imdb":"7.1/10  2,104 atkv.","imdbLink":"http://www.imdb.com/title/tt1954315","image":"http://kvikmyndir.is/images/poster/9045_500.jpg","showtimes":[{"theater":"BÃ­Ã³ ParadÃ­s","schedule":["22:00"]}]},{"title":"The Secret Life of Walter Mitty","released":"2013","restricted":"7 Ã¡ra","imdb":"7.5/10  67,498 atkv.","imdbLink":"http://www.imdb.com/title/tt0359950","image":"http://kvikmyndir.is/images/poster/secret_life_of_walter_mitty_ver8-1385683792.jpg","showtimes":[{"theater":"SmÃ¡rabÃ­Ã³","schedule":["20:00","22:30"]},{"theater":"LaugarÃ¡sbÃ­Ã³","schedule":["20:00"]}]},{"title":"The Hobbit: The Desolation of Smaug","released":"2013","restricted":"12 Ã¡ra","imdb":"8.2/10  215,228 atkv.","imdbLink":"http://www.imdb.com/title/tt1170358","image":"http://kvikmyndir.is/images/poster/hobbit_the_desolation_of_smaug_ver15-1385683758.jpg","showtimes":[{"theater":"SmÃ¡rabÃ­Ã³","schedule":["17:40 (3D )","21:00 (3D )"]}]},{"title":"The Wolf of Wall Street","released":"2013","restricted":"16 Ã¡ra","imdb":"8.5/10  208,321 atkv.","imdbLink":"http://www.imdb.com/title/tt0993846","image":"http://kvikmyndir.is/images/poster/8581_500.jpg","showtimes":[{"theater":"SambÃ­Ã³in Kringlunni","schedule":["20:30 (2)"]}]},{"title":"I'm So Excited!","released":"2013","restricted":"16 Ã¡ra","imdb":"5.7/10  10,261 atkv.","imdbLink":"http://www.imdb.com/title/tt2243389","image":"http://kvikmyndir.is/images/poster/9033_500.jpg","showtimes":[{"theater":"BÃ­Ã³ ParadÃ­s","schedule":["18:00"]}]},{"title":"Frozen","released":"2013","restricted":"Ã–llum leyfÃ°","imdb":"8.1/10  103,292 atkv.","imdbLink":"http://www.imdb.com/title/tt2294629","image":"http://kvikmyndir.is/images/poster/frozen-1386619849.jpg","showtimes":[{"theater":"SambÃ­Ã³in Ãlfabakka","schedule":["13:00 (ÃSL TAL B)","15:20 (ÃSL TAL B)"]},{"theater":"SambÃ­Ã³in EgilshÃ¶ll","schedule":["13:00 (ÃSL TAL 3)","15:20 (ÃSL TAL 3)"]},{"theater":"SambÃ­Ã³in Akureyri","schedule":["15:40 (ÃSL TAL B)"]}]},{"title":"Gravity","released":"2013","restricted":"12 Ã¡ra","imdb":"8.2/10  282,063 atkv.","imdbLink":"http://www.imdb.com/title/tt1454468","image":"http://kvikmyndir.is/images/poster/7743_500.jpg","showtimes":[{"theater":"BÃ­Ã³ ParadÃ­s","schedule":["16:00 (3D )"]}]},{"title":"Eddu stuttmyndir: Heilabrotinn / HvalfjÃ¶rÃ°ur / VÃ­kingar","released":"2013","restricted":"Ã–llum leyfÃ°","imdb":"8.1/10  41 atkv.","imdbLink":"http://www.imdb.com/title/tt2865272","image":"http://kvikmyndir.is/images/poster/hval-1378646562.jpg","showtimes":[{"theater":"BÃ­Ã³ ParadÃ­s","schedule":["18:00"]}]},{"title":"Miele","released":"2013","restricted":"16 Ã¡ra","imdb":"6.7/10  453 atkv.","imdbLink":"http://www.imdb.com/title/tt2357461","image":"http://kvikmyndir.is/images/poster/8856_500.jpg","showtimes":[{"theater":"BÃ­Ã³ ParadÃ­s","schedule":["16:00","20:00","22:00"]}]},{"title":"The Broken Circle Breakdown","released":"2013","restricted":"14 Ã¡ra","imdb":"7.9/10  9,409 atkv.","imdbLink":"http://www.imdb.com/title/tt2024519","image":"http://kvikmyndir.is/images/poster/8826_500.jpg","showtimes":[{"theater":"BÃ­Ã³ ParadÃ­s","schedule":["22:00"]}]},{"title":"Hross Ã­ oss","released":"2013","restricted":"12 Ã¡ra","imdb":"7.3/10  134 atkv.","imdbLink":"http://www.imdb.com/title/tt3074732","image":"http://kvikmyndir.is/images/poster/hrosss-1375721995.jpg","showtimes":[{"theater":"BÃ­Ã³ ParadÃ­s","schedule":["20:00"]}]},{"title":"Ernest And Celestine","released":"2012","restricted":"Ã–llum leyfÃ°","imdb":"7.9/10  2,599 atkv.","imdbLink":"http://www.imdb.com/title/tt1816518","image":"http://kvikmyndir.is/images/poster/8624_500.jpg","showtimes":[{"theater":"BÃ­Ã³ ParadÃ­s","schedule":["16:00"]}]}]};
+// All data that passes to jade:
+var moviesData = {};
+var moviesJsData = {};
+
+// Fetch the movies data from apis.is and do some error checking:
+var getMoviesJson = function() {
+    request.get('http://apis.is/cinema', function (err, res, body) {
+        if (!err) updateMovies(JSON.parse(body));
+        else console.log('Error fetching JSON data: ' + err);
+    });
+};
+// Run the function once to update data immediately:
+getMoviesJson();
+// Finally set timer to run the fetching periodically:
+setInterval(getMoviesJson, 10*60*1000);
+
+// Recreate the global movies data based on fresh info:
+var updateMovies = function(moviesJSON) {
+    // Helpers:
+    var timeToNum = function (time) {
+        var parts = time.split(':');
+        return parts[0] + (parseInt(parts[1], 10)/60 + '').substring(1);
+    };
+    var numToTime = function (number) {
+        var parts = number.split('.');
+        if (parts.length === 1 || parseInt(parts[1], 10) === 0) return number + ':00';
+        var minutes = Math.round(parseFloat('0.' + parts[1])*60).toString();
+        if (minutes.length === 1) minutes = '0' + minutes;
+        return parts[0] + ':' + minutes;
+    };
+    var knownCapitalPlaces = [
+        'Bíó Paradís',
+        'Háskólabíó',
+        'Laugarásbíó',
+        'Sambíóin Álfabakka',
+        'Sambíóin Egilshöll',
+        'Sambíóin Kringlunni',
+        'Smárabíó'
+    ];
+
+    var months = [
+        'janúar',
+        'febrúar',
+        'mars',
+        'apríl',
+        'maí',
+        'júní',
+        'júlí',
+        'ágúst',
+        'september',
+        'október',
+        'nóbember',
+        'desember'
+    ];
+
+
+    // Start constructing the two data sets, one for jade and the other
+    // for Javascript functionality:
+    var jadeData = {};
+
+    jadeData.titles = [];
+    jadeData.capitalPlaces = [];
+    jadeData.ruralPlaces = [];
+
+    var date = new Date();
+    jadeData.date = date.getDate() + '. ' + months[date.getMonth()];
+
+    var data = {};
+    data.titles = {};
+    data.hasMovies = true;
+
+    var lowestShowtime = 24;
+    var highestShowtime = 0;
+
+    // Cycle through the whole json to work with the data:
+    moviesJSON.results.forEach(function (movie) {
+
+        var jadeMovie = {};
+        jadeMovie.title = movie.title;
+        jadeMovie.rating = movie.imdb.split('/')[0];
+        jadeMovie.votes = movie.imdb.split(' ')[2];
+        jadeMovie.imdbUrl = movie.imdbLink;
+        jadeMovie.restriction = movie.restricted;
+        jadeMovie.imgUrl = movie.image;
+        jadeMovie.shows = [];
+
+        data.titles[movie.title] = {};
+
+        var currentMovie = data.titles[movie.title];
+        currentMovie.isFiltered = false;
+        currentMovie.rating = movie.imdb.split('/')[0];
+        currentMovie.places = {};
+
+        // Cylce through the shows:
+        movie.showtimes.forEach(function(place) {
+            var jadeShow = {};
+            jadeShow.theater = place.theater;
+            jadeShow.times = [];
+
+            // If not yet there, add place to jadeData places:
+            if (knownCapitalPlaces.indexOf(place.theater) >= 0) {
+                if (jadeData.capitalPlaces.indexOf(place.theater) < 0)
+                    jadeData.capitalPlaces.push(place.theater);
+            }
+            else {
+                if (jadeData.ruralPlaces.indexOf(place.theater) < 0)
+                    jadeData.ruralPlaces.push(place.theater);
+            }
+
+            currentMovie.places[place.theater] = {};
+
+            // Cycle through the shows times:
+            place.schedule.forEach(function (time) {
+                var timeNumber = timeToNum(time);
+
+                jadeShow.times.push({human: time, number: timeNumber});
+
+                // Check if new limit has been found
+                if (timeNumber < lowestShowtime) lowestShowtime = timeNumber;
+                if (timeNumber > highestShowtime) highestShowtime = timeNumber;
+
+                currentMovie.places[place.theater][timeNumber] = 'visible';
+            });
+            jadeMovie.shows.push(jadeShow);
+        });
+        jadeData.titles.push(jadeMovie);
+    });
+
+    // Make the places fit well into the filter box in 1024+ view
+    jadeData.capitalPlaces.sort();
+
+    // Round to nearest quarter and convert to human readable time
+    var roundedLow = (Math.floor(parseFloat(lowestShowtime)*4)/4) + '';
+    var roundedHigh = (Math.ceil(parseFloat(highestShowtime)*4)/4) + '';
+    jadeData.lowestShowtime = { human: numToTime(roundedLow), number: roundedLow };
+    jadeData.highestShowtime = { human: numToTime(roundedHigh), number: roundedHigh };
+
+    // Update the global data
+    moviesData = jadeData;
+    moviesJsData = data;
+
+    console.log('Updated movies with fresh data');
+};
+
+
+/**
+ * Start server:
+ */
 
 app.get('/', function(req, res) {
-    res.render('index', { movies: movies });
+    res.render('index', { movies: moviesData, data: moviesJsData });
 });
 
 app.listen(8000);

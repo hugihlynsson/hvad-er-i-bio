@@ -490,11 +490,12 @@ output {
 				text-transform: none;
 				.transition(all @transitionTime);
 				&::before {
-					content: '- ';
+					content: ' - ';
 					color: @textColor;
 					.transition(all @transitionTime);
 				}
 				&.warning { color: @warningColor; }
+				&.light-warning { color: @secondColor; }
 			}
 		}
 	}
@@ -566,7 +567,7 @@ output {
 					padding: 0 0.5em;
 					background: @thirdColor;
 					border-radius: @radius;
-					margin: 0.1em 0 0.3em;
+					margin: 0.1em 0.2em 0.3em;
 					color: #FFF;
 					.transition(all @transitionTime);
 
@@ -789,7 +790,7 @@ footer {
 	}
 	.filters-wrap {
 		.box-sizing(border-box);
-		width: 47%;
+		width: 46.5%;
 		float: left;
 
 		border-right: 1px solid white;
@@ -823,7 +824,7 @@ footer {
 
 	.place-filter {
 		float: right;
-		width: 51.5%;
+		width: 52%;
 		border-radius: 0 @radius @radius 0;
 		border-right: 0;
 
