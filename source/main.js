@@ -91,7 +91,7 @@ var filterMoviesByTime = function (lowFilter, highFilter) {
 
 var filterMoviesByRating = function (minRating) {
 	for (var id in movies.titles) {
-		if (movies.titles[id].rating < minRating) {
+		if (movies.titles[id].rating < parseFloat(minRating)) {
 			movies.titles[id].isFiltered = true;
 		}
 	}

@@ -1,6 +1,6 @@
 {
   "name": "hvaderibio.is",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A web that displays movies in Icelandic cinemas",
   "author": {
     "name": "Hugi Hlynsson",
@@ -10,7 +10,6 @@
   "dependencies": {
     "express": "~3.4.8",
     "jade": "~1.1.5",
-    "bower": "~1.2.8",
     "request": "~2.33.0"
   },
   "devDependencies": {
@@ -25,7 +24,8 @@
     "gulp-uglify": "~0.2.1"
   },
   "scripts": {
-    "start": "gulp"
+    "start": "gulp",
+    "postinstall": "node node_modules/bower/bin/bower install"
   },
   "repository": {
     "type": "git",
