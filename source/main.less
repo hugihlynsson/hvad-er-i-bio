@@ -273,7 +273,10 @@ output {
 // //
 
 
-.filters { margin-top: 2em; }
+.filters {
+	margin-top: 2em;
+	.after-clear();
+}
 
 .filters-wrap {
 
@@ -388,7 +391,6 @@ output {
 
 
 .movies-wrap {
-	overflow: hidden;
 	width: 100%;
 	.after-clear();
 }
@@ -531,6 +533,18 @@ output {
 		margin: 0;
 		color: #FFF;
 
+		img,
+		.fluidbox-ghost {
+			cursor: -webkit-zoom-in;
+			cursor: zoom-in;
+		}
+		.fluidbox-opened {
+			img,
+			.fluidbox-ghost {
+				cursor: -webkit-zoom-out;
+				cursor: zoom-out;
+			}
+		}
 
 		img {
 			width: 150px;
@@ -786,7 +800,7 @@ footer {
 	.filters {
 		margin-top: 4em;
 		margin-bottom: 2em;
-		.after-clear();
+
 	}
 	.filters-wrap {
 		.box-sizing(border-box);
@@ -836,7 +850,6 @@ footer {
 	}
 
 	.movies-wrap {
-		border-radius: @radius;
 		padding: 0;
 	}
 
@@ -847,6 +860,19 @@ footer {
 		.extra {
 			.content { padding: 0 0.5em 0 1em; }
 		}
+
+		// Make corners rounded:
+		&:first-child {
+			.rating { border-radius: @radius 0 0 0; }
+			.more   { border-radius: 0 @radius 0 0; }
+		}
+		&:last-child {
+			.rating { border-radius: 0 0 0 @radius; }
+			.more   { border-radius: 0 0 @radius 0; }
+			.extra  { border-radius: 0 0 @radius @radius; }
+			.extra img { border-radius: 0 0 @radius 0; }
+		}
+		&.open:last-child .more { border-radius: 0; }
 	}
 
 	footer {
