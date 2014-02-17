@@ -24,8 +24,7 @@
     "gulp-uglify": "~0.2.1"
   },
   "scripts": {
-    "start": "gulp",
-    "postinstall": "node node_modules/bower/bin/bower install"
+    "start": "gulp"
   },
   "repository": {
     "type": "git",

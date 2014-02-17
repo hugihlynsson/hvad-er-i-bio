@@ -1,22 +1,18 @@
 'use strict';
 
+var jade = require('jade');
 var request = require('request');
 var express = require('express');
 var app = express();
 
 app.use(express.static(__dirname + '/public'));
-app.use(express.errorHandler());
-
-app.set('view engine', 'jade');
-
 
 /**
  * Functions for app:
  */
 
-// All data that passes to jade:
-var moviesData = {};
-var moviesJsData = {};
+// The prerendered jade file:
+var renderedHtml = '<!doctype html><html><head><meta charset="UTF-8"></head><body><h1>Verið er að sækja fersk gögn</h1></body></html>';
 
 // Fetch the movies data from apis.is and do some error checking:
 var getMoviesJson = function() {
@@ -28,7 +24,7 @@ var getMoviesJson = function() {
 // Run the function once to update data immediately:
 getMoviesJson();
 // Finally set timer to run the fetching periodically:
-setInterval(getMoviesJson, 10*60*1000);
+setInterval(getMoviesJson, 30*60*1000);
 
 // Recreate the global movies data based on fresh info:
 var updateMovies = function(moviesJSON) {
@@ -53,7 +49,6 @@ var updateMovies = function(moviesJSON) {
         'Sambíóin Kringlunni',
         'Smárabíó'
     ];
-
     var months = [
         'janúar',
         'febrúar',
@@ -68,7 +63,6 @@ var updateMovies = function(moviesJSON) {
         'nóbember',
         'desember'
     ];
-
 
     // Start constructing the two data sets, one for jade and the other
     // for Javascript functionality:
@@ -151,11 +145,18 @@ var updateMovies = function(moviesJSON) {
     jadeData.lowestShowtime = { human: numToTime(roundedLow), number: roundedLow };
     jadeData.highestShowtime = { human: numToTime(roundedHigh), number: roundedHigh };
 
-    // Update the global data
-    moviesData = jadeData;
-    moviesJsData = data;
+    jade.renderFile(
+        './views/index.jade',
+        { movies: jadeData, data: data },
+        function (err, html) {
+            if (err) console.log(err);
+            else {
+                renderedHtml = html;
+            }
+        }
+    );
 
-    console.log('Updated movies with fresh data');
+    console.log('Updated html with fresh data');
 };
 
 
@@ -163,8 +164,10 @@ var updateMovies = function(moviesJSON) {
  * Start server:
  */
 
+
 app.get('/', function(req, res) {
-    res.render('index', { movies: moviesData, data: moviesJsData });
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.end(renderedHtml);
 });
 
 app.listen(8000);
