@@ -827,28 +827,16 @@ output:after {
   overflow: hidden;
   text-overflow: ellipsis;
   text-transform: uppercase;
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -ms-transition: all 0.2s;
-  transition: all 0.2s;
 }
 .movie header h2 i {
   display: inline;
   color: #1abc9c;
   font-size: 0.875em;
   text-transform: none;
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -ms-transition: all 0.2s;
-  transition: all 0.2s;
 }
 .movie header h2 i::before {
   content: ' - ';
   color: #222222;
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -ms-transition: all 0.2s;
-  transition: all 0.2s;
 }
 .movie header h2 i.warning {
   color: #ee4433;

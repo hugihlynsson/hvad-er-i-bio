@@ -515,18 +515,15 @@ output {
 			overflow: hidden;
 			text-overflow: ellipsis;
 			text-transform: uppercase;
-			.transition(all @transitionTime);
 
 			i {
 				display: inline;
 				color: @thirdColor;
 				font-size: 14/16em;
 				text-transform: none;
-				.transition(all @transitionTime);
 				&::before {
 					content: ' - ';
 					color: @textColor;
-					.transition(all @transitionTime);
 				}
 				&.warning { color: @warningColor; }
 				&.light-warning { color: @secondColor; }
@@ -664,7 +661,7 @@ footer {
 	}
 }
 
-// ================================== FOOTER ===================================
+// ================================= FLUIDBOX ==================================
 
 .fluidbox {
 	outline: none;
