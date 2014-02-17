@@ -367,6 +367,22 @@ a:hover {
 img {
   max-width: 100%;
 }
+h1,
+.subtitle,
+label,
+.range-mark,
+h2,
+.place-filter li,
+header a,
+header h2 i,
+header h2 i::before,
+header h2,
+.more {
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -ms-transition: color 0.2s;
+  transition: color 0.2s;
+}
 .wf-loading h1,
 .wf-loading .subtitle,
 .wf-loading label,
@@ -377,7 +393,7 @@ img {
 .wf-loading header h2 i,
 .wf-loading header h2 i::before,
 .wf-loading header h2,
-.wf-loading a.more {
+.wf-loading .more {
   color: transparent !important;
 }
 .wf-loading ::-webkit-input-placeholder {
@@ -856,6 +872,10 @@ output:after {
   text-transform: uppercase;
   text-align: center;
   color: #FFF;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
 }
 .movie .more:focus,
 .movie .more:hover {

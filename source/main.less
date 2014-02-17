@@ -70,6 +70,19 @@ a {
 img { max-width: 100%; }
 
 // Fix Typekit FOUT:
+h1,
+.subtitle,
+label,
+.range-mark,
+h2,
+.place-filter li,
+header a,
+header h2 i,
+header h2 i::before,
+header h2,
+.more {
+	.transition(color @transitionTime);
+}
 .wf-loading {
 	h1,
 	.subtitle,
@@ -81,7 +94,7 @@ img { max-width: 100%; }
 	header h2 i,
 	header h2 i::before,
 	header h2,
-	a.more {
+	.more {
 		color: transparent !important;
 	}
 	::-webkit-input-placeholder { color: transparent }
@@ -535,7 +548,7 @@ output {
 		text-transform: uppercase;
 		text-align: center;
 		color: #FFF;
-
+		.transition(all @transitionTime);
 		&:focus,
 		&:hover {
 			background: lighten(@highlightColor, 5%);
