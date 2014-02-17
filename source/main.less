@@ -69,6 +69,25 @@ a {
 
 img { max-width: 100%; }
 
+// Fix Typekit FOUT:
+.wf-loading {
+	h1,
+	.subtitle,
+	label,
+	.range-mark,
+	h2 a,
+	.place-filter li,
+	header a,
+	header h2 i,
+	header h2 i::before,
+	header h2,
+	a.more {
+		color: transparent !important;
+	}
+	::-webkit-input-placeholder { color: transparent }
+	::-moz-placeholder          { color: transparent }
+}
+
 //
 // =============================== FORMS ===============================
 //

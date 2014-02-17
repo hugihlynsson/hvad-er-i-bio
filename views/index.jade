@@ -23,8 +23,6 @@ html(lang="is")
         link(rel="shortcut icon" sizes="128x128" href="images/icon-128x128.png")
         link(rel="shortcut icon" sizes="196x196" href="images/icon-196x196.png")
 
-        link(rel="stylesheet" href="main.css")
-
         script.
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -32,9 +30,9 @@ html(lang="is")
             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
             ga('create', 'UA-20956924-4', 'hvaderibio.is');
             ga('send', 'pageview');
+            !function(a){var h,b={kitId:"kkk7ayb",scriptTimeout:3e3},c=a.documentElement,d=setTimeout(function(){c.className=c.className.replace(/\bwf-loading\b/g,"")+" wf-inactive"},b.scriptTimeout),e=a.createElement("script"),f=!1,g=a.getElementsByTagName("script")[0];c.className+=" wf-loading",e.src="//use.typekit.net/"+b.kitId+".js",e.async=!0,e.onload=e.onreadystatechange=function(){if(h=this.readyState,!(f||h&&"complete"!=h&&"loaded"!=h)){f=!0,clearTimeout(d);try{Typekit.load(b)}catch(a){}}},g.parentNode.insertBefore(e,g)}(document);
 
-        script(type="text/javascript" src="//use.typekit.net/kkk7ayb.js")
-        script(type="text/javascript") try{Typekit.load();}catch(e){}
+        link(rel="stylesheet" href="main.css")
     body
         h1 Hvað er í bíó?
         p.subtitle Þessar myndir eru sýndar í dag, #{movies.date}

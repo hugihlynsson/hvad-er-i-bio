@@ -367,6 +367,25 @@ a:hover {
 img {
   max-width: 100%;
 }
+.wf-loading h1,
+.wf-loading .subtitle,
+.wf-loading label,
+.wf-loading .range-mark,
+.wf-loading h2 a,
+.wf-loading .place-filter li,
+.wf-loading header a,
+.wf-loading header h2 i,
+.wf-loading header h2 i::before,
+.wf-loading header h2,
+.wf-loading a.more {
+  color: transparent !important;
+}
+.wf-loading ::-webkit-input-placeholder {
+  color: transparent;
+}
+.wf-loading ::-moz-placeholder {
+  color: transparent;
+}
 label {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
