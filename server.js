@@ -12,8 +12,18 @@ app.use(express.static(__dirname + '/public'));
  * Functions for app:
  */
 
+var renderedHtml = '';
 // The prerendered jade file:
-var renderedHtml = '<!doctype html><html><head><meta charset="UTF-8"></head><body><h1>Verið er að sækja fersk gögn</h1></body></html>';
+jade.renderFile(
+    './views/loading.jade',
+    {},
+    function (err, html) {
+        if (err) console.log(err);
+        else {
+            renderedHtml = html;
+        }
+    }
+);
 
 // Fetch the movies data from apis.is and do some error checking:
 var getMoviesJson = function() {
