@@ -789,9 +789,11 @@ footer {
 		}
 
 		&.open {
-			header
+			header {
+				h2,
+				h2.no-rating,
 				.rating { border-radius: 0; }
-				h2.no-rating { border-radius: 0; }
+			}
 			.more {
 				background: @colorThird;
 				transform: none;
@@ -959,7 +961,22 @@ footer {
 			.extra  { border-radius: 0 0 @radius @radius; }
 			.extra img { border-radius: 0 0 @radius 0; }
 		}
-		&.open:last-child .more { border-radius: 0; }
+		&.open {
+			header {
+				.rating { border-radius: 0 0 0 @radius; }
+				h2.no-rating { border-radius: 0 0 0 @radius; }
+			}
+			&:first-child header .rating { border-radius: @radius 0 0 @radius; }
+			&:last-child {
+				header .rating { border-radius: 0 0 0 @radius; }
+				.more { border-radius: 0; }
+			}
+			// If open, make movie below have a radius in it's top left corner:
+			+ .movie header {
+				.rating { border-top-left-radius: @radius; }
+				h2.no-rating { border-top-left-radius: @radius; }
+			}
+		}
 	}
 
 	footer {

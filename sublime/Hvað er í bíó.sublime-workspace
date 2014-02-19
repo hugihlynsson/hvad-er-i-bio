@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"visib",
+				"visibility"
+			],
+			[
+				"render",
+				"renderedHtml"
+			],
+			[
 				"trans",
 				"transparent"
 			],
@@ -180,18 +188,50 @@
 	"buffers":
 	[
 		{
-			"file": "/Users/hugihlynsson/Web/hvaderibio.is/site/index.php",
+			"file": "/Users/hugihlynsson/Web/hvaderibio.is/package.json",
 			"settings":
 			{
-				"buffer_size": 7386,
+				"buffer_size": 905,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/hugihlynsson/Web/hvaderibio.is/site/style.less",
+			"file": "/Users/hugihlynsson/Web/hvaderibio.is/server.js",
 			"settings":
 			{
-				"buffer_size": 15430,
+				"buffer_size": 5458,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/hugihlynsson/Web/hvaderibio.is/source/main.less",
+			"settings":
+			{
+				"buffer_size": 17910,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/hugihlynsson/Web/hvaderibio.is/views/index.jade",
+			"settings":
+			{
+				"buffer_size": 7746,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/hugihlynsson/Web/hvaderibio.is/gulpfile.js",
+			"settings":
+			{
+				"buffer_size": 1515,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/hugihlynsson/Web/hvaderibio.is/source/main.js",
+			"settings":
+			{
+				"buffer_size": 11071,
 				"line_ending": "Unix"
 			}
 		}
@@ -247,16 +287,29 @@
 	},
 	"file_history":
 	[
+		"/Users/hugihlynsson/Web/hvaderibio.is/views/loading.jade",
+		"/Users/hugihlynsson/Web/hvaderibio.is/source/main.less",
+		"/Users/hugihlynsson/Web/hvaderibio.is/.jshintrc",
+		"/Users/hugihlynsson/Web/hvaderibio.is/node_modules/gulp/.jshintrc",
+		"/Users/hugihlynsson/Web/hvaderibio.is/node_modules/gulp-less/node_modules/less/.idea/jsLinters/jshint.xml",
+		"/Users/hugihlynsson/Web/hvaderibio.is/node_modules/gulp-jshint/node_modules/jshint/node_modules/shelljs/jshint.json",
+		"/Users/hugihlynsson/Web/hvaderibio.is/node_modules/gulp-jshint/node_modules/jshint/src/jshint.js",
+		"/Users/hugihlynsson/Web/hvaderibio.is/node_modules/gulp-jshint/node_modules/jshint/bin/jshint",
+		"/Users/hugihlynsson/Web/hvaderibio.is/node_modules/gulp-jshint/node_modules/.bin/jshint",
+		"/Users/hugihlynsson/Web/hvaderibio.is/node_modules/gulp-less/node_modules/less/lib/less/join-selector-visitor.js",
+		"/Users/hugihlynsson/Web/hvaderibio.is/node_modules/.bin/jade",
+		"/Users/hugihlynsson/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/hugihlynsson/Library/Application Support/Sublime Text 3/Packages/Less2Css/README.md",
+		"/Users/hugihlynsson/Library/Application Support/Sublime Text 3/Packages/User/less2css.sublime-settings",
+		"/Users/hugihlynsson/Web/hvaderibio.is/site/index.php",
+		"/Users/hugihlynsson/Web/hvaderibio.is/site/style.less",
 		"/Users/hugihlynsson/Web/hvaderibio.is/site/js/main.js",
 		"/Users/hugihlynsson/Downloads/peg-0.8.0.js",
 		"/Users/hugihlynsson/Downloads/Fluidbox-gh-pages/css/fluidbox.css",
 		"/Users/hugihlynsson/Downloads/Fluidbox-gh-pages/css/styles.css",
 		"/Users/hugihlynsson/Web/common/mixins.less",
 		"/Users/hugihlynsson/Web/hvaderibio.is/site/main.js",
-		"/Users/hugihlynsson/Web/hvaderibio.is/site/index.php",
-		"/Users/hugihlynsson/Web/hvaderibio.is/site/style.less",
 		"/Users/hugihlynsson/Web/apus/node_modules/angular/node_modules/jsdom/node_modules/htmlparser2/node_modules/domhandler/test/cases/01-basic.json",
-		"/Users/hugihlynsson/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/hugihlynsson/Documents/HI/2014  Vor/Hugbúnaðarverkefni 2/Git/nodejstest/public/core.js",
 		"/Users/hugihlynsson/Documents/HI/2014  Vor/Hugbúnaðarverkefni 2/Git/nodejstest/package.json",
 		"/Users/hugihlynsson/Documents/HI/2014  Vor/Hugbúnaðarverkefni 2/Git/nodejstest/server.js",
@@ -279,9 +332,7 @@
 		"/Users/hugihlynsson/Downloads/Vodafone/vd/SMS_HISTORY.sql",
 		"/Users/hugihlynsson/Documents/Blizzard/StarCraft II/Saves/VersusAI/1 Very Easy - 1x1 - Burial Grounds.SC2Save",
 		"/Library/Fonts/ChalkboardSE.ttc",
-		"/Users/hugihlynsson/Library/Application Support/Sublime Text 3/Packages/User/less2css.sublime-settings",
 		"/Users/hugihlynsson/Library/Application Support/Sublime Text 3/Packages/Less2Css/less2css.sublime-settings",
-		"/Users/hugihlynsson/Library/Application Support/Sublime Text 3/Packages/Less2Css/README.md",
 		"/Users/hugihlynsson/Library/Application Support/Sublime Text 3/Packages/User/LESS.sublime-settings",
 		"/Users/hugihlynsson/Library/Application Support/Sublime Text 3/Packages/LESS/LESS.sublime-settings",
 		"/Users/hugihlynsson/Web/kjarninnapp.is/django/bookshelf/static/bookshelf/style.css",
@@ -363,15 +414,7 @@
 		"/Users/hugihlynsson/Downloads/Torrents/Sketch_2.2.4/sketch_keyfilemaker",
 		"/Users/hugihlynsson/Documents/HI/2013 Haust/Hugbúnaðarverkefni HBV501/HBV1/base.txt",
 		"/Users/hugihlynsson/Documents/HI/2013 Haust/Vefforritun TÖL306/Verkefni 1/style.less",
-		"/Users/hugihlynsson/Web/bulsur.is/wordpress/.htaccess",
-		"/Users/hugihlynsson/Web/wordpress/themeBase/index.php",
-		"/Users/hugihlynsson/Web/wordpress/themeBase/style.less",
-		"/Users/hugihlynsson/Documents/Web/juliarunolfs.com/jr.com v.5/5.1/style.less",
-		"/Users/hugihlynsson/Documents/Web/juliarunolfs.com/jr.com v.5/5.1/mixins.less",
-		"/Users/hugihlynsson/Web/leiguvaktin.is/site/style.less",
-		"/Users/hugihlynsson/Web/leiguvaktin.is/site/index.html",
-		"/Users/hugihlynsson/Desktop/index.html",
-		"/Users/hugihlynsson/Desktop/bordergradient.html"
+		"/Users/hugihlynsson/Web/bulsur.is/wordpress/.htaccess"
 	],
 	"find":
 	{
@@ -390,6 +433,24 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"transform",
+			"-webkit",
+			"darken",
+			"@baseFont",
+			"@textColor",
+			"@backgroundColor",
+			"@warningColor",
+			"@thirdColor",
+			"@secondColor",
+			"@highlightColor",
+			"@formBgColor",
+			"text indent",
+			".more",
+			"output",
+			"transition",
+			".transition",
+			".more",
+			"transition",
 			".two-col",
 			".after-clear();",
 			".filters",
@@ -499,25 +560,7 @@
 			"getWidth",
 			"getHeight()",
 			"getWidth()",
-			"getHeight()",
-			"nextField",
-			"javasscript",
-			"_setActiveBlock",
-			"_blockSize",
-			"_size",
-			"eas",
-			"doEase",
-			"new Block",
-			"rotate",
-			"KEY_ROTATE",
-			"getWidth",
-			"_y",
-			"_x",
-			"_nudgeBricks",
-			"_stickBrick",
-			"collidesWith",
-			"keyControl",
-			"getBottom"
+			"getHeight()"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -525,6 +568,14 @@
 		"regex": false,
 		"replace_history":
 		[
+			"@fontBase",
+			"@colorText",
+			"@colorBg",
+			"@colorWarning",
+			"@colorThird",
+			"@colorSecond",
+			"@colorHighlight",
+			"@backgroundColor",
 			"@radius",
 			".top",
 			"'",
@@ -557,54 +608,84 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/Users/hugihlynsson/Web/hvaderibio.is/site/index.php",
+					"file": "/Users/hugihlynsson/Web/hvaderibio.is/package.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7386,
+						"buffer_size": 905,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								521,
+								521
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 794.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/Users/hugihlynsson/Web/hvaderibio.is/site/style.less",
+					"file": "/Users/hugihlynsson/Web/hvaderibio.is/server.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15430,
+						"buffer_size": 5458,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2182,
-								2182
+								347,
+								347
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 124.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/hugihlynsson/Web/hvaderibio.is/source/main.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17910,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								16664,
+								16664
 							]
 						],
 						"settings":
@@ -613,10 +694,99 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1822.0,
+						"translation.y": 13871.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/hugihlynsson/Web/hvaderibio.is/views/index.jade",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7746,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6149,
+								6149
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1399.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Users/hugihlynsson/Web/hvaderibio.is/gulpfile.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1515,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								529,
+								529
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/Users/hugihlynsson/Web/hvaderibio.is/source/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11071,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1113,
+								1113
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 7.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -664,7 +834,7 @@
 	"project": "Hvað er í bíó.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 72.0
 	},
 	"save_all_on_build": false,
 	"select_file":
@@ -672,6 +842,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"jshin",
+				".jshintrc"
+			]
 		],
 		"width": 0.0
 	},
@@ -697,7 +871,7 @@
 	"show_minimap": false,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 217.0,
 	"status_bar_visible": true,
 	"template_settings":
