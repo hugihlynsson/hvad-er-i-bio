@@ -1,5 +1,6 @@
 var gulp        = require('gulp');
 var less        = require('gulp-less');
+var autoprefix  = require('gulp-autoprefixer');
 var minifycss   = require('gulp-minify-css');
 var concat      = require('gulp-concat');
 var jshint      = require('gulp-jshint');
@@ -11,6 +12,7 @@ var notify      = require('gulp-notify');
 gulp.task('styles', function() {
     return gulp.src('./source/main.less')
         .pipe(less())
+        .pipe(autoprefix('last 2 versions'))
         .pipe(minifycss())
         .pipe(gulp.dest('./public'))
         .pipe(livereaload(server))

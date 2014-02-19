@@ -563,6 +563,7 @@ output {
 		&:focus,
 		&:hover {
 			border-top-color: lighten(@colorThird, 3%);
+			outline: none;
 		}
 	}
 
@@ -592,21 +593,21 @@ output {
 		img {
 			width: 150px;
 			float: right;
-			margin: 0 0 0.1em 0.1em;
+			margin: 0 0 -1px 0.1em;
 			border-left: 1px solid #FFF;
 			border-bottom: 1px solid #FFF;
 		}
 
 		.content {
 			.box-sizing(border-box);
-			padding: 0 0.5em 1em;
+			padding: 0 0.5em 0.5em;
 
 			.showplace {
-				margin: 0.8em 0 0;
+				margin: 0.6em 0 0;
 			}
 
 			h3 {
-				margin: 0 0 0.2em;
+				margin: 0;
 				color: @colorText;
 				text-transform: uppercase;
 				font-size: 15/16em;
@@ -623,7 +624,7 @@ output {
 					padding: 0 0.5em;
 					background: @colorThird;
 					border-radius: @radius;
-					margin: 0.1em 0.4em 0.3em 0;
+					margin: 0.3em 0.4em 0.1em 0;
 					color: #FFF;
 					.transition(all @transitionTime);
 
@@ -644,7 +645,7 @@ output {
 			}
 		}
 		.more {
-			-webkit-transform: rotate(180deg);
+			transform: rotate(180deg);
 			border-top-color: @colorThird;
 
 			&:focus,
@@ -938,7 +939,15 @@ footer {
 			h2 { padding-left: 1em; }
 		}
 		.extra {
-			.content { padding: 0 0.5em 0 1em; }
+			.content {
+				padding: 0 0.5em 0 1em;
+				.showplace {
+					margin-top: 1em;
+					ul li {
+						margin: 0.4em 0.1em 0 0.3em;
+					}
+				}
+			}
 		}
 
 		// Make corners rounded:
