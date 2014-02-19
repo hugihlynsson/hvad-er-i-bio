@@ -32,7 +32,7 @@ var openArticleExtra = function (article) {
 	article.find('.more').text('Sjá minna');
 	article.find('.extra').slideDown(300);
 	$('html,body').clearQueue();
-	$('html,body').animate({ scrollTop: $(article).offset().top}, 400);
+	$('html,body').animate({ scrollTop: $(article).offset().top - 1}, 400);
 };
 
 // Delay multiple function calls:

@@ -7,15 +7,16 @@
 @import '../../common/mixins.less';
 @import '../../common/normalize.less';
 
-@highlightColor: #38E;
-@secondColor: #E89737;
-@thirdColor: #1ABC9C;
-@warningColor: #E43;
-@backgroundColor: #EEE;
-@formBgColor: #EEE;
-@textColor: #222;
+@colorHighlight: #38E;
+@colorSecond: #E89737;
+@colorThird: #1ABC9C;
+@colorWarning: #E43;
+@colorBg: #EEE;
+@colorBgDark: #CCC;
 
-@baseFont: 'proxima-nova', 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@colorText: #222;
+
+@fontBase: 'proxima-nova', 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 @transitionTime: 0.2s;
 @radius: 5px;
@@ -30,11 +31,11 @@ body {
 	margin: 0 auto;
 
 	background: #FFF;
-	font-family: @baseFont;
+	font-family: @fontBase;
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.4em;
-	color: @textColor;
+	color: @colorText;
 	.font-smoothing();
 }
 
@@ -57,12 +58,12 @@ h3 { font-weight: 400; }
 a {
 	border-bottom: 1px solid transparent;
 	text-decoration: none;
-	color: @textColor;
+	color: @colorText;
 	.transition (all @transitionTime);
 
 	&:hover {
-		border-color: @highlightColor;
-		color: @highlightColor;
+		border-color: @colorHighlight;
+		color: @colorHighlight;
 		text-decoration: none;
 	}
 }
@@ -113,10 +114,10 @@ label {
 	float: left;
 	width: 20%;
 	padding: 0.5em 1em;
-	border: 1px solid @formBgColor;
+	border: 1px solid @colorBg;
 	border-right: 1px solid #FFF;
 
-	background: @formBgColor;
+	background: @colorBg;
 	border-radius: @radius 0 0 @radius;
 }
 
@@ -126,7 +127,7 @@ input[type="text"] {
 	float: left;
 	width: 100%;
 	padding: 0.5em;
-	border: 1px solid @formBgColor;
+	border: 1px solid @colorBg;
 
 	background: #FFF;
 	border-radius: 0 @radius @radius 0;
@@ -134,10 +135,10 @@ input[type="text"] {
 	-webkit-appearance: none;
 	.transition(all @transitionTime);
 
-	&:hover { border-color: darken(@formBgColor, 15%); }
+	&:hover { border-color: @colorBgDark; }
 
 	&:focus {
-		border-color: @highlightColor;
+		border-color: @colorHighlight;
 		outline: none;
 	}
 }
@@ -151,7 +152,7 @@ input[type="range"] {
 	-moz-appearance: none;
 	height: 8px;
 
-	background: lighten(@highlightColor, 12%);
+	background: lighten(@colorHighlight, 12%);
 	border-radius: 1em;
 	box-shadow: inset 0 1px 3px fade(black, 20%);
 
@@ -205,7 +206,7 @@ input[type="range"] {
 
 // Special treatment for Firefox:
 ::-moz-range-track {
-	background: lighten(@highlightColor, 12%);
+	background: lighten(@colorHighlight, 12%);
 	border: 0;
 }
 
@@ -219,7 +220,7 @@ output {
 	margin-left: -25px;
 	margin-bottom: 5px;
 
-	background: @highlightColor;
+	background: @colorHighlight;
 	border-radius: @radius;
 	text-align: center;
 	font-size: 14px;
@@ -237,7 +238,7 @@ output {
 		left: 50%;
 		width: 0;
 		height: 0;
-		border-top: 5px solid @highlightColor;
+		border-top: 5px solid @colorHighlight;
 		border-left: 5px solid transparent;
 		border-right: 5px solid transparent;
 		margin-left: -5px;
@@ -258,9 +259,9 @@ output {
 	.box-sizing(border-box);
 	float: left;
 	width: 80%;
-	background: @formBgColor;
+	background: @colorBg;
 	padding: 0.5em 0;
-	border: 1px solid @formBgColor;
+	border: 1px solid @colorBg;
 	border-radius: 0 @radius @radius 0;
 
 	.range-mark {
@@ -351,7 +352,7 @@ output {
 			border-bottom: 0;
 			margin: 0 0 1px;
 
-			background: darken(@formBgColor, 10%);
+			background: @colorBgDark;
 			color: #FFF;
 			border-radius: @radius @radius 0 0;
 			text-align: center;
@@ -360,7 +361,7 @@ output {
 			font-weight: 600;
 
 			&:hover {
-				background: darken(@formBgColor, 20%);
+				background: darken(@colorBgDark, 10%);
 			}
 		}
 	}
@@ -370,7 +371,7 @@ output {
 		list-style: none;
 		padding: 0.2em;
 		margin: 0;
-		background: @formBgColor;
+		background: @colorBg;
 		border-radius: 0 0 @radius @radius;
 		text-align: center;
 
@@ -382,7 +383,7 @@ output {
 			border-radius: 1em;
 			cursor: pointer;
 
-			color: @highlightColor;
+			color: @colorHighlight;
 			font-size: 16/18em;
 			font-weight: 600;
 			text-transform: uppercase;
@@ -390,29 +391,32 @@ output {
 
 			.transition(all @transitionTime);
 
-			&:hover { background: fade(@highlightColor, 10%); }
+			&:hover { background: fade(@colorHighlight, 10%); }
 
 			&.toggled {
-				background: @highlightColor;
+				background: @colorHighlight;
 				color: #FFF;
-				&:hover { background: fade(@highlightColor, 80%); }
+				&:hover { background: fade(@colorHighlight, 80%); }
 			}
 		}
 	}
 
 	&.toggled {
 		h2 a {
-			background: @highlightColor;
+			background: @colorHighlight;
 			color: #FFF;
+			&:hover {
+				background: lighten(@colorHighlight, 10%);
+			}
 		}
 
 		ul {
 
 			li {
 				// Hide the toggle:
-				color: @highlightColor;
-				background: @formBgColor;
-				&:hover { background: fade(@highlightColor, 10%); }
+				color: @colorHighlight;
+				background: @colorBg;
+				&:hover { background: fade(@colorHighlight, 10%); }
 			}
 		}
 	}
@@ -430,6 +434,7 @@ output {
 }
 
 .movie {
+	position: relative;
 	margin: 2% 0;
 	clear: both;
 	border-bottom: 1px solid #FFF;
@@ -451,11 +456,12 @@ output {
 			display: block;
 			float: left;
 			padding: 0.7em 0.5em 0.5em;
-			background: @backgroundColor;
-			border: 1px solid @backgroundColor;
-			border-radius: @radius 0 0 0;
+			background: @colorBg;
+			border: 1px solid @colorBg;
+			border-radius: @radius 0 0 @radius;
 			text-align: center;
 			.transition(all @transitionTime);
+			min-width: 2.5em;
 
 			span {
 				display: block;
@@ -470,7 +476,7 @@ output {
 				top: 58%;
 				width: 130px;
 				height: 28px;
-				background: @highlightColor;
+				background: @colorHighlight;
 				border-radius: @radius;
 				margin-top: -14px;
 				text-align: center;
@@ -485,7 +491,7 @@ output {
 					right: 100%;
 					width: 0;
 					height: 0;
-					border-right: 5px solid fade(@highlightColor, 90%);
+					border-right: 5px solid fade(@colorHighlight, 90%);
 					border-top: 4px solid transparent;
 					border-bottom: 4px solid transparent;
 					margin-top: -4px;
@@ -496,20 +502,19 @@ output {
 			&:focus {
 				outline: 0;
 				color: #FFF;
-				border-color: @highlightColor;
-				background: @highlightColor;
+				border-color: @colorHighlight;
+				background: @colorHighlight;
 				.info { display: block; }
 			}
 		}
 		h2 {
 			.box-sizing(border-box);
 			height: 3em;
-			padding: 1em 0.5em 0.5em 0.5em;
-			background: @backgroundColor;
-			border: 1px solid @backgroundColor;
+			padding: 0.9em 2em 0.5em 0.5em;
+			background: @colorBg;
+			border: 1px solid @colorBg;
 			border-left: 1px solid #FFF;
-			border-right: 1px solid #FFF;
-			border-radius: 0 @radius 0 0;
+			border-radius: 0 @radius @radius 0;
 			margin: 0;
 			font-size: 1em;
 			display: block;
@@ -517,40 +522,47 @@ output {
 			overflow: hidden;
 			text-overflow: ellipsis;
 			text-transform: uppercase;
+			.transition(border-radius @transitionTime);
 
 			i {
 				display: inline;
-				color: @thirdColor;
+				color: @colorThird;
 				font-size: 14/16em;
 				text-transform: none;
 				&::before {
 					content: ' - ';
-					color: @textColor;
+					color: @colorText;
 				}
-				&.warning { color: @warningColor; }
-				&.light-warning { color: @secondColor; }
+				&.warning { color: @colorWarning; }
+				&.light-warning { color: @colorSecond; }
+			}
+
+			&.no-rating {
+				border-radius: @radius;
+				border-left: 0;
 			}
 		}
 	}
 
 
 	.more {
-		.box-sizing(border-box);
-		height: 2em;
-		display: block;
-		background: @highlightColor;
-		padding: 0.4em 0.5em 0.5em;
-		border: 0;
-		border-top: 1px solid #FFF;
-		border-radius: 0 0 @radius @radius;
-		font-weight: 400;
-		text-transform: uppercase;
-		text-align: center;
-		color: #FFF;
+		.hide-text();
+
+		position: absolute;
+		right: 1em;
+		top: 1.3em;
+		width: 0;
+		height: 0;
+
+		border: 8px solid transparent;
+		border-top: 12px solid @colorBgDark;
+		border-bottom: 0;
+
 		.transition(all @transitionTime);
+
 		&:focus,
 		&:hover {
-			background: lighten(@highlightColor, 5%);
+			border-top-color: lighten(@colorThird, 3%);
 		}
 	}
 
@@ -558,7 +570,7 @@ output {
 		float: left;
 		display: none;
 		width: 100%;
-		background: @formBgColor;
+		background: @colorBg;
 		border-radius: 0 0 @radius @radius;
 		border-top: 1px solid #FFF;
 		margin: 0;
@@ -580,10 +592,9 @@ output {
 		img {
 			width: 150px;
 			float: right;
-			margin-left: 1em;
+			margin: 0 0 0.1em 0.1em;
 			border-left: 1px solid #FFF;
 			border-bottom: 1px solid #FFF;
-			margin-bottom: -1px;
 		}
 
 		.content {
@@ -596,7 +607,7 @@ output {
 
 			h3 {
 				margin: 0 0 0.2em;
-				color: @textColor;
+				color: @colorText;
 				text-transform: uppercase;
 				font-size: 15/16em;
 			}
@@ -610,32 +621,42 @@ output {
 				li {
 					display: inline-block;
 					padding: 0 0.5em;
-					background: @thirdColor;
+					background: @colorThird;
 					border-radius: @radius;
-					margin: 0.1em 0.2em 0.3em;
+					margin: 0.1em 0.4em 0.3em 0;
 					color: #FFF;
 					.transition(all @transitionTime);
 
-					&.filtered { background: fade(@thirdColor, 30%); }
+					&.filtered { background: fade(@colorThird, 30%); }
 				}
 			}
 		}
 
 	}
 	&.open {
+		header {
+			.rating { border-radius: @radius 0 0 0; }
+			h2 {
+				border-radius: 0 @radius 0 0;
+				&.no-rating {
+					border-radius: @radius @radius 0 0;
+				}
+			}
+		}
 		.more {
-			border-radius: 0;
-			background: @thirdColor;
+			-webkit-transform: rotate(180deg);
+			border-top-color: @colorThird;
+
 			&:focus,
 			&:hover {
-				background: lighten(@thirdColor, 5%);
+				border-top-color: lighten(@colorThird, 3%);
 			}
 		}
 	}
 }
 
 .message {
-	background: @secondColor;
+	background: @colorSecond;
 	color: #FFF;
 	padding: 1em 1em 0.6em;
 	border-radius: @radius;
@@ -658,7 +679,7 @@ footer {
 	color: #AAA;
 
 	a {
-		color: @highlightColor;
+		color: @colorHighlight;
 		border-color: transparent;
 	}
 }
@@ -734,22 +755,50 @@ footer {
 				min-width: 2.5em;
 				border-radius: 0;
 			}
-			h2 { border-radius: 0; }
+			h2 {
+				border-radius: 0;
+				&.no-rating { border-radius: 0; }
+			}
 		}
 		.more {
+			.dehide-text();
+			.box-sizing(border-box);
+
 			float: left;
+			display: block;
 			width: 30%;
 			height: 3em;
-			padding-top: 1em;
-			border-top: 0;
-			border-radius: 0;
+			padding: 1em 0.5em 0.5em;
+			border: 0;
+			border-left: 1px solid #FFF;
 
-			&.open {
-				border-radius: 0;
+			background: @colorHighlight;
+			color: #FFF;
+			font-weight: 400;
+			text-transform: uppercase;
+			text-align: center;
+
+			&:focus,
+			&:hover {
+				background: lighten(@colorHighlight, 5%);
 			}
 		}
 		.extra img {
 			width: 30%;
+		}
+
+		&.open {
+			header
+				.rating { border-radius: 0; }
+				h2.no-rating { border-radius: 0; }
+			.more {
+				background: @colorThird;
+				-webkit-transform: none;
+				&:focus,
+				&:hover {
+					background: lighten(@colorThird, 3%);
+				}
+			}
 		}
 	}
 	.message {
@@ -783,7 +832,7 @@ footer {
 		input:focus + &,
 		input:hover + & {
 			opacity: 1;
-			background: @highlightColor;
+			background: @colorHighlight;
 		}
 	}
 	.place-filter { font-size: 17/20em; }
@@ -804,7 +853,7 @@ footer {
 			border-radius: 0;
 			margin-left: 3em;
 
-			img { width: 201px; }
+			img { width: 200px; }
 
 			.content {
 				padding-bottom: 0;

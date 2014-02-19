@@ -102,15 +102,25 @@ html(lang="is")
                                 =movie.rating
                                 span IMDB
                                 div.info með #{movie.votes} atkv.
-                        h2= movie.title
-                            if movie.restriction === '16 ára'
-                                i.warning= movie.restriction
-                            if movie.restriction === '12 ára'
-                                i.light-warning= movie.restriction
-                            if movie.restriction === '7 ára'
-                                i.light-warning= movie.restriction
-                            if movie.restriction === 'Öllum leyfð'
-                                i= movie.restriction
+                            h2= movie.title
+                                if movie.restriction === '16 ára'
+                                    i.warning= movie.restriction
+                                if movie.restriction === '12 ára'
+                                    i.light-warning= movie.restriction
+                                if movie.restriction === '7 ára'
+                                    i.light-warning= movie.restriction
+                                if movie.restriction === 'Öllum leyfð'
+                                    i= movie.restriction
+                        else
+                            h2.no-rating= movie.title
+                                if movie.restriction === '16 ára'
+                                    i.warning= movie.restriction
+                                if movie.restriction === '12 ára'
+                                    i.light-warning= movie.restriction
+                                if movie.restriction === '7 ára'
+                                    i.light-warning= movie.restriction
+                                if movie.restriction === 'Öllum leyfð'
+                                    i= movie.restriction
                     a.more(href="#") Sjá meira
                     aside.extra
                         a.fluidbox(href="#")
