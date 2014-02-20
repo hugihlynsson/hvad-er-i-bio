@@ -953,7 +953,13 @@ footer {
 		// Make corners rounded:
 		&:first-child {
 			.rating { border-radius: @radius 0 0 0; }
+			.no-rating { border-top-left-radius: @radius; }
 			.more   { border-radius: 0 @radius 0 0; }
+
+			&.open {
+				.rating,
+				.no-rating { border-top-left-radius: @radius; }
+			}
 		}
 		&:last-child {
 			.rating { border-radius: 0 0 0 @radius; }
@@ -963,8 +969,8 @@ footer {
 		}
 		&.open {
 			header {
-				.rating { border-radius: 0 0 0 @radius; }
-				h2.no-rating { border-radius: 0 0 0 @radius; }
+				.rating { border-bottom-left-radius: @radius; }
+				h2.no-rating { border-bottom-left-radius: @radius; }
 			}
 			&:first-child header .rating { border-radius: @radius 0 0 @radius; }
 			&:last-child {
@@ -973,7 +979,7 @@ footer {
 			}
 			// If open, make movie below have a radius in it's top left corner:
 			+ .movie header {
-				.rating { border-top-left-radius: @radius; }
+				.rating,
 				h2.no-rating { border-top-left-radius: @radius; }
 			}
 		}
