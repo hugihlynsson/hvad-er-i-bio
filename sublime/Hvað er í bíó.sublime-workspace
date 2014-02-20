@@ -207,7 +207,7 @@
 			"file": "/Users/hugihlynsson/Web/hvaderibio.is/source/main.less",
 			"settings":
 			{
-				"buffer_size": 17910,
+				"buffer_size": 18365,
 				"line_ending": "Unix"
 			}
 		},
@@ -677,15 +677,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 17910,
+						"buffer_size": 18365,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								16664,
-								16664
+								17211,
+								17211
 							]
 						],
 						"settings":
@@ -694,7 +694,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 13871.0,
+						"translation.y": 14122.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

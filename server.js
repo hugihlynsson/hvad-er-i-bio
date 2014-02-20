@@ -14,22 +14,34 @@ app.use(express.static(__dirname + '/public'));
 
 var renderedHtml = '';
 // The prerendered jade file:
-jade.renderFile(
-    './views/loading.jade',
-    {},
-    function (err, html) {
-        if (err) console.log(err);
-        else {
-            renderedHtml = html;
-        }
-    }
-);
+jade.renderFile('./views/loading.jade', function (err, html) {
+    if (err) console.log(err);
+    else renderedHtml = html;
+});
+
+// Initialize update to the beginning of Unix...
+var lastUpdate = new Date(0);
 
 // Fetch the movies data from apis.is and do some error checking:
 var getMoviesJson = function() {
     request.get('http://apis.is/cinema', function (err, res, body) {
-        if (!err) updateMovies(JSON.parse(body));
-        else console.log('Error fetching JSON data: ' + err);
+        if (err) {
+            console.log('Error fetching JSON: ' + err);
+            setTimeout(getMoviesJson, 60*1000);
+        }
+        else if (res.statusCode !== 200) {
+            console.log('Error fetching JSON: Cinema site responded with code: ' + res.statusCode);
+
+            // If the data is old display no-data:
+            if (lastUpdate.toDateString() !== new Date().toDateString()) {
+                jade.renderFile('./views/no-data.jade', function (err, html) {
+                    if (err) console.log(err);
+                    else renderedHtml = html;
+                });
+            }
+            setTimeout(getMoviesJson, 60*1000);
+        }
+        else updateMovies(JSON.parse(body));
     });
 };
 // Run the function once to update data immediately:
@@ -78,11 +90,9 @@ var updateMovies = function(moviesJSON) {
     // Start constructing the two data sets, one for jade and the other
     // for Javascript functionality:
     var jadeData = {};
-
     jadeData.titles = [];
     jadeData.capitalPlaces = [];
     jadeData.ruralPlaces = [];
-
     var date = new Date();
     jadeData.date = date.getDate() + '. ' + months[date.getMonth()];
 
@@ -167,6 +177,7 @@ var updateMovies = function(moviesJSON) {
         }
     );
 
+    lastUpdate = new Date();
     console.log('Updated html with fresh data');
 };
 
