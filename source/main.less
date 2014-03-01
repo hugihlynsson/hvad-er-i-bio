@@ -112,6 +112,13 @@ output,
 	output,
 	.more {
 		color: transparent !important;
+		text-shadow: none;
+	}
+	.subtitle {
+		&::after,
+		&::before {
+			opacity: 0;
+		}
 	}
 	::-webkit-input-placeholder { color: transparent }
 	::-moz-placeholder          { color: transparent }
