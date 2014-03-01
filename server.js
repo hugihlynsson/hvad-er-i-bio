@@ -135,7 +135,7 @@ var updateMovies = function(moviesJSON) {
         currentMovie.places = {};
 
         // Cylce through the shows:
-        movie.showtimes.forEach(function(place) {
+        movie.showtimes.forEach(function (place) {
             var jadeShow = {};
             jadeShow.theater = place.theater;
             jadeShow.times = [];
@@ -151,6 +151,8 @@ var updateMovies = function(moviesJSON) {
             }
 
             currentMovie.places[place.theater] = {};
+            currentMovie.places[place.theater].times = {};
+            currentMovie.places[place.theater].isFiltered = false;
 
             // Cycle through the shows times:
             place.schedule.forEach(function (time) {
@@ -162,7 +164,7 @@ var updateMovies = function(moviesJSON) {
                 if (timeNumber < lowestShowtime) lowestShowtime = timeNumber;
                 if (timeNumber > highestShowtime) highestShowtime = timeNumber;
 
-                currentMovie.places[place.theater][timeNumber] = 'visible';
+                currentMovie.places[place.theater].times[timeNumber] = 'visible';
             });
             jadeMovie.shows.push(jadeShow);
         });

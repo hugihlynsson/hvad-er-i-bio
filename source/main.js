@@ -76,12 +76,12 @@ var filterMoviesByTime = function (lowFilter, highFilter) {
 		var places = movies.titles[id].places;
 		for (var placeKey in places) {
 			var place = places[placeKey];
-			for (var time in place) {
+			for (var time in place.times) {
 				if (lowFilter <= time && time <= highFilter) {
 					hasTime = true;
-					place[time] = 'visible';
+					place.times[time] = 'visible';
 				}
-				else { place[time] = 'filtered'; }
+				else { place.times[time] = 'filtered'; }
 			}
 		}
 
@@ -107,11 +107,13 @@ var filterMoviesByPlace = function (placesAllowed) {
 		var places = movies.titles[id].places;
 		for (var place in places) {
 			if (placesAllowed.indexOf(place) >= 0) {
+				movies.titles[id].places[place].isFiltered = false;
 				hasPlace = true;
-				break;
+			}
+			else {
+				movies.titles[id].places[place].isFiltered = true;
 			}
 		}
-
 		if (!hasPlace) movies.titles[id].isFiltered = true;
 	}
 };
@@ -159,9 +161,10 @@ var filterMovies = function () {
 
 			movieElm.find('.showplace').each(function () {
 				var place = $(this).data('place');
+				$(this).toggleClass('filtered', movies.titles[id].places[place].isFiltered)
 				$(this).find('li').each(function () {
 					var time = $(this).data('time');
-					if (movies.titles[id].places[place][time] === 'visible') {
+					if (movies.titles[id].places[place].times[time] === 'visible') {
 						$(this).removeClass('filtered');
 					}
 					else {
