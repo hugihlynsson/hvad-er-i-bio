@@ -407,20 +407,22 @@ var enableAnalyticEventTracking = function () {
 
 var activateStickyNavbar = function () {
 	var navToTop = $('.filters').offset().top;
-	console.log(navToTop);
 	var filters = $('.filters');
+
+	// Add and remove sticky class to navbar:
 	var checkNavbarIfSticky = function () {
 		if ($(window).scrollTop() > navToTop) {
-			console.log('Sticky!');
 			if (!filters.is('.sticky')) filters.addClass('sticky');
 		}
 		else {
 			if (filters.is('.sticky')) filters.removeClass('sticky');
 		}
 	}
+
+	// Only make scroll check on wide screens:
 	$(window).on('resize', function () {
 		if ($(window).width() >= 1680) {
-			$(window).on('scroll.checkIfSticky', checkNavbarIfSticky);
+			$(window).on('scroll.checkIfSticky', checkNavbarIfSticky).trigger('scroll');
 		}
 		else {
 			$(window).off('scroll.checkIfSticky');
