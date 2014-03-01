@@ -39,17 +39,30 @@ body {
 	.font-smoothing();
 }
 
-h1 {
-	margin: 1em 0 0;
-	font-weight: 400;
-	font-size: 50/16em;
-	line-height: 1em;
+body > header {
 	text-align: center;
 }
 
-.subtitle {
-	margin-top: 0;
+h1 {
+	margin: 1.5em 0 0;
+	font-weight: 400;
+	font-size: 36/16em;
+	line-height: 1em;
 	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	text-shadow: 1px 1px 0px lighten(@colorHighlight, 35%);
+}
+
+.subtitle {
+	position: relative;
+	display: inline-block;
+	margin: 0;
+	font-size: 12/16em;
+	font-style: italic;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 0px lighten(@colorHighlight, 35%);
 }
 
 h2 { font-weight: 400; }
@@ -731,7 +744,31 @@ footer {
 // Move into compact no-rounded layout:
 @media screen and (min-width: 460px) {
 	body { padding: 0 1px; }
-	h1 { padding: 0.5em 1em 0; }
+	h1 {
+		margin: 1.5em 0.5em 0.1em;
+		font-size: 50/16em;
+	}
+
+	.subtitle {
+		font-size: 13/16em;
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+
+			display: block;
+			width: 40px;
+			height: 1px;
+			margin-top: -1px;
+			box-shadow: 1px 1px 0px lighten(@colorHighlight, 35%);
+
+			background: @colorText;
+		}
+
+		&::before { right: 103%; }
+		&::after { left: 103%; }
+	}
 
 	.filters { margin-top: 3em; }
 	.input-box { margin: 0 0 1px; }
@@ -816,8 +853,11 @@ footer {
 // Expand the compact layout and make bubbles visible only on hover:
 @media screen and (min-width: 700px) {
 	body { font-size: 24/20em; }
-	h1 { font-size: 80/24em; }
-	.subtitle { font-size: 21/20em; }
+	h1 {
+		font-size: 80/24em;
+		text-shadow: 2px 2px 0px lighten(@colorHighlight, 35%);
+	}
+	.subtitle { font-size: 18/20em; }
 	.two-col .input-box { border-right: 0; }
 	output {
 		line-height: 28px;
@@ -884,8 +924,13 @@ footer {
 		padding-bottom: 2em;
 		.after-clear();
 	}
-	h1 { font-size: 99/24em; }
-	.subtitle { font-size: 26/20em; }
+	h1 { font-size: 100/24em; }
+	.subtitle {
+		&::before,
+		&::after { width: 80px; }
+		&::before { right: 107%; }
+		&::after { left: 107%; }
+	}
 
 	.filters {
 		margin-top: 4em;
