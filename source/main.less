@@ -932,7 +932,7 @@ footer {
 		border-radius: 0 @radius @radius 0;
 		border-right: 0;
 
-		&.rural { margin-top: 0.8em; }
+		&.rural { margin-top: 0.83em; }
 
 		// Make corners round:
 		h2 a { border-radius: @radius @radius 0 0; }
@@ -1010,8 +1010,14 @@ footer {
 		width: 350px;
 		width: calc(~"40% - 350px");
 		max-width: 400px;
-		margin: 2em 0 0 420px;
+		margin: 0 0 0 420px;
+		padding-top: 2em;
 
+
+		&.sticky {
+			position: fixed;
+			top: 0;
+		}
 	}
 	.filters-wrap { width: 100%; }
 	.place-filter.rural,

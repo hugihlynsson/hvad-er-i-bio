@@ -161,7 +161,7 @@ var filterMovies = function () {
 
 			movieElm.find('.showplace').each(function () {
 				var place = $(this).data('place');
-				$(this).toggleClass('filtered', movies.titles[id].places[place].isFiltered)
+				$(this).toggleClass('filtered', movies.titles[id].places[place].isFiltered);
 				$(this).find('li').each(function () {
 					var time = $(this).data('time');
 					if (movies.titles[id].places[place].times[time] === 'visible') {
@@ -405,6 +405,28 @@ var enableAnalyticEventTracking = function () {
 	// See .reset-filter at end of filterMovies()
 };
 
+var activateStickyNavbar = function () {
+	var navToTop = $('.filters').offset().top;
+	console.log(navToTop);
+	var filters = $('.filters');
+	var checkNavbarIfSticky = function () {
+		if ($(window).scrollTop() > navToTop) {
+			console.log('Sticky!');
+			if (!filters.is('.sticky')) filters.addClass('sticky');
+		}
+		else {
+			if (filters.is('.sticky')) filters.removeClass('sticky');
+		}
+	}
+	$(window).on('resize', function () {
+		if ($(window).width() >= 1680) {
+			$(window).on('scroll.checkIfSticky', checkNavbarIfSticky);
+		}
+		else {
+			$(window).off('scroll.checkIfSticky');
+		}
+	}).trigger('resize');
+};
 
 //
 // ========================= INITIALIZATION ============================
@@ -413,4 +435,5 @@ var enableAnalyticEventTracking = function () {
 // populateMoviesObject();
 activateFilters();
 activateMoreToggle();
+activateStickyNavbar();
 enableAnalyticEventTracking();
