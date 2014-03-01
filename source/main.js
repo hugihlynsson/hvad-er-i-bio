@@ -397,7 +397,7 @@ var enableAnalyticEventTracking = function () {
 	});
 
 	// Track Poster-enlargement clicks:
-	$('.movie .fluidbox').on('click', function () {
+	$('.extra').on('click', '.fluidbox-open', function () {
 		ga('send', 'event', 'button', 'click', 'Poster');
 	});
 
