@@ -117,7 +117,7 @@ var updateMovies = function(moviesJSON) {
 
         var posterFile = sanitize(movie.title) + '.' + movie.image.split('.').pop();
         jadeMovie.poster = 'posters/' + encodeURIComponent(posterFile)
-            .replace(/[!'()]/g, escape).replace(/\*/g, "%2A");;
+            .replace(/[!'()]/g, escape).replace(/\*/g, '%2A');
 
         if (!fs.existsSync('./public/posters/' + posterFile)) {
             request(movie.image).pipe(fs.createWriteStream(
@@ -206,5 +206,11 @@ app.get('/', function(req, res) {
     res.end(renderedHtml);
 });
 
-app.listen(8000);
-console.log('Running server at port 8000');
+console.log('Env: ' + app.get('env'));
+
+var port = 8001;
+if (app.get('env') === 'production') {
+    port = 8000;
+}
+app.listen(port);
+console.log('Running server at port ' + port);
