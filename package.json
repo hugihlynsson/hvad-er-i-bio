@@ -11,7 +11,8 @@
     "express": "~3.4.8",
     "jade": "~1.1.5",
     "request": "~2.33.0",
-    "sanitize-filename": "~1.0.1"
+    "sanitize-filename": "~1.0.1",
+    "xml2js": "~0.4.1"
   },
   "devDependencies": {
     "gulp": "~3.5.2",

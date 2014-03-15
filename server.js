@@ -5,27 +5,54 @@ var express  = require('express');
 var request  = require('request');
 var jade     = require('jade');
 var sanitize = require('sanitize-filename');
+var xml      = require('xml2js');
 
 var app = express();
 app.use(express.compress());
 app.use(express.static(__dirname + '/public'));
 
+
 /**
  * Functions for app:
  */
 
-var renderedHtml = '';
 // The prerendered jade file:
+var renderedHtml = '';
+// Initialize with loading view:
 jade.renderFile('./views/loading.jade', function (err, html) {
     if (err) console.log(err);
     else renderedHtml = html;
 });
 
-// Initialize update to the beginning of Unix...
+
+// Initialize last fetch to the beginning of Unix
 var lastUpdate = new Date(0);
 
+var getMoviesXML = function () {
+    console.log('Fetching XML');
+    request.get('http://www.sambio.is/xml/Schedule/', processSambioXML);
+};
+
+var processSambioXML = function (err, res, body) {
+    console.log('Fetched Sambio XML, starting parsing');
+    xml.parseString(body, function(err, result) {
+        if (err) {
+            console.log('Error fetching Sambio data');
+            return;
+        }
+        console.log('Finished parsing Sambio data');
+        var date = new Date(result.Schedule.PubDate[0]);
+        console.log('Date ' + date);
+        var shows = result.Schedule.Shows[0].Show;
+        console.log(shows);
+    });
+
+};
+
+getMoviesXML();
+
 // Fetch the movies data from apis.is and do some error checking:
-var getMoviesJson = function() {
+var getMoviesJson = function () {
     request.get('http://apis.is/cinema', function (err, res, body) {
         if (err) {
             console.log('Error fetching JSON: ' + err);
@@ -52,7 +79,7 @@ getMoviesJson();
 setInterval(getMoviesJson, 30*60*1000);
 
 // Recreate the global movies data based on fresh info:
-var updateMovies = function(moviesJSON) {
+var updateMovies = function (moviesJSON) {
     // Helpers:
     var timeToNum = function (time) {
         var parts = time.split(':');
@@ -200,17 +227,15 @@ var updateMovies = function(moviesJSON) {
  * Start server:
  */
 
-
 app.get('/', function(req, res) {
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.end(renderedHtml);
 });
 
-console.log('Env: ' + app.get('env'));
 
 var port = 8001;
 if (app.get('env') === 'production') {
     port = 8000;
 }
 app.listen(port);
-console.log('Running server at port ' + port);
+console.log('Running server in ' + app.get('env') + ' envitonment at port ' + port);
