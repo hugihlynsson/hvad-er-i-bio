@@ -8,7 +8,7 @@
     "url": "http://hugihlynsson.com"
   },
   "dependencies": {
-    "express": "~3.4.8",
+    "express": "~4.0.0",
     "jade": "~1.1.5",
     "request": "~2.33.0",
     "sanitize-filename": "~1.0.1",

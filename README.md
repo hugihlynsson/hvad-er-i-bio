@@ -10,7 +10,7 @@ Sambíó http://www.sambio.is/xml/Schedule/
 Midi.is: in arrangements about api key
 Selfossbíó: has not yet made an api (and is not in the current data)
 
-The data should be gathered in a single JSON file with the following stricture:
+The data should be gathered in a single JSON file with the following structure:
     "2014-03-15": [
         {
             "title": "The Lego Movie",

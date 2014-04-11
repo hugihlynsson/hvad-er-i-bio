@@ -5,11 +5,10 @@ var express  = require('express');
 var request  = require('request');
 var jade     = require('jade');
 var sanitize = require('sanitize-filename');
-var xml      = require('xml2js');
 
 var app = express();
-app.use(express.compress());
 app.use(express.static(__dirname + '/public'));
+
 
 
 /**
@@ -25,37 +24,15 @@ jade.renderFile('./views/loading.jade', function (err, html) {
 });
 
 
-// Initialize last fetch to the beginning of Unix
+// Initialize update to the beginning of Unix...
 var lastUpdate = new Date(0);
-
-var getMoviesXML = function () {
-    console.log('Fetching XML');
-    request.get('http://www.sambio.is/xml/Schedule/', processSambioXML);
-};
-
-var processSambioXML = function (err, res, body) {
-    console.log('Fetched Sambio XML, starting parsing');
-    xml.parseString(body, function(err, result) {
-        if (err) {
-            console.log('Error fetching Sambio data');
-            return;
-        }
-        console.log('Finished parsing Sambio data');
-        var date = new Date(result.Schedule.PubDate[0]);
-        console.log('Date ' + date);
-        var shows = result.Schedule.Shows[0].Show;
-        console.log(shows);
-    });
-
-};
-
-getMoviesXML();
 
 // Fetch the movies data from apis.is and do some error checking:
 var getMoviesJson = function () {
     request.get('http://apis.is/cinema', function (err, res, body) {
         if (err) {
             console.log('Error fetching JSON: ' + err);
+            // If there is an error fetching the data, try again in a minute
             setTimeout(getMoviesJson, 60*1000);
         }
         else if (res.statusCode !== 200) {
@@ -122,8 +99,8 @@ var updateMovies = function (moviesJSON) {
     jadeData.titles = [];
     jadeData.capitalPlaces = [];
     jadeData.ruralPlaces = [];
-    var date = new Date();
-    jadeData.date = date.getDate() + '. ' + months[date.getMonth()];
+    lastUpdate = new Date();
+    jadeData.date = lastUpdate.getDate() + '. ' + months[lastUpdate.getMonth()];
 
     var data = {};
     data.titles = {};
@@ -219,6 +196,7 @@ var updateMovies = function (moviesJSON) {
     );
 
     lastUpdate = new Date();
+    console.log(lastUpdate);
     console.log('Updated html with fresh data');
 };
 
@@ -233,9 +211,6 @@ app.get('/', function(req, res) {
 });
 
 
-var port = 8001;
-if (app.get('env') === 'production') {
-    port = 8000;
-}
+var port = (app.get('env') === 'production') ? 8000 : 8001;
 app.listen(port);
 console.log('Running server in ' + app.get('env') + ' envitonment at port ' + port);
