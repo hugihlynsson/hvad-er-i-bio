@@ -306,13 +306,13 @@ var updateTimeRangeMarks = function () {
 var activateRangeSliders = function () {
 
 	// On time range change:
-	$('#to-time, #from-time').on('change', function() {
+	$('#to-time, #from-time').on('input', function() {
 		throttleMovieFilter();
 		updateTimeRangeMarks();
 	});
 
 	// On rating range change:
-	$('#rating-range').on('change', function () {
+	$('#rating-range').on('input', function () {
 		var range = $(this);
 		throttleMovieFilter();
 		updateRangemark(range);
