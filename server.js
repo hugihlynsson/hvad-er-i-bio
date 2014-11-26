@@ -26,36 +26,53 @@ jade.renderFile('./views/loading.jade', function (err, html) {
 // Initialize update to the beginning of Unix...
 var lastUpdate = new Date(0);
 
+
 // Fetch the movies data from apis.is and do some error checking:
-var getMoviesJson = function () {
+var getMoviesData = function (cb) {
     request.get('http://apis.is/cinema', function (err, res, body) {
-        if (err) {
-            console.log('Error fetching JSON: ' + err);
-            // If there is an error fetching the data, try again in a minute
-            setTimeout(getMoviesJson, 60*1000);
-        }
+        if (err) return cb(err);
         else if (res.statusCode !== 200) {
             console.log('Error fetching JSON: Cinema site responded with code: ' + res.statusCode);
-
-            // If the data is old display no-data:
-            if (lastUpdate.toDateString() !== new Date().toDateString()) {
-                jade.renderFile('./views/no-data.jade', function (err, html) {
-                    if (err) console.log(err);
-                    else renderedHtml = html;
-                });
-            }
-            setTimeout(getMoviesJson, 60*1000);
+            return cb(err);
         }
-        else updateMovies(JSON.parse(body));
+        return cb(undefined, body);
     });
 };
-// Run the function once to update data immediately:
-getMoviesJson();
-// Finally set timer to run the fetching periodically:
-setInterval(getMoviesJson, 30*60*1000);
+
+
+var updateRenderedHtml = function () {
+    getMoviesData(function(err, body) {
+        if (err) {
+            console.log('Error fetching movies', err);
+            if (lastUpdate.toDateString() !== new Date().toDateString()) {
+                jade.renderFile('./views/no-data.jade', function (err, html) {
+                  if (err) console.log('Error rendering no-data jade', err);
+                  else renderedHtml = html;
+                });
+            }
+            setTimeout(updateRenderedHtml, 60*1000);
+        }
+        else {
+            var data = processMovieJson(JSON.parse(body).results);
+            jade.renderFile('./views/index.jade', data, function (err, html) {
+                if (err) console.log('Failed to render index', err);
+                else {
+                    renderedHtml = html;
+                }
+            });
+
+            lastUpdate = new Date();
+            console.log(lastUpdate);
+            console.log('Updated html with fresh data');
+
+            setTimeout(updateRenderedHtml, 30*60*1000);
+        }
+    });
+}.call();
+
 
 // Recreate the global movies data based on fresh info:
-var updateMovies = function (moviesJSON) {
+var processMovieJson = function (moviesJSON) {
     // Helpers:
     var timeToNum = function (time) {
         var parts = time.split(':');
@@ -109,7 +126,7 @@ var updateMovies = function (moviesJSON) {
     var highestShowtime = 0;
 
     // Cycle through the whole json to work with the data:
-    moviesJSON.results.forEach(function (movie) {
+    moviesJSON.forEach(function (movie) {
 
         var jadeMovie = {};
         jadeMovie.title = movie.title;
@@ -175,20 +192,7 @@ var updateMovies = function (moviesJSON) {
     jadeData.lowestShowtime = { human: numToTime(roundedLow), number: roundedLow };
     jadeData.highestShowtime = { human: numToTime(roundedHigh), number: roundedHigh };
 
-    jade.renderFile(
-        './views/index.jade',
-        { movies: jadeData, data: data },
-        function (err, html) {
-            if (err) console.log(err);
-            else {
-                renderedHtml = html;
-            }
-        }
-    );
-
-    lastUpdate = new Date();
-    console.log(lastUpdate);
-    console.log('Updated html with fresh data');
+    return { movies: jadeData, data: data };
 };
 
 
