@@ -89,7 +89,7 @@ var updateMovies = function (moviesJSON) {
         'ágúst',
         'september',
         'október',
-        'nóbember',
+        'nóvember',
         'desember'
     ];
 
