@@ -1,10 +1,9 @@
 'use strict';
 
-var fs       = require('fs');
-var express  = require('express');
-var request  = require('request');
-var jade     = require('jade');
-var sanitize = require('sanitize-filename');
+var express = require('express');
+var request = require('request');
+var jade = require('jade');
+var cachePoster = require('./cachePoster');
 
 var app = express();
 app.use(express.static(__dirname + '/public'));
@@ -119,15 +118,7 @@ var updateMovies = function (moviesJSON) {
         jadeMovie.imdbUrl = movie.imdbLink;
         jadeMovie.restriction = movie.restricted;
 
-        var posterFile = sanitize(movie.title) + '.' + movie.image.split('.').pop();
-        jadeMovie.poster = 'posters/' + encodeURIComponent(posterFile)
-            .replace(/[!'()]/g, escape).replace(/\*/g, '%2A');
-
-        if (!fs.existsSync('./public/posters/' + posterFile)) {
-            request(movie.image).pipe(fs.createWriteStream(
-                './public/posters/' + posterFile
-            ));
-        }
+        jadeMovie.poster = cachePoster(movie.image, movie.title);
 
         jadeMovie.shows = [];
 
