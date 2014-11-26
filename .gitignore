@@ -1,5 +1,4 @@
 .DS_Store
-*.sublime-workspace
 
 lib-cov
 lcov.info
@@ -10,12 +9,13 @@ lcov.info
 *.out
 *.pid
 *.gz
-.env
 
 pids
 logs
 results
 build
 
-node_modules
-posters
+.env
+node_modules/
+public/posters/
+assets/
