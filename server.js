@@ -21,7 +21,9 @@ jade.renderFile('./views/loading.jade', function (err, html) {
 
 
 var getMoviesData = function (cb) {
-    request.get('http://apis.is/cinema', function (err, res, body) {
+    var url = 'http://kvikmyndir.is/api/showtimes/?key=' + process.env.KVIKMYNDIR_KEY;
+    console.log(url);
+    request.get({ url: url }, function (err, res, body) {
         if (err) return cb(err);
         else if (res.statusCode !== 200) {
             console.log('Error fetching JSON: Cinema site responded with code: ' + res.statusCode);
@@ -36,19 +38,16 @@ var updateRenderedHtml = function () {
     getMoviesData(function(err, body) {
         if (err) {
             console.log('Error fetching movies', err);
-            if (lastUpdate.toDateString() !== new Date().toDateString()) {
-                jade.renderFile('./views/no-data.jade', function (err, html) {
-                  if (err) console.log('Error rendering no-data jade', err);
-                  else renderedHtml = html;
-                });
-            }
-
-            setTimeout(updateRenderedHtml, 60*1000);
+            handleDataError();
         }
         else {
             var data = {};
-            try { data = processMoviesJson(JSON.parse(body).results); }
-            catch (err) { console.log('Failed to process data', err); }
+            try { data = processMoviesJson(JSON.parse(body)); }
+            catch (err) {
+                console.log('Failed to process data', err);
+                handleDataError();
+                return;
+            }
             jade.renderFile('./views/index.jade', data, function (err, html) {
                 if (err) console.log('Failed to render index', err);
                 else renderedHtml = html;
@@ -61,6 +60,16 @@ var updateRenderedHtml = function () {
         }
     });
 }.call();
+
+var handleDataError = function () {
+    if (lastUpdate.toDateString() !== new Date().toDateString()) {
+        jade.renderFile('./views/no-data.jade', function (err, html) {
+            if (err) console.log('Error rendering no-data jade', err);
+            else renderedHtml = html;
+        });
+    }
+    setTimeout(updateRenderedHtml, 60*1000);
+};
 
 
 /**

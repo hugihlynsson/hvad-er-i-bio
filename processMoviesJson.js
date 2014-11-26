@@ -61,12 +61,11 @@ var processMoviesJson = function (moviesJSON) {
 
         var jadeMovie = {};
         jadeMovie.title = movie.title;
-        jadeMovie.rating = movie.imdb.split('/')[0];
-        jadeMovie.votes = movie.imdb.split(' ')[2];
-        jadeMovie.imdbUrl = movie.imdbLink;
-        jadeMovie.restriction = movie.restricted;
+        jadeMovie.rating = movie.ratings.imdb;
+        jadeMovie.imdbUrl = 'http://www.imdb.com/title/tt' + movie.ids.imdb;
+        jadeMovie.restriction = movie.certificateIS;
 
-        jadeMovie.poster = cachePoster(movie.image, movie.title);
+        jadeMovie.poster = cachePoster(movie.poster, movie.title);
 
         jadeMovie.shows = [];
 
@@ -74,30 +73,30 @@ var processMoviesJson = function (moviesJSON) {
 
         var currentMovie = data.titles[movie.title];
         currentMovie.isFiltered = false;
-        currentMovie.rating = movie.imdb.split('/')[0];
+        currentMovie.rating = movie.ratings.imdb;
         currentMovie.places = {};
 
         // Cylce through the shows:
         movie.showtimes.forEach(function (place) {
             var jadeShow = {};
-            jadeShow.theater = place.theater;
+            jadeShow.theater = place.cinema;
             jadeShow.times = [];
 
             // If not yet there, add place to jadeData places:
-            if (knownCapitalPlaces.indexOf(place.theater) >= 0) {
-                if (jadeData.capitalPlaces.indexOf(place.theater) < 0) {
-                    jadeData.capitalPlaces.push(place.theater);
+            if (knownCapitalPlaces.indexOf(place.cinema) >= 0) {
+                if (jadeData.capitalPlaces.indexOf(place.cinema) < 0) {
+                    jadeData.capitalPlaces.push(place.cinema);
                 }
             }
             else {
-                if (jadeData.ruralPlaces.indexOf(place.theater) < 0) {
-                    jadeData.ruralPlaces.push(place.theater);
+                if (jadeData.ruralPlaces.indexOf(place.cinema) < 0) {
+                    jadeData.ruralPlaces.push(place.cinema);
                 }
             }
 
-            currentMovie.places[place.theater] = {};
-            currentMovie.places[place.theater].times = {};
-            currentMovie.places[place.theater].isFiltered = false;
+            currentMovie.places[place.cinema] = {};
+            currentMovie.places[place.cinema].times = {};
+            currentMovie.places[place.cinema].isFiltered = false;
 
             // Cycle through the shows times:
             place.schedule.forEach(function (time) {
@@ -109,7 +108,7 @@ var processMoviesJson = function (moviesJSON) {
                 if (timeNumber < lowestShowtime) lowestShowtime = timeNumber;
                 if (timeNumber > highestShowtime) highestShowtime = timeNumber;
 
-                currentMovie.places[place.theater].times[timeNumber] = 'visible';
+                currentMovie.places[place.cinema].times[timeNumber] = 'visible';
             });
             jadeMovie.shows.push(jadeShow);
         });
