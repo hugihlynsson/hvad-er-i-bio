@@ -6,7 +6,6 @@ var concat      = require('gulp-concat');
 var jshint      = require('gulp-jshint');
 var uglify      = require('gulp-uglify');
 var livereaload = require('gulp-livereload');
-var server      = require('tiny-lr')();
 var notify      = require('gulp-notify');
 
 gulp.task('styles', function() {
@@ -15,8 +14,8 @@ gulp.task('styles', function() {
         .pipe(autoprefix('last 2 versions'))
         .pipe(minifycss())
         .pipe(gulp.dest('./public'))
-        .pipe(livereaload(server))
-        .pipe(notify({message: 'Styles task complete'}));
+        .pipe(livereaload())
+        .pipe(notify('Styles task complete'));
 });
 
 gulp.task('scripts', function() {
@@ -29,7 +28,8 @@ gulp.task('scripts', function() {
         .pipe(concat('main.js'))
         .pipe(uglify())
         .pipe(gulp.dest('./public'))
-        .pipe(notify({message: 'Scripts task completed'}));
+        .pipe(livereaload())
+        .pipe(notify('Scripts task completed'));
 });
 
 gulp.task('lint', function() {
@@ -39,8 +39,6 @@ gulp.task('lint', function() {
 });
 
 gulp.task('watch', function() {
-    server.listen(35729, function(err) {if (err) return console.log(err); });
-
     gulp.watch('./source/**/*.less', ['styles']);
     gulp.watch('./source/**/*.js', ['lint', 'scripts']);
 });
