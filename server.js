@@ -15,14 +15,13 @@ app.use(express.static(__dirname + '/public'));
 // Start rendering the loading view
 var renderedHtml;
 jade.renderFile('./views/loading.jade', function (err, html) {
-    if (err) console.log(err);
+    if (err) console.log('Failed to render loading.jade', err);
     else renderedHtml = html;
 });
 
 
 var getMoviesData = function (cb) {
     var url = 'http://kvikmyndir.is/api/showtimes/?key=' + process.env.KVIKMYNDIR_KEY;
-    console.log(url);
     request.get({ url: url }, function (err, res, body) {
         if (err) return cb(err);
         else if (res.statusCode !== 200) {

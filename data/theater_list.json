@@ -1,0 +1,112 @@
+[
+  {
+    "id":1,
+    "name":"Sm\u00e1rab\u00ed\u00f3",
+    "address\t":"Sm\u00e1ralind",
+    "city":"201 K\u00f3pavogur",
+    "phone":"564-0000",
+    "website":"www.smarabio.is",
+    "description":"Sm\u00e1rab\u00ed\u00f3 er eitt fullkomnasta kvikmyndah\u00fas landsins.<br><br>\n\nB\u00ed\u00f3i\u00f0 er me\u00f0 5 sali og tekur r\u00famlega 1.000 manns \u00ed s\u00e6ti..\n<br><br><b>\n",
+    "google_map":""
+  },
+  {
+    "id":2,
+    "name":"H\u00e1sk\u00f3lab\u00ed\u00f3",
+    "address\t":"Hagatorgi",
+    "city":"107 Reykjav\u00edk",
+    "phone":"530-1919",
+    "website":"www.haskolabio.is",
+    "description":"\u00cd H\u00e1sk\u00f3lab\u00ed\u00f3 eru 7 misst\u00f3rir fyrirlestrarsalir s\u00e9rhanna\u00f0ir fyrir fundi og fyrirlestra, s\u00e1 minnsti 23 s\u00e6ta og s\u00e1 st\u00e6rsti 970 s\u00e6ta, samtals 1891 s\u00e6ti.\n\n\u00cd \u00f6llum s\u00f6lunum eru \u00fe\u00e6gilegir st\u00f3lar, \u00ed sumum fellibor\u00f0 og hallandi g\u00f3lf og veitir \u00fea\u00f0 \u00fe\u00e1tttakendum bestu a\u00f0st\u00e6\u00f0ur til a\u00f0 fylgjast me\u00f0 fyrirlesurum og myndefni \u00e1 tjaldi. Auk \u00feess er m\u00f6guleiki \u00e1 a\u00f0 b\u00e6ta vi\u00f0 fundaa\u00f0st\u00f6\u00f0u \u00ed \u00f6\u00f0rum byggingum H\u00e1sk\u00f3lans \u00e1 sv\u00e6\u00f0inu.\n\nGott a\u00f0gengi er fyrir fatla\u00f0a \u00ed \u00f6llu h\u00fasinu. 700 b\u00edlast\u00e6\u00f0i eru umhverfis h\u00fasi\u00f0.\n\n<br><br><b>\n\n",
+    "google_map":""
+  },
+  {
+    "id":3,
+    "name":"Borgarb\u00ed\u00f3",
+    "address\t":"H\u00f3labraut 12",
+    "city":"600 Akureyri",
+    "phone":"462-2602",
+    "website":"www.borgarbio.is",
+    "description":"Borgarb\u00ed\u00f3 Akureyri er b\u00fai\u00f0 2 kvikmyndas\u00f6lum og tekur r\u00famlega 300 manns \u00ed s\u00e6ti, en vi\u00f0 \u00fea\u00f0 vinnur \u00e1 annan tug manns. Kvikmyndah\u00fasi\u00f0 er eitt f\u00e1rra frums\u00fdningab\u00ed\u00f3a utan h\u00f6fu\u00f0borgarinnar og var stofna\u00f0 fyrir mi\u00f0ja s\u00ed\u00f0ustu \u00f6ld og er \u00fev\u00ed l\u00edklega eitt elsta kvikmyndah\u00fas \u00e1 landinu.<br><br>Kvikmyndah\u00fasi\u00f0 hefur veri\u00f0 lei\u00f0andi me\u00f0al kvikmyndah\u00fasa \u00e1 landsbygg\u00f0inni, enda var \u00fea\u00f0 lengi vel eina fj\u00f6lsala-kvikmyndah\u00fasi\u00f0 utan Reykjav\u00edkur og einnig \u00fea\u00f0 st\u00e6rsta. <br><br><b><br>",
+    "google_map":""
+  },
+  {
+    "id":4,
+    "name":"Laugar\u00e1sb\u00ed\u00f3",
+    "address\t":"Laugar\u00e1si",
+    "city":"104 Reykjav\u00edk",
+    "phone":"553-2075",
+    "website":"www.laugarasbio.is",
+    "description":"",
+    "google_map":"<iframe width=\"425\" height=\"350\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" src=\"http:\/\/maps.google.com\/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=laugar%C3%A1sb%C3%AD%C3%B3&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=37.871902,70.839844&amp;ie=UTF8&amp;hq=laugar%C3%A1sb%C3%AD%C3%B3&amp;hnear=&amp;radius=15000&amp;ll=64.148181,-21.867099&amp;spn=0.138764,0.160226&amp;t=m&amp;output=embed\"><\/iframe><br \/><small><a href=\"http:\/\/maps.google.com\/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=laugar%C3%A1sb%C3%AD%C3%B3&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=37.871902,70.839844&amp;ie=UTF8&amp;hq=laugar%C3%A1sb%C3%AD%C3%B3&amp;hnear=&amp;radius=15000&amp;ll=64.148181,-21.867099&amp;spn=0.138764,0.160226&amp;t=m\" style=\"color:#0000FF;text-align:left\">View Larger Map<\/a><\/small>"
+  },
+  {
+    "id":5,
+    "name":"B\u00ed\u00f3 Parad\u00eds",
+    "address\t":"Hverfisg\u00f6tu 54",
+    "city":"Reykjav\u00edk",
+    "phone":null,
+    "website":"bioparadis.is",
+    "description":null,
+    "google_map":""
+  },
+  {
+    "id":6,
+    "name":"\u00c1lfabakki",
+    "address\t":"\u00c1lfabakka",
+    "city":"109 Reykjav\u00edk",
+    "phone":"575-8900",
+    "website":"www.sambioin.is",
+    "description":"Samb\u00ed\u00f3in \u00e1lfabakka var byggt \u00e1ri\u00f0 1982 og er eitt fullkomnasta kvikmyndah\u00fas landsins.\nB\u00ed\u00f3i\u00f0 var fyrsta kvikmyndah\u00fasi\u00f0 \u00e1 nor\u00f0url\u00f6ndum sem var b\u00fai\u00f0 THX kerfinu. Samb\u00ed\u00f3in \u00e1lfabakkka er \u00ed dag b\u00fai\u00f0 6 kvikmyndas\u00f6lum, \u00feetta var fyrsta kvikmyndah\u00fasi\u00f0 sem bau\u00f0 upp \u00e1 l\u00faxus VIP sal, en s\u00e1 salur er b\u00fainn \u00fe\u00e6gilegum rafdrifnum s\u00e6tum, s\u00e1 salur var v\u00edg\u00f0ur \u00ed \u00e1g\u00fast \u00e1ri\u00f0 2001.<br><br>",
+    "google_map":""
+  },
+  {
+    "id":7,
+    "name":"Kringlub\u00ed\u00f3",
+    "address\t":"Kringlunni 4-6",
+    "city":"103 Reykjav\u00edk",
+    "phone":"575-8900",
+    "website":"www.sambioin.is",
+    "description":"Samb\u00ed\u00f3in Kringlunni var opna\u00f0 \u00e1ri\u00f0 1996.\r\n\r\n\u00dea\u00f0 var fyrsta kvikmyndah\u00fasi\u00f0 \u00e1 \u00edslandi sem bau\u00f0 upp\u00e1 THX hlj\u00f3\u00f0kerfi \u00ed \u00f6llum s\u00f6lum. Samb\u00ed\u00f3in Kringlunni er fyrsta kvikmyndah\u00fasi\u00f0 \u00e1 \u00cdslandi sem b\u00fd\u00f0ur upp\u00e1 digital b\u00ed\u00f3s\u00fdningar.",
+    "google_map":""
+  },
+  {
+    "id":8,
+    "name":"Samb\u00ed\u00f3in Egilsh\u00f6ll",
+    "address\t":"Egilsh\u00f6ll",
+    "city":"Reykjav\u00edk",
+    "phone":"575-8900",
+    "website":"www.sambio.is",
+    "description":null,
+    "google_map":""
+  },
+  {
+    "id":9,
+    "name":"Samb\u00ed\u00f3in, Akureyri",
+    "address\t":"R\u00e1\u00f0h\u00fastorgi 8",
+    "city":"600 Akureyri",
+    "phone":"461-4666",
+    "website":"www.sambioin.is",
+    "description":"Samb\u00ed\u00f3in \u00e1 Akureyri hafa yfir tveimur s\u00fdningars\u00f6lum a\u00f0 r\u00e1\u00f0a. A salur tekur 211 manns \u00ed s\u00e6ti en B salur 98 manns. Kvikmyndah\u00fasi\u00f0 er gl\u00e6silega \u00fatb\u00fai\u00f0 og hefur veri\u00f0 miki\u00f0 endurn\u00fdja\u00f0 fr\u00e1 \u00fev\u00ed sem var h\u00e9r \u00e1 \u00e1rum \u00e1\u00f0ur \u00feegar Akureyringar \u00feekktu \u00fea\u00f0 helst undir nafninu N\u00fdja b\u00ed\u00f3. H\u00fasi\u00f0 var reist \u00e1ri\u00f0 1929 og reki\u00f0 undir Nafninu N\u00fdjaB\u00edo Til fj\u00f6lda \u00e1ra Rekstri Kvikmyndah\u00fas var s\u00ed\u00f0an h\u00e6tt og S\u00ed\u00f0ar t\u00f3k vi\u00f0 n\u00fdr rekstur \u00ed h\u00fasinu en \u00fe\u00e1 var settur \u00e1 lagginar skemmtista\u00f0urinn 1929 en \u00feema skemmtista\u00f0arins var allt tengt kvikmyndum og var einn vins\u00e6lasti skemmtista\u00f0ur landsins \u00ed m\u00f6rg \u00e1r og spilu\u00f0u \u00fea\u00f0 margar af st\u00e6rstu hlj\u00f3msveitum landsins \u00e1ri\u00f0 1995 brann svo h\u00fasi\u00f0 og \u00f6llum rekstri h\u00e6tt En \u00e1ri\u00f0 \u00ed n\u00f3vember 1998  var B\u00ed\u00f3i\u00f0 opna\u00f0 almenningi aftur og \u00fe\u00e1 au\u00f0vita\u00f0 undir nafninu N\u00fdja b\u00ed\u00f3.\r\n",
+    "google_map":""
+  },
+  {
+    "id":10,
+    "name":"Samb\u00ed\u00f3in, Selfossi",
+    "address\t":"Eyrarvegi 2",
+    "city":"800 Selfoss",
+    "phone":"575-8900",
+    "website":"www.sambion.is",
+    "description":"Samb\u00ed\u00f3in Selfossi var opna\u00f0 11.des 2004.  B\u00ed\u00f3i\u00f0 b\u00ed\u00f0ur upp \u00e1 tvo sali, n\u00fd og \u00fe\u00e6gileg s\u00e6ti me\u00f0 gott r\u00fdmi fyrir f\u00e6tur og g\u00f3\u00f0an halla \u00e1 milli s\u00e6tara\u00f0a. Hlj\u00f3\u00f0kerfi\u00f0 er \u00ed  Dolby Digital g\u00e6\u00f0um og allar \u00fe\u00e6r kr\u00f6fur sem THX sta\u00f0allinn gerir, enda stillt me\u00f0 THX t\u00e6kjum.\r\n\r\nUpphaflega h\u00e9t b\u00ed\u00f3i\u00f0 Selfossb\u00ed\u00f3 en Samb\u00ed\u00f3in keyptu \u00fea\u00f0 \u00ed \u00e1g\u00fast 2007.",
+    "google_map":""
+  },
+  {
+    "id":11,
+    "name":"Samb\u00ed\u00f3in, Keflav\u00edk",
+    "address\t":"Hafnarg\u00f6tu 33",
+    "city":"230 Keflav\u00edk",
+    "phone":"421-1170",
+    "website":"www.sambioin.is",
+    "description":"\r\nSamb\u00ed\u00f3in Keflav\u00edk voru fyrsta Samb\u00ed\u00f3i\u00f0 , \u00fea\u00f0 var byggt \u00e1ri\u00f0 1941 af Eyj\u00f3lfi \u00c1sberg. Samb\u00ed\u00f3in keflav\u00edk er b\u00fai\u00f0 2 s\u00f6lum. Salur eitt var endurreistur \u00e1ri\u00f0 1998 og salur 2 var bygg\u00f0ur 2001",
+    "google_map":""
+  }
+]

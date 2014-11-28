@@ -1,7 +1,12 @@
 'use strict';
 
+var fs = require('fs');
 var cachePoster = require('./cachePoster');
 
+
+var theaterData = JSON.parse(fs.readFileSync('./data/theater_list.json'));
+var theaterNameMap = {};
+theaterData.forEach(function(theater) { theaterNameMap[theater.id] = theater.name });
 
 // Recreate the global movies data based on fresh info:
 var processMoviesJson = function (moviesJSON) {
@@ -79,24 +84,25 @@ var processMoviesJson = function (moviesJSON) {
         // Cylce through the shows:
         movie.showtimes.forEach(function (place) {
             var jadeShow = {};
-            jadeShow.theater = place.cinema;
+            var theaterName = theaterNameMap[place.cinema];
+            jadeShow.theater = theaterName;
             jadeShow.times = [];
 
             // If not yet there, add place to jadeData places:
-            if (knownCapitalPlaces.indexOf(place.cinema) >= 0) {
-                if (jadeData.capitalPlaces.indexOf(place.cinema) < 0) {
-                    jadeData.capitalPlaces.push(place.cinema);
+            if (knownCapitalPlaces.indexOf(theaterName) >= 0) {
+                if (jadeData.capitalPlaces.indexOf(theaterName) < 0) {
+                    jadeData.capitalPlaces.push(theaterName);
                 }
             }
             else {
-                if (jadeData.ruralPlaces.indexOf(place.cinema) < 0) {
-                    jadeData.ruralPlaces.push(place.cinema);
+                if (jadeData.ruralPlaces.indexOf(theaterName) < 0) {
+                    jadeData.ruralPlaces.push(theaterName);
                 }
             }
 
-            currentMovie.places[place.cinema] = {};
-            currentMovie.places[place.cinema].times = {};
-            currentMovie.places[place.cinema].isFiltered = false;
+            currentMovie.places[theaterName] = {};
+            currentMovie.places[theaterName].times = {};
+            currentMovie.places[theaterName].isFiltered = false;
 
             // Cycle through the shows times:
             place.schedule.forEach(function (time) {
@@ -108,7 +114,7 @@ var processMoviesJson = function (moviesJSON) {
                 if (timeNumber < lowestShowtime) lowestShowtime = timeNumber;
                 if (timeNumber > highestShowtime) highestShowtime = timeNumber;
 
-                currentMovie.places[place.cinema].times[timeNumber] = 'visible';
+                currentMovie.places[theaterName].times[timeNumber] = 'visible';
             });
             jadeMovie.shows.push(jadeShow);
         });
