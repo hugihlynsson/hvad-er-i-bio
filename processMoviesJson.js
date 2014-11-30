@@ -26,9 +26,9 @@ var processMoviesJson = function (moviesJSON) {
         'Bíó Paradís',
         'Háskólabíó',
         'Laugarásbíó',
-        'Sambíóin Álfabakka',
+        'Álfabakki',
         'Sambíóin Egilshöll',
-        'Sambíóin Kringlunni',
+        'Kringlubíó',
         'Smárabíó'
     ];
     var months = [
