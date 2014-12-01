@@ -48,7 +48,10 @@ var updateRenderedHtml = function () {
                 return;
             }
             jade.renderFile('./views/index.jade', data, function (err, html) {
-                if (err) console.log('Failed to render index', err);
+                if (err) {
+                    console.log('Failed to render index', err);
+                    handleDataError();
+                }
                 else renderedHtml = html;
             });
 

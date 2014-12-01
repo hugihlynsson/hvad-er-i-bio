@@ -6,7 +6,7 @@ var cachePoster = require('./cachePoster');
 
 var theaterData = JSON.parse(fs.readFileSync('./data/theater_list.json'));
 var theaterNameMap = {};
-theaterData.forEach(function(theater) { theaterNameMap[theater.id] = theater.name });
+theaterData.forEach(function(theater) { theaterNameMap[theater.id] = theater.name; });
 
 // Recreate the global movies data based on fresh info:
 var processMoviesJson = function (moviesJSON) {
