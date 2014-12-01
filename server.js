@@ -3,75 +3,67 @@
 var express = require('express');
 var request = require('request');
 var jade = require('jade');
+var Q = require('q');
 var processMoviesJson = require('./processMoviesJson');
 
 var app = express();
 app.use(express.static(__dirname + '/public'));
 
 
- // Initialize update to the beginning of Unix
- var lastUpdate = new Date(0);
-
-// Start rendering the loading view
-var renderedHtml;
-jade.renderFile('./views/loading.jade', function (err, html) {
-    if (err) console.log('Failed to render loading.jade', err);
-    else renderedHtml = html;
-});
-
-
-var getMoviesData = function (cb) {
-    var url = 'http://kvikmyndir.is/api/showtimes/?key=' + process.env.KVIKMYNDIR_KEY;
-    request.get({ url: url }, function (err, res, body) {
-        if (err) return cb(err);
-        else if (res.statusCode !== 200) {
-            console.log('Error fetching JSON: Cinema site responded with code: ' + res.statusCode);
-            return cb(new Error());
-        }
-        return cb(undefined, body);
+// Wrap jade.renderFile in a promise
+var renderJadeFile = function (path, data) {
+    return Q.promise(function(resolve, reject) {
+        jade.renderFile(path, data, function(err, html) {
+            if (err) reject(new Error(err));
+            resolve(html);
+        });
     });
 };
+
+
+// A function to update the renderedHtml to make promise.then nicer.
+var replaceHtml = function(html) { renderedHtml = html; };
+
+
+// Initialize update to the beginning of Unix
+var lastUpdate = new Date(0);
+
+// The html to be serverd from memory
+var renderedHtml;
+
+// Start rendering the loading view
+renderJadeFile('./views/loading.jade').then(replaceHtml).fail(console.log);
+
 
 // Update the rendered html with either fresh data or no-data and call itself
 var updateRenderedHtml = function () {
-    getMoviesData(function(err, body) {
-        if (err) {
-            console.log('Error fetching movies', err);
-            handleDataError();
-        }
-        else {
-            var data = {};
-            try { data = processMoviesJson(JSON.parse(body)); }
-            catch (err) {
-                console.log('Failed to process data', err);
-                handleDataError();
-                return;
+    Q.promise(function (resolve, reject) {
+        var url = 'http://kvikmyndir.is/api/showtimes/?key=' + process.env.KVIKMYNDIR_KEY;
+        request.get({ url: url }, function (err, res, body) {
+            if (err) reject(new Error(err));
+            else if (res.statusCode !== 200) {
+                reject(new Error('Faild to fetch data, got bad status: ' + res.statusCode));
             }
-            jade.renderFile('./views/index.jade', data, function (err, html) {
-                if (err) {
-                    console.log('Failed to render index', err);
-                    handleDataError();
-                }
+            else resolve(body);
+        });
+    }).then(JSON.parse).then(processMoviesJson).then(function(data) {
+        return renderJadeFile('./views/index.jade', data);
+    }).then(replaceHtml).then(function() {
+        lastUpdate = new Date();
+        console.log('Updated html with fresh data', lastUpdate);
+        setTimeout(updateRenderedHtml, 30*60*1000);
+    }).fail(function (err) {
+        console.log('Handling data error');
+        console.log(err);
+        if (lastUpdate.toDateString() !== new Date().toDateString()) {
+            jade.renderFile('./views/no-data.jade', function (err, html) {
+                if (err) console.log('Error rendering no-data jade', err);
                 else renderedHtml = html;
             });
-
-            lastUpdate = new Date();
-            console.log('Updated html with fresh data', lastUpdate);
-
-            setTimeout(updateRenderedHtml, 30*60*1000);
         }
+        setTimeout(updateRenderedHtml, 60*1000);
     });
-}.call();
-
-var handleDataError = function () {
-    if (lastUpdate.toDateString() !== new Date().toDateString()) {
-        jade.renderFile('./views/no-data.jade', function (err, html) {
-            if (err) console.log('Error rendering no-data jade', err);
-            else renderedHtml = html;
-        });
-    }
-    setTimeout(updateRenderedHtml, 60*1000);
-};
+}();
 
 
 /**
