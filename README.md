@@ -26,7 +26,6 @@ Run `gulp` to start the compiling process. It will watch any changes and recompi
 - Break main.less into smaller, more maintainable files
 - Use [browserify](http://browserify.org) for the front-end JS instead of manually adding files to the Gulp process
 - Break scripts.js into smaller, more testable files
-- Use Promises where it makes sense
 
 
 ## Copyright

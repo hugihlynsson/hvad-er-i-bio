@@ -3,7 +3,7 @@
 var express = require('express');
 var request = require('request');
 var jade = require('jade');
-var Q = require('q');
+var Promise = require('bluebird');
 var processMoviesJson = require('./processMoviesJson');
 
 var app = express();
@@ -12,7 +12,7 @@ app.use(express.static(__dirname + '/public'));
 
 // Wrap jade.renderFile in a promise
 var renderJadeFile = function (path, data) {
-    return Q.promise(function(resolve, reject) {
+    return new Promise(function(resolve, reject) {
         jade.renderFile(path, data, function(err, html) {
             if (err) reject(new Error(err));
             resolve(html);
@@ -21,7 +21,7 @@ var renderJadeFile = function (path, data) {
 };
 
 
-// A function to update the renderedHtml to make promise.then nicer.
+// A function to update the renderedHtml to make Promise.then() nicer
 var replaceHtml = function(html) { renderedHtml = html; };
 
 
@@ -32,12 +32,12 @@ var lastUpdate = new Date(0);
 var renderedHtml;
 
 // Start rendering the loading view
-renderJadeFile('./views/loading.jade').then(replaceHtml).fail(console.log);
+renderJadeFile('./views/loading.jade').then(replaceHtml).catch(console.log);
 
 
 // Update the rendered html with either fresh data or no-data and call itself
-var updateRenderedHtml = function () {
-    Q.promise(function (resolve, reject) {
+var updateData = function () {
+    new Promise(function(resolve, reject) {
         var url = 'http://kvikmyndir.is/api/showtimes/?key=' + process.env.KVIKMYNDIR_KEY;
         request.get({ url: url }, function (err, res, body) {
             if (err) reject(new Error(err));
@@ -51,20 +51,16 @@ var updateRenderedHtml = function () {
     }).then(replaceHtml).then(function() {
         lastUpdate = new Date();
         console.log('Updated html with fresh data', lastUpdate);
-        setTimeout(updateRenderedHtml, 30*60*1000);
-    }).fail(function (err) {
-        console.log('Handling data error');
-        console.log(err);
+        setTimeout(updateData, 30*60*1000);
+    }).catch(function (err) {
+        console.log(err.stack);
         if (lastUpdate.toDateString() !== new Date().toDateString()) {
-            jade.renderFile('./views/no-data.jade', function (err, html) {
-                if (err) console.log('Error rendering no-data jade', err);
-                else renderedHtml = html;
-            });
+            renderJadeFile('./views/no-data.jade').then(replaceHtml).catch(console.log);
         }
-        setTimeout(updateRenderedHtml, 60*1000);
+        setTimeout(updateData, 60*1000);
     });
-}();
-
+};
+updateData();
 
 /**
  * Start server:
