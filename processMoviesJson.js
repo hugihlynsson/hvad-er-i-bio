@@ -1,7 +1,12 @@
 'use strict';
 
+var fs = require('fs');
 var cachePoster = require('./cachePoster');
 
+
+var theaterData = JSON.parse(fs.readFileSync('./data/theaterList.json'));
+var theaterNameMap = {};
+theaterData.forEach(function(theater) { theaterNameMap[theater.id] = theater.name; });
 
 // Recreate the global movies data based on fresh info:
 var processMoviesJson = function (moviesJSON) {
@@ -21,9 +26,9 @@ var processMoviesJson = function (moviesJSON) {
         'Bíó Paradís',
         'Háskólabíó',
         'Laugarásbíó',
-        'Sambíóin Álfabakka',
+        'Álfabakki',
         'Sambíóin Egilshöll',
-        'Sambíóin Kringlunni',
+        'Kringlubíó',
         'Smárabíó'
     ];
     var months = [
@@ -61,12 +66,11 @@ var processMoviesJson = function (moviesJSON) {
 
         var jadeMovie = {};
         jadeMovie.title = movie.title;
-        jadeMovie.rating = movie.imdb.split('/')[0];
-        jadeMovie.votes = movie.imdb.split(' ')[2];
-        jadeMovie.imdbUrl = movie.imdbLink;
-        jadeMovie.restriction = movie.restricted;
+        jadeMovie.rating = movie.ratings.imdb;
+        jadeMovie.imdbUrl = 'http://www.imdb.com/title/tt' + movie.ids.imdb;
+        jadeMovie.restriction = movie.certificateIS;
 
-        jadeMovie.poster = cachePoster(movie.image, movie.title);
+        jadeMovie.poster = cachePoster(movie.poster, movie.title);
 
         jadeMovie.shows = [];
 
@@ -74,30 +78,31 @@ var processMoviesJson = function (moviesJSON) {
 
         var currentMovie = data.titles[movie.title];
         currentMovie.isFiltered = false;
-        currentMovie.rating = movie.imdb.split('/')[0];
+        currentMovie.rating = movie.ratings.imdb;
         currentMovie.places = {};
 
         // Cylce through the shows:
         movie.showtimes.forEach(function (place) {
             var jadeShow = {};
-            jadeShow.theater = place.theater;
+            var theaterName = theaterNameMap[place.cinema];
+            jadeShow.theater = theaterName;
             jadeShow.times = [];
 
             // If not yet there, add place to jadeData places:
-            if (knownCapitalPlaces.indexOf(place.theater) >= 0) {
-                if (jadeData.capitalPlaces.indexOf(place.theater) < 0) {
-                    jadeData.capitalPlaces.push(place.theater);
+            if (knownCapitalPlaces.indexOf(theaterName) >= 0) {
+                if (jadeData.capitalPlaces.indexOf(theaterName) < 0) {
+                    jadeData.capitalPlaces.push(theaterName);
                 }
             }
             else {
-                if (jadeData.ruralPlaces.indexOf(place.theater) < 0) {
-                    jadeData.ruralPlaces.push(place.theater);
+                if (jadeData.ruralPlaces.indexOf(theaterName) < 0) {
+                    jadeData.ruralPlaces.push(theaterName);
                 }
             }
 
-            currentMovie.places[place.theater] = {};
-            currentMovie.places[place.theater].times = {};
-            currentMovie.places[place.theater].isFiltered = false;
+            currentMovie.places[theaterName] = {};
+            currentMovie.places[theaterName].times = {};
+            currentMovie.places[theaterName].isFiltered = false;
 
             // Cycle through the shows times:
             place.schedule.forEach(function (time) {
@@ -109,7 +114,7 @@ var processMoviesJson = function (moviesJSON) {
                 if (timeNumber < lowestShowtime) lowestShowtime = timeNumber;
                 if (timeNumber > highestShowtime) highestShowtime = timeNumber;
 
-                currentMovie.places[place.theater].times[timeNumber] = 'visible';
+                currentMovie.places[theaterName].times[timeNumber] = 'visible';
             });
             jadeMovie.shows.push(jadeShow);
         });

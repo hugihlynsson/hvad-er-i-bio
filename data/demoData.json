@@ -1,0 +1,834 @@
+[
+  {
+    "id":8736,
+    "ids":{
+      "imdb":"1911658",
+      "rotten":null,
+      "tmdb":"205545"
+    },
+    "title":"The Penguins of Madagascar",
+    "alternativeTitles":"M\u00f6rg\u00e6sirnar fr\u00e1 Madagascar",
+    "year":"2014",
+    "certificateIS":"\u00d6llum leyf\u00f0",
+    "durationMinutes":90,
+    "genres":[
+      2,
+      32,
+      34,
+      70
+    ],
+    "poster":"http:\/\/kvikmyndir.is\/images\/poster\/8736_500.jpg",
+    "actors_abridged":[
+      {
+        "name":"Tom McGrath"
+      },
+      {
+        "name":"Chris Miller"
+      }
+    ],
+    "directors_abridged":[
+      {
+        "name":"Simon J. Smith"
+      }
+    ],
+    "ratings":{
+      "imdb":"7.3",
+      "rotten_audience":null,
+      "rotten_critics":null
+    },
+    "showtimes":[
+      {
+        "cinema":"1",
+        "schedule":[
+          "15:15",
+          "17:30",
+          "15:15 (3D ) ",
+          "17:30 (3D ) ",
+          "20:00 (3D ) "
+        ]
+      },
+      {
+        "cinema":"2",
+        "schedule":[
+          "17:30",
+          "17:30 (3D ) "
+        ]
+      },
+      {
+        "cinema":"3",
+        "schedule":[
+          "17:40 (2D ) "
+        ]
+      },
+      {
+        "cinema":"4",
+        "schedule":[
+          "17:00 (2D ) "
+        ]
+      },
+      {
+        "cinema":"6",
+        "schedule":[
+          "17:50 (\u00cdSL TAL B) ",
+          "18:20 (3D \u00cdSL TAL A) "
+        ]
+      },
+      {
+        "cinema":"8",
+        "schedule":[
+          "17:50 (3D \u00cdSL TAL 1) "
+        ]
+      },
+      {
+        "cinema":"11",
+        "schedule":[
+          "17:50 (3D \u00cdSL TAL 1) "
+        ]
+      }
+    ]
+  },
+  {
+    "id":9294,
+    "ids":{
+      "imdb":"1371150",
+      "rotten":null,
+      "tmdb":null
+    },
+    "title":"This Is Where I Leave You",
+    "alternativeTitles":"",
+    "year":"2014",
+    "certificateIS":"12 \u00e1ra",
+    "durationMinutes":103,
+    "genres":[
+      2,
+      4
+    ],
+    "poster":"http:\/\/kvikmyndir.is\/images\/poster\/9294_500.jpg",
+    "actors_abridged":[
+      {
+        "name":"Jason Bateman"
+      },
+      {
+        "name":"Tina Fey"
+      }
+    ],
+    "directors_abridged":[
+      {
+        "name":"Shawn Levy"
+      }
+    ],
+    "ratings":{
+      "imdb":"6.7",
+      "rotten_audience":null,
+      "rotten_critics":null
+    },
+    "showtimes":[
+      {
+        "cinema":"6",
+        "schedule":[
+          "20:00 (B) ",
+          "22:20 (B) "
+        ]
+      },
+      {
+        "cinema":"8",
+        "schedule":[
+          "17:40 (4) ",
+          "20:00 (2) ",
+          "22:20 (2) "
+        ]
+      },
+      {
+        "cinema":"9",
+        "schedule":[
+          "20:00 (B) "
+        ]
+      },
+      {
+        "cinema":"11",
+        "schedule":[
+          "22:30 (1) "
+        ]
+      }
+    ]
+  },
+  {
+    "id":9661,
+    "ids":{
+      "imdb":"",
+      "rotten":null,
+      "tmdb":null
+    },
+    "title":"Vikingoo",
+    "alternativeTitles":"",
+    "year":"2014",
+    "certificateIS":"12 \u00e1ra",
+    "durationMinutes":0,
+    "genres":[
+      39,
+      75
+    ],
+    "poster":"http:\/\/kvikmyndir.is\/images\/poster\/vikingoo-1416911443.jpg",
+    "actors_abridged":[
+
+    ],
+    "directors_abridged":[
+      {
+        "name":"\u00deorfinnur Gu\u00f0nason"
+      }
+    ],
+    "ratings":{
+      "imdb":null,
+      "rotten_audience":null,
+      "rotten_critics":null
+    },
+    "showtimes":[
+      {
+        "cinema":"7",
+        "schedule":[
+          "18:00 (2) ",
+          "20:00 (2) ",
+          "22:00 (2) "
+        ]
+      },
+      {
+        "cinema":"9",
+        "schedule":[
+          "22:20 (B) "
+        ]
+      },
+      {
+        "cinema":"11",
+        "schedule":[
+          "22:20 (2) "
+        ]
+      }
+    ]
+  },
+  {
+    "id":9246,
+    "ids":{
+      "imdb":"1951265",
+      "rotten":null,
+      "tmdb":null
+    },
+    "title":"The Hunger Games: Mockingjay - Part 1",
+    "alternativeTitles":"",
+    "year":"2014",
+    "certificateIS":"12 \u00e1ra",
+    "durationMinutes":125,
+    "genres":[
+      6,
+      31,
+      32
+    ],
+    "poster":"http:\/\/kvikmyndir.is\/images\/poster\/9246_500.jpg",
+    "actors_abridged":[
+      {
+        "name":"Jennifer Lawrence"
+      },
+      {
+        "name":"Josh Hutcherson"
+      }
+    ],
+    "directors_abridged":[
+      {
+        "name":"Francis Lawrence"
+      }
+    ],
+    "ratings":{
+      "imdb":"7.2",
+      "rotten_audience":null,
+      "rotten_critics":null
+    },
+    "showtimes":[
+      {
+        "cinema":"1",
+        "schedule":[
+          "17:00",
+          "17:00 (L\u00daX ) ",
+          "20:00 (L\u00daX ) ",
+          "20:00",
+          "21:00",
+          "22:45",
+          "22:45 (L\u00daX ) "
+        ]
+      },
+      {
+        "cinema":"2",
+        "schedule":[
+          "18:00",
+          "21:00",
+          "22:30"
+        ]
+      },
+      {
+        "cinema":"3",
+        "schedule":[
+          "17:40",
+          "20:00",
+          "22:20"
+        ]
+      },
+      {
+        "cinema":"4",
+        "schedule":[
+          "17:30",
+          "19:00",
+          "22:00"
+        ]
+      },
+      {
+        "cinema":"11",
+        "schedule":[
+          "17:30 (2) ",
+          "20:00 (1) "
+        ]
+      }
+    ]
+  },
+  {
+    "id":9101,
+    "ids":{
+      "imdb":"2058107",
+      "rotten":"771271199",
+      "tmdb":null
+    },
+    "title":"The Railway Man",
+    "alternativeTitles":"",
+    "year":"2013",
+    "certificateIS":"16 \u00e1ra",
+    "durationMinutes":116,
+    "genres":[
+      4,
+      42
+    ],
+    "poster":"http:\/\/kvikmyndir.is\/images\/poster\/9101_500.jpg",
+    "actors_abridged":[
+      {
+        "name":"Jeremy Irvine"
+      },
+      {
+        "name":"Colin Firth"
+      }
+    ],
+    "directors_abridged":[
+      {
+        "name":"Jonathan Teplitzky"
+      }
+    ],
+    "ratings":{
+      "imdb":"7.1",
+      "rotten_audience":"72",
+      "rotten_critics":"66"
+    },
+    "showtimes":[
+      {
+        "cinema":"7",
+        "schedule":[
+          "20:00 (3) ",
+          "22:20 (3) "
+        ]
+      },
+      {
+        "cinema":"8",
+        "schedule":[
+          "20:00 (4) ",
+          "22:30 (4) "
+        ]
+      },
+      {
+        "cinema":"9",
+        "schedule":[
+          "17:40 (B) "
+        ]
+      }
+    ]
+  },
+  {
+    "id":9245,
+    "ids":{
+      "imdb":"2096672",
+      "rotten":null,
+      "tmdb":null
+    },
+    "title":"Dumb and Dumber To",
+    "alternativeTitles":"",
+    "year":"2014",
+    "certificateIS":"7 \u00e1ra",
+    "durationMinutes":90,
+    "genres":[
+      2
+    ],
+    "poster":"http:\/\/kvikmyndir.is\/images\/poster\/9245_500.jpg",
+    "actors_abridged":[
+      {
+        "name":"Jeff Daniels"
+      },
+      {
+        "name":"Jim Carrey"
+      }
+    ],
+    "directors_abridged":[
+      {
+        "name":"Bobby Farrelly"
+      },
+      {
+        "name":"Peter Farrelly"
+      }
+    ],
+    "ratings":{
+      "imdb":"6.8",
+      "rotten_audience":null,
+      "rotten_critics":null
+    },
+    "showtimes":[
+      {
+        "cinema":"1",
+        "schedule":[
+          "15:30",
+          "18:00",
+          "20:00",
+          "22:30"
+        ]
+      },
+      {
+        "cinema":"2",
+        "schedule":[
+          "17:30",
+          "20:00",
+          "22:30"
+        ]
+      },
+      {
+        "cinema":"3",
+        "schedule":[
+          "20:00",
+          "22:20"
+        ]
+      },
+      {
+        "cinema":"4",
+        "schedule":[
+          "17:30",
+          "20:00",
+          "22:20"
+        ]
+      },
+      {
+        "cinema":"6",
+        "schedule":[
+          "17:40 (1) ",
+          "20:00 (1) ",
+          "22:20 (1) "
+        ]
+      },
+      {
+        "cinema":"11",
+        "schedule":[
+          "20:00 (2) "
+        ]
+      }
+    ]
+  },
+  {
+    "id":9363,
+    "ids":{
+      "imdb":"2170593",
+      "rotten":null,
+      "tmdb":null
+    },
+    "title":"St. Vincent",
+    "alternativeTitles":"",
+    "year":"2014",
+    "certificateIS":"12 \u00e1ra",
+    "durationMinutes":103,
+    "genres":[
+      2
+    ],
+    "poster":"http:\/\/kvikmyndir.is\/images\/poster\/9363_500.jpg",
+    "actors_abridged":[
+      {
+        "name":"Bill Murray"
+      },
+      {
+        "name":"Melissa McCarthy"
+      }
+    ],
+    "directors_abridged":[
+      {
+        "name":"Theodore Melfi"
+      }
+    ],
+    "ratings":{
+      "imdb":"7.4",
+      "rotten_audience":null,
+      "rotten_critics":null
+    },
+    "showtimes":[
+      {
+        "cinema":"2",
+        "schedule":[
+          "20:00"
+        ]
+      }
+    ]
+  },
+  {
+    "id":8708,
+    "ids":{
+      "imdb":"0816692",
+      "rotten":null,
+      "tmdb":"157336"
+    },
+    "title":"Interstellar",
+    "alternativeTitles":"",
+    "year":"2014",
+    "certificateIS":"12 \u00e1ra",
+    "durationMinutes":169,
+    "genres":[
+      31,
+      32,
+      38
+    ],
+    "poster":"http:\/\/kvikmyndir.is\/images\/poster\/l_816692_a074ce1f-1415390541.jpg",
+    "actors_abridged":[
+      {
+        "name":"Matthew McConaughey"
+      },
+      {
+        "name":"Anne Hathaway"
+      }
+    ],
+    "directors_abridged":[
+      {
+        "name":"Christopher Nolan"
+      }
+    ],
+    "ratings":{
+      "imdb":"8.9",
+      "rotten_audience":null,
+      "rotten_critics":null
+    },
+    "showtimes":[
+      {
+        "cinema":"6",
+        "schedule":[
+          "17:00 (P) ",
+          "17:40 (2) ",
+          "20:30 (P) ",
+          "20:30 (A) ",
+          "21:30 (2) "
+        ]
+      },
+      {
+        "cinema":"7",
+        "schedule":[
+          "17:30 (1) ",
+          "21:00 (1) "
+        ]
+      },
+      {
+        "cinema":"8",
+        "schedule":[
+          "18:30 (3) ",
+          "20:00 (1) ",
+          "22:00 (3) "
+        ]
+      },
+      {
+        "cinema":"9",
+        "schedule":[
+          "20:30 (A) "
+        ]
+      }
+    ]
+  },
+  {
+    "id":9570,
+    "ids":{
+      "imdb":"2872718",
+      "rotten":null,
+      "tmdb":null
+    },
+    "title":"Nightcrawler",
+    "alternativeTitles":"",
+    "year":"2014",
+    "certificateIS":"16 \u00e1ra",
+    "durationMinutes":117,
+    "genres":[
+      4,
+      6,
+      8
+    ],
+    "poster":"http:\/\/kvikmyndir.is\/images\/poster\/9570_500.jpg",
+    "actors_abridged":[
+      {
+        "name":"Jake Gyllenhaal"
+      },
+      {
+        "name":"Bill Paxton"
+      }
+    ],
+    "directors_abridged":[
+      {
+        "name":"Dan Gilroy"
+      }
+    ],
+    "ratings":{
+      "imdb":"8.2",
+      "rotten_audience":null,
+      "rotten_critics":null
+    },
+    "showtimes":[
+      {
+        "cinema":"2",
+        "schedule":[
+          "20:00"
+        ]
+      },
+      {
+        "cinema":"4",
+        "schedule":[
+          "20:00",
+          "22:30"
+        ]
+      }
+    ]
+  },
+  {
+    "id":9539,
+    "ids":{
+      "imdb":"",
+      "rotten":null,
+      "tmdb":null
+    },
+    "title":"Algj\u00f6r Sveppi og G\u00f3i bjargar m\u00e1lunum",
+    "alternativeTitles":"",
+    "year":"2014",
+    "certificateIS":"\u00d6llum leyf\u00f0",
+    "durationMinutes":95,
+    "genres":[
+      2
+    ],
+    "poster":"http:\/\/kvikmyndir.is\/images\/poster\/sveppi-1411838014.jpg",
+    "actors_abridged":[
+      {
+        "name":"Sverrir \u00de\u00f3r Sverrisson"
+      },
+      {
+        "name":"Gu\u00f0j\u00f3n Dav\u00ed\u00f0 Karlsson"
+      }
+    ],
+    "directors_abridged":[
+      {
+        "name":"Bragi \u00de\u00f3r Hinriksson"
+      }
+    ],
+    "ratings":{
+      "imdb":null,
+      "rotten_audience":null,
+      "rotten_critics":null
+    },
+    "showtimes":[
+      {
+        "cinema":"6",
+        "schedule":[
+          "17:40 (3) "
+        ]
+      },
+      {
+        "cinema":"8",
+        "schedule":[
+          "17:40 (2) "
+        ]
+      },
+      {
+        "cinema":"9",
+        "schedule":[
+          "18:00 (A) "
+        ]
+      }
+    ]
+  },
+  {
+    "id":8735,
+    "ids":{
+      "imdb":"",
+      "rotten":null,
+      "tmdb":null
+    },
+    "title":"Grafir og Bein",
+    "alternativeTitles":"",
+    "year":"2014",
+    "certificateIS":"16 \u00e1ra",
+    "durationMinutes":90,
+    "genres":[
+      4,
+      6,
+      75
+    ],
+    "poster":"http:\/\/kvikmyndir.is\/images\/poster\/grafir-1408652380.jpg",
+    "actors_abridged":[
+      {
+        "name":"Elvar Mar\u00eda Birgisd\u00f3ttir"
+      },
+      {
+        "name":"N\u00edna D\u00f6gg Filippusd\u00f3ttir"
+      }
+    ],
+    "directors_abridged":[
+      {
+        "name":"Anton Sigur\u00f0sson"
+      }
+    ],
+    "ratings":{
+      "imdb":null,
+      "rotten_audience":null,
+      "rotten_critics":null
+    },
+    "showtimes":[
+      {
+        "cinema":"2",
+        "schedule":[
+          "22:30"
+        ]
+      }
+    ]
+  },
+  {
+    "id":9536,
+    "ids":{
+      "imdb":"2911666",
+      "rotten":null,
+      "tmdb":null
+    },
+    "title":"John Wick",
+    "alternativeTitles":"",
+    "year":"2014",
+    "certificateIS":"16 \u00e1ra",
+    "durationMinutes":96,
+    "genres":[
+      1,
+      6
+    ],
+    "poster":"http:\/\/kvikmyndir.is\/images\/poster\/9536_500.jpg",
+    "actors_abridged":[
+      {
+        "name":"Keanu Reeves"
+      },
+      {
+        "name":"Adrianne Palicki"
+      }
+    ],
+    "directors_abridged":[
+      {
+        "name":"Chad Stahelski"
+      }
+    ],
+    "ratings":{
+      "imdb":"7.8",
+      "rotten_audience":null,
+      "rotten_critics":null
+    },
+    "showtimes":[
+      {
+        "cinema":"6",
+        "schedule":[
+          "20:00 (3) ",
+          "22:20 (3) "
+        ]
+      }
+    ]
+  },
+  {
+    "id":9297,
+    "ids":{
+      "imdb":"2267998",
+      "rotten":null,
+      "tmdb":null
+    },
+    "title":"Gone Girl",
+    "alternativeTitles":"",
+    "year":"2014",
+    "certificateIS":"16 \u00e1ra",
+    "durationMinutes":145,
+    "genres":[
+      4,
+      6,
+      38
+    ],
+    "poster":"http:\/\/kvikmyndir.is\/images\/poster\/9297_500.jpg",
+    "actors_abridged":[
+      {
+        "name":"Ben Affleck"
+      },
+      {
+        "name":"Rosamund Pike"
+      }
+    ],
+    "directors_abridged":[
+      {
+        "name":"David Fincher"
+      }
+    ],
+    "ratings":{
+      "imdb":"8.4",
+      "rotten_audience":null,
+      "rotten_critics":null
+    },
+    "showtimes":[
+      {
+        "cinema":"1",
+        "schedule":[
+          "22:15"
+        ]
+      }
+    ]
+  },
+  {
+    "id":8238,
+    "ids":{
+      "imdb":"",
+      "rotten":"",
+      "tmdb":"192353"
+    },
+    "title":"Afinn",
+    "alternativeTitles":"The Grandad",
+    "year":"2014",
+    "certificateIS":"\u00d6llum leyf\u00f0",
+    "durationMinutes":95,
+    "genres":[
+      2,
+      4,
+      75
+    ],
+    "poster":"http:\/\/kvikmyndir.is\/images\/poster\/afinn_bio_final-1405031688.jpeg",
+    "actors_abridged":[
+      {
+        "name":"Sigur\u00f0ur Sigurj\u00f3nsson"
+      },
+      {
+        "name":"\u00deorsteinn Bachmann"
+      }
+    ],
+    "directors_abridged":[
+      {
+        "name":"Bjarni Thorsson"
+      }
+    ],
+    "ratings":{
+      "imdb":"",
+      "rotten_audience":"0",
+      "rotten_critics":"0"
+    },
+    "showtimes":[
+      {
+        "cinema":"7",
+        "schedule":[
+          "17:40 (3) "
+        ]
+      }
+    ]
+  }
+]

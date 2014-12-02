@@ -1,51 +1,29 @@
 # Hvað er í bíó?
 
+
 ## About
-Hvað er í bíó? is a webapp that list all movie screenings in theaters in Iceland. The app is focused on providing an excelent user experience and solving the problem – finding a movie to see – in a efficient and intuitive manner.
 
-## Data
-Data sources:
-Right now all the data comes from apis.is/cinema which relies on kvikmyndir.is but the plan is to fetch it from it's sources:
-Sambíó http://www.sambio.is/xml/Schedule/
-Midi.is: in arrangements about api key
-Selfossbíó: has not yet made an api (and is not in the current data)
-
-The data should be gathered in a single JSON file with the following structure:
-    "2014-03-15": [
-        {
-            "title": "The Lego Movie",
-            "year": "2014",
-            "length": "100",
-            "imdbUrl": "http://imdb.com/1337",
-            "imgSmallUrl": "/posters/the-lego-movie-small.jpg",
-            "imgLargeUrl": "/posters/the-lego-movie-large.jpg",
-            "trailerUrl": "http://www.youtube.com/watch?v=fZ_JOBCLF-I",
-            "restriction": "12",
-            "ratings": [
-                {
-                    "source": "imdb",
-                    "rating": "5.5",
-                    "top": "10.0",
-                    "votes": "14323"
-                }
-            ],
-            "showtimes": [
-                { 
-                    "theater": "Kringlan",
-                    "schedule": [
-                        {
-                            "time": "20:00",
-                            "auditorium": "2",
-                            "extra": "3D",
-                            "buyUrl": "http://www.sambio.is/Websales/Show/164157/"
-                        }
-                    ]
-                }
-            ]
-        }
-    ]
+Hvað er í bíó? is a web app that displays movies screening the current day in Icelandic cinemas. The app is focused on providing a good user experience, solving the problem of finding a movie to see in an efficient and intuitive manner. The data comes from the [Kvikmyndir.is](http://kvikmyndir.is) api.
 
 
+## Development
 
-## Copyright
-© 2014 Hugi Hlynsson – all right reserved
+Requirements:
+- [NodeJS](http://nodejs.org)
+- [Optional] An api key from Kvikmyndir.is set as the `KVIKMYNDIR_KEY` environment variable. If it is not set and Node is not running in a production environment, data from `data/demoData.json` will be used.
+
+To start the server, run `node start`. You can now navigate to http://localhost:8001 (or [8000](http://localhost:8000) in a production environment).
+
+The project uses [Gulp](http://gulpjs.com) to compile the files required for the front-end. That is:
+- Javascript from `source/scripts.js` to `public/main.js`
+- Less from `source/styles.less` to `public/main.css`
+
+Run `gulp` to start the compiling process. It will watch any changes and recompile the files. If you have [Livereload](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-) running in the browser, it will automatically update the site.
+
+
+## Todo
+
+- Set up a testing environment and test all the things
+- Break main.less into smaller, more maintainable files
+- Use [browserify](http://browserify.org) for the front-end JS instead of manually adding files to the Gulp process
+- Break scripts.js into smaller, more testable files
