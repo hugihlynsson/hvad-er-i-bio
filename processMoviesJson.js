@@ -4,7 +4,7 @@ var fs = require('fs');
 var cachePoster = require('./cachePoster');
 
 
-var theaterData = JSON.parse(fs.readFileSync('./data/theater_list.json'));
+var theaterData = JSON.parse(fs.readFileSync('./data/theaterList.json'));
 var theaterNameMap = {};
 theaterData.forEach(function(theater) { theaterNameMap[theater.id] = theater.name; });
 

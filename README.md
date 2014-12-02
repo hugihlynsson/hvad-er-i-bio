@@ -9,10 +9,10 @@ Hvað er í bíó? is a web app that displays movies screening the current day i
 ## Development
 
 Requirements:
-- To run this project, you currently need an api key from Kvikmyndir.is set as the `KVIKMYNDIR_KEY` environment variable. The plan is to include a set of data for testing, omitting the need for the key
 - [NodeJS](http://nodejs.org)
+- [Optional] An api key from Kvikmyndir.is set as the `KVIKMYNDIR_KEY` environment variable. If it is not set and Node is not running in a production environment, data from `data/demoData.json` will be used.
 
-To start the server, run `node start`. It will output the port it is running on (8001 if not in production).
+To start the server, run `node start`. You can now navigate to http://localhost:8001 (or [8000](http://localhost:8000) in a production environment).
 
 The project uses [Gulp](http://gulpjs.com) to compile the files required for the front-end. That is:
 - Javascript from `source/scripts.js` to `public/main.js`

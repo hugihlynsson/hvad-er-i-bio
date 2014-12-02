@@ -1,10 +1,12 @@
 'use strict';
 
+var fs = require('fs');
 var express = require('express');
 var request = require('request');
 var jade = require('jade');
 var Promise = require('bluebird');
 var processMoviesJson = require('./processMoviesJson');
+
 
 var app = express();
 app.use(express.static(__dirname + '/public'));
@@ -22,7 +24,7 @@ var renderJadeFile = function (path, data) {
 
 
 // A function to update the renderedHtml to make Promise.then() nicer
-var replaceHtml = function(html) { renderedHtml = html; };
+var replaceHtml = function (html) { renderedHtml = html; };
 
 
 // Initialize update to the beginning of Unix
@@ -34,11 +36,20 @@ var renderedHtml;
 // Start rendering the loading view
 renderJadeFile('./views/loading.jade').then(replaceHtml).catch(console.log);
 
-
-// Update the rendered html with either fresh data or no-data and call itself
-var updateData = function () {
-    new Promise(function(resolve, reject) {
-        var url = 'http://kvikmyndir.is/api/showtimes/?key=' + process.env.KVIKMYNDIR_KEY;
+// Returns movie data. Demo data is returned if KVIKMYNDIR_KEY isn't set
+var fetchData = function () {
+    var kvikmyndirKey = process.env.KVIKMYNDIR_KEY;
+    if (!kvikmyndirKey && app.get('env') !== 'production') {
+        console.log('The kvikmyndir.is api key was not found, using demo data');
+        return new Promise(function (resolve, reject) {
+            fs.readFile('./data/demoData.json', function (err, data) {
+                if (err) reject(new Error(err));
+                else resolve(data);
+            });
+        });
+    }
+    return new Promise(function (resolve, reject) {
+        var url = 'http://kvikmyndir.is/api/showtimes/?key=' + kvikmyndirKey;
         request.get({ url: url }, function (err, res, body) {
             if (err) reject(new Error(err));
             else if (res.statusCode !== 200) {
@@ -46,9 +57,15 @@ var updateData = function () {
             }
             else resolve(body);
         });
-    }).then(JSON.parse).then(processMoviesJson).then(function(data) {
+    });
+};
+
+
+// Update the rendered html with either fresh data or no-data and call itself
+var updateData = function () {
+    fetchData().then(JSON.parse).then(processMoviesJson).then(function (data) {
         return renderJadeFile('./views/index.jade', data);
-    }).then(replaceHtml).then(function() {
+    }).then(replaceHtml).then(function () {
         lastUpdate = new Date();
         console.log('Updated html with fresh data', lastUpdate);
         setTimeout(updateData, 30*60*1000);
@@ -66,7 +83,7 @@ updateData();
  * Start server:
  */
 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.end(renderedHtml);
 });
