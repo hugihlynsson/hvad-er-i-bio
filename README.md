@@ -16,7 +16,7 @@ Hvað er í bíó? is a web app that displays movie screenings in Icelandic cine
 
 Run `npm install`
 
-To start the server, run `node server`. You can now navigate to http://localhost:8001 (or [8000](http://localhost:8000) in a production environment).
+To start the server, run `node server`. You can then navigate to [http://localhost:8001](http://localhost:8001) (or [8000](http://localhost:8000) in a production environment).
 
 
 ## Development
