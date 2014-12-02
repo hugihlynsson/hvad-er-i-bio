@@ -17,5 +17,4 @@ build
 
 .env
 node_modules/
-public/posters/
 assets/

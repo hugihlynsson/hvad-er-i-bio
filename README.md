@@ -3,16 +3,23 @@
 
 ## About
 
-Hvað er í bíó? is a web app that displays movies screening the current day in Icelandic cinemas. The app is focused on providing a good user experience, solving the problem of finding a movie to see in an efficient and intuitive manner. The data comes from the [kvikmyndir.is](http://kvikmyndir.is) api.
+Hvað er í bíó? is a web app that displays movie screenings in Icelandic cinemas. The app is focused on providing a good user experience, solving the problem of finding a movie to see in an efficient and intuitive manner. The data comes from the [kvikmyndir.is](http://kvikmyndir.is) api.
+
+
+##Requirements:
+
+- [NodeJS](http://nodejs.org)
+- [Optional] An api key from kvikmyndir.is set as the `KVIKMYNDIR_KEY` environment variable. If it's not set and Node isn't running in a production environment, data from `data/demoData.json` will be used.
+
+
+## Installation
+
+Run `npm install`
+
+To start the server, run `node server`. You can now navigate to http://localhost:8001 (or [8000](http://localhost:8000) in a production environment).
 
 
 ## Development
-
-Requirements:
-- [NodeJS](http://nodejs.org)
-- [Optional] An api key from kvikmyndir.is set as the `KVIKMYNDIR_KEY` environment variable. If it is not set and Node is not running in a production environment, data from `data/demoData.json` will be used.
-
-To start the server, run `node server`. You can now navigate to http://localhost:8001 (or [8000](http://localhost:8000) in a production environment).
 
 The project uses [Gulp](http://gulpjs.com) to compile the files required for the front-end. That is:
 - Javascript from `source/scripts.js` to `public/main.js`
