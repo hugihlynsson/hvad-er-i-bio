@@ -88,6 +88,11 @@ app.get('/', function (req, res) {
     res.end(renderedHtml);
 });
 
+app.get('/debug', function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.end('Last successful fetch: ' + lastUpdate);
+});
+
 
 var port = (app.get('env') === 'production') ? 8000 : 8001;
 app.listen(port);
