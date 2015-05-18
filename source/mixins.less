@@ -1,0 +1,100 @@
+// Common mixins for all sites.
+// DO NOT MODIFY MIXINS WITHOUT CONSIDERATION.
+
+.box-sizing (@x) {
+	-webkit-box-sizing: @x;
+	-moz-box-sizing: @x;
+	-ms-box-sizing: @x;
+	box-sizing: @x;
+}
+
+.box-shadow (@x) {
+	-webkit-box-shadow: @x;
+	-moz-box-shadow: @x;
+	-ms-box-shadow: @x;
+	box-shadow: @x;
+}
+
+// Columns:
+.columns (@x) {
+	-webkit-columns: @x;
+	-moz-columns: @x;
+	columns: @x;
+}
+.column-gap (@x) {
+	-webkit-column-gap: @x;
+	-moz-column-gap: @x;
+	column-gap: @x;
+}
+.column-span (@x) {
+	-webkit-column-span: @x;
+	-moz-column-span: @x;
+	column-span: @x;
+}
+.column-rule (@x) {
+	-webkit-column-rule: @x;
+	-moz-column-rule: @x;
+	column-rule: @x;
+}
+
+.transition (@x) {
+	-webkit-transition: @x;
+	-moz-transition: @x;
+	-ms-transition: @x;
+	transition: @x;
+}
+
+.animation (@x) {
+	-webkit-animation: @x;
+	-moz-animation: @x;
+	-ms-animation: @x;
+	animation: @x;
+}
+
+.hide-text () {
+	position: relative;
+	overflow: hidden;
+	width: 1px;
+	display: inline-block;
+	white-space: nowrap;
+	text-indent: 100%;
+}
+
+.dehide-text () {
+	position: static;
+	overflow: visible;
+	width: auto;
+	white-space: normal;
+	text-indent: 0;
+}
+
+.after-clear () {
+	&:after {
+		content: ".";
+		visibility: hidden;
+		display: block;
+		height: 0;
+		clear: both;
+	}
+}
+
+.hyphens (@x) {
+	-webkit-hyphens: @x;
+	-moz-hyphens: @x;
+	-ms-hyphens: @x;
+	hyphens: @x;
+}
+
+.font-feature-settings (@x) {
+	-moz-font-feature-settings: @x;
+	-moz-font-feature-settings: @x;
+	-ms-font-feature-settings: @x;
+	-o-font-feature-settings: @x;
+	-webkit-font-feature-settings: @x;
+	font-feature-settings: @x;
+}
+
+.font-smoothing() {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
