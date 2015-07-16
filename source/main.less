@@ -662,9 +662,6 @@ output {
 			.rating { border-radius: @radius 0 0 0; }
 			h2 {
 				border-radius: 0 @radius 0 0;
-				&.no-rating {
-					border-radius: @radius @radius 0 0;
-				}
 			}
 		}
 		.more {
@@ -1024,7 +1021,6 @@ footer {
 		&.open {
 			header {
 				.rating { border-bottom-left-radius: @radius; }
-				h2.no-rating { border-bottom-left-radius: @radius; }
 			}
 			&:first-child header .rating { border-radius: @radius 0 0 @radius; }
 			&:last-child {
@@ -1033,8 +1029,7 @@ footer {
 			}
 			// If open, make movie below have a radius in it's top left corner:
 			+ .movie header {
-				.rating,
-				h2.no-rating { border-top-left-radius: @radius; }
+				.rating { border-top-left-radius: @radius; }
 			}
 		}
 	}
