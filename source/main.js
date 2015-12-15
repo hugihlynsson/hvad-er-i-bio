@@ -347,7 +347,7 @@ var activateFilters = function () {
 
 // Show the aside and change link state:
 var activateMoreToggle = function () {
-	$('.more, header h2').on('click', function (e) {
+	$('.more, header h2, header .rating.lol-jk').on('click', function (e) {
 		e.preventDefault();
 		var article = $(this).closest('article');
 
