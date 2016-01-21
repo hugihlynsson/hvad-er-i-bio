@@ -85,6 +85,12 @@ var processMoviesJson = function (moviesJSON) {
         movie.showtimes.forEach(function (place) {
             var jadeShow = {};
             var theaterName = theaterNameMap[place.cinema];
+
+            // If the cinema is not on the list it should not be displayed
+            if (!theaterName) {
+              return;
+            }
+
             jadeShow.theater = theaterName;
             jadeShow.times = [];
 
@@ -118,7 +124,15 @@ var processMoviesJson = function (moviesJSON) {
             });
             jadeMovie.shows.push(jadeShow);
         });
-        jadeData.titles.push(jadeMovie);
+
+        // A movie should not be in the list if there are no shows
+        if (!currentMovie.places.length) {
+          delete data.titles[movie.title];
+        }
+
+        if (jadeMovie.shows.length) {
+          jadeData.titles.push(jadeMovie);
+        }
     });
 
     // Make the places fit well into the filter box in 1024+ view
