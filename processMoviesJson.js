@@ -82,15 +82,9 @@ var processMoviesJson = function (moviesJSON) {
         currentMovie.places = {};
 
         // Cylce through the shows:
-        movie.showtimes.forEach(function (place) {
+        movie.showtimes.filter(function (place) { return theaterNameMap[place.cinema]; }).forEach(function (place) {
             var jadeShow = {};
             var theaterName = theaterNameMap[place.cinema];
-
-            // If the cinema is not on the list it should not be displayed
-            if (!theaterName) {
-              return;
-            }
-
             jadeShow.theater = theaterName;
             jadeShow.times = [];
 
@@ -125,8 +119,7 @@ var processMoviesJson = function (moviesJSON) {
             jadeMovie.shows.push(jadeShow);
         });
 
-        // A movie should not be in the list if there are no shows
-        if (!currentMovie.places.length) {
+        if (!Object.keys(currentMovie.places).length) {
           delete data.titles[movie.title];
         }
 
