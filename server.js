@@ -22,6 +22,7 @@ var renderJadeFile = function (path, data) {
     });
 };
 
+var processedData;
 
 // A function to update the renderedHtml to make Promise.then() nicer
 var replaceHtml = function (html) { renderedHtml = html; };
@@ -64,6 +65,7 @@ var fetchData = function () {
 // Update the rendered html with either fresh data or no-data and call itself
 var updateData = function () {
     fetchData().then(JSON.parse).then(processMoviesJson).then(function (data) {
+        processedData = data;
         return renderJadeFile('./views/index.jade', data);
     }).then(replaceHtml).then(function () {
         lastUpdate = new Date();
@@ -93,6 +95,9 @@ app.get('/debug', function (req, res) {
   res.end('Last successful fetch: ' + lastUpdate);
 });
 
+app.get('/movies', function(req, res) {
+  res.json(processedData && {movies: processedData.movies && processedData.movies.titles});
+});
 
 var port = (app.get('env') === 'production') ? 8000 : 8001;
 app.listen(port);
