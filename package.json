@@ -8,11 +8,11 @@
     "url": "http://hugihlynsson.com"
   },
   "dependencies": {
-    "bluebird": "~2.3.11",
-    "express": "~4.10.4",
-    "jade": "~1.8.1",
-    "request": "~2.49.0",
-    "sanitize-filename": "~1.1.1"
+    "bluebird": "^3.3.5",
+    "express": "^4.13.4",
+    "jade": "^1.11.0",
+    "request": "^2.72.0",
+    "sanitize-filename": "^1.6.0"
   },
   "devDependencies": {
     "gulp": "~3.8.10",
