@@ -1,0 +1,7 @@
+{
+  "extends": "airbnb-base",
+  "rules": {
+    "curly": ["error", "all"],
+    "no-console": "off"
+  }
+}

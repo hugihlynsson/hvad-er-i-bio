@@ -1,143 +1,152 @@
-'use strict';
-
-var fs = require('fs');
-var cachePoster = require('./cachePoster');
+const fs = require('fs');
+const cachePoster = require('./cachePoster');
 
 
-var theaterData = JSON.parse(fs.readFileSync('./data/theaterList.json'));
-var theaterNameMap = {};
-theaterData.forEach(function(theater) { theaterNameMap[theater.id] = theater.name; });
+// Helpers:
+function timeToNum(time) {
+  const parts = time.split(':');
+  return `${parts[0]}${(parseInt(parts[1], 10) / 60).toString().substring(1)}`;
+}
+
+function numToTime(number) {
+  const parts = number.split('.');
+  if (parts.length === 1 || parseInt(parts[1], 10) === 0) {
+    return `${number}:00`;
+  }
+  let minutes = Math.round(parseFloat(`0.${parts[1]}`) * 60).toString();
+  if (minutes.length === 1) {
+    minutes = `0${minutes}`;
+  }
+  return `${parts[0]}:${minutes}`;
+}
+
+
+const knownCapitalPlaces = [
+  'Bíó Paradís',
+  'Háskólabíó',
+  'Laugarásbíó',
+  'Álfabakki',
+  'Sambíóin Egilshöll',
+  'Kringlubíó',
+  'Smárabíó',
+];
+
+const months = [
+  'janúar',
+  'febrúar',
+  'mars',
+  'apríl',
+  'maí',
+  'júní',
+  'júlí',
+  'ágúst',
+  'september',
+  'október',
+  'nóvember',
+  'desember',
+];
+
+
+const theaterData = JSON.parse(fs.readFileSync('./data/theaterList.json'));
+const theaterNameMap = {};
+theaterData.forEach((theater) => { theaterNameMap[theater.id] = theater.name; });
 
 // Recreate the global movies data based on fresh info:
-var processMoviesJson = function (moviesJSON) {
-    // Helpers:
-    var timeToNum = function (time) {
-        var parts = time.split(':');
-        return parts[0] + (parseInt(parts[1], 10)/60 + '').substring(1);
-    };
-    var numToTime = function (number) {
-        var parts = number.split('.');
-        if (parts.length === 1 || parseInt(parts[1], 10) === 0) return number + ':00';
-        var minutes = Math.round(parseFloat('0.' + parts[1])*60).toString();
-        if (minutes.length === 1) minutes = '0' + minutes;
-        return parts[0] + ':' + minutes;
-    };
-    var knownCapitalPlaces = [
-        'Bíó Paradís',
-        'Háskólabíó',
-        'Laugarásbíó',
-        'Álfabakki',
-        'Sambíóin Egilshöll',
-        'Kringlubíó',
-        'Smárabíó'
-    ];
-    var months = [
-        'janúar',
-        'febrúar',
-        'mars',
-        'apríl',
-        'maí',
-        'júní',
-        'júlí',
-        'ágúst',
-        'september',
-        'október',
-        'nóvember',
-        'desember'
-    ];
+function processMoviesJson(moviesJSON) {
+  // Start constructing the two data sets, one for jade and the other
+  // for Javascript functionality:
+  const jadeData = {};
+  jadeData.titles = [];
+  jadeData.capitalPlaces = [];
+  jadeData.ruralPlaces = [];
+  jadeData.date = `${new Date().getDate()}.${months[new Date().getMonth()]}`;
 
-    // Start constructing the two data sets, one for jade and the other
-    // for Javascript functionality:
-    var jadeData = {};
-    jadeData.titles = [];
-    jadeData.capitalPlaces = [];
-    jadeData.ruralPlaces = [];
-    jadeData.date = new Date().getDate() + '. ' + months[new Date().getMonth()];
+  const data = {};
+  data.titles = {};
+  data.hasMovies = true;
 
-    var data = {};
-    data.titles = {};
-    data.hasMovies = true;
+  let lowestShowtime = 24;
+  let highestShowtime = 0;
 
-    var lowestShowtime = 24;
-    var highestShowtime = 0;
+  // Cycle through the whole json to work with the data:
+  moviesJSON.forEach((movie) => {
+    const jadeMovie = {};
+    jadeMovie.title = movie.title;
+    jadeMovie.rating = movie.ratings.imdb;
+    jadeMovie.imdbUrl = `http://www.imdb.com/title/tt${movie.ids.imdb}`;
+    jadeMovie.restriction = movie.certificateIS;
 
-    // Cycle through the whole json to work with the data:
-    moviesJSON.forEach(function (movie) {
+    jadeMovie.poster = cachePoster(movie.poster, movie.title);
 
-        var jadeMovie = {};
-        jadeMovie.title = movie.title;
-        jadeMovie.rating = movie.ratings.imdb;
-        jadeMovie.imdbUrl = 'http://www.imdb.com/title/tt' + movie.ids.imdb;
-        jadeMovie.restriction = movie.certificateIS;
+    jadeMovie.shows = [];
 
-        jadeMovie.poster = cachePoster(movie.poster, movie.title);
+    data.titles[movie.title] = {};
 
-        jadeMovie.shows = [];
+    const currentMovie = data.titles[movie.title];
+    currentMovie.isFiltered = false;
+    currentMovie.rating = movie.ratings.imdb;
+    currentMovie.places = {};
 
-        data.titles[movie.title] = {};
+    // Cylce through the shows:
+    movie.showtimes.filter((place) => theaterNameMap[place.cinema]).forEach((place) => {
+      const jadeShow = {};
+      const theaterName = theaterNameMap[place.cinema];
+      jadeShow.theater = theaterName;
+      jadeShow.times = [];
 
-        var currentMovie = data.titles[movie.title];
-        currentMovie.isFiltered = false;
-        currentMovie.rating = movie.ratings.imdb;
-        currentMovie.places = {};
+      // If not yet there, add place to jadeData places:
+      if (knownCapitalPlaces.indexOf(theaterName) >= 0) {
+        if (jadeData.capitalPlaces.indexOf(theaterName) < 0) {
+          jadeData.capitalPlaces.push(theaterName);
+        }
+      } else {
+        if (jadeData.ruralPlaces.indexOf(theaterName) < 0) {
+          jadeData.ruralPlaces.push(theaterName);
+        }
+      }
 
-        // Cylce through the shows:
-        movie.showtimes.filter(function (place) { return theaterNameMap[place.cinema]; }).forEach(function (place) {
-            var jadeShow = {};
-            var theaterName = theaterNameMap[place.cinema];
-            jadeShow.theater = theaterName;
-            jadeShow.times = [];
+      currentMovie.places[theaterName] = {};
+      currentMovie.places[theaterName].times = {};
+      currentMovie.places[theaterName].isFiltered = false;
 
-            // If not yet there, add place to jadeData places:
-            if (knownCapitalPlaces.indexOf(theaterName) >= 0) {
-                if (jadeData.capitalPlaces.indexOf(theaterName) < 0) {
-                    jadeData.capitalPlaces.push(theaterName);
-                }
-            }
-            else {
-                if (jadeData.ruralPlaces.indexOf(theaterName) < 0) {
-                    jadeData.ruralPlaces.push(theaterName);
-                }
-            }
+      // Cycle through the shows times:
+      place.schedule.forEach((time) => {
+        const timeNumber = timeToNum(time);
 
-            currentMovie.places[theaterName] = {};
-            currentMovie.places[theaterName].times = {};
-            currentMovie.places[theaterName].isFiltered = false;
+        jadeShow.times.push({ human: time, number: timeNumber });
 
-            // Cycle through the shows times:
-            place.schedule.forEach(function (time) {
-                var timeNumber = timeToNum(time);
-
-                jadeShow.times.push({human: time, number: timeNumber});
-
-                // Check if new limit has been found
-                if (timeNumber < lowestShowtime) lowestShowtime = timeNumber;
-                if (timeNumber > highestShowtime) highestShowtime = timeNumber;
-
-                currentMovie.places[theaterName].times[timeNumber] = 'visible';
-            });
-            jadeMovie.shows.push(jadeShow);
-        });
-
-        if (!Object.keys(currentMovie.places).length) {
-          delete data.titles[movie.title];
+        // Check if new limit has been found
+        if (timeNumber < lowestShowtime) {
+          lowestShowtime = timeNumber;
+        }
+        if (timeNumber > highestShowtime) {
+          highestShowtime = timeNumber;
         }
 
-        if (jadeMovie.shows.length) {
-          jadeData.titles.push(jadeMovie);
-        }
+        currentMovie.places[theaterName].times[timeNumber] = 'visible';
+      });
+      jadeMovie.shows.push(jadeShow);
     });
 
-    // Make the places fit well into the filter box in 1024+ view
-    jadeData.capitalPlaces.sort();
+    if (!Object.keys(currentMovie.places).length) {
+      delete data.titles[movie.title];
+    }
 
-    // Round to nearest quarter and convert to human readable time
-    var roundedLow = (Math.floor(parseFloat(lowestShowtime)*4)/4) + '';
-    var roundedHigh = (Math.ceil(parseFloat(highestShowtime)*4)/4) + '';
-    jadeData.lowestShowtime = { human: numToTime(roundedLow), number: roundedLow };
-    jadeData.highestShowtime = { human: numToTime(roundedHigh), number: roundedHigh };
+    if (jadeMovie.shows.length) {
+      jadeData.titles.push(jadeMovie);
+    }
+  });
 
-    return { movies: jadeData, data: data };
-};
+  // Make the places fit well into the filter box in 1024+ view
+  jadeData.capitalPlaces.sort();
+
+  // Round to nearest quarter and convert to human readable time
+  const roundedLow = (Math.floor(parseFloat(lowestShowtime) * 4) / 4).toString();
+  const roundedHigh = (Math.ceil(parseFloat(highestShowtime) * 4) / 4).toString();
+  jadeData.lowestShowtime = { human: numToTime(roundedLow), number: roundedLow };
+  jadeData.highestShowtime = { human: numToTime(roundedHigh), number: roundedHigh };
+
+  return { movies: jadeData, data };
+}
 
 module.exports = processMoviesJson;
