@@ -26,9 +26,9 @@
     "gulp-autoprefixer": "~2.0.0"
   },
   "scripts": {
-    "build": "gulp"
+    "build": "gulp",
+    "start": "node server/server.js"
   },
-  "main": "server.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/hugihlynsson/hvad-er-i-bio"

@@ -9,7 +9,7 @@ var processMoviesJson = require('./processMoviesJson');
 
 
 var app = express();
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/../public'));
 
 
 // Wrap jade.renderFile in a promise
