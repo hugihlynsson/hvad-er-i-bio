@@ -3,21 +3,35 @@ const cachePoster = require('./cachePoster');
 
 
 // Helpers:
-function timeToNum(time) {
-  const parts = time.split(':');
-  return `${parts[0]}${(parseInt(parts[1], 10) / 60).toString().substring(1)}`;
+
+// Converts time in format hours:minutes (13:30) to a floated number of hours (13.5)
+// 0:00 -> 0.0
+// 0:30 -> 0.5
+// 15:15 -> 15.25
+function timeToHours(time) {
+  const [hours, rest] = time.split(':');
+  const minutes = parseInt(rest, 10);
+  const hourFragment = (minutes / 60).toString().substring(1);
+  return parseFloat(`${hours}${hourFragment}`, 10);
 }
 
-function numToTime(number) {
-  const parts = number.split('.');
-  if (parts.length === 1 || parseInt(parts[1], 10) === 0) {
-    return `${number}:00`;
+// Converts floats representing hours (13.5) to a human readable time string as
+// hours:minutes (13:30)
+// 0.0 -> 0.0
+// 0.5 -> 0:30
+// 13 -> 13:00
+// 15.25 -> 15:15
+function hoursToTime(number) {
+  const [hours, reminder] = number.split('.');
+  if (!reminder || parseInt(reminder, 10) === 0) {
+    return `${hours}:00`;
   }
-  let minutes = Math.round(parseFloat(`0.${parts[1]}`) * 60).toString();
-  if (minutes.length === 1) {
-    minutes = `0${minutes}`;
+
+  const minutes = Math.round(parseFloat(`0.${hours}`) * 60);
+  if (minutes.toString().length === 1) {
+    return `${hours}:0${minutes}`;
   }
-  return `${parts[0]}:${minutes}`;
+  return `${hours}:${minutes}`;
 }
 
 
@@ -111,7 +125,7 @@ function processMoviesJson(moviesJSON) {
 
       // Cycle through the shows times:
       place.schedule.forEach((time) => {
-        const timeNumber = timeToNum(time);
+        const timeNumber = timeToHours(time);
 
         jadeShow.times.push({ human: time, number: timeNumber });
 
@@ -143,8 +157,8 @@ function processMoviesJson(moviesJSON) {
   // Round to nearest quarter and convert to human readable time
   const roundedLow = (Math.floor(parseFloat(lowestShowtime) * 4) / 4).toString();
   const roundedHigh = (Math.ceil(parseFloat(highestShowtime) * 4) / 4).toString();
-  jadeData.lowestShowtime = { human: numToTime(roundedLow), number: roundedLow };
-  jadeData.highestShowtime = { human: numToTime(roundedHigh), number: roundedHigh };
+  jadeData.lowestShowtime = { human: hoursToTime(roundedLow), number: roundedLow };
+  jadeData.highestShowtime = { human: hoursToTime(roundedHigh), number: roundedHigh };
 
   return { movies: jadeData, data };
 }
