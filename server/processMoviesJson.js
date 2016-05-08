@@ -1,4 +1,3 @@
-const fs = require('fs');
 const cachePoster = require('./cachePoster');
 
 
@@ -61,10 +60,6 @@ const months = [
 ];
 
 
-const theaterData = JSON.parse(fs.readFileSync('./data/theaterList.json'));
-const theaterNameMap = {};
-theaterData.forEach((theater) => { theaterNameMap[theater.id] = theater.name; });
-
 // Recreate the global movies data based on fresh info:
 function processMoviesJson(moviesJSON) {
   // Start constructing the two data sets, one for jade and the other
@@ -102,9 +97,9 @@ function processMoviesJson(moviesJSON) {
     currentMovie.places = {};
 
     // Cylce through the shows:
-    movie.showtimes.filter((place) => theaterNameMap[place.cinema]).forEach((place) => {
+    movie.showtimes.forEach((place) => {
       const jadeShow = {};
-      const theaterName = theaterNameMap[place.cinema];
+      const theaterName = place.cinema.name;
       jadeShow.theater = theaterName;
       jadeShow.times = [];
 
@@ -124,10 +119,10 @@ function processMoviesJson(moviesJSON) {
       currentMovie.places[theaterName].isFiltered = false;
 
       // Cycle through the shows times:
-      place.schedule.forEach((time) => {
-        const timeNumber = timeToHours(time);
+      place.schedule.forEach((schedule) => {
+        const timeNumber = timeToHours(schedule.time);
 
-        jadeShow.times.push({ human: time, number: timeNumber });
+        jadeShow.times.push({ human: schedule.time, number: timeNumber });
 
         // Check if new limit has been found
         if (timeNumber < lowestShowtime) {
