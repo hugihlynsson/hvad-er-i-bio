@@ -22,11 +22,11 @@ function timeToHours(time) {
 // 15.25 -> 15:15
 function hoursToTime(number) {
   const [hours, reminder] = number.split('.');
-  if (!reminder || parseInt(reminder, 10) === 0) {
+  if (!reminder) {
     return `${hours}:00`;
   }
 
-  const minutes = Math.round(parseFloat(`0.${hours}`) * 60);
+  const minutes = Math.round(parseFloat(`0.${reminder}`) * 60);
   if (minutes.toString().length === 1) {
     return `${hours}:0${minutes}`;
   }
