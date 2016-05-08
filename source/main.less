@@ -652,6 +652,15 @@ output {
 					.transition(all @transitionTime);
 
 					&.filtered { background: fade(@colorThird, 30%); }
+
+					a {
+						color: inherit;
+						border: 0;
+					}
+
+					&:hover {
+						background: @colorHighlight;
+					}
 				}
 			}
 		}

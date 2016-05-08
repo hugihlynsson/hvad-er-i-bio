@@ -122,7 +122,11 @@ function processMoviesJson(moviesJSON) {
       place.schedule.forEach((schedule) => {
         const timeNumber = timeToHours(schedule.time);
 
-        jadeShow.times.push({ human: schedule.time, number: timeNumber });
+        jadeShow.times.push({
+          human: schedule.time,
+          number: timeNumber,
+          purchaseUrl: schedule.purchase_url,
+        });
 
         // Check if new limit has been found
         if (timeNumber < lowestShowtime) {
