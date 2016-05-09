@@ -274,10 +274,10 @@ var initPlaceFilter = function () {
 
 var updateRangemark = function (range) {
 	// Compersate for thumb width:
-	var width = range.width()-30;
+	var width = range.width() - 20;
 	var newPoint = (range.val()-range.attr('min')) / (range.attr('max')-range.attr('min'));
 	// Compersate for thumb width and slider padding:
-	var offset = 15;
+	var offset = 10;
 	// Prevent mark from going beyond left or right (unsupported browsers):
 	var newPlace;
 	if (newPoint < 0) { newPlace = 0; }
@@ -417,7 +417,7 @@ var activateStickyNavbar = function () {
 		else {
 			if (filters.is('.sticky')) filters.removeClass('sticky');
 		}
-	}
+	};
 
 	// Only make scroll check on wide screens:
 	$(window).on('resize', function () {
