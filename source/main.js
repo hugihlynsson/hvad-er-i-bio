@@ -401,6 +401,11 @@ var enableAnalyticEventTracking = function () {
 		ga('send', 'event', 'button', 'click', 'Poster');
 	});
 
+	// Track Purchase Url clicks:
+	$('.showplace a').on('click', function () {
+		ga('send', 'event', 'showTime', 'click', $(this).prop('hostname'));
+	});
+
 	// Track filter reset use:
 	// See .reset-filter at end of filterMovies()
 };
