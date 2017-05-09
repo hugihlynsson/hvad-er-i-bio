@@ -9,7 +9,7 @@ Hvað er í bíó? is a web app that displays movie screenings in Icelandic cine
 ##Requirements:
 
 - [NodeJS](http://nodejs.org)
-- [Optional] An api key from kvikmyndir.is set as the `KVIKMYNDIR_KEY` environment variable. If it's not set and Node isn't running in a production environment, data from `data/demoData.json` will be used.
+- [Optional] An login from kvikmyndir.is set as the `KVIKMYNDIR_PASSWORD` and `KVIKMYNDIR_USERNAME` environment variables. If it's not set and Node isn't running in a production environment, data from `data/demoData.json` will be used.
 
 
 ## Installation
