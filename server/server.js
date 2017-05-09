@@ -71,7 +71,9 @@ app.get('/movies', (req, res) => {
   res.json(moviesData);
 });
 
-const port = (app.get('env') === 'production') ? 8000 : 8001;
+const productionPort = process.env.PORT || 8000;
+
+const port = (app.get('env') === 'production') ? productionPort : 8001;
 app.listen(port, () => {
   console.log(`Running server in ${app.get('env')} envitonment at port ${port}`);
 });
