@@ -38,5 +38,8 @@
   },
   "licence": "MIT",
   "homepage": "http://www.hvaderibio.is",
-  "private": true
+  "private": true,
+  "engines": {
+    "node": "10.x"
+  }
 }
