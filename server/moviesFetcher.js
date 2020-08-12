@@ -8,7 +8,7 @@ const processMoviesJson = require('./processMoviesJson');
 function getToken() {
   return new Promise((resolve, reject) => {
     const authOptions = {
-      url: 'http://api.kvikmyndir.is/authenticate',
+      url: 'https://api.kvikmyndir.is/authenticate',
       body: {
         username: process.env.KVIKMYNDIR_USERNAME,
         password: process.env.KVIKMYNDIR_PASSWORD,
@@ -42,7 +42,7 @@ function fetchData(token) {
     });
   }
   return new Promise((resolve, reject) => {
-    const url = `http://api.kvikmyndir.is/movies/?token=${token}`;
+    const url = `https://api.kvikmyndir.is/movies/?token=${token}`;
     request.get({ url, json: true }, (err, res, response) => {
       if (err) {
         reject(new Error(err));
