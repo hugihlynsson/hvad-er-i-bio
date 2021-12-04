@@ -14,6 +14,7 @@ function getToken() {
         password: process.env.KVIKMYNDIR_PASSWORD,
       },
       json: true,
+      rejectUnauthorized: false
     };
     request.post(authOptions, (error, response, json) => {
       if (error) {
@@ -43,7 +44,7 @@ function fetchData(token) {
   }
   return new Promise((resolve, reject) => {
     const url = `https://api.kvikmyndir.is/movies/?token=${token}`;
-    request.get({ url, json: true }, (err, res, response) => {
+    request.get({ url, json: true, rejectUnauthorized: false }, (err, res, response) => {
       if (err) {
         reject(new Error(err));
       } else if (res.statusCode !== 200) {
